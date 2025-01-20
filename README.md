@@ -1,4 +1,5 @@
 # Overall Project Notes
+The aim of this project is to specify, design, and implement an application for a mobile device, in particular, one based on the Android platform
 
 You and your development team have been contracted to specify, design, and implement a system modeling application that allows a user to input 
 specific characteristics that your application will use to identify what the object or phenomenon is.
