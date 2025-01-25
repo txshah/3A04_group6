@@ -10,6 +10,8 @@
 \usepackage{fancyhdr}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
+\usepackage{multirow}
+\graphicspath{ {./images/} }
 %\usepackage{extarrows}
 %\usepackage{setspace}
 %\usepackage{xcolor}
@@ -69,8 +71,10 @@
 \label{sub:purpose}
 % Begin SubSection
 \begin{itemize}
-	\item Specify the purpose of the SRS.
-	\item Specify the intended audience for the SRS.
+	\item Specify the purpose of the SRS.\newline inform public about wildlife 
+	\item Specify the intended audience for the SRS.\newline
+	Nature enthusiats 	\newline
+	hunters - 1.27 mill canadians hunted, 1.4 mill sport shooting 	
 \end{itemize}
 % End SubSection
 
@@ -79,6 +83,7 @@
 % Begin SubSection
 \begin{itemize}
 	\item Identify the software product(s) to be produced, and name each (e.g., Host DBMS, Report Generator, etc.)
+	\newline
 	\item Explain what the software product(s) will do (and, if necessary, also state what they will not do).
 	\item Describe the application of the software being specified, including relevant benefits, objectives, and goals.
 %	\item Be consistent with similar statements in higher-level specifications (e.g., the system requirements specification), if they exist
@@ -154,6 +159,33 @@
 		\item Such a diagram is not intended to show a design of a product, but simply shows the logical relationships among variables
 	\end{itemize} 
 \end{itemize}
+The goal of the system is to identify endangered and out of season species for 3 main domains: aerial, aquatic, and land. There will be 3 main methods for identifying specifics and a backend decision tree to determine accuracy and provide a result. The methods will be: description, survey and image. The main modules of this app will be the following: Identifying species (submitting photo, writing a description, filling a questionnaire, getting result, viewing accuracy score), Account Services (creating an account, viewing past inquiries, updating information, logging in), Community Discussion (asking questions, posting pictures, liking other users posts in the hunting community). 
+
+
+\begin{center}
+	\begin{tabular}{ |c|c| } 
+	\hline
+	Modules & Functions \\
+	\hline
+	Indentify Species & Submit Image: Allows the user to upload an image of animals they see \\ 
+	& Write Description: Allows the user to submit a description of the animal they have seen \\ 
+	& Fill out Questionnaire: Allows user to submit inquiry based on predesigned questions \\ 
+	& View Result: Allows user to see the identified species and corresponding accuracy score \\
+	& Post Result: Allows user to share output with Community \\
+   \hline
+   Community & Create Post: Allows user to post on the community forum and share thoughts with other accounts\\ 
+   & Like Post: When viewing public posts users, it allows users to like posts they enjoy \\ 
+   & Submit Comment: Allows users to engage in discussions accross other posts \\ 
+  \hline	
+  Account Services & Create Account: Allows the user to create an account\\ 
+  & Update Account: Allows the user to update their account information \\ 
+  & Login: Allows user to login/logout of their account  \\ 
+  & Search History: Allows user to view past searches and share them on the community module \\
+ \hline
+   \end{tabular}
+\end{center}
+
+\includegraphics[scale=0.25]{2.2StateDiagram.jpg}
 % End SubSection
 
 \subsection{User Characteristics}
