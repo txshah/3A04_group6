@@ -210,21 +210,27 @@ The goal of the system is to identify endangered and out of season species for 3
 \label{sub:assumptions_and_dependencies}
 % Begin SubSection
 \begin{itemize}
-	\item List any assumptions you made in interpreting what the software being developed is aiming to achieve
-	\item List any other assumptions you made that, if it fails to hold, could require you to change the requirements
-	%\item List each of the factors that affect the requirements stated in the SRS
-	%\item These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS
-	\begin{itemize}
-		\item \textbf{Example}: An assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not available, the SRS would then have to change accordingly.
-	\end{itemize}
+	\item Audio recordings are clear and free of excessive background noise.
+	\item Images and videos are of sufficient resolution, clarity, and lighting for accurate identification.
+    \item The app will only be used in Canada (no need to consider species from other regions).
+    \item We have access to cloud or local computational resources to handle image and sound processing.
+    \item Assume APIs are secure and functional
+    \item Assume user has internet connection
+    
+    
+    
 \end{itemize}
+
 % End SubSection
 
 \subsection{Apportioning of Requirements}
 \label{sub:apportioning_of_requirements}
 % Begin SubSection
 \begin{itemize}
-	\item Identify requirements that may be delayed until future versions of the system
+	\item The first version of the app will not take into consideration animals whose appearances change by season.
+    \item The first version of the app will be developed in English.
+    \item Verify with wildlife experts to check accuracy of our results.
+    \item Expand database to take into account species from other regions as the app grows.
 \end{itemize}
 % End SubSection
 
