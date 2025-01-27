@@ -16,6 +16,7 @@
 %\usepackage{setspace}
 %\usepackage{xcolor}
 \usepackage{color}
+\usepackage{titlesec}
 %------------------------------------------------------------------------------
 
 % Header and Footer
@@ -30,6 +31,16 @@
 \title{Deliverable \#1 Template : Software Requirement Specification (SRS)}
 \author{SE 3A04: Software Design II -- Large System Design}
 \date{}
+%------------------------------------------------------------------------------
+
+% Paragraph Formatting
+%------------------------------------------------------------------------------
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
                             
 %------------------------------------------------------------------------------
 
@@ -83,6 +94,36 @@
 
 \subsection{Scope}
 \label{sub:scope}
+\subsubsection{Software Products}
+\paragraph{Decision-Tree Expert (Mammal, Bird, and Fish domain)}
+This expert gives guided questions that the user can answer. At the end, based on the answers given by the user, generates and gives to the forum
+its best guess at what the animal could be based on its domain. It also gives an accuracy score to the forum. If it has no animal in its database which meets the required attributes, 
+it returns no answer.
+\paragraph{Image Expert}
+Based on a user-uploaded image, this expert generates and gives to the forum its best guess on what the animal could be. At the same time, it generates an accuracy score. If the accuracy score is
+too low, it returns nothing to the forum.
+\paragraph{Freeform Writing Expert}
+Based on user-given freeform text, this expert generates and returns to the forum its best guess to as what the animal could be. At the same time, it generates an accuracy score. If the accuracy score 
+is too low, it returns nothing to the forum.
+\paragraph{Animal Characteristics DBMS}
+This service maintains a list of species in Ontario including their attributes, phylogenetic classification, and their at-risk status. It allows other classes to sort and access this information.
+\paragraph{Forum}
+The forum accepts responses from the experts as their guesses of what the animal could be, as well as an accuracy score. Based on these accuracy scores, it selects an answer to present to the user.
+\paragraph{Animal Report Generator}
+The animal report generator receives the answer from the Forum and generates a report to show to the user about the animal.
+\subsubsection{Applications}
+\paragraph{Benefits}
+This product will allow users to be able to more easily identify animals found in Ontario. It will then give them relevant information such as habitat, circadian rhythms, and at-risk status.
+It will allow users to make informed decisions about their actions surrounding the identified animal.
+\paragraph{Objectives}
+This software will reliably generate a report based on any of the available input methods. It will be secure. This product will efficiently determine what animal the user is asking about based on any of the available input methods.
+\paragraph{Goals}
+\begin{itemize}
+	\item This product will generate an answer within 10 seconds of completion of user input
+	\item This product will be complete by
+	\item This product will always generate an answer with an accuracy score greater than 90\%
+\end{itemize}
+
 % Begin SubSection
 \begin{itemize}
 	\item Identify the software product(s) to be produced, and name each (e.g., Host DBMS, Report Generator, etc.)
