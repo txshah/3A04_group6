@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1737995856 "/home/braunc8/3A04/3A04_group6/SE3A04_Group6.tex" "SE3A04_Group6.pdf" "SE3A04_Group6" 1737995857 0
+["pdflatex"] 1737996692 "/home/braunc8/3A04/3A04_group6/SE3A04_Group6.tex" "SE3A04_Group6.pdf" "SE3A04_Group6" 1737996693 0
   "/etc/texmf/web2c/texmf.cnf" 1737403060 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/braunc8/3A04/3A04_group6/SE3A04_Group6.tex" 1737995856 28102 d150ed424fd304590fc66abc97eecf7b ""
+  "/home/braunc8/3A04/3A04_group6/SE3A04_Group6.tex" 1737996692 29583 3fdc058e134a04f9823fc3ee5ec0b98c ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -69,8 +69,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1693172360 40357 c95f5d5e031b5c7040b426833c11f2e0 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1737424344 4643645 d2d1d8b8ba87ed005f4aaf1ce646a79e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1737424376 7909434 9e018e4c7e75807294320c10a148fef2 ""
-  "SE3A04_Group6.aux" 1737995857 10074 83c118f3a9708a1cc417acda0ed78506 "pdflatex"
-  "SE3A04_Group6.tex" 1737995856 28102 d150ed424fd304590fc66abc97eecf7b ""
+  "SE3A04_Group6.aux" 1737996693 10295 e8e0ef52ad6ec0169bd2a0c97bfe66e3 "pdflatex"
+  "SE3A04_Group6.tex" 1737996692 29583 3fdc058e134a04f9823fc3ee5ec0b98c ""
   "images/2.2StateDiagram.jpg" 1737995698 776925 b94d74158431f555555136e21a79c1f1 ""
   (generated)
   "SE3A04_Group6.aux"
