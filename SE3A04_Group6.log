@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  3 FEB 2025 13:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  3 FEB 2025 13:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -272,32 +272,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--129
  []
 
 [3]
-Overfull \hbox (60.8292pt too wide) in paragraph at lines 208--228
+Overfull \hbox (71.77365pt too wide) in paragraph at lines 208--233
  [] 
  []
 
 <./images/2.2StateDiagram.jpg, id=19, 1418.29875pt x 1695.33376pt>
 File: ./images/2.2StateDiagram.jpg Graphic file (type jpg)
 <use ./images/2.2StateDiagram.jpg>
-Package pdftex.def Info: ./images/2.2StateDiagram.jpg  used on input line 230.
+Package pdftex.def Info: ./images/2.2StateDiagram.jpg  used on input line 235.
 (pdftex.def)             Requested size: 354.57382pt x 423.8324pt.
 [4]
-Overfull \hbox (0.6347pt too wide) in paragraph at lines 242--248
+Overfull \hbox (0.6347pt too wide) in paragraph at lines 247--253
 \OT1/cmr/m/n/10 Nature en-thu-si-asts cover a broad spec-trum of peo-ple from ca-sual na-tional park-goers to ex-pe-ri-enced portagers.
  []
 
 [5 <./images/2.2StateDiagram.jpg>] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--335
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--337
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
 
@@ -310,13 +310,13 @@ L3 programming layer <2024-02-20>
 Here is how much of TeX's memory you used:
  3911 strings out of 474116
  58452 string characters out of 5743682
- 1939187 words of memory out of 5000000
+ 1940187 words of memory out of 5000000
  26229 multiletter control sequences out of 15000+600000
  566613 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,6n,65p,765b,227s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on SE3A04_Group6.pdf (10 pages, 735352 bytes).
+Output written on SE3A04_Group6.pdf (10 pages, 735215 bytes).
 PDF statistics:
  74 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream
