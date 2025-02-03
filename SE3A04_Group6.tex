@@ -254,11 +254,17 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 
 \subsection{Constraints}
 \label{sub:constraints}
-% Begin SubSection
-\begin{itemize}
-	\item Provide a general description of any constraints that will limit the developer's options
-\end{itemize}
-% End SubSection
+\begin{enumerate}
+    \item \textbf{Data Availability:} The accuracy of Gaim depends on an up-to-date and comprehensive database of wildlife species, including their characteristics and at-risk status. Obtaining and maintaining such a database may require collaboration with wildlife organizations and adherence to licensing restrictions. Especially since this is supposed to be Ontario-specific, it will be difficult to obtain such a database.
+
+    \item \textbf{Internet Dependency:} Even though some features can be used locally, features such as cloud-based image processing, AI model updates, and community discussions require an active internet connection. Users in remote locations with limited to no internet connectivity may experience reduced to no functionality.
+
+    \item \textbf{Regulatory and Ethical Constraints:} Since the application deals with wildlife identification, it must comply with Canadian environmental laws and conservation policies. The app must ensure that it does not inadvertently promote illegal activities such as hunting endangered species. Even though the app will provide endangerment status, the list will need to be up-to-date and may require regular checks to stay updated.
+
+    \item \textbf{AI Model Accuracy and Bias:} The AI models used for species identification must be trained with diverse datasets to avoid misclassifications. Ensuring high accuracy while maintaining real-time performance is a key challenge, as incorrect identifications may mislead users. This can be especially critical with endangered species and protected species.
+
+    \item \textbf{Scalability:} As Gaim gains more users, the system must be capable of handling increased data processing demands and community interactions. Future versions may require cloud infrastructure scaling, which could introduce additional costs. 
+\end{enumerate}
 
 \subsection{Assumptions and Dependencies}
 \label{sub:assumptions_and_dependencies}
