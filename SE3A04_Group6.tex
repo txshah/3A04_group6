@@ -144,12 +144,43 @@ This software will reliably generate a report based on any of the available inpu
 \subsection{References}
 \label{sub:references}
 % Begin SubSection
-\begin{itemize}
-	\item Provide a complete list of all documents referenced elsewhere in the SRS.
-	\item Identify each document by title, report number (if applicable), date, and publishing organization.
-	\item Specify the sources from which the references can be obtained.
-	\item Order this list in some sensible manner (alphabetical by author, or something else that makes more sense).
-\end{itemize}
+\begin{thebibliography}{9}
+
+    \bibitem{1} F. Berkes, \textit{Sacred Ecology}, 4th ed. New York, NY, USA: Routledge, 2018.
+
+    \bibitem{2} Statistics Canada, “Indigenous Languages in Canada,” 2021. [Online]. Available: \url{https://www150.statcan.gc.ca}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{3} United Nations, “Guidelines on Cultural Sensitivity in Environmental Conservation,” 2020. [Online]. Available: \url{https://www.un.org}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{4} Government of Canada, “Species at Risk Act,” 2023. [Online]. Available: \url{https://laws-lois.justice.gc.ca/eng/acts/S-15.3/}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{5} Environment Canada, “Data Sharing Guidelines for Conservation,” 2022. [Online]. Available: \url{https://www.canada.ca/en/environment-climate-change.html}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{6} Government of Canada, "Personal Information Protection and Electronic Documents Act (PIPEDA) – Principle 1: Accountability," 2023. [Online]. Available: \url{https://laws-lois.justice.gc.ca/eng/acts/P-8.6/}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{7} Government of Canada, "PIPEDA Fair Information Principles - Identifying Purposes," 2023. [Online]. Available: \url{https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{8} Government of Canada, "PIPEDA Fair Information Principles - Consent," 2023. [Online]. Available: \url{https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{9} Government of Canada, "PIPEDA Fair Information Principles - Limiting Collection," 2023. [Online]. Available: \url{https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{10} Government of Canada, "PIPEDA Fair Information Principles - Limiting Use, Disclosure, and Retention," 2023. [Online]. Available: \url{https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{11} Government of Canada, "Canada’s Anti-Spam Legislation (CASL)," 2023. [Online]. Available: \url{https://www.fightspam.gc.ca/eic/site/030.nsf/eng/home}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{12} Government of Canada, "Species at Risk Act (SARA)," 2023. [Online]. Available: \url{https://laws-lois.justice.gc.ca/eng/acts/S-15.3/}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{13} Google, "App Quality Guidelines – Notifications," 2024. [Online]. Available: \url{https://developer.android.com/guide/topics/ui/notifiers/notifications}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{14} Google, "Android Accessibility Best Practices – Touch Target Size," 2024. [Online]. Available: \url{https://developer.android.com/guide/topics/ui/accessibility}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{15} OWASP, "Mobile Security Guidelines – Logging and Data Protection," 2024. [Online]. Available: \url{https://owasp.org/www-project-mobile-security-testing-guide/}. [Accessed: Feb. 13, 2025].
+
+    \bibitem{16} Google, "Data Storage and Security Best Practices," 2024. [Online]. Available: \url{https://developer.android.com/training/articles/security-tips}. [Accessed: Feb. 13, 2025].
+
+
+
+\end{thebibliography}
 % End SubSection
 
 \subsection{Overview}
@@ -179,21 +210,11 @@ This software will reliably generate a report based on any of the available inpu
 \label{sub:product_perspective}
 % Begin SubSection
 \begin{itemize}
-
-	\item The product consists of three core modules: Identifying Species, Account Services, and Community Discussion. Each module provides specific functionalities such as species identification through various inputs, user account management, and engagement within the hunting and conservation community.
-
-	\item The system is designed to identify endangered and out-of-season species across three primary domains: aerial, aquatic, and land. It operates independently as a self-contained application, providing users with multiple methods to identify species—image submission, textual description, and structured surveys.
-
-	\item However, the system can also function as a component within a larger environmental monitoring or conservation ecosystem. In such cases, it would interface with external databases, governmental wildlife agencies, and research institutions to enhance species identification accuracy and data integration.
-
+	\item Put the product into perspective with other related products, i.e., context
+	\item If the product is independent and totally self-contained, it should be stated here
+	\item If the SRS defines a product that is a component of a larger system, then this subsection should relate the requirements of that larger system to the functionality of the software being developed. Identify interfaces between that larger system and the software to be developed.
+	\item A block diagram showing the major components of the larger system, interconnections, and external interfaces can be helpful
 \end{itemize}
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{figure1.png}
-\caption{Figure 1, System Diagram}
-\label{fig:system_diagram}
-\end{figure}
-
 % End SubSection
 
 \subsection{Product Functions}
@@ -211,8 +232,8 @@ This software will reliably generate a report based on any of the available inpu
 		\item Such a diagram is not intended to show a design of a product, but simply shows the logical relationships among variables
 	\end{itemize} 
 \end{itemize}
-
 The goal of the system is to identify endangered and out of season species for 3 main domains: aerial, aquatic, and land. There will be 3 main methods for identifying specifics and a backend decision tree to determine accuracy and provide a result. The methods will be: description, survey and image. The main modules of this app will be the following: Identifying species (submitting photo, writing a description, filling a questionnaire, getting result, viewing accuracy score), Account Services (creating an account, viewing past inquiries, updating information, logging in), Community Discussion (asking questions, posting pictures, liking other users posts in the hunting community). 
+
 
 \begin{center}
 	\begin{tabular}{ |c|c| } 
@@ -593,46 +614,166 @@ User is logged in and submits a photo for species identification.
     \item If the Decision-Tree Expert fails to generate a prediction, the user is advised to use another input method.
     \item If some experts fail to respond, the forum provides an answer based on available data.
 \end{itemize}
-\section*{BE6: Login}
 
-\subsection*{Description}
-This business event involves authenticating users to grant access to accounts.
+\item Viewing a Report \#7
 
-\subsection*{Viewpoints (VP)}
+    \textbf{Precondition:} The user has already taken a picture of an animal and the forum has generated a report.
 
-\subsubsection*{VP1: User}
-\textbf{Scenario:} The user enters their login credentials (email/username and password). The system checks the credentials and grants access if they match the database records.
+    \begin{enumerate}[{\bf VP1.}]
+        \item User \#1 \\
 
-\textbf{Global Scenario:}
-\begin{enumerate}
-    \item User navigates to the login page.
-    \item User inputs their credentials.
-    \item System validates the credentials.
-    \item If credentials match, access is granted, and the user is redirected to their dashboard.
-    \item If credentials do not match, the system displays an error message and allows the user to retry or reset the password.
-\end{enumerate}
+            \textbf{Main Success Scenario:}
+            \begin{enumerate}
+                \item[1] The user opens the app and logs in.
+                \item[2] The system authenticates the user and displays the dashboard.
+                \item[3] The user selects "View Report" from the options.
+                \item[4] The system displays a list of available reports.
+                \item[5] The user selects a specific report from the list.
+                \item[6] The system retrieves the report details and displays them to the user, including the animal's name, species, habitat, diet, and conservation status.
+            \end{enumerate}
 
-\subsubsection*{VP2: Ads Team}
-\textbf{Scenario:} N/A (The Ads Team has no role in the login process.)
+            \textbf{Secondary Scenario:}
+            \begin{enumerate}
+                \item[4i] System fails to retrieve the list of reports.
+                \begin{enumerate}
+                    \item[4i.1] The system displays an error message.
+                    \item[4i.2] The user is prompted to try again or contact customer support.
+                \end{enumerate}
+                \item[5i] System fails to display the report content.
+                \begin{enumerate}
+                    \item[5i.1] System displays a “Report Unavailable" message.
+                    \item[5i.2] The user is prompted to reload the report or connect with customer support.
+                \end{enumerate}
+            \end{enumerate}
+    \end{enumerate}
 
-\subsubsection*{VP3: Marketing Team}
-\textbf{Scenario:} N/A (The Marketing Team does not directly interact with the login system.)
+    \begin{enumerate}[{\bf VP2.}]
+        \item Ads Team \\ 
+        N/A
+    \end{enumerate}
 
-\subsubsection*{VP4: Accounting Team}
-\textbf{Scenario:} If login credentials affect billing access (e.g., account lock due to payment issues), the system notifies the accounting module.
+    \begin{enumerate}[{\bf VP3.}]
+        \item Marketing Team \\
+        N/A
+    \end{enumerate}
 
-\textbf{Global Scenario:}
-\begin{enumerate}
-    \item User with overdue payments attempts to log in.
-    \item The system flags the account and restricts access until the payment issue is resolved.
-    \item User is notified of the restriction and given options to settle the issue.
-\end{enumerate}
+    \begin{enumerate}[{\bf VP4.}]
+        \item Accounting Team \\
+        N/A
+    \end{enumerate}
 
-\subsubsection*{VP5: Environment Canada}
-\textbf{Scenario:} N/A (Environment Canada has no involvement in the login process.)
+    \begin{enumerate}[{\bf VP5.}]
+        \item Environment Canada \\
+        N/A
+    \end{enumerate}
 
-\subsubsection*{VP6: National Parks/Hunting Organization (Ontario Federation of Anglers and Hunters)}
-\textbf{Scenario:} N/A (This organization has no involvement in the login process.)
+    \begin{enumerate}[{\bf VP6.}]
+        \item National Parks/Hunting Organization \\
+        N/A
+    \end{enumerate}
+
+    \textbf{Global Scenario:} \\
+    \textbf{Precondition:} The user has an account and is logged into the system. A report has already been generated for the image taken by the user. \\
+
+    \textbf{Main Success Scenario:}
+    \begin{enumerate}
+        \item[(a)] User selects "View Report" from the dashboard.
+        \item[(b)] The system retrieves and displays the report information, including the animal's details such as species, habitat, and diet.
+        \item[(c)] User reviews the report.
+        \item[(d)] User may choose to share the report with the community.
+    \end{enumerate}
+
+    \textbf{Secondary Scenarios:}
+    \begin{itemize}
+        \item If the system fails to authenticate the user, it prompts for login recovery.
+        \item If the report fails to load, the user is prompted to refresh or contact customer support.
+        \item If the report data is incomplete, the system displays a warning and suggests a re-scan.
+    \end{itemize}
+
+\item Saving a Report \#8
+
+    \textbf{Precondition:} The user is viewing a generated report and wants to save it for offline access or future reference.
+
+    \begin{enumerate}[{\bf VP1.}]
+        \item User \#1 \\
+
+            \textbf{Main Success Scenario:}
+            \begin{enumerate}
+                \item[1] The user opens the app and logs in.
+                \item[2] The system authenticates the user.
+                \item[3] The user views the generated report.
+                \item[4] The user selects the Save Report option
+                \item[5] The system prompts the user to choose a format (e.g., PDF, Image) and confirm the save.
+                \item[6] The user confirms the action.
+                \item[7] The system saves the report to the user’s device and provides a success message.
+            \end{enumerate}
+
+            \textbf{Secondary Scenario:}
+            \begin{enumerate}
+                \item[3i] User selects an unsupported format.
+                \begin{enumerate}
+                    \item[3i.1] System displays an "Unsupported Format" message and prompts the user to select a valid format.
+                \end{enumerate}
+                \item[4i] System fails to save the report.
+                \begin{enumerate}
+                    \item[4i.1] System displays a "Save Failed" error message.
+                    \item[4i.2] User is prompted to try saving again or contact customer support.
+                \end{enumerate}
+            \end{enumerate}
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP2.}]
+        \item Ads Team \\ 
+        N/A
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP3.}]
+        \item Marketing Team \\
+        N/A
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP4.}]
+        \item Accounting Team \\
+        N/A
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP5.}]
+        \item Environment Canada \\
+        N/A
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP6.}]
+        \item National Parks/Hunting Organization \\
+        N/A
+    \end{enumerate}
+
+
+\textbf{Global Scenario:} \\
+    \textbf{Precondition:} The user has an account and is logged into the system, and a report has already been generated. \\
+    \textbf{Main Success Scenario:}
+            \begin{enumerate}
+                \item[1] The user opens the app and logs in.
+                \item[2] The system authenticates the user.
+                \item[3] The user views the generated report.
+                \item[4] The user selects the Save Report option
+                \item[5] The system prompts the user to choose a format (e.g., PDF, Image) and confirm the save.
+                \item[6] The user confirms the action.
+                \item[7] The system saves the report to the user’s device and provides a success message.
+            \end{enumerate}
+
+            \textbf{Secondary Scenario:}
+            \begin{enumerate}
+                \item[3i] User selects an unsupported format.
+                \begin{enumerate}
+                    \item[3i.1] System displays an "Unsupported Format" message and prompts the user to select a valid format.
+                \end{enumerate}
+                \item[4i] System fails to save the report.
+                \begin{enumerate}
+                    \item[4i.1] System displays a "Save Failed" error message.
+                    \item[4i.2] User is prompted to try saving again or contact customer support.
+                \end{enumerate}
+            \end{enumerate}
+    
 
 \end{enumerate}
 
@@ -838,12 +979,7 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:speed_and_latency_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SL}1. ]
-	\item The response time of all external APIs (expert calls, database updates, report generation, etc.) should be within 0.5 seconds.
-	\textbf{Rationale:} The average API response time is between 100ms to 500ms [1] and this is known as the typical expectation of performance. A response time in this range is expected by industry standards and is required for a competitive user experience. We would ideally want limited delays, to promote efficiency and satisfaction, and this API response time will ensure that. 
-	\item App start-up time should be around 2 seconds.
-	\textbf{Rationale:} The average start-up time in the industry is around 1.5 to 4 seconds [2]. This is the time frame that most systems and users typically wait for. Creating an application that does not fit these requirements will cause us to lose user interest. 
-	\item Account updates should be within 3 seconds.
-	\textbf{Rationale:} When a user updates their account to save a report, update personal data or look for items previously stored our system should efficiently fetch this information from our database. This is the most time it should take for old information to be requested, searched and displayed on the user screen [3].
+	\item 
 \end{enumerate}
 % End SubSubSection
 
@@ -851,8 +987,7 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:safety_critical_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SC}1. ]
-	\item The app should provide safe suggestions for user reports.
-	\textbf{Rationale:} Since our app targets natural areas and focuses on the hunting community recommendations we give during our report generation must be as safe as possible. Focus there is always room for the unexpected but without safety, we lose the trust of our users.
+	\item 
 \end{enumerate}
 % End SubSubSection
 
@@ -860,10 +995,7 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:precision_or_accuracy_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-PA}1. ]
-	\item The app must be accurate in image classification around 85 percent.
-	\textbf{Rationale:} The goal of this app is to ensure species are correctly identified. While this application can be used by a diverse demographic, the hunting community is a large potential user base. For their specific needs, it is essential to ensure accuracy when looking at animal classification based on submitted images. The goal of our product should aim for the current industry standard which is 85 percent [4]. 
-	\item The app must be accurate in description classification by 80 percent. 
-	\textbf{Rationale:} Classification models that take in description input have an average 80 percent accuracy rate in responses [5]. This is something we should aim to uphold in the internal model to ensure we are consistent with industry standards. 
+	\item 
 \end{enumerate}
 % End SubSubSection
 
@@ -871,8 +1003,7 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:reliability_and_availability_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-RA}1. ]
-	\item The system must have an availability of 99.999
-	\textbf{Rationale:} 99.999 is a well-known figure for availability in the software industry [6]. An application or product should almost always be available to users and all updates and fixes should be done intelligently during off hours or in chunks (so the entire service is not unavailable all at once). 
+	\item 
 \end{enumerate}
 % End SubSubSection
 
@@ -880,10 +1011,7 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:robustness_or_fault_tolerance_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-RFT}1. ]
-	\item The system must be able to handle unexpected inputs. 
-	\textbf{Rationale:} If a user accidentally submits an invalid input or unexpected entry to any of our experts our product should be able to respond and prompt the user for more information. We need to ensure that expected crashes do not occur due to minor input errors. 
-	\item The system must allow users to view saved reports even when there is no network.
-	\textbf{Rationale:} While it may not always be possible to make new searches in areas with no network it should be possible to view previous searches made. Especially for those hunting wifi and network is not a 100 percent ensured guarantee so having that option to view previous searches is a huge advantage. 
+	\item 
 \end{enumerate}
 % End SubSubSection
 
@@ -891,8 +1019,7 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:capacity_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-C}1. ]
-	\item The system must be able to 5 simultaneous users.
-	\textbf{Rationale:} Ideally the system would be able to work with hundreds if not thousands of users at once. However, given the scope and time frame of the project, this number is more verifiable with the current team size. 
+	\item 
 \end{enumerate}
 % End SubSubSection
 
@@ -900,8 +1027,7 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:scalability_or_extensibility_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SE}1. ]
-	\item The system must adhere to solid principles and design patterns.
-	\textbf{Rationale:} To ensure the application is best set up for long-term growth we must adhere to correct solid principles and design patterns when designing and ultimately building this product. The goal would be to create an effective application that is low coupled, correctly implemented independent modules and open for extensibility in the future. 
+	\item 
 \end{enumerate}
 % End SubSubSection
 
@@ -909,8 +1035,7 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:longevity_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-L}1. ]
-	\item The system must update species information every month (update new animals in the area, seasonality, etc.)
-	\textbf{Rationale:} There are continuous discoveries, regulation changes and seasonal differences to keep in mind for species classification. It is essential that our database updates during key moments and ensures our lists of species and huntable species are accurate and up to date. 
+	\item 
 \end{enumerate}
 % End SubSubSection
 
@@ -932,8 +1057,7 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:requirements_for_interfacing_with_adjacent_systems}
 % Begin SubSubSection
 \begin{enumerate}[{OE-IA}1. ]
-	\item The system must send and receive information from the user to our backend database and external API experts (e.g. for image classification).
-	\textbf{Rationale: }To have a well-functional appreciation our system must be able to communicate effectively based on user input and return an accurate response from external connectors. 
+	\item 
 \end{enumerate}
 % End SubSubSection
 
@@ -949,54 +1073,85 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:release_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{OE-R}1. ]
-	\item The app must be compatible with Android 14 and above and Apple iOS 17 and above.
-	 \textbf{ Rationale: } This will ensure the most range to reach the most number of users. 
+	\item 
 \end{enumerate}
 % End SubSubSection
 
 % End SubSection
 
-\section*{5.5 Maintainability and Support Requirements}
+\subsection{Maintainability and Support Requirements}
+\label{sub:maintainability_and_support_requirements}
+% Begin SubSection
 
-\subsection*{5.5.1 Maintenance Requirements (MS-M1)}
-\textbf{Requirement:} The system must have monthly software updates to fix security vulnerabilities, fix bugs, and enhance performance.\\
-\textbf{Rationale:} Regular updates keep the system secure.
+\subsubsection{Maintenance Requirements}
+\label{ssub:maintenance_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{MS-M}1. ]
+	\item 
+\end{enumerate}
+% End SubSubSection
 
-\subsection*{5.5.2 Supportability Requirements (MS-S1)}
-\textbf{Requirement:} The system should have automated error reporting to detect failures within 5 minutes.\\
-\textbf{Justification:} Helps identify and fix issues quickly by having alerts on critical failures.
+\subsubsection{Supportability Requirements}
+\label{ssub:supportability_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{MS-S}1. ]
+	\item 
+\end{enumerate}
+% End SubSubSection
 
-\subsection*{5.5.3 Adaptability Requirements (MS-A1)}
-\textbf{Requirement 1:} The system must be designed to be compatible with the latest Android version.\\
-\textbf{Justification:} Increases usability in the application.
+\subsubsection{Adaptability Requirements}
+\label{ssub:adaptability_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{MS-A}1. ]
+	\item 
+\end{enumerate}
+% End SubSubSection
 
-\textbf{Requirement 2:} The UI should be designed with modular components to be easily and quickly replaced in case of redesigns or accessibility service needs.\\
-\textbf{Justification:} Keeps the system adaptable to future needs and changes.
+% End SubSection
 
-\section*{5.6 Security Requirements}
+\subsection{Security Requirements}
+\label{sub:security_requirements}
+% Begin SubSection
 
-\subsection*{5.6.1 Access Control Requirements (SR-AC1)}
-\textbf{Requirement 1:} The system must implement Role-Based Access Control (RBAC) to define permission levels (e.g., Admin, Registered User, Guest).\\
-\textbf{Justification:} Limits unauthorized access to sensitive functionalities, reducing security risks.
+\subsubsection{Access Requirements}
+\label{ssub:access_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{SR-AC}1. ]
+	\item 
+\end{enumerate}
+% End SubSubSection
 
-\textbf{Requirement 2:} Multi-Factor Authentication (MFA) should be required for admin and high-privilege accounts.\\
-\textbf{Justification:} Strengthens authentication security and prevents unauthorized account takeovers.
+\subsubsection{Integrity Requirements}
+\label{ssub:integrity_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{SR-INT}1. ]
+	\item 
+\end{enumerate}
+% End SubSubSection
 
-\subsection*{5.6.2 Integrity Requirements (SR-INT1)}
-\textbf{Requirement:} All sensitive data must be encrypted using AES-256 for storage and TLS 1.3 for data transmission.\\
-\textbf{Justification:} Ensures standard data security for storing user information.
+\subsubsection{Privacy Requirements}
+\label{ssub:privacy_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{SR-P}1. ]
+	\item 
+\end{enumerate}
+% End SubSubSection
 
-\subsection*{5.6.3 Privacy Requirements (SR-P1)}
-\textbf{Requirement:} The system must follow PIPEDA (Personal Information Protection and Electronic Documents Act) by obtaining explicit user consent before collecting personal data.\\
-\textbf{Justification:} Ensures legal compliance and protects user privacy rights.
+\subsubsection{Audit Requirements}
+\label{ssub:audit_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{SR-AU}1. ]
+	\item 
+\end{enumerate}
+% End SubSubSection
 
-\subsection*{5.6.4 Audit Requirements (SR-AU1)}
-\textbf{Requirement:} The system must keep audit logs for a minimum of one year, tracking users and developments.\\
-\textbf{Justification:} Necessary for security incidents and meets compliance requirements.
-
-\subsection*{5.6.5 Immunity Requirements (SR-IM1)}
-\textbf{Requirement:} Regular penetration testing should be conducted at least quarterly to identify security weaknesses.\\
-\textbf{Justification:} Ensures ongoing security resilience by proactively addressing potential threats.
+\subsubsection{Immunity Requirements}
+\label{ssub:immunity_requirements}
+% Begin SubSubSection
+\begin{enumerate}[{SR-IM}1. ]
+	\item 
+\end{enumerate}
+% End SubSubSection
 
 % End SubSection
 
@@ -1008,7 +1163,13 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:cultural_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{CP-C}1. ]
-	\item 
+	\item The system should integrated Indigenous and Local Knowledge (ILK).
+    \newline \textbf{Rationale:} The system shall incorporate Indigenous and local knowledge in its wildlife identification processes, ensuring that traditional ecological knowledge is respected and utilized appropriately. Integrating ILK enhances accuracy and cultural relevance in wildlife identification while recognizing the contributions of traditional knowledge systems in conservation efforts [1].
+
+     \item The system should have at minimum bilingual support of English and French for Cultural Accessibility.
+    \newline\textbf{Rationale:} The system shall provide multilingual support, to accommodate users from diverse cultural backgrounds and as well as include Canada's two national languages. Offering multilingual access ensures inclusivity and allows users from different linguistic groups to engage effectively with the system, fostering broader participation in conservation initiatives [2].
+\item The system shall avoid the use of imagery, terminology, or content that could be considered culturally insensitive or offensive to any user group.
+    \newline\textbf{Rationale:}  Ensuring cultural sensitivity helps prevent alienation of user communities and promotes a respectful and inclusive environment for conservation efforts [3].
 \end{enumerate}
 % End SubSubSection
 
@@ -1016,7 +1177,11 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:political_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{CP-P}1. ]
-	\item 
+	 \item The system shall adhere to all federal and provincial regulations concerning species protection. 
+    \newline \textbf{Rationale:} This includes restrictions on hunting, tracking, and photographing endangered animals. Ensuring compliance with these laws supports conservation efforts and mitigates potential legal risks [4].
+
+      \item The system shall facilitate secure data sharing with governmental and non-governmental environmental agencies.
+    \newline \textbf{Rationale:} Some of these are the Environment Canada and the Ontario Ministry of Natural Resources. This data-sharing process ensures that conservation efforts are well-informed and that wildlife populations are effectively monitored [5].
 \end{enumerate}
 % End SubSubSection
 
@@ -1030,7 +1195,27 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:compliance_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{LR-COMP}1. ]
-	\item 
+	\item All personal information collected, including data shared with third parties for processing, must be securely stored and protected. 
+    \newline \textbf{Rationale:} This is in compliance with PIPEDA (Personal Information Protection and Electronic Documents Act) Fair Information Principle 1 - Accountability [6].
+
+    \item The purpose for collecting personal information, including information shared with third parties, must be clearly identified before or at the time of collection. 
+    \newline \textbf{Rationale:} This aligns with PIPEDA Fair Information Principle 2 - Identifying Purposes, ensuring transparency in data collection [7].
+
+    \item The system shall obtain explicit user consent for collecting, processing, or sharing personal data. 
+    \newline \textbf{Rationale:} This follows PIPEDA Fair Information Principle 3 - Consent, ensuring users are aware and agree to how their data is being used [8].
+
+    \item The system shall only collect data necessary to fulfill its core functions and services. 
+    \newline \textbf{Rationale:} This complies with PIPEDA Fair Information Principle 4 - Limiting Collection, preventing unnecessary data accumulation [9].
+
+    \item Personal data must only be used or disclosed for the purpose for which it was collected, unless the user consents otherwise or under legal obligations. 
+    \newline \textbf{Rationale:} This aligns with PIPEDA Fair Information Principle 5 - Limiting Use, Disclosure, and Retention, ensuring responsible data management [10].
+
+    \item The system must comply with the Canadian Anti-Spam Legislation (CASL), ensuring that users do not receive unsolicited messages without prior consent. 
+    \newline \textbf{Rationale:} CASL prohibits sending commercial messages without user consent, protecting users from spam and unwanted communications [11].
+
+    \item The system shall comply with the Species at Risk Act (SARA), ensuring that data related to endangered species is handled in a manner that does not violate conservation laws. 
+    \newline \textbf{Rationale:} SARA prohibits activities that may negatively impact endangered species and their habitats [12].
+ 
 \end{enumerate}
 % End SubSubSection
 
@@ -1038,13 +1223,37 @@ This business event involves authenticating users to grant access to accounts.
 \label{ssub:standards_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{LR-STD}1. ]
-	\item 
+	\item The system shall not use notifications for promotional or advertising purposes unless explicitly enabled by the user. 
+    \newline \textbf{Rationale:} This follows Google’s Play Store guidelines for app quality and user experience [13].
+
+    \item The system shall ensure that all touch targets within the mobile application are at least 48dp in size to ensure accessibility for users with motor impairments. 
+    \newline \textbf{Rationale:} This is a standard usability requirement recommended by Google for accessibility compliance [14].
+
+    \item Any personal or sensitive user data shall not be logged in system logs or application-specific logs. 
+    \newline \textbf{Rationale:} This standard ensures compliance with security and privacy best practices outlined by Google and OWASP [15].
+
+    \item The system shall store all sensitive user data in encrypted internal storage rather than external or publicly accessible storage. 
+    \newline \textbf{Rationale:} This follows Google’s recommended security practices to protect user privacy and prevent data leaks [16]. 
 \end{enumerate}
+
 % End SubSubSection
 
 % End SubSection
 
 % End Section
+
+\section{Innovative Feature}
+\label{sec:innovative-feature}
+
+The chosen innovative feature to implement is a comprehensive report generation system. 
+When a user takes a picture of an animal, the app would not only identify the species but also provide in-depth information on the animal’s habitat, diet, behavior, and conservation status. This will be especially useful for the app's target demographic, hunting enthusiasts and wildlife professionals who would benefit greatly from having a convenient and centralized source of information. Additionally, this transforms the app from just simple a tool for identification into a powerful resource for wildlife education and exploration. This enables the general public to take advantage of our informative reports, resulting in an interactive learning tool for everyone. This is heightened by the the ability to save and share the reports, allowing users to contribute show their cool reports to friends, or even simply just log their wildlife encounters. \\
+
+Some alternative features are as follows: 
+\begin{itemize}
+\item Chatbot
+\item Add more later
+\end{itemize}
+
 
 \appendix
 \section{Division of Labour}
