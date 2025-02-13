@@ -360,6 +360,230 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 	\end{enumerate}
 	{\bf Global Scenario:}\\
 	\textcolor{red}{Insert Scenario Here}
+
+    \item Submitting a photo \#3
+
+    \textbf{Precondition:} The user has an account and is logged into the system. The user has captured or selected an image of an animal to be analyzed.
+
+	\begin{enumerate}[{\bf VP1.}]
+		\item User \#1 \\
+		
+            \textbf{Main Success Scenario:}
+            \begin{enumerate}
+    \item[1] User opens the application on their mobile device.
+    \item[2] System requires the user to log in and displays the login fields.
+    \item[3] User enters their account credentials.
+    \item[4] System authenticates the user.
+    \item[5] User selects the "Identify Species" option.
+    \item[6] System prompts the user to upload an image from their gallery or take a new photo.
+    \item[7] User selects or captures an image.
+    \item[8] System uploads the image and begins processing using the Image Recognition Expert.
+    \item[9] Image Recognition Expert generates a prediction of the species along with an accuracy score.
+    \item[10] The system forwards the prediction and accuracy score to the central forum.
+    \item[11] The forum waits for inputs from the other experts before finalizing a decision.
+    \item[12] System displays a "Processing Submission" status to the user.
+    \item[13] Once all expert opinions are collected, the forum finalizes the species identification.
+    \item[14] System displays the identified species, confidence level, and additional relevant details to the user.
+
+    \end{enumerate}
+
+    \textbf{Secondary Scenarios:}
+    \begin{itemize}
+    \item 4i. System fails to authenticate the user.
+    \begin{enumerate}
+        \item[4i.1] System fails to authenticate the user.
+        \item[4i.2] System prompts the user to reset their password or contact support.
+    \end{enumerate}
+    
+    \item 8i. User submits an invalid or blurry image.
+    \begin{enumerate}
+        \item[8i.1] System detects that the image is too blurry or invalid.
+        \item[8i.2] System prompts the user to submit a clearer image.
+    \end{enumerate}
+
+    \item 9i. Image Recognition Expert fails to generate a prediction.
+    \begin{enumerate}
+        \item[9i.1] System fails to generate a prediction due to insufficient data.
+        \item[9i.2] System notifies the user and suggests using another identification method (e.g., text description or survey).
+    \end{enumerate}
+
+    \item 13i. Other experts fail to provide input to the forum.
+    \begin{enumerate}
+        \item[13i.1] The forum detects missing inputs from other experts.
+        \item[13i.2] The system returns a partial result based on available data and notifies the user.
+    \end{enumerate}
+\end{itemize}
+    
+
+		\item Ads Team \#2 \\
+\begin{enumerate}
+    \item [12i.1] System logs the user's engagement with the image submission feature.
+    \item [12i.2] If applicable, the system selects wildlife-related advertisements based on the submission context.
+    \item [12i.3] The system ensures that advertisements do not disrupt the user experience.
+\end{enumerate}
+
+            \item Marketing Team \#3 \\
+\begin{enumerate}
+    \item [12i.4] System tracks user engagement data related to photo submissions.
+    \item [12i.5] System collects data for analytics to improve user experience and optimize future marketing strategies.
+\end{enumerate}
+
+
+            \item Accounting Team \#4 \\
+        \newline NA
+
+
+        \item Environment Canada \#5 \\
+\begin{enumerate}
+    \item[8ii.1] System  flags any identified endangered or protected species.
+    \item[8ii.2]    System flagged submissions for regulatory tracking.
+    \item[8ii.3] If applicable, the system notifies the appropriate authorities about the flagged species.
+\end{enumerate}
+
+
+
+\item National Parks/Hunting Organization (Ontario Federation of Anglers and Hunters) \#6 \\
+\begin{enumerate}
+    \item [8iii.1] System logs identified species data for conservation efforts and hunting regulations.
+    \item[8iii.2] If the species is considered *unhuntable* due to conservation laws, the system notifies the user.
+    \item[8iii.3] System provides relevant legal hunting information based on the identified species.
+\end{enumerate}
+    \textbf{Global Scenario:}
+
+    \noindent \textbf{Pre-condition:}  
+User is logged in and submits a photo for species identification.
+
+\noindent \textbf{Main Success Scenario:}
+\begin{enumerate}
+    \item User uploads or captures an image.
+    \item System processes the image using AI models.
+    \item System submits results to the forum.
+    \item Forum consolidates data from all identification experts.
+    \item Final species prediction is displayed to the user.
+    \item User can choose to submit the identification result to the community.
+\end{enumerate}
+
+\noindent \textbf{Secondary Scenarios:}
+\begin{itemize}
+    \item If the system fails to authenticate the user, it prompts for login recovery.
+    \item If the image is invalid, the user is asked to submit another one.
+    \item If the Image Recognition Expert fails, the user is advised to use another input method.
+    \item If some experts fail to respond, the forum provides an answer based on available data.
+\end{itemize}
+\end{enumerate}
+
+\item Submitting a survey \#4
+
+    \textbf{Precondition:} The user has an account and is logged into the system. The user has chosen to identify an animal using the survey-based method.
+
+	\begin{enumerate}[{\bf VP1.}]
+		\item User \#1 \\
+		
+            \textbf{Main Success Scenario:}
+            \begin{enumerate}
+                \item[1] User opens the application on their mobile device.
+                \item[2] System requires the user to log in and displays the login fields.
+                \item[3] User enters their account credentials.
+                \item[4] System authenticates the user.
+                \item[5] User selects the "Identify Species" option.
+                \item[6] System prompts the user to choose a method: Image-based or Survey-based identification.
+                \item[7] User selects the Survey-based identification.
+                \item[8] System initiates the Decision-Tree Expert and starts the questionnaire.
+                \item[9] System presents the first question, prompting the user with a yes/no or multiple-choice format.
+                \item[10] User responds to each question, and based on the responses, the Decision-Tree Expert dynamically adjusts the next question.
+                \item[11] The Decision-Tree Expert continues until it determines a probable species or exhausts all questions.
+                \item[12] System generates a prediction of the species along with an accuracy score.
+                \item[13] The system forwards the prediction and accuracy score to the central forum.
+                \item[14] The forum waits for inputs from the other experts before finalizing a decision.
+                \item[15] System displays a "Processing Submission" status to the user.
+                \item[16] Once all expert opinions are collected, the forum finalizes the species identification.
+                \item[17] System displays the identified species, confidence level, and additional relevant details to the user.
+            \end{enumerate}
+
+    \textbf{Secondary Scenarios:}
+    \begin{itemize}
+        \item 4i. System fails to authenticate the user.
+        \begin{enumerate}
+            \item[4i.1] System fails to authenticate the user.
+            \item[4i.2] System prompts the user to reset their password or contact support.
+        \end{enumerate}
+        
+        \item 8i. User provides inconsistent or conflicting answers in the survey.
+        \begin{enumerate}
+            \item[8i.1] System detects logical inconsistencies in the user's responses.
+            \item[8i.2] System prompts the user to review their answers or restart the survey.
+        \end{enumerate}
+
+        \item 12i. Decision-Tree Expert fails to generate a prediction.
+        \begin{enumerate}
+            \item[12i.1] System fails to determine a probable species due to insufficient matching data.
+            \item[12i.2] System notifies the user and suggests using another identification method (e.g., image-based or freeform text description).
+        \end{enumerate}
+
+        \item 13i. Other experts fail to provide input to the forum.
+        \begin{enumerate}
+            \item[13i.1] The forum detects missing inputs from other experts.
+            \item[13i.2] The system returns a partial result based on available data and notifies the user.
+        \end{enumerate}
+    \end{itemize}
+    
+
+		\item Ads Team \#2 \\
+\begin{enumerate}
+    \item [12i.3] System logs the user's engagement with the survey submission feature.
+    \item [12i.4] If applicable, the system selects wildlife-related advertisements based on the submission context.
+    \item [12i.5] The system ensures that advertisements do not disrupt the user experience.
+\end{enumerate}
+
+        \item Marketing Team \#3 \\
+\begin{enumerate}
+    \item [12i.6] System tracks user engagement data related to survey submissions.
+    \item [12i.7] System collects data for analytics to improve user experience and optimize future marketing strategies.
+\end{enumerate}
+
+        \item Accounting Team \#4 \\
+        \newline NA
+
+        \item Environment Canada \#5 \\
+\begin{enumerate}
+    \item[8ii.1] System flags any identified endangered or protected species.
+    \item[8ii.2] System logs flagged submissions for regulatory tracking.
+    \item[8ii.3] If applicable, the system notifies the appropriate authorities about the flagged species.
+\end{enumerate}
+
+        \item National Parks/Hunting Organization (Ontario Federation of Anglers and Hunters) \#6 \\
+\begin{enumerate}
+    \item [8iii.1] System logs identified species data for conservation efforts and hunting regulations.
+    \item[8iii.2] If the species is considered *unhuntable* due to conservation laws, the system notifies the user.
+    \item[8iii.3] System provides relevant legal hunting information based on the identified species.
+\end{enumerate}
+        
+\end{enumerate}
+
+\textbf{Global Scenario:}
+
+\textbf{Precondition:} The user has an account and is logged into the system.
+
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+    \item User selects survey-based species identification.
+    \item System presents a series of questions dynamically based on the Decision-Tree Expert.
+    \item User completes the survey.
+    \item System generates a species prediction and accuracy score.
+    \item System submits results to the forum.
+    \item Forum consolidates data from all identification experts.
+    \item Final species prediction is displayed to the user.
+    \item User can choose to submit the identification result to the community.
+\end{enumerate}
+
+\textbf{Secondary Scenarios:}
+\begin{itemize}
+    \item If the system fails to authenticate the user, it prompts for login recovery.
+    \item If the survey responses are inconsistent, the user is asked to review or restart the survey.
+    \item If the Decision-Tree Expert fails to generate a prediction, the user is advised to use another input method.
+    \item If some experts fail to respond, the forum provides an answer based on available data.
+\end{itemize}
+
 \end{enumerate}
 
 %	Below, we organize by Business Event.
