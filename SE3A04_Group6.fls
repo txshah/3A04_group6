@@ -63,9 +63,6 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/titlesec/titlesec.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT ./SE3A04_Group6.aux
-INPUT ./SE3A04_Group6.aux
-INPUT SE3A04_Group6.aux
 OUTPUT SE3A04_Group6.aux
 INPUT /usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -118,11 +115,6 @@ OUTPUT SE3A04_Group6.pdf
 INPUT /usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT ./figure1.png
-INPUT ./figure1.png
-INPUT ./figure1.png
-INPUT ./figure1.png
-INPUT ./figure1.png
 INPUT ./images/2.2StateDiagram.png
 INPUT ./images/2.2StateDiagram.png
 INPUT ./images/2.2StateDiagram.png

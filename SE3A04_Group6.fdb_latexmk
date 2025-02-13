@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1739482301.27379 "/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex" "SE3A04_Group6.pdf" "SE3A04_Group6" 1739482302.26317 0
-  "/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex" 1739482301.05658 54127 65fb14e3ceef7fb1f344e08c546c9759 ""
+["pdflatex"] 1739484634.63804 "/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex" "SE3A04_Group6.pdf" "SE3A04_Group6" 1739484635.66592 2
+  "/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex" 1739484634.02242 61706 cc1b5fb74411f3ef32faae6bd6e7e757 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -69,9 +69,8 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1728106506.95317 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1728105611 8221424 4d5bbf75fee41867477169d5e100ade9 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "SE3A04_Group6.aux" 1739482302.19667 11207 8d79592edbde2a0a9e9beba3ff73a325 "pdflatex"
-  "SE3A04_Group6.tex" 1739482301.05658 54127 65fb14e3ceef7fb1f344e08c546c9759 ""
-  "figure1.png" 1739481797.11396 56250 dbb9e41c5b2c3d634ca691d339404304 ""
+  "SE3A04_Group6.aux" 1739484635.59429 13490 4ed99a1edef8bb447269afacec340a29 "pdflatex"
+  "SE3A04_Group6.tex" 1739484634.02242 61706 cc1b5fb74411f3ef32faae6bd6e7e757 ""
   "images/2.2StateDiagram.png" 1739466693.92477 268789 df1cf0481d20ae7d5eb06fe1ef8fed4d ""
   "images/3Diagram.png" 1739468158.20359 192701 42dffc5f25c9a165f26ca746fe516a2c ""
   (generated)

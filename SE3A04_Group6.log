@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  13 FEB 2025 16:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  13 FEB 2025 17:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -186,7 +186,8 @@ Package: titlesec 2023/10/27 v2.16 Sectioning titles
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count278
 \l__pdf_internal_box=\box54
-) (./SE3A04_Group6.aux)
+)
+No file SE3A04_Group6.aux.
 \openout1 = `SE3A04_Group6.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
@@ -203,7 +204,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -271,135 +271,361 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--129
 
  []
 
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:151: Undefined control sequence.
+l.151 ...anada,” 2021. [Online]. Available: \url
+                                                  {https://www150.statcan.gc...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+[]\OT1/cmr/m/n/10 Statistics Canada, \In-dige-nous Lan-guages in Canada," 2021. [On-line]. Avail-able:
+ []
+
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:153: Undefined control sequence.
+l.153 ...ation,” 2020. [Online]. Available: \url
+                                                  {https://www.un.org}. [Acc...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:155: Undefined control sequence.
+l.155 ...k Act,” 2023. [Online]. Available: \url
+                                                  {https://laws-lois.justice...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 5939) in paragraph at lines 155--156
+[]\OT1/cmr/m/n/10 Government of Canada, \Species at Risk Act," 2023. [On-line]. Avail-able: https://laws-
+ []
+
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:157: Undefined control sequence.
+l.157 ...ation,” 2022. [Online]. Available: \url
+                                                  {https://www.canada.ca/en/...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 2626) in paragraph at lines 157--158
+[]\OT1/cmr/m/n/10 Environment Canada, \Data Shar-ing Guide-lines for Con-ser-va-tion," 2022. [On-line]. Avail-able:
+ []
+
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:159: Undefined control sequence.
+l.159 ...ability," 2023. [Online]. Available: \url
+                                                  {https://laws-lois.justice...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:161: Undefined control sequence.
+l.161 ...urposes," 2023. [Online]. Available: \url
+                                                  {https://www.priv.gc.ca/en...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 [3]
-<figure1.png, id=19, 609.77812pt x 395.97937pt>
-File: figure1.png Graphic file (type png)
-<use figure1.png>
-Package pdftex.def Info: figure1.png  used on input line 192.
-(pdftex.def)             Requested size: 469.75502pt x 305.06215pt.
- [4 <./figure1.png>]
-Overfull \hbox (66.21808pt too wide) in paragraph at lines 218--243
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:163: Undefined control sequence.
+l.163 ...Consent," 2023. [Online]. Available: \url
+                                                  {https://www.priv.gc.ca/en...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 4518) in paragraph at lines 163--164
+[]\OT1/cmr/m/n/10 Government of Canada, "PIPEDA Fair In-for-ma-tion Prin-ci-ples - Con-sent," 2023. [On-line].
+ []
+
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:165: Undefined control sequence.
+l.165 ...lection," 2023. [Online]. Available: \url
+                                                  {https://www.priv.gc.ca/en...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:167: Undefined control sequence.
+l.167 ...tention," 2023. [Online]. Available: \url
+                                                  {https://www.priv.gc.ca/en...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:169: Undefined control sequence.
+l.169 ... (CASL)," 2023. [Online]. Available: \url
+                                                  {https://www.fightspam.gc....
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 1320) in paragraph at lines 169--170
+[]\OT1/cmr/m/n/10 Government of Canada, "Canada's Anti-Spam Leg-is-la-tion (CASL)," 2023. [On-line]. Avail-able:
+ []
+
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:171: Undefined control sequence.
+l.171 ... (SARA)," 2023. [Online]. Available: \url
+                                                  {https://laws-lois.justice...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:173: Undefined control sequence.
+l.173 ...cations," 2024. [Online]. Available: \url
+                                                  {https://developer.android...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
+[]\OT1/cmr/m/n/10 Google, "App Qual-ity Guide-lines { No-ti-fi-ca-tions," 2024. [On-line]. Avail-able:
+ []
+
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:175: Undefined control sequence.
+l.175 ...et Size," 2024. [Online]. Available: \url
+                                                  {https://developer.android...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:177: Undefined control sequence.
+l.177 ...tection," 2024. [Online]. Available: \url
+                                                  {https://owasp.org/www-pro...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:179: Undefined control sequence.
+l.179 ...actices," 2024. [Online]. Available: \url
+                                                  {https://developer.android...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
+[]\OT1/cmr/m/n/10 Google, "Data Stor-age and Se-cu-rity Best Prac-tices," 2024. [On-line]. Avail-able:
+ []
+
+[4]
+Overfull \hbox (66.21808pt too wide) in paragraph at lines 239--264
  [] 
  []
 
-<./images/2.2StateDiagram.png, id=25, 809.0225pt x 707.64375pt>
+<./images/2.2StateDiagram.png, id=22, 809.0225pt x 707.64375pt>
 File: ./images/2.2StateDiagram.png Graphic file (type png)
 <use ./images/2.2StateDiagram.png>
-Package pdftex.def Info: ./images/2.2StateDiagram.png  used on input line 245.
+Package pdftex.def Info: ./images/2.2StateDiagram.png  used on input line 266.
 (pdftex.def)             Requested size: 404.51027pt x 353.82101pt.
 [5]
-Overfull \hbox (0.6347pt too wide) in paragraph at lines 257--263
+Overfull \hbox (0.6347pt too wide) in paragraph at lines 278--284
 \OT1/cmr/m/n/10 Nature en-thu-si-asts cover a broad spec-trum of peo-ple from ca-sual na-tional park-goers to ex-pe-ri-enced portagers.
  []
 
 [6 <./images/2.2StateDiagram.png>]
-<./images/3Diagram.png, id=33, 457.71pt x 825.0825pt>
+<./images/3Diagram.png, id=31, 457.71pt x 825.0825pt>
 File: ./images/3Diagram.png Graphic file (type png)
 <use ./images/3Diagram.png>
-Package pdftex.def Info: ./images/3Diagram.png  used on input line 315.
+Package pdftex.def Info: ./images/3Diagram.png  used on input line 336.
 (pdftex.def)             Requested size: 366.1685pt x 660.06691pt.
  [7]
 Overfull \vbox (38.53966pt too high) has occurred while \output is active []
 
  [8 <./images/3Diagram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 348--349
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--353
+Underfull \hbox (badness 10000) in paragraph at lines 373--374
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 379--380
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 428--430
+Underfull \hbox (badness 10000) in paragraph at lines 449--451
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--437
+Underfull \hbox (badness 10000) in paragraph at lines 456--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 442--444
+Underfull \hbox (badness 10000) in paragraph at lines 463--465
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 446--448
+Underfull \hbox (badness 10000) in paragraph at lines 467--469
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 455--457
+Underfull \hbox (badness 10000) in paragraph at lines 476--478
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--491
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 541--543
+Underfull \hbox (badness 10000) in paragraph at lines 562--564
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 548--550
+Underfull \hbox (badness 10000) in paragraph at lines 569--571
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--556
+Underfull \hbox (badness 10000) in paragraph at lines 575--577
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--559
+Underfull \hbox (badness 10000) in paragraph at lines 578--580
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 564--566
+Underfull \hbox (badness 10000) in paragraph at lines 585--587
 
  []
 
-[12] [13]
-Overfull \hbox (1.22571pt too wide) in paragraph at lines 634--634
-|\OT1/cmr/bx/n/10 VP6: Na-tional Parks/Hunting Or-ga-ni-za-tion (On-tario Fed-er-a-tion of An-glers and Hunters)| 
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 623--624
+
  []
 
-[14] [15] [16] [17] [18] (./SE3A04_Group6.aux)
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP2. on input line 650.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP3. on input line 655.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP4. on input line 660.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP5. on input line 665.
+
+[13]
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP6. on input line 670.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--677
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
+
+ []
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP2. on input line 725.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP3. on input line 730.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP4. on input line 735.
+
+[14]
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP5. on input line 740.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP6. on input line 745.
+
+[15] [16] [17] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 1248--1250
+
+ []
+
+[19] [20] (./SE3A04_Group6.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 3920 strings out of 474116
- 58579 string characters out of 5743682
+ 3936 strings out of 474116
+ 58770 string characters out of 5743682
  1939187 words of memory out of 5000000
- 26238 multiletter control sequences out of 15000+600000
+ 26256 multiletter control sequences out of 15000+600000
  566613 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,65p,765b,368s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,6n,65p,938b,368s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on SE3A04_Group6.pdf (18 pages, 556966 bytes).
+Output written on SE3A04_Group6.pdf (20 pages, 510275 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 110 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
