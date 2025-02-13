@@ -201,8 +201,8 @@ This software will reliably generate a report based on any of the available inpu
 		\item Such a diagram is not intended to show a design of a product, but simply shows the logical relationships among variables
 	\end{itemize} 
 \end{itemize}
-The goal of the system is to identify endangered and out of season species for 3 main domains: aerial, aquatic, and land. There will be 3 main methods for identifying specifics and a backend decision tree to determine accuracy and provide a result. The methods will be: description, survey and image. The main modules of this app will be the following: Identifying species (submitting photo, writing a description, filling a questionnaire, getting result, viewing accuracy score), Account Services (creating an account, viewing past inquiries, updating information, logging in), Community Discussion (asking questions, posting pictures, liking other users posts in the hunting community). 
 
+The goal of the system is to identify endangered and out of season species for 3 main domains: aerial, aquatic, and land. There will be 3 main methods for identifying specifics and a backend decision tree to determine accuracy and provide a result. The methods will be: description, survey and image. The main modules of this app will be the following: Identifying species (submitting photo, writing a description, filling a questionnaire, getting result, viewing accuracy score), Account Services (creating an account, viewing past inquiries, updating information, logging in), Community Discussion (asking questions, posting pictures, liking other users posts in the hunting community). 
 
 \begin{center}
 	\begin{tabular}{ |c|c| } 
@@ -564,7 +564,12 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 \label{ssub:speed_and_latency_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SL}1. ]
-	\item 
+	\item The response time of all external APIs (expert calls, database updates, report generation, etc.) should be within 0.5 seconds. 
+	\textbf{Rationale:} The average API response time is between 100ms to 500ms [1] and this is known as the typical expectation of performance. A response time in this range is expected by industry standards and is required for a competitive user experience. We would ideally want limited delays, to promote efficiency and satisfaction, and this API response time will ensure that. 
+	\item App start-up time should be around 2 seconds. 
+	\textbf{Rationale:} The average start-up time in the industry is around 1.5 to 4 seconds [2]. This is the time frame that most systems and users typically wait for. Creating an application that does not fit these requirements will cause us to lose user interest. 
+	\item Account updates should be within 3 seconds.
+	\textbf{Rationale:} When a user updates their account to save a report, update personal data or look for items previously stored our system should efficiently fetch this information from our database. This is the most time it should take for old information to be requested, searched and displayed on the user screen [3].
 \end{enumerate}
 % End SubSubSection
 
@@ -572,7 +577,8 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 \label{ssub:safety_critical_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SC}1. ]
-	\item 
+	\item The app should provide safe suggestions for user reports. 
+	\textbf{Rationale:} Since our app targets natural areas and focuses on the hunting community recommendations we give during our report generation must be as safe as possible. Focus there is always room for the unexpected but without safety, we lose the trust of our users.
 \end{enumerate}
 % End SubSubSection
 
@@ -580,7 +586,10 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 \label{ssub:precision_or_accuracy_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-PA}1. ]
-	\item 
+	\item The app must be accurate in image classification around 85 percent. 
+	\textbf{Rationale:} The goal of this app is to ensure species are correctly identified. While this application can be used by a diverse demographic, the hunting community is a large potential user base. For their specific needs, it is essential to ensure accuracy when looking at animal classification based on submitted images. The goal of our product should aim for the current industry standard which is 85 percent [4]. 
+	\item The app must be accurate in description classification by 80 percent. 
+	\textbf{Rationale:} Classification models that take in description input have an average 80 percent accuracy rate in responses [5]. This is something we should aim to uphold in the internal model to ensure we are consistent with industry standards. 
 \end{enumerate}
 % End SubSubSection
 
@@ -588,7 +597,8 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 \label{ssub:reliability_and_availability_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-RA}1. ]
-	\item 
+	\item The system must have an availability of 99.999
+	\textbf{Rationale:} 99.999 is a well-known figure for availability in the software industry [6]. An application or product should almost always be available to users and all updates and fixes should be done intelligently during off hours or in chunks (so the entire service is not unavailable all at once). 
 \end{enumerate}
 % End SubSubSection
 
@@ -596,7 +606,10 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 \label{ssub:robustness_or_fault_tolerance_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-RFT}1. ]
-	\item 
+	\item The system must be able to handle unexpected inputs 
+	\textbf{Rationale:} If a user accidentally submits an invalid input or unexpected entry to any of our experts our product should be able to respond and prompt the user for more information. We need to ensure that expected crashes do not occur due to minor input errors. 
+	\item The system must allow users to view saved reports even when there is no network.
+	\textbf{Rationale:} While it may not always be possible to make new searches in areas with no network it should be possible to view previous searches made. Especially for those hunting wifi and network is not a 100 percent ensured guarantee so having that option to view previous searches is a huge advantage. 
 \end{enumerate}
 % End SubSubSection
 
@@ -604,7 +617,8 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 \label{ssub:capacity_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-C}1. ]
-	\item 
+	\item The system must be able to 5 simultaneous users. 
+	\textbf{Rationale:} Ideally the system would be able to work with hundreds if not thousands of users at once. However, given the scope and time frame of the project, this number is more verifiable with the current team size. 
 \end{enumerate}
 % End SubSubSection
 
@@ -612,7 +626,8 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 \label{ssub:scalability_or_extensibility_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SE}1. ]
-	\item 
+	\item The system must adhere to solid principles and design patterns.
+	\textbf{Rationale:} To ensure the application is best set up for long-term growth we must adhere to correct solid principles and design patterns when designing and ultimately building this product. The goal would be to create an effective application that is low coupled, correctly implemented independent modules and open for extensibility in the future. 
 \end{enumerate}
 % End SubSubSection
 
@@ -620,7 +635,8 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 \label{ssub:longevity_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-L}1. ]
-	\item 
+	\item The system must update species information every month (update new animals in the area, seasonality, etc.)
+	\textbf{Rationale:} There are continuous discoveries, regulation changes and seasonal differences to keep in mind for species classification. It is essential that our database updates during key moments and ensures our lists of species and huntable species are accurate and up to date. 
 \end{enumerate}
 % End SubSubSection
 
@@ -642,7 +658,8 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 \label{ssub:requirements_for_interfacing_with_adjacent_systems}
 % Begin SubSubSection
 \begin{enumerate}[{OE-IA}1. ]
-	\item 
+	\item The system must send and receive information from the user to our backend database and external API experts (e.g. for image classification) 
+	\textbf{ Rationale }: To have a well-functional appreciation our system must be able to communicate effectively based on user input and return an accurate response from external connectors. 
 \end{enumerate}
 % End SubSubSection
 
@@ -658,7 +675,8 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 \label{ssub:release_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{OE-R}1. ]
-	\item 
+	\item The app must be compatible with Android 14 and above and Apple iOS 17 and above. 
+	 \textbf{ Rationale }: This will ensure the most range to reach the most number of users. 
 \end{enumerate}
 % End SubSubSection
 
