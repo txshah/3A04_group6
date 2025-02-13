@@ -17,6 +17,9 @@
 %\usepackage{xcolor}
 \usepackage{color}
 \usepackage{titlesec}
+\usepackage{hyperref}  % Recommended for clickable links
+\usepackage{url}       % If you only need URL support
+
 %------------------------------------------------------------------------------
 
 % Header and Footer
@@ -83,10 +86,7 @@ This SRS will provide visibility over software requirements for Gaim, an AI-powe
 \label{sub:purpose}
 % Begin SubSection
 \begin{itemize}
-	\item Specify the purpose of the SRS.\newline inform public about wildlife 
-	\item Specify the intended audience for the SRS.\newline
-	Nature enthusiats 	\newline
-	hunters - 1.27 mill canadians hunted, 1.4 mill sport shooting 	
+    \item The document focuses on software requirements, user characteristics, and use cases for Gaim. This document is intended for internal Gaim stakeholders, including but not limited to, project managers, developers, domain experts, and Gaim team members/investors. No prior readings are required
 \end{itemize}
 % End SubSection
 
@@ -136,8 +136,7 @@ This software will reliably generate a report based on any of the available inpu
 \label{sub:definitions_acronyms_and_abbreviations}
 % Begin SubSection
 \begin{itemize}
-	\item Provide the definitions of all terms, acronyms, and abbreviations required to properly interpret the SRS.
-	\item This should be in alphabetical order.
+	\item Gaim: Species classifer application created by team to provide support to hunting communities through identifying endagered animals. 
 \end{itemize}
 % End SubSection
 
@@ -178,19 +177,20 @@ This software will reliably generate a report based on any of the available inpu
 
     \bibitem{16} Google, "Data Storage and Security Best Practices," 2024. [Online]. Available: \url{https://developer.android.com/training/articles/security-tips}. [Accessed: Feb. 13, 2025].
 
-
-
 \end{thebibliography}
 % End SubSection
 
 \subsection{Overview}
 \label{sub:overview}
 % Begin SubSection
-\begin{itemize}
-	\item Describe what the remainder of the document/SRS contains.\\
-	(e.g. "Section 2 discusses...Section 3...")
-%	\item Explain how the SRS is organized
-\end{itemize}
+Section 2 discusses the overall product description talking about the product perspective, product functions,
+user characteristics, assumptions and dependencies, and apportioning of requirements. Section 3 contains
+the Use Case Diagram for the use case scenario of creating a carpool. Section 4 contains the highlights of
+functional requirements talking about main business events and viewpoints. Section 5 contains the Non-
+Functional Requirements talking about Look and Feel Requirements, Usability and Humanity Requirements,
+Performance Requirements, Operational and Environmental Requirements, Maintainability and Support
+Requirements, Security Requirements, Cultural and Political Requirements and Legal Requirements. Section
+6 contains the innovative feature of our design. Lastly, Section A contains the Division of Labour.
 % End SubSection
 
 % End Section
@@ -198,40 +198,24 @@ This software will reliably generate a report based on any of the available inpu
 \section{Overall Product Description}
 \label{sec:overall_description}
 % Begin Section
-
-\begin{itemize}
-	\item This section should describe the general factors that affect the product and its requirements. 
-	\item It does not state specific requirements.
-	\item It provides a \emph{background} for those requirements and makes them easier to understand.
-\end{itemize}
-
-
 \subsection{Product Perspective}
 \label{sub:product_perspective}
 % Begin SubSection
 \begin{itemize}
-	\item Put the product into perspective with other related products, i.e., context
-	\item If the product is independent and totally self-contained, it should be stated here
-	\item If the SRS defines a product that is a component of a larger system, then this subsection should relate the requirements of that larger system to the functionality of the software being developed. Identify interfaces between that larger system and the software to be developed.
-	\item A block diagram showing the major components of the larger system, interconnections, and external interfaces can be helpful
+
+	\item The product consists of three core modules: Identifying Species, Account Services, and Community Discussion. Each module provides specific functionalities such as species identification through various inputs, user account management, and engagement within the hunting and conservation community.
+
+	\item The system is designed to identify endangered and out-of-season species across three primary domains: aerial, aquatic, and land. It operates independently as a self-contained application, providing users with multiple methods to identify species—image submission, textual description, and structured surveys.
+
+	\item However, the system can also function as a component within a larger environmental monitoring or conservation ecosystem. In such cases, it would interface with external databases, governmental wildlife agencies, and research institutions to enhance species identification accuracy and data integration.
+
 \end{itemize}
+\includegraphics[scale=0.5]{figure1.png}
 % End SubSection
 
 \subsection{Product Functions}
 \label{sub:product_functions}
 % Begin SubSection
-\begin{itemize}
-	\item Provide a \emph{summary} of the major functions that the software will perform.
-	\begin{itemize}
-		\item \textbf{Example}: An SRS for an accounting program may use this part to address customer account maintenance, customer statement, and invoice preparation without mentioning the vast amount of detail that each of those functions requires.
-	\end{itemize}
-	\item Functions should be organized in a way that makes the list of functions understandable to the customer or to anyone else reading the document for the first time 
-	\item Present the functions in a list format - each item should be one function, with a brief description of it
-	\item Textual or graphical methods can be used to show the different functions and their relationships
-	\begin{itemize}
-		\item Such a diagram is not intended to show a design of a product, but simply shows the logical relationships among variables
-	\end{itemize} 
-\end{itemize}
 The goal of the system is to identify endangered and out of season species for 3 main domains: aerial, aquatic, and land. There will be 3 main methods for identifying specifics and a backend decision tree to determine accuracy and provide a result. The methods will be: description, survey and image. The main modules of this app will be the following: Identifying species (submitting photo, writing a description, filling a questionnaire, getting result, viewing accuracy score), Account Services (creating an account, viewing past inquiries, updating information, logging in), Community Discussion (asking questions, posting pictures, liking other users posts in the hunting community). 
 
 
@@ -313,8 +297,6 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
     \item Assume APIs are secure and functional
     \item Assume user has internet connection
     
-    
-    
 \end{itemize}
 
 % End SubSection
@@ -329,18 +311,17 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
     \item Expand database to take into account species from other regions as the app grows.
 \end{itemize}
 % End SubSection
-
 % End Section
 \section{Use Case Diagram}
 \label{sec:use_case_diagram}
-\includegraphics[scale=0.8]{3Diagram.png}
+\includegraphics[scale=0.75]{3Diagram.png}
 % Begin Section
-\begin{itemize}
-	\item Provide the use case diagram for the system being developed.
-	\item You do not need to provide the textual description of any of the use cases here (these will be specified under "Highlights of Functional Requirements").
-%	\item Provide \emph{one} use case diagram for the most important Business Event.
-%	\item The text of all use cases will be specified under "Highlights of Functional Requirements"
-\end{itemize}
+% \begin{itemize}
+% 	\item Provide the use case diagram for the system being developed.
+% 	\item You do not need to provide the textual description of any of the use cases here (these will be specified under "Highlights of Functional Requirements").
+% %	\item Provide \emph{one} use case diagram for the most important Business Event.
+% %	\item The text of all use cases will be specified under "Highlights of Functional Requirements"
+% \end{itemize}
 %In this section, select the most important Business Event that your system responds to and give its use case diagram.  Only one use case diagram is needed.  Give a brief textual description of the use case without repeating what is in the scenarios of the corresponding Business Event.
 
 %
@@ -355,17 +336,16 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 \section{Highlights of Functional Requirements}
 \label{sec:functional_requirements}
 % Begin Section
-\begin{itemize}
-	\item Specify all use cases (or other scenarios triggered by other events), organized by Business Event. 
-	\item For each Business Event, show the scenario from every Viewpoint. You should have the same set of Viewpoints across all Business Events. If a Viewpoint doesn't participate, write N/A so we know you considered it still. You can choose how to present this - keep in mind it should be easy to follow. 
-	\item At the end, combine them all into a Global Scenario.
-	%\item Specify the "use cases" (or other triggering events) organized by Business Event. (The Global Scenario is what you might think of as a use case). Be sure to consider Business Events that aren't just triggered by users with goals (e.g. something happens in the environment that your system needs to respond to)
-	\item Your focus should be on what the system needs to do, not how to do it. Specify it in enough detail that it clearly specifies what needs to be accomplished, but not so detailed that you start programming or making design decisions.
-	\item Keep the length of each use case (Global Scenario) manageable. If it's getting too long, split into sub-cases.
-	\item You are \emph{not} specifying a complete and consistent set of functional requirements here. (i.e. you are providing them in the form of use cases/global scenarios, not a refined list). For the purpose of this project, you do not need to reduce them to a list; the global scenarios format is all you need.
-	\item Red text below is just to highlight where you need to insert a scenario - don't actually write it all in red.
-\end{itemize}
-
+% \begin{itemize}
+% 	\item Specify all use cases (or other scenarios triggered by other events), organized by Business Event. 
+% 	\item For each Business Event, show the scenario from every Viewpoint. You should have the same set of Viewpoints across all Business Events. If a Viewpoint doesn't participate, write N/A so we know you considered it still. You can choose how to present this - keep in mind it should be easy to follow. 
+% 	\item At the end, combine them all into a Global Scenario.
+% 	%\item Specify the "use cases" (or other triggering events) organized by Business Event. (The Global Scenario is what you might think of as a use case). Be sure to consider Business Events that aren't just triggered by users with goals (e.g. something happens in the environment that your system needs to respond to)
+% 	\item Your focus should be on what the system needs to do, not how to do it. Specify it in enough detail that it clearly specifies what needs to be accomplished, but not so detailed that you start programming or making design decisions.
+% 	\item Keep the length of each use case (Global Scenario) manageable. If it's getting too long, split into sub-cases.
+% 	\item You are \emph{not} specifying a complete and consistent set of functional requirements here. (i.e. you are providing them in the form of use cases/global scenarios, not a refined list). For the purpose of this project, you do not need to reduce them to a list; the global scenarios format is all you need.
+% 	\item Red text below is just to highlight where you need to insert a scenario - don't actually write it all in red.
+% \end{itemize}
 \noindent {\bf Main Business Events:} List out all the main business events you are presenting. If you sub-divided into smaller ones, you don't need to include the smaller ones in this list.\\
 
 \noindent {\bf Viewpoints:} List out all the viewpoints you will be considering.\\
@@ -970,7 +950,6 @@ User is logged in and submits a photo for species identification.
 % End SubSubSection
 
 % End SubSection
-
 \subsection{Performance Requirements}
 \label{sub:performance_requirements}
 % Begin SubSection
@@ -979,7 +958,12 @@ User is logged in and submits a photo for species identification.
 \label{ssub:speed_and_latency_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SL}1. ]
-	\item 
+	\item The response time of all external APIs (expert calls, database updates, report generation, etc.) should be within 0.5 seconds.
+	\textbf{Rationale:} The average API response time is between 100ms to 500ms [1] and this is known as the typical expectation of performance. A response time in this range is expected by industry standards and is required for a competitive user experience. We would ideally want limited delays, to promote efficiency and satisfaction, and this API response time will ensure that. 
+	\item App start-up time should be around 2 seconds.
+	\textbf{Rationale:} The average start-up time in the industry is around 1.5 to 4 seconds [2]. This is the time frame that most systems and users typically wait for. Creating an application that does not fit these requirements will cause us to lose user interest. 
+	\item Account updates should be within 3 seconds.
+	\textbf{Rationale:} When a user updates their account to save a report, update personal data or look for items previously stored our system should efficiently fetch this information from our database. This is the most time it should take for old information to be requested, searched and displayed on the user screen [3].
 \end{enumerate}
 % End SubSubSection
 
@@ -987,7 +971,8 @@ User is logged in and submits a photo for species identification.
 \label{ssub:safety_critical_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SC}1. ]
-	\item 
+	\item The app should provide safe suggestions for user reports.
+	\textbf{Rationale:} Since our app targets natural areas and focuses on the hunting community recommendations we give during our report generation must be as safe as possible. Focus there is always room for the unexpected but without safety, we lose the trust of our users.
 \end{enumerate}
 % End SubSubSection
 
@@ -995,7 +980,10 @@ User is logged in and submits a photo for species identification.
 \label{ssub:precision_or_accuracy_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-PA}1. ]
-	\item 
+	\item The app must be accurate in image classification around 85 percent.
+	\textbf{Rationale:} The goal of this app is to ensure species are correctly identified. While this application can be used by a diverse demographic, the hunting community is a large potential user base. For their specific needs, it is essential to ensure accuracy when looking at animal classification based on submitted images. The goal of our product should aim for the current industry standard which is 85 percent [4]. 
+	\item The app must be accurate in description classification by 80 percent. 
+	\textbf{Rationale:} Classification models that take in description input have an average 80 percent accuracy rate in responses [5]. This is something we should aim to uphold in the internal model to ensure we are consistent with industry standards. 
 \end{enumerate}
 % End SubSubSection
 
@@ -1003,7 +991,8 @@ User is logged in and submits a photo for species identification.
 \label{ssub:reliability_and_availability_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-RA}1. ]
-	\item 
+	\item The system must have an availability of 99.999
+	\textbf{Rationale:} 99.999 is a well-known figure for availability in the software industry [6]. An application or product should almost always be available to users and all updates and fixes should be done intelligently during off hours or in chunks (so the entire service is not unavailable all at once). 
 \end{enumerate}
 % End SubSubSection
 
@@ -1011,7 +1000,10 @@ User is logged in and submits a photo for species identification.
 \label{ssub:robustness_or_fault_tolerance_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-RFT}1. ]
-	\item 
+	\item The system must be able to handle unexpected inputs. 
+	\textbf{Rationale:} If a user accidentally submits an invalid input or unexpected entry to any of our experts our product should be able to respond and prompt the user for more information. We need to ensure that expected crashes do not occur due to minor input errors. 
+	\item The system must allow users to view saved reports even when there is no network.
+	\textbf{Rationale:} While it may not always be possible to make new searches in areas with no network it should be possible to view previous searches made. Especially for those hunting wifi and network is not a 100 percent ensured guarantee so having that option to view previous searches is a huge advantage. 
 \end{enumerate}
 % End SubSubSection
 
@@ -1019,7 +1011,8 @@ User is logged in and submits a photo for species identification.
 \label{ssub:capacity_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-C}1. ]
-	\item 
+	\item The system must be able to 5 simultaneous users.
+	\textbf{Rationale:} Ideally the system would be able to work with hundreds if not thousands of users at once. However, given the scope and time frame of the project, this number is more verifiable with the current team size. 
 \end{enumerate}
 % End SubSubSection
 
@@ -1027,7 +1020,8 @@ User is logged in and submits a photo for species identification.
 \label{ssub:scalability_or_extensibility_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SE}1. ]
-	\item 
+	\item The system must adhere to solid principles and design patterns.
+	\textbf{Rationale:} To ensure the application is best set up for long-term growth we must adhere to correct solid principles and design patterns when designing and ultimately building this product. The goal would be to create an effective application that is low coupled, correctly implemented independent modules and open for extensibility in the future. 
 \end{enumerate}
 % End SubSubSection
 
@@ -1035,7 +1029,8 @@ User is logged in and submits a photo for species identification.
 \label{ssub:longevity_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-L}1. ]
-	\item 
+	\item The system must update species information every month (update new animals in the area, seasonality, etc.)
+	\textbf{Rationale:} There are continuous discoveries, regulation changes and seasonal differences to keep in mind for species classification. It is essential that our database updates during key moments and ensures our lists of species and huntable species are accurate and up to date. 
 \end{enumerate}
 % End SubSubSection
 
@@ -1057,7 +1052,8 @@ User is logged in and submits a photo for species identification.
 \label{ssub:requirements_for_interfacing_with_adjacent_systems}
 % Begin SubSubSection
 \begin{enumerate}[{OE-IA}1. ]
-	\item 
+	\item The system must send and receive information from the user to our backend database and external API experts (e.g. for image classification).
+	\textbf{Rationale: }To have a well-functional appreciation our system must be able to communicate effectively based on user input and return an accurate response from external connectors. 
 \end{enumerate}
 % End SubSubSection
 
@@ -1073,85 +1069,54 @@ User is logged in and submits a photo for species identification.
 \label{ssub:release_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{OE-R}1. ]
-	\item 
+	\item The app must be compatible with Android 14 and above and Apple iOS 17 and above.
+	 \textbf{ Rationale: } This will ensure the most range to reach the most number of users. 
 \end{enumerate}
 % End SubSubSection
 
 % End SubSection
 
-\subsection{Maintainability and Support Requirements}
-\label{sub:maintainability_and_support_requirements}
-% Begin SubSection
+\section*{5.5 Maintainability and Support Requirements}
 
-\subsubsection{Maintenance Requirements}
-\label{ssub:maintenance_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{MS-M}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+\subsection*{5.5.1 Maintenance Requirements (MS-M1)}
+\textbf{Requirement:} The system must have monthly software updates to fix security vulnerabilities, fix bugs, and enhance performance.\\
+\textbf{Rationale:} Regular updates keep the system secure.
 
-\subsubsection{Supportability Requirements}
-\label{ssub:supportability_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{MS-S}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+\subsection*{5.5.2 Supportability Requirements (MS-S1)}
+\textbf{Requirement:} The system should have automated error reporting to detect failures within 5 minutes.\\
+\textbf{Justification:} Helps identify and fix issues quickly by having alerts on critical failures.
 
-\subsubsection{Adaptability Requirements}
-\label{ssub:adaptability_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{MS-A}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+\subsection*{5.5.3 Adaptability Requirements (MS-A1)}
+\textbf{Requirement 1:} The system must be designed to be compatible with the latest Android version.\\
+\textbf{Justification:} Increases usability in the application.
 
-% End SubSection
+\textbf{Requirement 2:} The UI should be designed with modular components to be easily and quickly replaced in case of redesigns or accessibility service needs.\\
+\textbf{Justification:} Keeps the system adaptable to future needs and changes.
 
-\subsection{Security Requirements}
-\label{sub:security_requirements}
-% Begin SubSection
+\section*{5.6 Security Requirements}
 
-\subsubsection{Access Requirements}
-\label{ssub:access_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR-AC}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+\subsection*{5.6.1 Access Control Requirements (SR-AC1)}
+\textbf{Requirement 1:} The system must implement Role-Based Access Control (RBAC) to define permission levels (e.g., Admin, Registered User, Guest).\\
+\textbf{Justification:} Limits unauthorized access to sensitive functionalities, reducing security risks.
 
-\subsubsection{Integrity Requirements}
-\label{ssub:integrity_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR-INT}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+\textbf{Requirement 2:} Multi-Factor Authentication (MFA) should be required for admin and high-privilege accounts.\\
+\textbf{Justification:} Strengthens authentication security and prevents unauthorized account takeovers.
 
-\subsubsection{Privacy Requirements}
-\label{ssub:privacy_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR-P}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+\subsection*{5.6.2 Integrity Requirements (SR-INT1)}
+\textbf{Requirement:} All sensitive data must be encrypted using AES-256 for storage and TLS 1.3 for data transmission.\\
+\textbf{Justification:} Ensures standard data security for storing user information.
 
-\subsubsection{Audit Requirements}
-\label{ssub:audit_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR-AU}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+\subsection*{5.6.3 Privacy Requirements (SR-P1)}
+\textbf{Requirement:} The system must follow PIPEDA (Personal Information Protection and Electronic Documents Act) by obtaining explicit user consent before collecting personal data.\\
+\textbf{Justification:} Ensures legal compliance and protects user privacy rights.
 
-\subsubsection{Immunity Requirements}
-\label{ssub:immunity_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR-IM}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+\subsection*{5.6.4 Audit Requirements (SR-AU1)}
+\textbf{Requirement:} The system must keep audit logs for a minimum of one year, tracking users and developments.\\
+\textbf{Justification:} Necessary for security incidents and meets compliance requirements.
+
+\subsection*{5.6.5 Immunity Requirements (SR-IM1)}
+\textbf{Requirement:} Regular penetration testing should be conducted at least quarterly to identify security weaknesses.\\
+\textbf{Justification:} Ensures ongoing security resilience by proactively addressing potential threats.
 
 % End SubSection
 
@@ -1250,8 +1215,11 @@ When a user takes a picture of an animal, the app would not only identify the sp
 
 Some alternative features are as follows: 
 \begin{itemize}
-\item Chatbot
-\item Add more later
+\item Chatbot for more user interactivity, customer support, etc
+\item AI-Powered Behavior Prediction (feeding, hibernating, migrating)
+\item Interactive Educational Content (Videos based on user's pictures and location)
+\item Community Discussion and Forum
+
 \end{itemize}
 
 

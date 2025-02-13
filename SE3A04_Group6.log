@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  13 FEB 2025 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  13 FEB 2025 18:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -182,28 +182,138 @@ Package: titlesec 2023/10/27 v2.16 Sectioning titles
 \titlewidth=\dimen163
 \titlewidthlast=\dimen164
 \titlewidthfirst=\dimen165
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count278
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count279
+)
+\@linkdim=\dimen166
+\Hy@linkcounter=\count280
+\Hy@pagecounter=\count281
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count282
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count283
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen167
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count284
+\Field@Width=\dimen168
+\Fld@charsize=\dimen169
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count285
+\c@Item=\count286
+\c@Hfootnote=\count287
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
+with kernel methods
+)
+\Fld@listcount=\count288
+\c@bookmark@seq@number=\count289
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
+)
+\Hy@SectionHShift=\skip69
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count278
+\l__color_backend_stack_int=\count290
 \l__pdf_internal_box=\box54
-)
-No file SE3A04_Group6.aux.
+) (./SE3A04_Group6.aux)
 \openout1 = `SE3A04_Group6.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -240,16 +350,16 @@ LaTeX Font Info:    ... okay on input line 49.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count279
-\scratchdimen=\dimen166
+\scratchcounter=\count291
+\scratchdimen=\dimen170
 \scratchbox=\box55
-\nofMPsegments=\count280
-\nofMParguments=\count281
+\nofMPsegments=\count292
+\nofMParguments=\count293
 \everyMPshowfont=\toks33
-\MPscratchCnt=\count282
-\MPscratchDim=\dimen167
-\MPnumerator=\count283
-\makeMPintoPDFobject=\count284
+\MPscratchCnt=\count294
+\MPscratchDim=\dimen171
+\MPnumerator=\count295
+\makeMPintoPDFobject=\count296
 \everyMPtoPDFconversion=\toks34
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -257,11 +367,16 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
+Package hyperref Info: Link coloring OFF on input line 52.
+ (./SE3A04_Group6.out) (./SE3A04_Group6.out)
+\@outlinefile=\write3
+\openout3 = `SE3A04_Group6.out'.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -271,223 +386,134 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--129
 
  []
 
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:151: Undefined control sequence.
-l.151 ...anada,” 2021. [Online]. Available: \url
-                                                  {https://www150.statcan.gc...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
-[]\OT1/cmr/m/n/10 Statistics Canada, \In-dige-nous Lan-guages in Canada," 2021. [On-line]. Avail-able:
+Underfull \hbox (badness 2042) in paragraph at lines 160--161
+[]\OT1/cmr/m/n/10 Government of Canada, "PIPEDA Fair In-for-ma-tion Prin-ci-ples - Iden-ti-fy-ing Pur-poses," 2023.
  []
 
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:153: Undefined control sequence.
-l.153 ...ation,” 2020. [Online]. Available: \url
-                                                  {https://www.un.org}. [Acc...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:155: Undefined control sequence.
-l.155 ...k Act,” 2023. [Online]. Available: \url
-                                                  {https://laws-lois.justice...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 5939) in paragraph at lines 155--156
-[]\OT1/cmr/m/n/10 Government of Canada, \Species at Risk Act," 2023. [On-line]. Avail-able: https://laws-
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+\OT1/cmr/m/n/10 [On-line]. Avail-able: []$\OT1/cmtt/m/n/10 https : / / www . priv . gc . ca / en / privacy-[]topics / privacy-[]laws-[]in-[]canada /
  []
 
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:157: Undefined control sequence.
-l.157 ...ation,” 2022. [Online]. Available: \url
-                                                  {https://www.canada.ca/en/...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-
-Underfull \hbox (badness 2626) in paragraph at lines 157--158
-[]\OT1/cmr/m/n/10 Environment Canada, \Data Shar-ing Guide-lines for Con-ser-va-tion," 2022. [On-line]. Avail-able:
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+\OT1/cmtt/m/n/10 the-[]personal-[]information-[]protection-[]and-[]electronic-[]documents-[]act-[]pipeda/$[]\OT1/cmr/m/n/10 . [Ac-cessed:
  []
 
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:159: Undefined control sequence.
-l.159 ...ability," 2023. [Online]. Available: \url
-                                                  {https://laws-lois.justice...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:161: Undefined control sequence.
-l.161 ...urposes," 2023. [Online]. Available: \url
-                                                  {https://www.priv.gc.ca/en...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+[]\OT1/cmr/m/n/10 Government of Canada, "PIPEDA Fair In-for-ma-tion Prin-ci-ples - Con-sent," 2023. [On-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+\OT1/cmr/m/n/10 line]. Avail-able: []$\OT1/cmtt/m/n/10 https : / / www . priv . gc . ca / en / privacy-[]topics / privacy-[]laws-[]in-[]canada /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+\OT1/cmtt/m/n/10 the-[]personal-[]information-[]protection-[]and-[]electronic-[]documents-[]act-[]pipeda/$[]\OT1/cmr/m/n/10 . [Ac-cessed:
+ []
+
+
+Underfull \hbox (badness 2837) in paragraph at lines 164--165
+[]\OT1/cmr/m/n/10 Government of Canada, "PIPEDA Fair In-for-ma-tion Prin-ci-ples - Lim-it-ing Col-lec-tion," 2023.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+\OT1/cmr/m/n/10 [On-line]. Avail-able: []$\OT1/cmtt/m/n/10 https : / / www . priv . gc . ca / en / privacy-[]topics / privacy-[]laws-[]in-[]canada /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+\OT1/cmtt/m/n/10 the-[]personal-[]information-[]protection-[]and-[]electronic-[]documents-[]act-[]pipeda/$[]\OT1/cmr/m/n/10 . [Ac-cessed:
+ []
 
 [3]
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:163: Undefined control sequence.
-l.163 ...Consent," 2023. [Online]. Available: \url
-                                                  {https://www.priv.gc.ca/en...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 4518) in paragraph at lines 163--164
-[]\OT1/cmr/m/n/10 Government of Canada, "PIPEDA Fair In-for-ma-tion Prin-ci-ples - Con-sent," 2023. [On-line].
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+[]\OT1/cmr/m/n/10 Government of Canada, "PIPEDA Fair In-for-ma-tion Prin-ci-ples -
  []
 
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:165: Undefined control sequence.
-l.165 ...lection," 2023. [Online]. Available: \url
-                                                  {https://www.priv.gc.ca/en...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:167: Undefined control sequence.
-l.167 ...tention," 2023. [Online]. Available: \url
-                                                  {https://www.priv.gc.ca/en...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:169: Undefined control sequence.
-l.169 ... (CASL)," 2023. [Online]. Available: \url
-                                                  {https://www.fightspam.gc....
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 1320) in paragraph at lines 169--170
-[]\OT1/cmr/m/n/10 Government of Canada, "Canada's Anti-Spam Leg-is-la-tion (CASL)," 2023. [On-line]. Avail-able:
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+\OT1/cmr/m/n/10 Lim-it-ing Use, Dis-clo-sure, and Re-ten-tion," 2023. [On-line]. Avail-
  []
 
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:171: Undefined control sequence.
-l.171 ... (SARA)," 2023. [Online]. Available: \url
-                                                  {https://laws-lois.justice...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:173: Undefined control sequence.
-l.173 ...cations," 2024. [Online]. Available: \url
-                                                  {https://developer.android...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
-[]\OT1/cmr/m/n/10 Google, "App Qual-ity Guide-lines { No-ti-fi-ca-tions," 2024. [On-line]. Avail-able:
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+\OT1/cmr/m/n/10 able: []$\OT1/cmtt/m/n/10 https : / / www . priv . gc . ca / en / privacy-[]topics / privacy-[]laws-[]in-[]canada /
  []
 
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:175: Undefined control sequence.
-l.175 ...et Size," 2024. [Online]. Available: \url
-                                                  {https://developer.android...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:177: Undefined control sequence.
-l.177 ...tection," 2024. [Online]. Available: \url
-                                                  {https://owasp.org/www-pro...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex:179: Undefined control sequence.
-l.179 ...actices," 2024. [Online]. Available: \url
-                                                  {https://developer.android...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
-[]\OT1/cmr/m/n/10 Google, "Data Stor-age and Se-cu-rity Best Prac-tices," 2024. [On-line]. Avail-able:
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+\OT1/cmtt/m/n/10 the-[]personal-[]information-[]protection-[]and-[]electronic-[]documents-[]act-[]pipeda/$[]\OT1/cmr/m/n/10 . [Ac-cessed:
  []
 
+<./images/figure1.png, id=268, 651.93562pt x 497.60907pt>
+File: ./images/figure1.png Graphic file (type png)
+<use ./images/figure1.png>
+Package pdftex.def Info: ./images/figure1.png  used on input line 213.
+(pdftex.def)             Requested size: 325.96701pt x 248.80392pt.
 [4]
-Overfull \hbox (66.21808pt too wide) in paragraph at lines 239--264
+Overfull \hbox (66.21808pt too wide) in paragraph at lines 223--248
  [] 
  []
 
-<./images/2.2StateDiagram.png, id=22, 809.0225pt x 707.64375pt>
+<./images/2.2StateDiagram.png, id=290, 809.0225pt x 707.64375pt>
 File: ./images/2.2StateDiagram.png Graphic file (type png)
 <use ./images/2.2StateDiagram.png>
-Package pdftex.def Info: ./images/2.2StateDiagram.png  used on input line 266.
+Package pdftex.def Info: ./images/2.2StateDiagram.png  used on input line 250.
 (pdftex.def)             Requested size: 404.51027pt x 353.82101pt.
-[5]
-Overfull \hbox (0.6347pt too wide) in paragraph at lines 278--284
+[5 <./images/figure1.png>]
+Overfull \hbox (0.6347pt too wide) in paragraph at lines 262--268
 \OT1/cmr/m/n/10 Nature en-thu-si-asts cover a broad spec-trum of peo-ple from ca-sual na-tional park-goers to ex-pe-ri-enced portagers.
  []
 
 [6 <./images/2.2StateDiagram.png>]
-<./images/3Diagram.png, id=31, 457.71pt x 825.0825pt>
+<./images/3Diagram.png, id=301, 457.71pt x 825.0825pt>
 File: ./images/3Diagram.png Graphic file (type png)
 <use ./images/3Diagram.png>
-Package pdftex.def Info: ./images/3Diagram.png  used on input line 336.
-(pdftex.def)             Requested size: 366.1685pt x 660.06691pt.
+Package pdftex.def Info: ./images/3Diagram.png  used on input line 317.
+(pdftex.def)             Requested size: 343.28166pt x 618.81036pt.
  [7]
-Overfull \vbox (38.53966pt too high) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 349--350
 
- [8 <./images/3Diagram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 369--370
+ []
+
+[8 <./images/3Diagram.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--372
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 373--374
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 400--401
+Underfull \hbox (badness 10000) in paragraph at lines 380--381
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 449--451
+Underfull \hbox (badness 10000) in paragraph at lines 429--431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 436--438
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--445
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--449
 
  []
 
@@ -496,136 +522,118 @@ Underfull \hbox (badness 10000) in paragraph at lines 456--458
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 463--465
-
- []
-
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 467--469
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 476--478
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 511--512
+Underfull \hbox (badness 10000) in paragraph at lines 542--544
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 562--564
+Underfull \hbox (badness 10000) in paragraph at lines 549--551
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 569--571
+Underfull \hbox (badness 10000) in paragraph at lines 555--557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 575--577
+Underfull \hbox (badness 10000) in paragraph at lines 558--560
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 578--580
+Underfull \hbox (badness 10000) in paragraph at lines 565--567
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 585--587
+Underfull \hbox (badness 10000) in paragraph at lines 603--604
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 623--624
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP2. on input line 630.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP3. on input line 635.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP4. on input line 640.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP5. on input line 645.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP6. on input line 650.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 655--657
 
  []
-
-
-LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP2. on input line 650.
-
-
-LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP3. on input line 655.
-
-
-LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP4. on input line 660.
-
-
-LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP5. on input line 665.
 
 [13]
-
-LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP6. on input line 670.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 675--677
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 698--699
+Underfull \hbox (badness 10000) in paragraph at lines 678--679
 
  []
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP2. on input line 725.
+             The label is: \bf VP2. on input line 705.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP3. on input line 730.
+             The label is: \bf VP3. on input line 710.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP4. on input line 735.
-
-[14]
-
-LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP5. on input line 740.
+             The label is: \bf VP4. on input line 715.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP6. on input line 745.
+             The label is: \bf VP5. on input line 720.
 
-[15] [16] [17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 1248--1250
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP6. on input line 725.
+
+[14] [15] [16] [17] [18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 1213--1215
 
  []
 
-[19] [20] (./SE3A04_Group6.aux)
+[20] (./SE3A04_Group6.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package rerunfilecheck Info: File `SE3A04_Group6.out' has not changed.
+(rerunfilecheck)             Checksum: 5284DAC47F6E3D1D776F412B5AD3358C;9690.
  ) 
 Here is how much of TeX's memory you used:
- 3936 strings out of 474116
- 58770 string characters out of 5743682
- 1939187 words of memory out of 5000000
- 26256 multiletter control sequences out of 15000+600000
- 566613 words of font info for 69 fonts, out of 8000000 for 9000
+ 11097 strings out of 474116
+ 168363 string characters out of 5743682
+ 1942187 words of memory out of 5000000
+ 33126 multiletter control sequences out of 15000+600000
+ 566781 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,6n,65p,938b,368s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on SE3A04_Group6.pdf (20 pages, 510275 bytes).
+ 75i,6n,79p,938b,769s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on SE3A04_Group6.pdf (20 pages, 574991 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 534 PDF objects out of 1000 (max. 8388607)
+ 485 compressed objects within 5 object streams
+ 189 named destinations out of 1000 (max. 500000)
+ 424 words of extra memory for PDF output out of 10000 (max. 10000000)
 
