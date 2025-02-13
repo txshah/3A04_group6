@@ -584,6 +584,166 @@ User is logged in and submits a photo for species identification.
     \item If some experts fail to respond, the forum provides an answer based on available data.
 \end{itemize}
 
+\item Viewing a Report \#7
+
+    \textbf{Precondition:} The user has already taken a picture of an animal and the forum has generated a report.
+
+    \begin{enumerate}[{\bf VP1.}]
+        \item User \#1 \\
+
+            \textbf{Main Success Scenario:}
+            \begin{enumerate}
+                \item[1] The user opens the app and logs in.
+                \item[2] The system authenticates the user and displays the dashboard.
+                \item[3] The user selects "View Report" from the options.
+                \item[4] The system displays a list of available reports.
+                \item[5] The user selects a specific report from the list.
+                \item[6] The system retrieves the report details and displays them to the user, including the animal's name, species, habitat, diet, and conservation status.
+            \end{enumerate}
+
+            \textbf{Secondary Scenario:}
+            \begin{enumerate}
+                \item[4i] System fails to retrieve the list of reports.
+                \begin{enumerate}
+                    \item[4i.1] The system displays an error message.
+                    \item[4i.2] The user is prompted to try again or contact customer support.
+                \end{enumerate}
+                \item[5i] System fails to display the report content.
+                \begin{enumerate}
+                    \item[5i.1] System displays a “Report Unavailable" message.
+                    \item[5i.2] The user is prompted to reload the report or connect with customer support.
+                \end{enumerate}
+            \end{enumerate}
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP2.}]
+        \item Ads Team \\ 
+        N/A
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP3.}]
+        \item Marketing Team \\
+        N/A
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP4.}]
+        \item Accounting Team \\
+        N/A
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP5.}]
+        \item Environment Canada \\
+        N/A
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP6.}]
+        \item National Parks/Hunting Organization \\
+        N/A
+    \end{enumerate}
+
+    \textbf{Global Scenario:} \\
+    \textbf{Precondition:} The user has an account and is logged into the system. A report has already been generated for the image taken by the user. \\
+
+    \textbf{Main Success Scenario:}
+    \begin{enumerate}
+        \item[(a)] User selects "View Report" from the dashboard.
+        \item[(b)] The system retrieves and displays the report information, including the animal's details such as species, habitat, and diet.
+        \item[(c)] User reviews the report.
+        \item[(d)] User may choose to share the report with the community.
+    \end{enumerate}
+
+    \textbf{Secondary Scenarios:}
+    \begin{itemize}
+        \item If the system fails to authenticate the user, it prompts for login recovery.
+        \item If the report fails to load, the user is prompted to refresh or contact customer support.
+        \item If the report data is incomplete, the system displays a warning and suggests a re-scan.
+    \end{itemize}
+
+\item Saving a Report \#8
+
+    \textbf{Precondition:} The user is viewing a generated report and wants to save it for offline access or future reference.
+
+    \begin{enumerate}[{\bf VP1.}]
+        \item User \#1 \\
+
+            \textbf{Main Success Scenario:}
+            \begin{enumerate}
+                \item[1] The user opens the app and logs in.
+                \item[2] The system authenticates the user.
+                \item[3] The user views the generated report.
+                \item[4] The user selects the Save Report option
+                \item[5] The system prompts the user to choose a format (e.g., PDF, Image) and confirm the save.
+                \item[6] The user confirms the action.
+                \item[7] The system saves the report to the user’s device and provides a success message.
+            \end{enumerate}
+
+            \textbf{Secondary Scenario:}
+            \begin{enumerate}
+                \item[3i] User selects an unsupported format.
+                \begin{enumerate}
+                    \item[3i.1] System displays an "Unsupported Format" message and prompts the user to select a valid format.
+                \end{enumerate}
+                \item[4i] System fails to save the report.
+                \begin{enumerate}
+                    \item[4i.1] System displays a "Save Failed" error message.
+                    \item[4i.2] User is prompted to try saving again or contact customer support.
+                \end{enumerate}
+            \end{enumerate}
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP2.}]
+        \item Ads Team \\ 
+        N/A
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP3.}]
+        \item Marketing Team \\
+        N/A
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP4.}]
+        \item Accounting Team \\
+        N/A
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP5.}]
+        \item Environment Canada \\
+        N/A
+    \end{enumerate}
+
+    \begin{enumerate}[{\bf VP6.}]
+        \item National Parks/Hunting Organization \\
+        N/A
+    \end{enumerate}
+
+
+\textbf{Global Scenario:} \\
+    \textbf{Precondition:} The user has an account and is logged into the system, and a report has already been generated. \\
+    \textbf{Main Success Scenario:}
+            \begin{enumerate}
+                \item[1] The user opens the app and logs in.
+                \item[2] The system authenticates the user.
+                \item[3] The user views the generated report.
+                \item[4] The user selects the Save Report option
+                \item[5] The system prompts the user to choose a format (e.g., PDF, Image) and confirm the save.
+                \item[6] The user confirms the action.
+                \item[7] The system saves the report to the user’s device and provides a success message.
+            \end{enumerate}
+
+            \textbf{Secondary Scenario:}
+            \begin{enumerate}
+                \item[3i] User selects an unsupported format.
+                \begin{enumerate}
+                    \item[3i.1] System displays an "Unsupported Format" message and prompts the user to select a valid format.
+                \end{enumerate}
+                \item[4i] System fails to save the report.
+                \begin{enumerate}
+                    \item[4i.1] System displays a "Save Failed" error message.
+                    \item[4i.2] User is prompted to try saving again or contact customer support.
+                \end{enumerate}
+            \end{enumerate}
+    
+
 \end{enumerate}
 
 %	Below, we organize by Business Event.
