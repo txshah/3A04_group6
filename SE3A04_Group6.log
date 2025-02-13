@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  13 FEB 2025 18:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  13 FEB 2025 18:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -509,7 +509,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cite.13}) has 
                                                   \__shipout_drop_firstpage_...
 l.206 
       ]
-<./images/figure1.png, id=307, 651.93562pt x 497.60907pt>
+<./images/figure1.png, id=283, 651.93562pt x 497.60907pt>
 File: ./images/figure1.png Graphic file (type png)
 <use ./images/figure1.png>
 Package pdftex.def Info: ./images/figure1.png  used on input line 224.
@@ -519,7 +519,7 @@ Overfull \hbox (66.21808pt too wide) in paragraph at lines 234--259
  [] 
  []
 
-<./images/2.2StateDiagram.png, id=315, 809.0225pt x 707.64375pt>
+<./images/2.2StateDiagram.png, id=290, 809.0225pt x 707.64375pt>
 File: ./images/2.2StateDiagram.png Graphic file (type png)
 <use ./images/2.2StateDiagram.png>
 Package pdftex.def Info: ./images/2.2StateDiagram.png  used on input line 261.
@@ -530,7 +530,7 @@ Overfull \hbox (0.6347pt too wide) in paragraph at lines 273--279
  []
 
 [7]
-<./images/3Diagram.png, id=331, 457.71pt x 825.0825pt>
+<./images/3Diagram.png, id=307, 457.71pt x 825.0825pt>
 File: ./images/3Diagram.png Graphic file (type png)
 <use ./images/3Diagram.png>
 Package pdftex.def Info: ./images/3Diagram.png  used on input line 328.
@@ -671,7 +671,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1224--1226
 
  []
 
-[21] (./SE3A04_Group6.aux)
+[21] [22] (./SE3A04_Group6.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -681,21 +681,21 @@ L3 programming layer <2024-02-20>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `SE3A04_Group6.out' has not changed.
-(rerunfilecheck)             Checksum: 5284DAC47F6E3D1D776F412B5AD3358C;9690.
+(rerunfilecheck)             Checksum: 12A01E005FA92C5775439C91DCE26241;8573.
  ) 
 Here is how much of TeX's memory you used:
- 11106 strings out of 474116
- 168414 string characters out of 5743682
+ 11095 strings out of 474116
+ 168201 string characters out of 5743682
  1945187 words of memory out of 5000000
- 33130 multiletter control sequences out of 15000+600000
+ 33124 multiletter control sequences out of 15000+600000
  566781 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,6n,79p,938b,769s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on SE3A04_Group6.pdf (21 pages, 580721 bytes).
+Output written on SE3A04_Group6.pdf (22 pages, 580461 bytes).
 PDF statistics:
- 559 PDF objects out of 1000 (max. 8388607)
- 508 compressed objects within 6 object streams
- 194 named destinations out of 1000 (max. 500000)
- 424 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 537 PDF objects out of 1000 (max. 8388607)
+ 486 compressed objects within 5 object streams
+ 189 named destinations out of 1000 (max. 500000)
+ 376 words of extra memory for PDF output out of 10000 (max. 10000000)
 
