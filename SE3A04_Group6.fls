@@ -118,10 +118,10 @@ OUTPUT SE3A04_Group6.pdf
 INPUT /usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT ./images/2.2StateDiagram.jpg
-INPUT ./images/2.2StateDiagram.jpg
-INPUT ./images/2.2StateDiagram.jpg
-INPUT ./images/2.2StateDiagram.jpg
+INPUT ./images/2.2StateDiagram.png
+INPUT ./images/2.2StateDiagram.png
+INPUT ./images/2.2StateDiagram.png
+INPUT ./images/2.2StateDiagram.png
 INPUT ./images/3Diagram.png
 INPUT ./images/3Diagram.png
 INPUT ./images/3Diagram.png

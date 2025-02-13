@@ -1,0 +1,46 @@
+@startuml
+actor "App User" as User
+actor "Authenticator" as Auth
+actor "Third-Party API" as Expert1
+actor "Internal Algorithm" as Expert2
+actor "Survey Processor" as Expert3
+
+rectangle "Species Classifier System" {
+    User --> (Login)
+    (Login) ..> (Authentication) : <<includes>>
+    (Authentication) ..> (Deny User) : <<extends>>
+    (Authentication) ..> (Accept User) : <<extends>>
+    Auth ..> (Authentication)
+
+    User --> (Create Account)
+    (Create Account) ..> (Enter User Information) : <<includes>>
+    (Enter User Information) ..> (Account Created) : <<includes>>
+    (Account Created) ..> (Login): <<extends>>
+
+    (Accept User) ..> (Directed to Home Page) : <<includes>>  
+
+    (Directed to Home Page) ..> (Classification Request): <<includes>>  
+    (Classification Request) ..> (Photo Input) : <<includes>>
+    (Classification Request) ..> (Text Description) : <<includes>>
+    (Classification Request) ..> (Survey) : <<includes>>
+
+    (Photo Input) ..> (Expert 1 Processing): <<includes>>
+    (Text Description) ..>  (Expert 2 Processing): <<includes>>
+    (Survey) ..>  (Expert 3 Processing): <<includes>>
+
+    Expert1 --> (Expert 1 Processing)
+    Expert2 -->(Expert 2 Processing)
+    Expert3 -->  (Expert 3 Processing)
+
+    (Expert 1 Processing) ..>  (Conflict Resolution Forum): <<includes>>
+    (Expert 2 Processing) ..>  (Conflict Resolution Forum): <<includes>>
+    (Expert 3 Processing) ..>  (Conflict Resolution Forum): <<includes>>
+
+    (Conflict Resolution Forum) ..>  (Database Storage): <<extends>>
+    (Database Storage) ..>  (Display Classification Results): <<includes>>
+    (Display Classification Results) ..> (Generate Report) : <<includes>>
+
+    (Generate Report) ..> (Save Results to Account) : <<extends>>
+    (Save Results to Account) ..> (Database Storage) : <<includes>>
+}
+@enduml
