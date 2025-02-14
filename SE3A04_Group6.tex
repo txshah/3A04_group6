@@ -231,32 +231,41 @@ Requirements, Security Requirements, Cultural and Political Requirements and Leg
 \subsection{Product Functions}
 \label{sub:product_functions}
 % Begin SubSection
-The goal of the system is to identify endangered and out of season species for 3 main domains: aerial, aquatic, and land. There will be 3 main methods for identifying specifics and a backend decision tree to determine accuracy and provide a result. The methods will be: description, survey and image. The main modules of this app will be the following: Classification Process (submitting photo, writing a description, filling a questionnaire, getting result), Account Services (creating an account, viewing past inquiries, updating information, logging in), Display Results (generate report, save results, view accuracy score). 
+The goal of the system is to identify endangered and out-of-season species for 3 major domains: aerial, aquatic,
+and land. There will be 3 unique methods for identifying specifics and a backend decision tree to determine
+accuracy, generate a report and provide a final output. The methods will be: description, survey and image. The main modules
+of this app will be the following: Classification Process (submitting photo, writing a description, filling a questionnaire), Account Services (creating an account, viewing past inquiries, updating
+information, logging in), Display Results (view results, generate report, save results, view accuracy score).
 \begin{center}
-    \begin{tabular}{ |p{4cm}|p{10cm}| } 
+    \begin{tabular}{ |p{4cm}|p{12cm}| } 
     \hline
     \textbf{Modules} & \textbf{Functions} \\
     \hline
     Classification Process
-    & \textbf{Write Description}: Allows the user to submit a description of the animal they have seen. \\ 
-    & \textbf{Submit Image}: Allows the user to upload an image of animals they see. \\ 
-    & \textbf{Fill out Questionnaire}: Allows user to submit an inquiry based on predesigned questions. \\ 
-    & \textbf{Process Input}: Allows user to submit their chosen input type to backend forum for result. \\
+    & \textbf{Write Description}: Allows the user to submit a description of the animal. \\ 
+    & \textbf{Submit Image}: Allows the user to upload an image of an animal \\ 
+    & \textbf{Fill Questionnaire}: Allows user to submit an inquiry based on predesigned questions. \\ 
+    & \textbf{Process Input}: Allows user to submit their chosen input type to the backend. \\
     \hline
     Generate Report
+    & \textbf{View Result}: Allows the user to view classification for input. \\
     & \textbf{Generate Report}: Allows the user to create a unique report with details of their search and related information. \\ 
-    & \textbf{View Score}: Allows the user to see the corresponding accuracy score of generation. \\
+    & \textbf{View Score}: Allows the user to see accuracy score of search. \\
     & \textbf{Save Result}: Allows the user to store output. \\
     \hline	
     Account Services 
     & \textbf{Create Account}: Allows the user to create an account. \\ 
     & \textbf{Update Account}: Allows the user to update their account information. \\ 
     & \textbf{Login}: Allows the user to log in or log out of their account. \\ 
-    & \textbf{Search History}: Allows the user to view past searches. \\
+    & \textbf{Search History}: Allows the user to view past saved reports. \\
     \hline
     \end{tabular}
 \end{center}
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{2.2StateDiagram.png}
+    \caption*{\textbf{Figure 2: State Diagram}} % Removes numbering
+\end{figure}
 % \begin{center}
 % 	\begin{tabular}{ |c|c| } 
 % 	\hline
@@ -289,11 +298,6 @@ The goal of the system is to identify endangered and out of season species for 3
 %  \hline
 %    \end{tabular}
 % \end{center}
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.50]{2.2StateDiagram.png}
-    \caption*{\textbf{Figure 2: State Diagram}} % Removes numbering
-\end{figure}
 % \begin{center}
 % \includegraphics[scale=0.50]{2.2StateDiagram.png}
 % \end{center}
@@ -365,7 +369,7 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 % \label{sec:use_case_diagram}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth, height=1.25\textwidth]{3Diagram.png}
+    \includegraphics[width=1\textwidth, height=1.2\textwidth]{3Diagram.png}
     % \includegraphics[width=1.4\textwidth, height=1.2\textwidth, keepaspectratio=true]{3Diagram.png}
     \caption*{\textbf{Figure 3: Use Case Diagram}}
 \end{figure}
@@ -1159,12 +1163,12 @@ User is logged in and submits a photo for species identification.
 \label{ssub:speed_and_latency_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-SL}1. ]
-	\item The response time of all external APIs (expert calls, database updates, report generation, etc.) should be within 0.5 seconds.
-	\newline  \textbf{Rationale:} The average API response time is between 100ms to 500ms [1] and this is known as the typical expectation of performance. A response time in this range is expected by industry standards and is required for a competitive user experience. We would ideally want limited delays, to promote efficiency and satisfaction, and this API response time will ensure that. 
+	\item The response time of all external APIs (expert calls, report generation, etc.) should be within 0.5 seconds.
+	\newline  \textbf{Rationale:} The average API response time is between 100ms to 500ms [1] and this is known as the typical expectation of performance. A response time in this range is expected by industry standards and is required for a competitive user experience. We would ideally want limited delays, promote efficiency and overall satisfaction. One step to doing this would be to ensure all our external connectors fall within this time frame. 
 	\item App start-up time should be around 2 seconds.
-	\newline  \textbf{Rationale:} The average start-up time in the industry is around 1.5 to 4 seconds [2]. This is the time frame that most systems and users typically wait for. Creating an application that does not fit these requirements will cause us to lose user interest. 
+	\newline  \textbf{Rationale:} The average start-up time for an application is around 1.5 to 4 seconds [2]. This is the time frame that most systems and users typically wait for before abandoning the program. 
 	\item Account updates should be within 3 seconds.
-	\newline \textbf{Rationale:} When a user updates their account to save a report, update personal data or look for items previously stored our system should efficiently fetch this information from our database. This is the most time it should take for old information to be requested, searched and displayed on the user screen [3].
+	\newline \textbf{Rationale:} When a user views their account to save a report, update personal data or look for items previously stored, the system should efficiently fetch this information from our database in a timely manner. This is the most time it should take for previously stored data to be requested, searched and displayed/updated on the user screen [3].
 \end{enumerate}
 % End SubSubSection
 
@@ -1173,7 +1177,7 @@ User is logged in and submits a photo for species identification.
 % Begin SubSubSection
 \begin{enumerate}[{PR-SC}1. ]
 	\item The app should provide safe suggestions for user reports.
-	\newline \textbf{Rationale:} Since our app targets natural areas and focuses on the hunting community recommendations we give during our report generation must be as safe as possible. Focus there is always room for the unexpected but without safety, we lose the trust of our users.
+	\newline \textbf{Rationale:} Since our app targets natural areas and focuses on the hunting community, recommendations we give during our report generation must be as safe as possible. We can not display suggesstions or practices that are unsafe (e.g hunting areas that are not maintained). Without focusing on safety, we lose the trust of our users.
 \end{enumerate}
 % End SubSubSection
 
@@ -1182,9 +1186,9 @@ User is logged in and submits a photo for species identification.
 % Begin SubSubSection
 \begin{enumerate}[{PR-PA}1. ]
 	\item The app must be accurate in image classification around 85 percent.
-	\newline \textbf{Rationale:} The goal of this app is to ensure species are correctly identified. While this application can be used by a diverse demographic, the hunting community is a large potential user base. For their specific needs, it is essential to ensure accuracy when looking at animal classification based on submitted images. The goal of our product should aim for the current industry standard which is 85 percent [4]. 
+	\newline \textbf{Rationale:} The goal of this app is to ensure species are correctly identified. While this application can be used by a diverse demographic, the hunting community is a large potential user base. For their specific needs, it is essential to ensure accuracy when looking at animal classification based on submitted images. The goal of our product is to aim for the current industry standard which is 85 percent [4]. 
 	\item The app must be accurate in description classification by 80 percent. 
-	\newline \textbf{Rationale:} Classification models that take in description input have an average 80 percent accuracy rate in responses [5]. This is something we should aim to uphold in the internal model to ensure we are consistent with industry standards. 
+	\newline \textbf{Rationale:} Classification models that take in description/text input have an average 80 percent accuracy rate in responses [5]. This is something we should aim to uphold in the internal model to ensure we are consistent with industry standards. 
 \end{enumerate}
 % End SubSubSection
 
@@ -1202,9 +1206,9 @@ User is logged in and submits a photo for species identification.
 % Begin SubSubSection
 \begin{enumerate}[{PR-RFT}1. ]
 	\item The system must be able to handle unexpected inputs. 
-	\newline \textbf{Rationale:} If a user accidentally submits an invalid input or unexpected entry to any of our experts our product should be able to respond and prompt the user for more information. We need to ensure that expected crashes do not occur due to minor input errors. 
+	\newline \textbf{Rationale:} If a user accidentally submits an invalid input or unexpected entry to any of our experts, our product should be able to respond and prompt the user for more information. We need to ensure that unexpected crashes do not occur due to minor user errors. 
 	\item The system must allow users to view saved reports even when there is no network.
-	\newline \textbf{Rationale:} While it may not always be possible to make new searches in areas with no network it should be possible to view previous searches made. Especially for those hunting wifi and network is not a 100 percent ensured guarantee so having that option to view previous searches is a huge advantage. 
+	\newline \textbf{Rationale:} While it may not always be possible to make new searches in areas with no network it should be possible to view previous saved searches made. Especially for those hunting wifi is not ensured, so having that option to view previous searches is a huge advantage. 
 \end{enumerate}
 % End SubSubSection
 
@@ -1212,7 +1216,7 @@ User is logged in and submits a photo for species identification.
 \label{ssub:capacity_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{PR-C}1. ]
-	\item The system must be able to 5 simultaneous users.
+	\item The system must be able to handle 5 simultaneous users.
 	\newline \textbf{Rationale:} Ideally the system would be able to work with hundreds if not thousands of users at once. However, given the scope and time frame of the project, this number is more verifiable with the current team size. 
 \end{enumerate}
 % End SubSubSection
@@ -1222,7 +1226,7 @@ User is logged in and submits a photo for species identification.
 % Begin SubSubSection
 \begin{enumerate}[{PR-SE}1. ]
 	\item The system must adhere to solid principles and design patterns.
-	\newline \textbf{Rationale:} To ensure the application is best set up for long-term growth we must adhere to correct solid principles and design patterns when designing and ultimately building this product. The goal would be to create an effective application that is low coupled, correctly implemented independent modules and open for extensibility in the future. 
+	\newline \textbf{Rationale:} To ensure the application is best set up for long-term growth we must adhere to correct solid principles and design patterns when planning and ultimately building this product. The goal would be to create an effective application that is low coupled, has correctly implmented independent modules and open for extensibility in the future. 
 \end{enumerate}
 % End SubSubSection
 
@@ -1231,7 +1235,7 @@ User is logged in and submits a photo for species identification.
 % Begin SubSubSection
 \begin{enumerate}[{PR-L}1. ]
 	\item The system must update species information every month (update new animals in the area, seasonality, etc.)
-	\newline \textbf{Rationale:} There are continuous discoveries, regulation changes and seasonal differences to keep in mind for species classification. It is essential that our database updates during key moments and ensures our lists of species and huntable species are accurate and up to date. 
+	\newline \textbf{Rationale:} There are continuous discoveries, regulation changes and seasonal differences to keep in mind for species classification. It is essential that our database updates during key moments and ensures our lists of species and huntable animals are accurate and up to date. 
 \end{enumerate}
 % End SubSubSection
 
