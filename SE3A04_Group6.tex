@@ -6,11 +6,13 @@
 \usepackage{amstext}
 \usepackage{amsthm}
 \usepackage{amsmath}
+\usepackage{float}
 \usepackage{enumerate}
 \usepackage{fancyhdr}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{multirow}
+\usepackage{caption}
 \graphicspath{ {./images/} }
 %\usepackage{extarrows}
 %\usepackage{setspace}
@@ -85,9 +87,7 @@ This SRS will provide visibility over software requirements for Gaim, an AI-powe
 \subsection{Purpose}
 \label{sub:purpose}
 % Begin SubSection
-\begin{itemize}
-    \item The document focuses on software requirements, user characteristics, and use cases for Gaim. This document is intended for internal Gaim stakeholders, including but not limited to, project managers, developers, domain experts, and Gaim team members/investors. No prior readings are required
-\end{itemize}
+The document focuses on software requirements, user characteristics, and use cases for Gaim. This document is intended for internal Gaim stakeholders, including but not limited to, project managers, developers, domain experts, and Gaim team members/investors. No prior readings are required
 % End SubSection
 
 \subsection{Scope}
@@ -125,7 +125,6 @@ This software will reliably generate a report based on any of the available inpu
 % Begin SubSection
 \begin{itemize}
 	\item Identify the software product(s) to be produced, and name each (e.g., Host DBMS, Report Generator, etc.)
-	\newline
 	\item Explain what the software product(s) will do (and, if necessary, also state what they will not do).
 	\item Describe the application of the software being specified, including relevant benefits, objectives, and goals.
 %	\item Be consistent with similar statements in higher-level specifications (e.g., the system requirements specification), if they exist
@@ -135,9 +134,7 @@ This software will reliably generate a report based on any of the available inpu
 \subsection{Definitions, Acronyms, and Abbreviations}
 \label{sub:definitions_acronyms_and_abbreviations}
 % Begin SubSection
-\begin{itemize}
-	\item Gaim: Species classifer application created by team to provide support to hunting communities through identifying endagered animals. 
-\end{itemize}
+Gaim: Species classifer application created by team to provide support to hunting communities through identifying endagered animals. 
 % End SubSection
 
 \subsection{References}
@@ -221,9 +218,14 @@ Requirements, Security Requirements, Cultural and Political Requirements and Leg
 	\item However, the system can also function as a component within a larger environmental monitoring or conservation ecosystem. In such cases, it would interface with external databases, governmental wildlife agencies, and research institutions to enhance species identification accuracy and data integration.
 
 \end{itemize}
-\begin{center}
-\includegraphics[scale=0.5]{figure1.png}
-\end{center}
+% \begin{center}
+% \includegraphics[scale=0.5]{figure1.png}
+% \end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{figure1.png}
+    \caption*{\textbf{Figure 1: System Diagram}} % Removes numbering
+\end{figure}
 % End SubSection
 
 \subsection{Product Functions}
@@ -287,9 +289,14 @@ The goal of the system is to identify endangered and out of season species for 3
 %  \hline
 %    \end{tabular}
 % \end{center}
-\begin{center}
-\includegraphics[scale=0.50]{2.2StateDiagram.png}
-\end{center}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.50]{2.2StateDiagram.png}
+    \caption*{\textbf{Figure 2: State Diagram}} % Removes numbering
+\end{figure}
+% \begin{center}
+% \includegraphics[scale=0.50]{2.2StateDiagram.png}
+% \end{center}
 % End SubSection
 
 \subsection{User Characteristics}
@@ -355,10 +362,13 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 % End SubSection
 % End Section
 \section{Use Case Diagram}
-\label{sec:use_case_diagram}
-\begin{center}
-\includegraphics[scale=0.75]{3Diagram.png}
-\end{center}
+% \label{sec:use_case_diagram}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth, height=1.15\textwidth]{3Diagram.png}
+    \caption*{\textbf{Figure 3: Use Case Diagram}}
+\end{figure}
+
 % Begin Section
 % \begin{itemize}
 % 	\item Provide the use case diagram for the system being developed.
@@ -390,11 +400,11 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 % 	\item You are \emph{not} specifying a complete and consistent set of functional requirements here. (i.e. you are providing them in the form of use cases/global scenarios, not a refined list). For the purpose of this project, you do not need to reduce them to a list; the global scenarios format is all you need.
 % 	\item Red text below is just to highlight where you need to insert a scenario - don't actually write it all in red.
 % \end{itemize}
-\noindent {\bf Main Business Events:} List out all the main business events you are presenting. If you sub-divided into smaller ones, you don't need to include the smaller ones in this list.\\
+% \noindent {\bf Main Business Events:} List out all the main business events you are presenting. If you sub-divided into smaller ones, you don't need to include the smaller ones in this list.\\
 
-\noindent {\bf Viewpoints:} List out all the viewpoints you will be considering.\\
+% \noindent {\bf Viewpoints:} List out all the viewpoints you will be considering.\\
 
-\noindent {\bf Interpretation:} Specify any liberties you took in interpreting business events, if necessary.\\
+% \noindent {\bf Interpretation:} Specify any liberties you took in interpreting business events, if necessary.\\
 
 \begin{enumerate}[{\bf BE1.}]
 	\item Business Event Name \#1
@@ -1062,16 +1072,15 @@ User is logged in and submits a photo for species identification.
 \section{Non-Functional Requirements}
 \label{sec:non-functional_requirements}
 
-
-\begin{itemize}
-	\item For each non-functional requirement, provide a justification/rationale for it.\\
-	{\bf Example:} \\
-	SC1. \emph{The device should not explode in a customer’s pocket.}\\
-	{\bf Rationale:} Other companies have had issues with the batteries they used in their phones randomly exploding [insert citation]. This causes a safety issue, as the phone is often carried in a person's hand or pocket.	
-	\item If you need to make a guess because you couldn't really talk to stakeholders, you can say "We imagined stakeholders would want...because..."
-	\item Each requirement should have a unique label/number for it.
-	\item In the list below, if a particular section doesn't apply, just write N/A so we know you considered it.
-\end{itemize}
+% \begin{itemize}
+% 	\item For each non-functional requirement, provide a justification/rationale for it.\\
+% 	{\bf Example:} \\
+% 	SC1. \emph{The device should not explode in a customer’s pocket.}\\
+% 	{\bf Rationale:} Other companies have had issues with the batteries they used in their phones randomly exploding [insert citation]. This causes a safety issue, as the phone is often carried in a person's hand or pocket.	
+% 	\item If you need to make a guess because you couldn't really talk to stakeholders, you can say "We imagined stakeholders would want...because..."
+% 	\item Each requirement should have a unique label/number for it.
+% 	\item In the list below, if a particular section doesn't apply, just write N/A so we know you considered it.
+% \end{itemize}
 
 % Begin Section
 \subsection{Look and Feel Requirements}
@@ -1260,8 +1269,8 @@ User is logged in and submits a photo for species identification.
 \label{ssub:release_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{OE-R}1. ]
-	\item The app must be compatible with Android 14 and above and Apple iOS 17 and above.
-	 \textbf{ Rationale: } This will ensure the most range to reach the most number of users. 
+	\item The app must be compatible with Android 5.0 and above and Apple iOS 12 and above.
+    \newline \textbf{ Rationale: } This will ensure range to reach the most number of users. 
 \end{enumerate}
 % End SubSubSection
 \subsection{Maintainability and Support Requirements} \label{sub:maintainability_and_support_requirements} % Begin SubSection

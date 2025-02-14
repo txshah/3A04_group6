@@ -25,6 +25,8 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/enumerate.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/enumerate.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
@@ -51,6 +53,10 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics/color.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics/color.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
