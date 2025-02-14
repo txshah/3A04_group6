@@ -214,51 +214,83 @@ Requirements, Security Requirements, Cultural and Political Requirements and Leg
 % Begin SubSection
 \begin{itemize}
 
-	\item The product consists of three core modules: Identifying Species, Account Services, and Community Discussion. Each module provides specific functionalities such as species identification through various inputs, user account management, and engagement within the hunting and conservation community.
+	\item The product consists of three core modules: Identifying Species, Account Services, and Report Generation. Each module provides specific functionalities such as species identification through various inputs, user account management, and engagment within the hunting and conservation community.
 
 	\item The system is designed to identify endangered and out-of-season species across three primary domains: aerial, aquatic, and land. It operates independently as a self-contained application, providing users with multiple methods to identify species—image submission, textual description, and structured surveys.
 
 	\item However, the system can also function as a component within a larger environmental monitoring or conservation ecosystem. In such cases, it would interface with external databases, governmental wildlife agencies, and research institutions to enhance species identification accuracy and data integration.
 
 \end{itemize}
+\begin{center}
 \includegraphics[scale=0.5]{figure1.png}
+\end{center}
 % End SubSection
 
 \subsection{Product Functions}
 \label{sub:product_functions}
 % Begin SubSection
-The goal of the system is to identify endangered and out of season species for 3 main domains: aerial, aquatic, and land. There will be 3 main methods for identifying specifics and a backend decision tree to determine accuracy and provide a result. The methods will be: description, survey and image. The main modules of this app will be the following: Identifying species (submitting photo, writing a description, filling a questionnaire, getting result, viewing accuracy score), Account Services (creating an account, viewing past inquiries, updating information, logging in), Community Discussion (asking questions, posting pictures, liking other users posts in the hunting community). 
-
-
+The goal of the system is to identify endangered and out of season species for 3 main domains: aerial, aquatic, and land. There will be 3 main methods for identifying specifics and a backend decision tree to determine accuracy and provide a result. The methods will be: description, survey and image. The main modules of this app will be the following: Identifying species (submitting photo, writing a description, filling a questionnaire, getting result), Account Services (creating an account, viewing past inquiries, updating information, logging in), Generate Report (generate report, save results, view accuracy score). 
 \begin{center}
-	\begin{tabular}{ |c|c| } 
-	\hline
-	Modules & Functions \\
-	\hline
-	Identify Species: Image 
-	& Write Description: Allows the user to submit a description of the animal they have seen \\ 
-	& View Result: Allows user to see the identified species and corresponding accuracy score \\
-	& Save Result: Allows user to store output \\
-   \hline
-   Identify Species: Description & Submit Image: Allows the user to upload an image of animals they see \\ 
-   & View Result: Allows user to see the identified species and corresponding accuracy score \\
-   & Save Result: Allows user to store output \\
-  \hline	
-  \hline
-  Identify Species: Survey 
-  & Fill out Questionnaire: Allows user to submit inquiry based on predesigned questions \\ 
-  & View Result: Allows user to see the identified species and corresponding accuracy score \\
-  & Save Result: Allows user to store output \\
- \hline	
-  Account Services & Create Account: Allows the user to create an account\\ 
-  & Update Account: Allows the user to update their account information \\ 
-  & Login: Allows user to login/logout of their account  \\ 
-  & Search History: Allows user to view past searches\\
- \hline
-   \end{tabular}
+    \begin{tabular}{ |p{4cm}|p{10cm}| } 
+    \hline
+    \textbf{Modules} & \textbf{Functions} \\
+    \hline
+    Identify Species 
+    & \textbf{Write Description}: Allows the user to submit a description of the animal they have seen. \\ 
+    & \textbf{Submit Image}: Allows the user to upload an image of animals they see. \\ 
+    & \textbf{Fill out Questionnaire}: Allows user to submit an inquiry based on predesigned questions. \\ 
+    & \textbf{View Result}: Allows user to see the identified species. \\
+    \hline
+    Generate Report
+    & \textbf{Generate Report}: Allows the user to create a unique report with details of their search and related information. \\ 
+    & \textbf{View Score}: Allows the user to see the corresponding accuracy score of generation. \\
+    & \textbf{Save Result}: Allows the user to store output. \\
+    \hline	
+    Account Services 
+    & \textbf{Create Account}: Allows the user to create an account. \\ 
+    & \textbf{Update Account}: Allows the user to update their account information. \\ 
+    & \textbf{Login}: Allows the user to log in or log out of their account. \\ 
+    & \textbf{Search History}: Allows the user to view past searches. \\
+    \hline
+    \end{tabular}
 \end{center}
 
+
+% \begin{center}
+% 	\begin{tabular}{ |c|c| } 
+% 	\hline
+% 	Modules & Functions \\
+% 	\hline
+% 	Identify Species 
+% 	& Write Description: Allows the user to submit a description of the animal they have seen \\ 
+%     & Submit Image: Allows the user to upload an image of animals they see \\ 
+%     & Fill out Questionnaire: Allows user to submit inquiry based on predesigned questions \\ 
+% 	& View Result: Allows user to see the identified species\\
+%    \hline
+%    Generate Report
+%     & Generate report: Allows user to have our system create a unique report entailing details of their search and related infromation\\ 
+% 	& View Score: Allows user to see the corresponding accuracy score of generation \\
+% 	& Save Result: Allows user to store output \\
+% %    Identify Species: Description & Submit Image: Allows the user to upload an image of animals they see \\ 
+% %    & View Result: Allows user to see the identified species and corresponding accuracy score \\
+% %    & Save Result: Allows user to store output \\
+% %   \hline	
+% %   \hline
+% %   Identify Species: Survey 
+% %   & Fill out Questionnaire: Allows user to submit inquiry based on predesigned questions \\ 
+% %   & View Result: Allows user to see the identified species and corresponding accuracy score \\
+% %   & Save Result: Allows user to store output \\
+%  \hline	
+%   Account Services & Create Account: Allows the user to create an account\\ 
+%   & Update Account: Allows the user to update their account information \\ 
+%   & Login: Allows user to login/logout of their account  \\ 
+%   & Search History: Allows user to view past searches\\
+%  \hline
+%    \end{tabular}
+% \end{center}
+\begin{center}
 \includegraphics[scale=0.50]{2.2StateDiagram.png}
+\end{center}
 % End SubSection
 
 \subsection{User Characteristics}
@@ -325,7 +357,9 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 % End Section
 \section{Use Case Diagram}
 \label{sec:use_case_diagram}
+\begin{center}
 \includegraphics[scale=0.75]{3Diagram.png}
+\end{center}
 % Begin Section
 % \begin{itemize}
 % 	\item Provide the use case diagram for the system being developed.
