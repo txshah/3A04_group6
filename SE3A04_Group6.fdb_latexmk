@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1739549682.285 "/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex" "SE3A04_Group6.pdf" "SE3A04_Group6" 1739549683.73014 0
-  "/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex" 1739549682.06395 82489 51a5f4fc58fbc6bd81b36687960d5dc6 ""
+["pdflatex"] 1739549726.62603 "/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex" "SE3A04_Group6.pdf" "SE3A04_Group6" 1739549728.06187 0
+  "/Users/tveshashah/Desktop/3A04_group6/SE3A04_Group6.tex" 1739549726.29398 82563 718917183c471fab233da789630c1713 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -101,12 +101,13 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1728106506.95317 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1728105611 8221424 4d5bbf75fee41867477169d5e100ade9 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "SE3A04_Group6.aux" 1739549683.64193 14722 983353780029e8d4e50565058df08aef "pdflatex"
-  "SE3A04_Group6.out" 1739549683.64388 10497 1f0583881627d7d6c4b7c6ee83718d9d "pdflatex"
-  "SE3A04_Group6.tex" 1739549682.06395 82489 51a5f4fc58fbc6bd81b36687960d5dc6 ""
+  "SE3A04_Group6.aux" 1739549727.97298 14722 983353780029e8d4e50565058df08aef "pdflatex"
+  "SE3A04_Group6.out" 1739549727.97468 10497 1f0583881627d7d6c4b7c6ee83718d9d "pdflatex"
+  "SE3A04_Group6.tex" 1739549726.29398 82563 718917183c471fab233da789630c1713 ""
   "images/2.2StateDiagram.png" 1739466693.92477 268789 df1cf0481d20ae7d5eb06fe1ef8fed4d ""
   "images/3Diagram.png" 1739468158.20359 192701 42dffc5f25c9a165f26ca746fe516a2c ""
   "images/Tvesha.png" 1739545926.34011 150276 638c6eac813ad451e8946e7ca5e663ec ""
+  "images/Victor.png" 1739549726.30292 1706519 390f9791c2729a67c358f6505b2ff3dd ""
   "images/figure1.png" 1739486057.95465 52455 86dd546f8d251de8997e67bea5a55f68 ""
   (generated)
   "SE3A04_Group6.aux"
