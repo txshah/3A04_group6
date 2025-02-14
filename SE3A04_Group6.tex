@@ -605,6 +605,153 @@ User is logged in and submits a photo for species identification.
     \item If the Decision-Tree Expert fails to generate a prediction, the user is advised to use another input method.
     \item If some experts fail to respond, the forum provides an answer based on available data.
 \end{itemize}
+\item Editing Account \#5
+ 
+\textbf{Precondition:} Has an account and is trying to change account details.
+ 
+\begin{enumerate}[{\bf VP1.}]
+\item User \#1 \
+ 
+    \textbf{Main Success Scenario:}
+    \begin{enumerate}
+        \item[1] User navigates to the "Edit Account" page.
+        \item[2] User modifies account details (e.g., name, email, password).
+        \item[3] System validates the input.
+        \item[4] If validation succeeds, the system updates the database.
+        \item[5] User receives a confirmation message.
+        \item[6] If validation fails, the system displays an error message and prompts the user for corrections.
+    \end{enumerate}
+ 
+\textbf{Secondary Scenarios:}
+\begin{itemize}
+\item 4i. User provides invalid input.
+\begin{enumerate}
+\item[4i.1] System detects invalid input.
+\item[4i.2] System prompts the user to correct the information and retry.
+\end{enumerate}
+\end{itemize}
+ 
+\item Ads Team \#2 \
+\begin{enumerate}
+\item N/A (The Ads Team has no role in the editing account process.)
+\end{enumerate}
+ 
+\item Marketing Team \#3 \
+\begin{enumerate}
+\item N/A (The Marketing Team does not directly interact with the editing account system.)
+\end{enumerate}
+ 
+\item Accounting Team \#4 \
+\begin{enumerate}
+\item (a) User updates billing information.
+\item (b) The system validates the changes.
+\item (c) The accounting team’s module is updated to reflect new details.
+\item (d) Confirmation is sent to the user.
+\end{enumerate}
+ 
+\item Environment Canada \#5 \
+\begin{enumerate}
+\item N/A (Environment Canada has no involvement in the editing account process.)
+\end{enumerate}
+ 
+\item National Parks/Hunting Organization (Ontario Federation of Anglers and Hunters) \#6 \
+\begin{enumerate}
+\item N/A (This organization has no involvement in the editing account process.)
+\end{enumerate}
+\end{enumerate}
+ 
+\textbf{Global Scenario:}
+ 
+\textbf{Precondition:}
+ 
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+\item User accesses the "Edit Account" page.
+\item User modifies account details.
+\item System validates the input.
+\item If validation succeeds, the system updates the database.
+\item User receives a confirmation message.
+\item If validation fails, the system displays an error message and prompts the user for corrections.
+\end{enumerate}
+ 
+\textbf{Secondary Scenarios:}
+\begin{itemize}
+\item If the user provides invalid input, the system prompts for corrections.
+\item If billing information is updated, the accounting module is notified.
+\end{itemize}
+ 
+ 
+\item Login \#6
+ 
+\textbf{Precondition:} Has an account and is trying to log in.
+ 
+\begin{enumerate}[{\bf VP1.}]
+\item User \#1 \
+ 
+    \textbf{Main Success Scenario:}
+    \begin{enumerate}
+        \item[1] User navigates to the login page.
+        \item[2] User inputs their credentials (email/username and password).
+        \item[3] System validates the credentials.
+        \item[4] If credentials match, access is granted, and the user is redirected to their dashboard.
+        \item[5] If credentials do not match, the system displays an error message and allows the user to retry or reset the password.
+    \end{enumerate}
+ 
+\textbf{Secondary Scenarios:}
+\begin{itemize}
+\item 4i. User has overdue payments.
+\begin{enumerate}
+\item[4i.1] System flags the account and restricts access until the payment issue is resolved.
+\item[4i.2] User is notified of the restriction and given options to settle the issue.
+\end{enumerate}
+\end{itemize}
+ 
+\item Ads Team \#2 \
+\begin{enumerate}
+\item N/A (The Ads Team has no role in the login process.)
+\end{enumerate}
+ 
+\item Marketing Team \#3 \
+\begin{enumerate}
+\item N/A (The Marketing Team does not directly interact with the login system.)
+\end{enumerate}
+ 
+\item Accounting Team \#4 \
+\begin{enumerate}
+\item (a) User with overdue payments attempts to log in.
+\item (b) The system flags the account and restricts access until the payment issue is resolved.
+\item (c) User is notified of the restriction and given options to settle the issue.
+\end{enumerate}
+ 
+\item Environment Canada \#5 
+\begin{enumerate}
+\item N/A (Environment Canada has no involvement in the login process.)
+\end{enumerate}
+ 
+\item National Parks/Hunting Organization (Ontario Federation of Anglers and Hunters) \#6 \
+\begin{enumerate}
+\item N/A (This organization has no involvement in the login process.)
+\end{enumerate}
+\end{enumerate}
+ 
+\textbf{Global Scenario:}
+ 
+\textbf{Precondition:}
+ 
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+\item User navigates to the login page.
+\item User inputs their credentials.
+\item System validates the credentials.
+\item If credentials match, access is granted, and the user is redirected to their dashboard.
+\item If credentials do not match, the system displays an error message and allows the user to retry or reset the password.
+\end{enumerate}
+ 
+\textbf{Secondary Scenarios:}
+\begin{itemize}
+\item If the user has overdue payments, the system flags the account and restricts access until payment is settled.
+\item User is notified of the restriction and provided with payment options.
+\end{itemize}
 
 \item Viewing a Report \#7
 
@@ -1084,50 +1231,76 @@ User is logged in and submits a photo for species identification.
 	 \textbf{ Rationale: } This will ensure the most range to reach the most number of users. 
 \end{enumerate}
 % End SubSubSection
+\subsection{Maintainability and Support Requirements} \label{sub:maintainability_and_support_requirements} % Begin SubSection
+\subsubsection{Maintenance Requirements} \label{ssub:maintenance_requirements} 
+ \begin{enumerate}[{MS-M}1. ] \item Requirement: The system must have monthly software updates to fix security vulnerabilities, fix bugs, and enhance performance. \item Rationale: Regular updates keep the system secure. \end{enumerate} % End SubSubSection
+\subsubsection{Supportability Requirements} \label{ssub:supportability_requirements}
+\begin{enumerate}[{MS-S}1. ] \item Requirement: The system should have automated error reporting to detect failures within 5 minutes. 
+    \newline \textbf{Rationale:} Helps identify and fix issues quickly by having alerts on critical failures. \end{enumerate} % End SubSubSection
+\subsubsection{Adaptability Requirements} \label{ssub:adaptability_requirements} \begin{enumerate}[{MS-A}1. ] \item Requirement: The system must be designed to be compatible with the latest Android version. 
+    \newline \textbf{Rationale:} Increases usability in the application. \item Requirement: The UI should be designed with modular components to be easily and quickly replaced in case of redesigns or accessibility service needs. 
+    \newline \textbf{Rationale:} Keeps the system adaptable to future needs and changes. \end{enumerate} % End SubSubSection
+% End SubSection
+\subsection{Security Requirements} \label{sub:security_requirements} % Begin SubSection
+\subsubsection{Access Control Requirements} \label{ssub:access_control_requirements} % Begin SubSubSection 
+\begin{enumerate}[{SR-AC}1. ] \item Requirement: The system must implement Role-Based Access Control (RBAC) to define permission levels (e.g., Admin, Registered User, Guest). 
+    \newline \textbf{Rationale:} Limits unauthorized access to sensitive functionalities, reducing security risks.
+     \item Requirement: Multi-Factor Authentication (MFA) should be required for admin and high-privilege accounts.
+      \newline \textbf{Rationale:} Strengthens authentication security and prevents unauthorized account takeovers. \end{enumerate} % End SubSubSection
+\subsubsection{Integrity Requirements} \label{ssub:integrity_requirements} % Begin SubSubSection
+ \begin{enumerate}[{SR-INT}1. ] \item Requirement: All sensitive data must be encrypted using AES-256 for storage and TLS 1.3 for data transmission. \newline \textbf{Rationale:} Ensures standard data security for storing user information. \end{enumerate} % End SubSubSection
+\subsubsection{Privacy Requirements} \label{ssub:privacy_requirements} % Begin SubSubSection 
+\begin{enumerate}[{SR-P}1. ] \item Requirement: The system must follow PIPEDA (Personal Information Protection and Electronic Documents Act) by obtaining explicit user consent before collecting personal data. \newline \textbf{Rationale:} Ensures legal compliance and protects user privacy rights. \end{enumerate} % End SubSubSection
+\subsubsection{Audit Requirements} \label{ssub:audit_requirements} % Begin SubSubSection 
+\begin{enumerate}[{SR-AU}1. ] \item Requirement: The system must keep audit logs for a minimum of one year, tracking users and developments. \newline \textbf{Rationale:} Necessary for security incidents and meets compliance requirements. \end{enumerate} % End SubSubSection
+\subsubsection{Immunity Requirements} \label{ssub:immunity_requirements} % Begin SubSubSection
+ \begin{enumerate}[{SR-IM}1. ] \item Requirement: Regular penetration testing should be conducted at least quarterly to identify security weaknesses. \newline \textbf{Rationale:} Ensures ongoing security resilience by proactively addressing potential threats. \end{enumerate} % End SubSubSection
+% End SubSection
+
 
 % End SubSection
 
-\section*{5.5 Maintainability and Support Requirements}
+% \section*{5.5 Maintainability and Support Requirements}
 
-\subsection*{5.5.1 Maintenance Requirements (MS-M1)}
-\textbf{Requirement:} The system must have monthly software updates to fix security vulnerabilities, fix bugs, and enhance performance.\\
-\textbf{Rationale:} Regular updates keep the system secure.
+% \subsection*{5.5.1 Maintenance Requirements (MS-M1)}
+% \textbf{Requirement:} The system must have monthly software updates to fix security vulnerabilities, fix bugs, and enhance performance.\\
+% \textbf{Rationale:} Regular updates keep the system secure.
 
-\subsection*{5.5.2 Supportability Requirements (MS-S1)}
-\textbf{Requirement:} The system should have automated error reporting to detect failures within 5 minutes.\\
-\textbf{Justification:} Helps identify and fix issues quickly by having alerts on critical failures.
+% \subsection*{5.5.2 Supportability Requirements (MS-S1)}
+% \textbf{Requirement:} The system should have automated error reporting to detect failures within 5 minutes.\\
+% \textbf{Justification:} Helps identify and fix issues quickly by having alerts on critical failures.
 
-\subsection*{5.5.3 Adaptability Requirements (MS-A1)}
-\textbf{Requirement 1:} The system must be designed to be compatible with the latest Android version.\\
-\textbf{Justification:} Increases usability in the application.
+% \subsection*{5.5.3 Adaptability Requirements (MS-A1)}
+% \textbf{Requirement 1:} The system must be designed to be compatible with the latest Android version.\\
+% \textbf{Justification:} Increases usability in the application.
 
-\textbf{Requirement 2:} The UI should be designed with modular components to be easily and quickly replaced in case of redesigns or accessibility service needs.\\
-\textbf{Justification:} Keeps the system adaptable to future needs and changes.
+% \textbf{Requirement 2:} The UI should be designed with modular components to be easily and quickly replaced in case of redesigns or accessibility service needs.\\
+% \textbf{Justification:} Keeps the system adaptable to future needs and changes.
 
-\section*{5.6 Security Requirements}
+% \section*{5.6 Security Requirements}
 
-\subsection*{5.6.1 Access Control Requirements (SR-AC1)}
-\textbf{Requirement 1:} The system must implement Role-Based Access Control (RBAC) to define permission levels (e.g., Admin, Registered User, Guest).\\
-\textbf{Justification:} Limits unauthorized access to sensitive functionalities, reducing security risks.
+% \subsection*{5.6.1 Access Control Requirements (SR-AC1)}
+% \textbf{Requirement 1:} The system must implement Role-Based Access Control (RBAC) to define permission levels (e.g., Admin, Registered User, Guest).\\
+% \textbf{Justification:} Limits unauthorized access to sensitive functionalities, reducing security risks.
 
-\textbf{Requirement 2:} Multi-Factor Authentication (MFA) should be required for admin and high-privilege accounts.\\
-\textbf{Justification:} Strengthens authentication security and prevents unauthorized account takeovers.
+% \textbf{Requirement 2:} Multi-Factor Authentication (MFA) should be required for admin and high-privilege accounts.\\
+% \textbf{Justification:} Strengthens authentication security and prevents unauthorized account takeovers.
 
-\subsection*{5.6.2 Integrity Requirements (SR-INT1)}
-\textbf{Requirement:} All sensitive data must be encrypted using AES-256 for storage and TLS 1.3 for data transmission.\\
-\textbf{Justification:} Ensures standard data security for storing user information.
+% \subsection*{5.6.2 Integrity Requirements (SR-INT1)}
+% \textbf{Requirement:} All sensitive data must be encrypted using AES-256 for storage and TLS 1.3 for data transmission.\\
+% \textbf{Justification:} Ensures standard data security for storing user information.
 
-\subsection*{5.6.3 Privacy Requirements (SR-P1)}
-\textbf{Requirement:} The system must follow PIPEDA (Personal Information Protection and Electronic Documents Act) by obtaining explicit user consent before collecting personal data.\\
-\textbf{Justification:} Ensures legal compliance and protects user privacy rights.
+% \subsection*{5.6.3 Privacy Requirements (SR-P1)}
+% \textbf{Requirement:} The system must follow PIPEDA (Personal Information Protection and Electronic Documents Act) by obtaining explicit user consent before collecting personal data.\\
+% \textbf{Justification:} Ensures legal compliance and protects user privacy rights.
 
-\subsection*{5.6.4 Audit Requirements (SR-AU1)}
-\textbf{Requirement:} The system must keep audit logs for a minimum of one year, tracking users and developments.\\
-\textbf{Justification:} Necessary for security incidents and meets compliance requirements.
+% \subsection*{5.6.4 Audit Requirements (SR-AU1)}
+% \textbf{Requirement:} The system must keep audit logs for a minimum of one year, tracking users and developments.\\
+% \textbf{Justification:} Necessary for security incidents and meets compliance requirements.
 
-\subsection*{5.6.5 Immunity Requirements (SR-IM1)}
-\textbf{Requirement:} Regular penetration testing should be conducted at least quarterly to identify security weaknesses.\\
-\textbf{Justification:} Ensures ongoing security resilience by proactively addressing potential threats.
+% \subsection*{5.6.5 Immunity Requirements (SR-IM1)}
+% \textbf{Requirement:} Regular penetration testing should be conducted at least quarterly to identify security weaknesses.\\
+% \textbf{Justification:} Ensures ongoing security resilience by proactively addressing potential threats.
 
 % End SubSection
 
