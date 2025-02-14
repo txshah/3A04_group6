@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  14 FEB 2025 09:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  14 FEB 2025 10:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -556,135 +556,145 @@ Overfull \hbox (0.6347pt too wide) in paragraph at lines 311--317
 File: ./images/3Diagram.png Graphic file (type png)
 <use ./images/3Diagram.png>
 Package pdftex.def Info: ./images/3Diagram.png  used on input line 368.
-(pdftex.def)             Requested size: 375.82051pt x 540.22527pt.
+(pdftex.def)             Requested size: 469.7704pt x 587.19756pt.
  [8] [9 <./images/3Diagram.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 434--435
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 483--485
+Underfull \hbox (badness 10000) in paragraph at lines 484--486
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--492
+Underfull \hbox (badness 10000) in paragraph at lines 491--493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--499
+Underfull \hbox (badness 10000) in paragraph at lines 498--500
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 501--503
+Underfull \hbox (badness 10000) in paragraph at lines 502--504
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--512
+Underfull \hbox (badness 10000) in paragraph at lines 511--513
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 545--546
+Underfull \hbox (badness 10000) in paragraph at lines 546--547
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 596--598
+Underfull \hbox (badness 10000) in paragraph at lines 597--599
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 603--605
+Underfull \hbox (badness 10000) in paragraph at lines 604--606
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 609--611
+Underfull \hbox (badness 10000) in paragraph at lines 610--612
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 612--614
+Underfull \hbox (badness 10000) in paragraph at lines 613--615
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 619--621
+Underfull \hbox (badness 10000) in paragraph at lines 620--622
 
  []
 
 [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 804--805
+Underfull \hbox (badness 10000) in paragraph at lines 805--806
 
  []
 
 [15]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP2. on input line 831.
+             The label is: \bf VP2. on input line 832.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP3. on input line 836.
+             The label is: \bf VP3. on input line 837.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP4. on input line 841.
+             The label is: \bf VP4. on input line 842.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP5. on input line 846.
+             The label is: \bf VP5. on input line 847.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP6. on input line 851.
+             The label is: \bf VP6. on input line 852.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 856--858
+Underfull \hbox (badness 10000) in paragraph at lines 857--859
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 879--880
+Underfull \hbox (badness 10000) in paragraph at lines 880--881
 
  []
 
 [16]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP2. on input line 906.
+             The label is: \bf VP2. on input line 907.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP3. on input line 911.
+             The label is: \bf VP3. on input line 912.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP4. on input line 916.
+             The label is: \bf VP4. on input line 917.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP5. on input line 921.
+             The label is: \bf VP5. on input line 922.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP6. on input line 926.
+             The label is: \bf VP6. on input line 927.
 
 [17] [18] [19] [20]
-Overfull \hbox (0.46696pt too wide) in paragraph at lines 1290--1291
+Overfull \hbox (0.46696pt too wide) in paragraph at lines 1291--1292
 []\OT1/cmr/m/n/10 Requirement: Multi-Factor Au-then-ti-ca-tion (MFA) should be re-quired for ad-min and high-privilege
  []
 
 [21] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1439--1441
+Underfull \hbox (badness 10000) in paragraph at lines 1440--1442
 
  []
 
-[23] (./SE3A04_Group6.aux)
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 1458--1462
+
+ []
+
+<./images/Tvesha.png, id=558, 263.98625pt x 153.57375pt>
+File: ./images/Tvesha.png Graphic file (type png)
+<use ./images/Tvesha.png>
+Package pdftex.def Info: ./images/Tvesha.png  used on input line 1499.
+(pdftex.def)             Requested size: 281.85587pt x 163.9778pt.
+[24 <./images/Tvesha.png>] [25] (./SE3A04_Group6.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -697,18 +707,18 @@ Package rerunfilecheck Info: File `SE3A04_Group6.out' has not changed.
 (rerunfilecheck)             Checksum: 1F0583881627D7D6C4B7C6EE83718D9D;10497.
  ) 
 Here is how much of TeX's memory you used:
- 12549 strings out of 474116
- 195749 string characters out of 5743682
+ 12559 strings out of 474116
+ 195954 string characters out of 5743682
  1946187 words of memory out of 5000000
- 34504 multiletter control sequences out of 15000+600000
+ 34512 multiletter control sequences out of 15000+600000
  566781 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,8n,79p,938b,779s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on SE3A04_Group6.pdf (23 pages, 582576 bytes).
+Output written on SE3A04_Group6.pdf (25 pages, 691371 bytes).
 PDF statistics:
- 651 PDF objects out of 1000 (max. 8388607)
- 598 compressed objects within 6 object streams
- 254 named destinations out of 1000 (max. 500000)
- 456 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 663 PDF objects out of 1000 (max. 8388607)
+ 605 compressed objects within 7 object streams
+ 256 named destinations out of 1000 (max. 500000)
+ 461 words of extra memory for PDF output out of 10000 (max. 10000000)
 
