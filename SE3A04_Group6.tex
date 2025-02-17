@@ -412,24 +412,133 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 % \noindent {\bf Interpretation:} Specify any liberties you took in interpreting business events, if necessary.\\
 
 \begin{enumerate}[{\bf BE1.}]
-	\item Business Event Name \#1
-		\begin{enumerate}[{\bf VP1.}]
-			\item Viewpoint Name \#1 \\
-				\textcolor{red}{Insert Scenario Here}
-			\item Viewpoint Name \#2 \\
-				\textcolor{red}{Insert Scenario Here}
-		\end{enumerate}
-		{\bf Global Scenario:}\\
-		\textcolor{red}{Insert Scenario Here}
-	\item Business Event Name \#2
-	\begin{enumerate}[{\bf VP1.}]
-		\item Viewpoint Name \#1 \\
-		\textcolor{red}{Insert Scenario Here}
-		\item Viewpoint Name \#2 \\
-		\textcolor{red}{Insert Scenario Here}
-	\end{enumerate}
-	{\bf Global Scenario:}\\
-	\textcolor{red}{Insert Scenario Here}
+        \item Create an account \#1
+        
+        \textbf{Precondition:} User has installled and opened the application and is not logged in.
+        \begin{enumerate}[{\bf VP1.}]
+            \item User \#1 \\
+                \textbf{Main Success Scenario:}
+                \begin{enumerate}
+                    \item[1] User opens the application on their mobile device.
+                    \item[2] System prompts the user to log in or create an account, displaying the login fields
+                    \item[3] User selects create an account
+                    \item[4] System prompts user to create a username
+                    \item[5] User creates a username and selects enter
+                    \item[6] System prompts user to create a password
+                    \item[7] User creates a password and selects enter
+                    \item[8] System prompts user to re-enter password for confirmation
+                    \item[9] User re-enters correct password and selects enter
+                    \item[10] System displays home page of app with user logged in
+                \end{enumerate}
+    
+                \textbf{Secondary Scenarios:}
+                \begin{itemize}
+                    \item 5i. User enters empty field for username and selects enter
+                    \begin{enumerate}
+                        \item[5i.1] System prompts user to fill in username field and does not proceed.
+                    \end{enumerate}
+                    \item 5ii. User enters username already held by another user
+                    \begin{enumerate}
+                        \item[5ii.1] System prompts user to choose a different username
+                        \item[5ii.2] System generates and offers similar potential usernames to the user
+                    \end{enumerate}
+                    \item 7i. User enters empty field for password and selects enter
+                    \begin{enumerate}
+                        \item[7i.1] System prompts user to fill in password field and does not proceed.
+                    \end{enumerate}
+                    \item 9i. User enters incorrect password and selects enter
+                    \begin{enumerate}
+                        \item[9i.1] System informs user that passwords do not match and prompts them to try again and does not proceed
+                    \end{enumerate}
+                \end{itemize}
+        
+            \item Ads Team \#2 \\
+                \newline NA
+    
+            \item Marketing Team \#3 \\
+                \newline NA
+                
+            \item Accounting Team \#4 \\
+                \newline NA
+    
+            \item Environment Canada \#5 \\
+                \newline NA
+    
+            \item National Parks/Hunting Organization (Ontario Federation of Anglers and Hunters) \#6 \\
+                \newline NA
+        \textbf{Global Scenario:}
+        \noindent \textbf{Pre-condition:} User has opened the application and is not logged in
+    
+            \noindent \textbf{Main Success Scenario:}
+            \begin{enumerate}
+                \item User selects create an account from login page
+                \item System provides user with fields to create a username and password
+                \item System asks users to re-enter password for confirmation
+                \item Account has been created and user is logged in on home page
+            \end{enumerate}
+    
+            \noindent \textbf{Secondary Scenarios:}
+            \begin{itemize}
+                \item If the user enters an already-taken username, the system prompts the user to use a different username and offers suggestions.
+                \item If the user misenters information for the password field, the system prompts the user to try again and does not proceed.
+            \end{itemize}
+        \end{enumerate}
+    
+        \item View history \#2
+        
+        \textbf{Precondition:} The user has an account and is logged into the system.
+        \begin{enumerate}[{\bf VP1.}]
+            \item User \#1 \\
+                \textbf{Main Success Scenario:}
+                \begin{enumerate}
+                    \item[1] User navigates to Account drop-down menu
+                    \item[2] User selects "View History"
+                    \item[3] System redirects user to history page
+                    \item[4] System gathers user data
+                    \item[5] System displays user query results chronilogically, displaying most recent queries first
+                    \item[6] System displays ads periodically while user scrolls through history
+                \end{enumerate}
+    
+                \textbf{Secondary Scenarios:}
+                \begin{itemize}
+                    \item 5i. User has no previous queries
+                    \begin{enumerate}
+                        \item[5i.1] System displays message that user has no user history
+                        \item[5i.2] System offers option to redirect to "Ask page" 
+                    \end{enumerate}
+                \end{itemize}
+        
+            \item Ads Team \#2 \\
+                \newline NA
+    
+            \item Marketing Team \#3 \\
+                \newline NA
+                
+            \item Accounting Team \#4 \\
+            \begin{enumerate}
+                \item [6i.1] Accounting team logs how many ads are seen for expense purposes
+            \end{enumerate}
+    
+            \item Environment Canada \#5 \\
+                \newline NA
+    
+            \item National Parks/Hunting Organization (Ontario Federation of Anglers and Hunters) \#6 \\
+                \newline NA
+        \textbf{Global Scenario:}
+        \noindent \textbf{Pre-condition:} User has opened the application and is not logged in.
+    
+            \noindent \textbf{Main Success Scenario:}
+            \begin{enumerate}
+                \item User navigates to view history page
+                \item System displays user history in chronilogical order with periodic ads
+            \end{enumerate}
+    
+            \noindent \textbf{Secondary Scenarios:}
+            \begin{itemize}
+                \item If user has no history, system prompts user that they have no history and offers to redirect them to query page
+            \end{itemize}
+        \end{enumerate}
+    
 
     \item Submitting a photo \#3
 
@@ -1088,15 +1197,14 @@ User is logged in and submits a photo for species identification.
 % \end{itemize}
 
 % Begin Section
-\subsection{Look and Feel Requirements}
-\label{sub:look_and_feel_requirements}
-% Begin SubSection
-
 \subsubsection{Appearance Requirements}
 \label{ssub:appearance_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{LF-A}1. ]
-	\item 
+	\item The user interface must have a consistent colour scheme
+    \newline  \textbf{Rationale:} A consistent colour scheme will be more aesthetically pleasing for the user.
+    \item The user interface shall use Arial font throughout the entire application
+    \newline \textbf{Rationale:} A consistent and legible typeface will allow the user to quickly read and understand all application functions
 \end{enumerate}
 % End SubSubSection
 
@@ -1104,9 +1212,11 @@ User is logged in and submits a photo for species identification.
 \label{ssub:style_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{LF-S}1. ]
-	\item 
+	\item All images (icons, displayed images, all visual assets) used in the application shall be vector-based (SVG or equivalent).
+	\newline \textbf{Rationale:} The usage of vector-based images will allow for high-resolution image scaling and high resolution image display across a multitude of devices.
+    \item All spacing and padding shall follow a 8px grid system.
+    \newline \textbf{Rationale:} The usage of a consistent grid system will make the application visually cohesive and understandable for the user.
 \end{enumerate}
-% End SubSubSection
 
 % End SubSection
 
@@ -1118,7 +1228,10 @@ User is logged in and submits a photo for species identification.
 \label{ssub:ease_of_use_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-EOU}1. ]
-	\item 
+	\item The application shall ensure that users can complete core tasks (log-in, begin query, view account) within 3 clicks or fewer
+	\newline \textbf{Rationale:} Having fewer clicks to navigate to core tasks allows the user to have a faster and more streamlined experience, increasing engagement.
+    \item The application shall support undo/redo functionality for all form screens
+    \newline \textbf{Rationale:} Having undo/redo functionality for all form screens allows the user to make mistakes without wasting much time having to re-enter information.
 \end{enumerate}
 % End SubSubSection
 
@@ -1126,7 +1239,8 @@ User is logged in and submits a photo for species identification.
 \label{ssub:personalization_and_internationalization_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-PI}1. ]
-	\item 
+	\item The application shall adjust date and time functionality (found within view history) according the user's current time zone.
+	\newline \textbf{Rationale:} Having date and time adjusted for the user allows for a more immersive user experience
 \end{enumerate}
 % End SubSubSection
 
@@ -1134,7 +1248,10 @@ User is logged in and submits a photo for species identification.
 \label{ssub:learning_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-L}1. ]
-	\item 
+	\item There shall be a page dedicated to FAQs on app functionality.
+	\newline \textbf{Rationale:} Having a page dedicated to FAQs will allow users to be able to answer questions on application functionality from wihtin the app.
+    \item Upon account creation, there shall be a quick start page displayed, explaining core application mechanics to the user.
+    \newline \textbf{Rationale:} Having a tutorial page displayed on account creation will allow new users to quickly understand the app and its functionalities.
 \end{enumerate}
 % End SubSubSection
 
@@ -1142,7 +1259,8 @@ User is logged in and submits a photo for species identification.
 \label{ssub:understandability_and_politeness_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-UP}1. ]
-	\item 
+	\item All user messages will be written in polite and clear language.
+	\newline \textbf{Rationale:} Having polite language enhances user experiences and gives them a sense of respect from the application.
 \end{enumerate}
 % End SubSubSection
 
@@ -1150,7 +1268,10 @@ User is logged in and submits a photo for species identification.
 \label{ssub:accessibility_requirements}
 % Begin SubSubSection
 \begin{enumerate}[{UH-A}1. ]
-	\item 
+	\item The system shall adhere to Web Content Accessibility Guidlines (WCAG) 2.1
+	\newline \textbf{Rationale:} Adhering to accessibility guidelines allows for users of all ability levels to utilize the application
+    \item All fonts shall be displayed on high-contrast backgrounds.
+    \newline \textbf{Rationale:} High contrast text will allow a variety of users to be able to understand and use the application.
 \end{enumerate}
 % End SubSubSection
 
@@ -1465,10 +1586,12 @@ Include a Division of Labour sheet which indicates the contributions of each tea
 \textbf{Cass Braun}
 \begin{itemize}
     \setlength\itemindent{2em}
-\item Bullet point 1
-\item Bullet point 2
-\item Bullet point 3
+\item Section 1: Scope \& Purpose
+\item Section 2: User Characteristics
+\item Section 4: Business Events 1 \& 2
+\item Section 5: Look and Feel Requirements \% Usability and Humanity Requirements
 \end{itemize}
+\includegraphics[width=0.3\textwidth]{Cass.jpg}
 
 \textbf{Nehad Shikh Trab}
 \begin{itemize}
@@ -1488,7 +1611,7 @@ Include a Division of Labour sheet which indicates the contributions of each tea
 \begin{itemize}
 \setlength\itemindent{2em}
 \item Section 2 - Apportioning of requirements 
-\item Section 4 - BE #7, #8 
+\item Section 4 - BE 7, 8 
 \item Section 6 - Innovative Feature 
 \item Helped with report editing 
 \item Participated in group discussions, brainstorming ideas for our topic, agents, and innovative features. 
