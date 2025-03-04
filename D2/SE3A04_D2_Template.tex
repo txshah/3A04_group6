@@ -10,6 +10,7 @@
 \usepackage{fancyhdr}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
+\usepackage{array}
 \graphicspath{ {./images/} }
 %\usepackage{extarrows}
 %\usepackage{setspace}
@@ -108,15 +109,39 @@ This section should provide an overview of the overall architectural design of y
 \subsection{System Architecture}
 \label{sub:system_architecture}
 % Begin SubSection
-\begin{itemize}
-	\item Identify and explain the overall architecture of your system
-	\item Be sure to clearly state the name of the architecture you used (this is the name of the architectural pattern, not the name of your system)
-	\item Provide the reasoning and justification of the choice of architecture
-	\item Provide a structural architecture diagram showing the relationship among the subsystems (if appropriate)
-	\item List any design alternatives you considered, but eliminated (and explain why you eliminated them)
-\end{itemize}
-% End SubSection
+The Gaim app utilizes a Data-Centric Architecture, specifically the blackboard architecture style for majority of the application. The agents are the independent experts (knowledge sources) that our user can interact. Synchronously, the blackboard, the active data store component, will take this information in, dividing the solution space and providing a non-deterministic answer and controlling the logic of the application.
+\\
+\begin{table}[h]
+Within our system, the components are defined as the following:  
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{| m{5cm} | m{6cm} | m{4cm} |}
+        \hline
+        \textbf{Subsystem} & \textbf{Purpose} & \textbf{Architectural Style} \\
+        \hline
+        Classification Management & Start a search, submit an image, submit text, fill a survey & Blackboard \\
+        \hline
+        Generate a Report & View result, generate report, view score, save & Blackboard \\
+        \hline
+        Account Management & Create an account and log in to an account & Repository \\
+        \hline
+    \end{tabular}
+    % \caption{Subsystems and Their Architectural Styles}
+    % \label{tab:subsystems}
+\end{table}
 
+System relationships are defined in section 3.2 of this document. 
+\\
+
+In addition, three databases are present on the model level of this architecture. An account database for account details, a classification database with background information regarding species classification, and a search/report history database to track user saved searches. 
+\\
+
+Our system architecture incorporates the Repository and Blackboard architecture styles. The blackboard style is chosen because it supports multiple independent knowledge sources that can be independently called and allows for a logical data store to present a final output. This is beneficial as our app involves multiple experts/sources of input that the user can utilize, either exclusively or in tandem, to classify a species. Due to this functionality, Blackboard architecture is ideal for classification management as we can narrow down the solution space based on agents and manage them based on the status of data store logic. Additionally, in terms of further expansion, it will become very easy to incorporate additional experts/knowledge sources, giving the user more potential use cases for the application. Further, for the generated report subsystem, we can extend that functionality by creating agents for “report types” (rather than just one general agent) and have our data store update and logically control the information those report agents display. Moreover, the data and solutions we are presenting to our clients are non-deterministic, making blackboard architecture the ideal choice to ensure we are not relying solely on agent logic and have our data store making active decisions based on a set of facts. 
+\\
+
+Another one of the architectures we chose is the Repository Architecture Style, because it supports direct fetching of deterministic outputs from agents. This architecture style allows for large complex information systems where different components need to access different aspects of information. This is the type of situation the account management subsystem will require, as many users should be able to use the application at the same time. Furthermore, this style allows the account management system to easily access stored user information, making it easy for agents to create new accounts and full credentials for verification. This style supports data integrity, for backups and restores, which is ideal for account security. Overall, this architect style is ideal for an expanding new application, making it easy for us to manage user data, ensure data integrity and potentially expand our new user base. 
+
+% End SubSection
 \subsection{Subsystems}
 \label{sub:subsystems}
 % Begin SubSection
@@ -136,7 +161,7 @@ This section should contain all of your CRC cards.
 	\item Please use the format outlined in tutorial, i.e., 
 	\begin{table}[ht]
 		\centering
-		\begin{tabular}{|p{5cm}|p{5cm}|}
+		\begin{tabular}{|p{7cm}|p{7cm}|}
 		\hline 
 		 \multicolumn{2}{|l|}{\textbf{Class Name:}} \\
 		\hline
@@ -146,6 +171,61 @@ This section should contain all of your CRC cards.
 		\hline
 		\end{tabular}
 	\end{table}
+
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: (Specify Class Name)}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborator:} \\
+		\hline
+		Knows Start an image search & Start an image search \\
+		Knows Start a textual search & Start a textual search \\
+		Knows Start a survey search & Start a survey search \\
+		Knows Photo Scanner & Photo Scanner \\
+		Knows Error/timeout Message & Error/timeout Message \\
+		Knows Current Status & Current Status \\
+		Knows Search History & Search History \\
+		Knows Success message & Success message \\
+		Knows Search details (report) & Search details (report) \\
+		Knows Account Management & Account Management \\
+		\hline
+		\end{tabular}
+	\end{table}
+	
+
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Error/Timeout Message (Boundary)}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		Handles time-out events & Classification Management Data Store \\
+		Handles Image Submission error events & \\
+		Handles Text submission error events & \\
+		Handles Survey submission error events & \\
+		Handles report generation error events & \\
+		\hline
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Current Status (Boundary)}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		Knows Classification Management Data Store & Classification Management Data Store \\
+		Knows User Search Status & \\
+		\hline
+		\end{tabular}
+	\end{table}
+	
 	
 \end{itemize}
 % End Section
