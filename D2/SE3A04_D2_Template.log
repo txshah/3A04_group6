@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  4 MAR 2025 18:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  6 MAR 2025 10:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -272,25 +272,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--141
 
  []
 
-[2] [3] [4] (./SE3A04_D2_Template.aux)
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 237--241
+
+ []
+
+[3]
+<./images/Cass.jpg, id=19, 2072.74374pt x 1350.04375pt>
+File: ./images/Cass.jpg Graphic file (type jpg)
+<use ./images/Cass.jpg>
+Package pdftex.def Info: ./images/Cass.jpg  used on input line 245.
+(pdftex.def)             Requested size: 140.92793pt x 91.77292pt.
+<./images/Nehad.png, id=20, 330.63525pt x 529.37775pt>
+File: ./images/Nehad.png Graphic file (type png)
+<use ./images/Nehad.png>
+Package pdftex.def Info: ./images/Nehad.png  used on input line 252.
+(pdftex.def)             Requested size: 281.85587pt x 451.28986pt.
+ [4 <./images/Cass.jpg>]
+<./images/Savvy.png, id=25, 232.61906pt x 141.52875pt>
+File: ./images/Savvy.png Graphic file (type png)
+<use ./images/Savvy.png>
+Package pdftex.def Info: ./images/Savvy.png  used on input line 259.
+(pdftex.def)             Requested size: 281.85587pt x 171.50298pt.
+ [5 <./images/Nehad.png>]
+<./images/Tvesha.png, id=30, 263.98625pt x 153.57375pt>
+File: ./images/Tvesha.png Graphic file (type png)
+<use ./images/Tvesha.png>
+Package pdftex.def Info: ./images/Tvesha.png  used on input line 271.
+(pdftex.def)             Requested size: 281.85587pt x 163.9778pt.
+<./images/Victor.png, id=31, 3972.61485pt x 1844.74763pt>
+File: ./images/Victor.png Graphic file (type png)
+<use ./images/Victor.png>
+Package pdftex.def Info: ./images/Victor.png  used on input line 278.
+(pdftex.def)             Requested size: 140.92793pt x 65.41722pt.
+ [6 <./images/Savvy.png> <./images/Tvesha.png> <./images/Victor.png (PNG copy)>] (./SE3A04_D2_Template.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3469 strings out of 474116
- 50790 string characters out of 5743682
+ 3514 strings out of 474116
+ 51819 string characters out of 5743682
  1943187 words of memory out of 5000000
- 25801 multiletter control sequences out of 15000+600000
+ 25846 multiletter control sequences out of 15000+600000
  566613 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,11n,65p,1428b,316s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on SE3A04_D2_Template.pdf (4 pages, 102619 bytes).
+Output written on SE3A04_D2_Template.pdf (6 pages, 3155284 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 68 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
