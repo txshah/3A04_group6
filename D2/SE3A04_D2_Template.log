@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  7 MAR 2025 11:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  7 MAR 2025 13:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -172,7 +172,8 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count277
 \l__pdf_internal_box=\box55
-) (./SE3A04_D2_Template.aux)
+)
+No file SE3A04_D2_Template.aux.
 \openout1 = `SE3A04_D2_Template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -189,7 +190,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -263,64 +263,95 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--135
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--138
+/Users/tveshashah/Desktop/Year3/3A04_group6/D2/SE3A04_D2_Template.tex:139: LaTeX Error: There's no line here to end.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 139--141
-
- []
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.139 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 254--258
+
+/Users/tveshashah/Desktop/Year3/3A04_group6/D2/SE3A04_D2_Template.tex:143: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.143 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--146
 
  []
 
-[3]
-<./images/Cass.jpg, id=19, 2072.74374pt x 1350.04375pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--264
+
+ []
+
+<./images/Cass.jpg, id=16, 2072.74374pt x 1350.04375pt>
 File: ./images/Cass.jpg Graphic file (type jpg)
 <use ./images/Cass.jpg>
-Package pdftex.def Info: ./images/Cass.jpg  used on input line 262.
+Package pdftex.def Info: ./images/Cass.jpg  used on input line 268.
 (pdftex.def)             Requested size: 140.92793pt x 91.77292pt.
+[3]
 <./images/Nehad.png, id=20, 330.63525pt x 529.37775pt>
 File: ./images/Nehad.png Graphic file (type png)
 <use ./images/Nehad.png>
-Package pdftex.def Info: ./images/Nehad.png  used on input line 269.
+Package pdftex.def Info: ./images/Nehad.png  used on input line 275.
 (pdftex.def)             Requested size: 281.85587pt x 451.28986pt.
  [4 <./images/Cass.jpg>]
 <./images/Savvy.png, id=25, 232.61906pt x 141.52875pt>
 File: ./images/Savvy.png Graphic file (type png)
 <use ./images/Savvy.png>
-Package pdftex.def Info: ./images/Savvy.png  used on input line 276.
+Package pdftex.def Info: ./images/Savvy.png  used on input line 282.
 (pdftex.def)             Requested size: 281.85587pt x 171.50298pt.
  [5 <./images/Nehad.png>]
 <./images/Tvesha.png, id=30, 263.98625pt x 153.57375pt>
 File: ./images/Tvesha.png Graphic file (type png)
 <use ./images/Tvesha.png>
-Package pdftex.def Info: ./images/Tvesha.png  used on input line 289.
+Package pdftex.def Info: ./images/Tvesha.png  used on input line 295.
 (pdftex.def)             Requested size: 281.85587pt x 163.9778pt.
 <./images/Victor.png, id=31, 3972.61485pt x 1844.74763pt>
 File: ./images/Victor.png Graphic file (type png)
 <use ./images/Victor.png>
-Package pdftex.def Info: ./images/Victor.png  used on input line 296.
+Package pdftex.def Info: ./images/Victor.png  used on input line 302.
 (pdftex.def)             Requested size: 140.92793pt x 65.41722pt.
  [6 <./images/Savvy.png> <./images/Tvesha.png> <./images/Victor.png (PNG copy)>] (./SE3A04_D2_Template.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 3514 strings out of 474116
- 51819 string characters out of 5743682
- 1939187 words of memory out of 5000000
- 25846 multiletter control sequences out of 15000+600000
+ 3511 strings out of 474116
+ 51738 string characters out of 5743682
+ 1940187 words of memory out of 5000000
+ 25845 multiletter control sequences out of 15000+600000
  566613 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,65p,1428b,316s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,11n,65p,1308b,316s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on SE3A04_D2_Template.pdf (6 pages, 3154971 bytes).
+Output written on SE3A04_D2_Template.pdf (6 pages, 3155181 bytes).
 PDF statistics:
  68 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream
