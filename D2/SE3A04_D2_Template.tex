@@ -10,6 +10,8 @@
 \usepackage{fancyhdr}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{float}
 \usepackage{array}
 \graphicspath{ {./images/} }
 %\usepackage{extarrows}
@@ -133,7 +135,7 @@ Within our system, the components are defined as the following:
 System relationships are defined in section 3.2 of this document. 
 \\
 
-In addition, three databases are present on the model level of this architecture. An account database for account details, a classification database with background information regarding species classification, and a report generation database to track user-saved searches. 
+Three databases are present on the model level of this architecture. An account database for account details, a classification database with background information regarding species classification, and a report generation database to track user-saved searches. 
 \\
 
 Our system architecture incorporates the Repository and Blackboard architecture styles. The blackboard style is chosen because it supports multiple independent knowledge sources that can be independently called and allows for a logical data store to present a final output. This is beneficial as our app involves multiple experts/sources of input that the user can utilize, either exclusively or in tandem, to classify a species. Due to this functionality, Blackboard architecture is ideal for classification management as we can narrow down the solution space based on agents and manage them based on the status of data store logic. Additionally, in terms of further expansion, it will become very easy to incorporate additional experts/knowledge sources, giving the user more potential use cases for the application.
@@ -158,25 +160,7 @@ The overall architecture style chosen for the interaction between these subsyste
 \section{Class Responsibility Collaboration (CRC) Cards}
 \label{sec:class_responsibility_collaboration_crc_cards}
 % Begin Section
-This section should contain all of your CRC cards.
-
-\begin{itemize}
-	\item Provide a CRC Card for each identified class
-	\item Please use the format outlined in tutorial, i.e., 
-	\begin{table}[ht]
-		\centering
-		\begin{tabular}{|p{7cm}|p{7cm}|}
-		\hline 
-		 \multicolumn{2}{|l|}{\textbf{Class Name:}} \\
-		\hline
-		\textbf{Responsibility:} & \textbf{Collaborators:} \\
-		\hline
-		\vspace{1in} & \\
-		\hline
-		\end{tabular}
-	\end{table}
-
-	\begin{table}[ht]
+	\begin{table}[H]
 		\centering
 		\begin{tabular}{|p{7cm}|p{7cm}|}
 		\hline 
@@ -202,9 +186,8 @@ This section should contain all of your CRC cards.
 		Image Agent \\
 		\hline
 		\end{tabular}
-	\end{table}	
-	
-	\begin{table}[ht]
+	\end{table}		
+	\begin{table}[H]
 		\centering
 		\begin{tabular}{|p{7cm}|p{7cm}|}
 		\hline 
@@ -217,8 +200,7 @@ This section should contain all of your CRC cards.
 		\hline
 		\end{tabular}
 	\end{table}
-	
-	\begin{table}[ht]
+	\begin{table}[H]
 		\centering
 		\begin{tabular}{|p{7cm}|p{7cm}|}
 		\hline 
@@ -231,8 +213,7 @@ This section should contain all of your CRC cards.
 		\hline
 		\end{tabular}
 	\end{table}
-	
-	\begin{table}[ht]
+	\begin{table}[H]
 		\centering
 		\begin{tabular}{|p{7cm}|p{7cm}|}
 		\hline 
@@ -245,11 +226,8 @@ This section should contain all of your CRC cards.
 		\hline
 		\end{tabular}
 	\end{table}
-	
-	
-	
-\end{itemize}
 % End Section
+\FloatBarrier
 
 \appendix
 \section{Division of Labour}
@@ -287,7 +265,7 @@ Include a Division of Labour sheet which indicates the contributions of each tea
     \item Section 4 - CRC card Forum 
     \item Section 4 - CRC card Start Image Search (Boundary)
     \item Section 4 - CRC card Start Freeform Search (Boundary)
-    \item \item Section 4 - CRC card Start Survey Search (Boundary) 
+    \item Section 4 - CRC card Start Survey Search (Boundary) 
     \item Managed github set up and assisted with formatting
 \end{itemize} 
 \includegraphics[width=0.6\textwidth]{Tvesha.png}
