@@ -176,55 +176,72 @@ This section should contain all of your CRC cards.
 		\centering
 		\begin{tabular}{|p{7cm}|p{7cm}|}
 		\hline 
-		 \multicolumn{2}{|l|}{\textbf{Class Name: (Specify Class Name)}} \\
-		\hline
-		\textbf{Responsibility:} & \textbf{Collaborator:} \\
-		\hline
-		Knows Start an image search & Start an image search \\
-		Knows Start a textual search & Start a textual search \\
-		Knows Start a survey search & Start a survey search \\
-		Knows Photo Scanner & Photo Scanner \\
-		Knows Error/timeout Message & Error/timeout Message \\
-		Knows Current Status & Current Status \\
-		Knows Search History & Search History \\
-		Knows Success message & Success message \\
-		Knows Search details (report) & Search details (report) \\
-		Knows Account Management & Account Management \\
-		\hline
-		\end{tabular}
-	\end{table}
-	
-
-	\begin{table}[ht]
-		\centering
-		\begin{tabular}{|p{7cm}|p{7cm}|}
-		\hline 
-		 \multicolumn{2}{|l|}{\textbf{Class Name: Error/Timeout Message (Boundary)}} \\
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Forum (Controller)}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\
 		\hline
-		Handles time-out events & Classification Management Data Store \\
-		Handles Image Submission error events & \\
-		Handles Text submission error events & \\
-		Handles Survey submission error events & \\
-		Handles report generation error events & \\
+		Knows Free Form Search \newline
+		Knows Survey Search \newline
+		Knows Image Search \newline
+		Knows Success Message \newline
+		Knows Failure Message \newline
+		Knows Free Form Agent \newline
+		Knows Survey Agent \newline
+		Knows Image Agent & 		
+		Start Free Form Search \newline
+		Start Image Search \newline
+		Start Survey Search \newline
+		Success Message \newline
+		Failure Message \newline
+		Free Form Agent \newline
+		Survey Agent \newline
+		Image Agent \\
 		\hline
 		\end{tabular}
-	\end{table}
+	\end{table}	
 	
 	\begin{table}[ht]
 		\centering
 		\begin{tabular}{|p{7cm}|p{7cm}|}
 		\hline 
-		 \multicolumn{2}{|l|}{\textbf{Class Name: Current Status (Boundary)}} \\
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Start Image Search (Boundary)}} \\
 		\hline
 		\textbf{Responsibility:} & \textbf{Collaborators:} \\
 		\hline
-		Knows Classification Management Data Store & Classification Management Data Store \\
-		Knows User Search Status & \\
+		Knows Forum \newline
+		Handles image submission events & Forum \\
 		\hline
 		\end{tabular}
 	\end{table}
+	
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Start Freeform Search (Boundary)}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		Knows Forum \newline
+		Handles freeform test submission events & Forum \\
+		\hline
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Start Survey Search (Boundary)}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		Knows Forum \newline
+		Handles survey submission events & Forum \\
+		\hline
+		\end{tabular}
+	\end{table}
+	
 	
 	
 \end{itemize}
@@ -263,9 +280,10 @@ Include a Division of Labour sheet which indicates the contributions of each tea
     \setlength\itemindent{2em}
     \item Section 3 -  Identify and explain the overall architecture of your system  
     \item Section 3 - Provide the reasoning and justification of the choice of architecture 
-    \item Section 4 - CRC card Blackboard DataStore
-    \item Section 4 - CRC card Error/Timeout Message (Boundary)
-    \item Section 4 - CRC card Current Status (Boundary)
+    \item Section 4 - CRC card Forum 
+    \item Section 4 - CRC card Start Image Search (Boundary)
+    \item Section 4 - CRC card Start Freeform Search (Boundary)
+    \item \item Section 4 - CRC card Start Survey Search (Boundary) 
     \item Managed github set up and assisted with formatting
 \end{itemize} 
 \includegraphics[width=0.6\textwidth]{Tvesha.png}
