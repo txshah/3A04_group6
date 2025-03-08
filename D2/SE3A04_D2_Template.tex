@@ -78,20 +78,32 @@ This section should provide an brief overview of the entire document.
 \subsection{Purpose}
 \label{sub:purpose}
 % Begin SubSection
-State the purpose and intended audience for the document.
+This document provides a high-level overview of the Gaim wildlife identification system architecture, including design considerations for the system and its subsystems. The document details architectural choices, subsystem interactions, and class-level responsibilities within the system.\newline
+
+\noindent{The intended audience for this document includes internal stakeholders such as software developers, system architects, project managers, domain experts in wildlife identification, and potential investors interested in the technological aspects of Gaim. It is recommended that Deliverable 1 be reviewed prior to reading this document for a foundational understanding of the system requirements.}
 % End SubSection
 
 \subsection{System Description}
 \label{sub:system_description}
 % Begin SubSection
-Give a brief description of the system. This could be a paragraph or two to give some context to this document.
+The system utilizes a Model-View-Controller (MVC) architecture combined with Repository and Blackboard architectural styles to efficiently process data from various knowledge sources and provide accurate species identification.\newline
+
+\noindent{The system is designed to facilitate interactions between different subsystems with some subsystems incorporating blackboard architecture, while other incorporate repository architectural style.}
+
 
 % End SubSection
 
 \subsection{Overview}
 \label{sub:overview}
 % Begin SubSection
-Describe what the rest of the document contains and explain how the document is organised (e.g. "In Section 2 we discuss...in Section 3...").
+The remainder of this document is structured as follows:
+
+\begin{itemize}
+    \item \textbf{Section 2:} Provides the Analysis Class Diagram for Gaim, illustrating the relationships between key system components.
+    \item \textbf{Section 3:} Discusses the overall architectural design of the system, including the rationale behind the chosen architectural styles, the division of the system into subsystems, and their respective functionalities.
+    \item \textbf{Section 4:} Presents Class Responsibility Collaboration (CRC) cards, detailing the responsibilities of major classes and their interactions.
+\end{itemize}
+
 
 % End SubSection
 
