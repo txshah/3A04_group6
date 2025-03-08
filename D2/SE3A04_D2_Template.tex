@@ -143,6 +143,7 @@ Our system architecture incorporates the Repository and Blackboard architecture 
 
 Another one of the architectures we chose is the Repository Architecture Style as it supports the direct fetching of deterministic outputs from agent requests. This architectural style supports large complex information systems where different components need to access various areas of information. This is the type of access the account management subsystem and report generation system will require, as many users should be able to use the application at the same time and access their specific reports and data. Additionally, this style allows the account management system to easily access stored user information, making it easy for agents to create new accounts and pull credentials for verification. This style also supports data integrity, for backups and restores, which is ideal for account security. Furthermore, for the generated report subsystem, the repository style allows direct access to information from our report generation database and enables the subsystem to display the requested report based on user (agent) input. This architectural style is ideal for expanding new applications, making it easy for us to manage user data, ensure data integrity, and potentially expand the user base.
 \\
+\includegraphics[width=0.6\textwidth]{architecture.svg}
 
 The overall architecture style chosen for the interaction between these subsystems is the Model View Controller. This architecture style is used because it supports the connection between the user view (presentation) and the data model (backend component) through a controller component that manages input situations and communicates with the appropriate subsystem/database functionality. We can also support frequent data changes, which is essential in the hunting sector which has a changing landscape based on seasonality and new regulations. Further, it is easy to update current functionalities and logic in one component without changing the entire system. This can be beneficial for a newer product because of frequent updates in the user interface or changes to classification logic.  
 \\
@@ -226,6 +227,87 @@ The overall architecture style chosen for the interaction between these subsyste
 		\hline
 		\end{tabular}
 	\end{table}
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Generate Report (Boundary)}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		Knows Report Generator \\
+		Knows Report Database & 		
+		Forum \\
+		Report Generator \\
+		Report Database \\
+		\hline
+		\end{tabular}
+	\end{table} 
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Report Generator (Controller)}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		Knows Forum \\
+		Knows Report Database & 		
+		Forum \\
+		Report Database \\
+		View Reports \\
+		\hline
+		\end{tabular}
+	\end{table} 	
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Report Database (Entity)}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		Knows Report Generator \\
+		Knows View Reports & 		
+		Report Generator \\
+		View Reports \\
+		\hline
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: View Reports (Boundary)}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		Knows Report Database \\
+		Knows Report Generator & 		
+		Report Database \\
+		Report Generator \\
+		\hline
+		\end{tabular}
+	\end{table} 	
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Save Report (Boundary)}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		Knows Report Generator & 		
+		Report Generator \\
+		Report Database \\
+		\hline
+		\end{tabular}
+	\end{table}
+	
 % End Section
 \FloatBarrier
 
