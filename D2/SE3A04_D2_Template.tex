@@ -175,6 +175,70 @@ The overall architecture style chosen for the interaction between these subsyste
 \section{Class Responsibility Collaboration (CRC) Cards}
 \label{sec:class_responsibility_collaboration_crc_cards}
 % Begin Section
+
+	\begin{table}[H]
+	    \centering
+	    \begin{tabular}{|p{7cm}|p{7cm}|}
+	    \hline 
+	     \multicolumn{2}{|l|}{\textbf{Class Name: Success Message (Forum - Boundary)}} \\
+	    \hline
+	    \textbf{Responsibility:} & \textbf{Collaborators:} \\
+	    \hline
+	    Knows Forum \newline
+	    Displays success message to user upon successful operation \newline
+	    Provides feedback on completed processes & 		
+	    Forum \\
+	    \hline
+	    \end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+	    \centering
+	    \begin{tabular}{|p{7cm}|p{7cm}|}
+	    \hline 
+	     \multicolumn{2}{|l|}{\textbf{Class Name: Failure Message (Forum - Boundary)}} \\
+	    \hline
+	    \textbf{Responsibility:} & \textbf{Collaborators:} \\
+	    \hline
+	    Knows Forum \newline
+	    Displays error message when a process fails \newline
+	    Provides guidance on next steps for users & 		
+	    Forum \\
+	    \hline
+	    \end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+	    \centering
+	    \begin{tabular}{|p{7cm}|p{7cm}|}
+	    \hline 
+	     \multicolumn{2}{|l|}{\textbf{Class Name: Login Error (Account - Boundary)}} \\
+	    \hline
+	    \textbf{Responsibility:} & \textbf{Collaborators:} \\
+	    \hline
+	    Knows Account Manager \newline
+	    Displays login failure message \newline
+	    Provides options to reset password or re-enter credentials & 		
+	    Account Manager \\
+	    \hline
+	    \end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+	    \centering
+	    \begin{tabular}{|p{7cm}|p{7cm}|}
+	    \hline 
+	     \multicolumn{2}{|l|}{\textbf{Class Name: Login Success (Account - Boundary)}} \\
+	    \hline
+	    \textbf{Responsibility:} & \textbf{Collaborators:} \\
+	    \hline
+	    Knows Account Manager \newline
+	    Confirms successful login and redirects user to dashboard \newline
+	    Provides session authentication for continued use & 		
+	    Account Manager \\
+	    \hline
+	    \end{tabular}
+	\end{table}
 	\begin{table}[H]
 		\centering
 		\begin{tabular}{|p{7cm}|p{7cm}|}
