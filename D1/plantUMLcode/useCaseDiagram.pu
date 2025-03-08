@@ -1,46 +1,41 @@
 @startuml
 actor "App User" as User
-actor "Authenticator" as Auth
 actor "Third-Party API" as Expert1
-actor "Internal Algorithm" as Expert2
-actor "Survey Processor" as Expert3
+actor "Authenticator" as Auth
 
 rectangle "Species Classifier System" {
-    User --> (Login)
-    (Login) ..> (Authentication) : <<includes>>
-    (Authentication) ..> (Deny User) : <<extends>>
-    (Authentication) ..> (Accept User) : <<extends>>
-    Auth ..> (Authentication)
+    User --> (Login to App)
+    (Login to App) ..> (Authenticate User) : <<includes>>
+    (Authenticate User) ..> (Deny User) : <<extends>>
+    (Authenticate User) ..> (Accept User) : <<extends>>
+    Auth ..> (Authenticate User)
 
     User --> (Create Account)
     (Create Account) ..> (Enter User Information) : <<includes>>
-    (Enter User Information) ..> (Account Created) : <<includes>>
-    (Account Created) ..> (Login): <<extends>>
+    (Enter User Information) ..> (Display Account Created) : <<includes>>
+    (Display Account Created) ..> (Login to Account): <<extends>>
 
-    (Accept User) ..> (Directed to Home Page) : <<includes>>  
+    (Accept User) ..> (View Home Page) : <<includes>>  
 
-    (Directed to Home Page) ..> (Classification Request): <<includes>>  
-    (Classification Request) ..> (Photo Input) : <<includes>>
-    (Classification Request) ..> (Text Description) : <<includes>>
-    (Classification Request) ..> (Survey) : <<includes>>
+    User --> (Select Classification Request)
+    (View Home Page) ..> (Select Classification Request): <<includes>>  
+    (Select Classification Request) ..> (Start Image Search) : <<includes>>
+    (Select Classification Request) ..> (Start Freeform Search) : <<includes>>
+    (Select Classification Request) ..> (Start Survey Search) : <<includes>>
 
-    (Photo Input) ..> (Expert 1 Processing): <<includes>>
-    (Text Description) ..>  (Expert 2 Processing): <<includes>>
-    (Survey) ..>  (Expert 3 Processing): <<includes>>
+     User --> (View Saved Results)
+    (View Home Page) ..> (View Saved Results): <<includes>> 
 
-    Expert1 --> (Expert 1 Processing)
-    Expert2 -->(Expert 2 Processing)
-    Expert3 -->  (Expert 3 Processing)
+    (Start Image Search) ..> (Image Processing): <<includes>>
+    (Image Processing) ..> (Decision Forum Processing) <<includes>>
+    (Start Freeform Search) ..>  (Decision Forum Processing): <<includes>>
+    (Start Survey Search) ..>  (Decision Forum Processing): <<includes>>
 
-    (Expert 1 Processing) ..>  (Conflict Resolution Forum): <<includes>>
-    (Expert 2 Processing) ..>  (Conflict Resolution Forum): <<includes>>
-    (Expert 3 Processing) ..>  (Conflict Resolution Forum): <<includes>>
-
-    (Conflict Resolution Forum) ..>  (Database Storage): <<extends>>
-    (Database Storage) ..>  (Display Classification Results): <<includes>>
-    (Display Classification Results) ..> (Generate Report) : <<includes>>
+    Expert1 --> (Image Processing)
+    (Decision Forum Processing) ..>  (Display Results): <<extends>>
+    (Display Results) ..> (Generate Report) : <<extends>>
 
     (Generate Report) ..> (Save Results to Account) : <<extends>>
-    (Save Results to Account) ..> (Database Storage) : <<includes>>
+    (Save Results to Account) ..> (View Saved Results) : <<includes>>
 }
 @enduml
