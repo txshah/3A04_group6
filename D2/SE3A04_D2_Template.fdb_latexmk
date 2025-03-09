@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1741547917.25666 "/home/braunc8/school/winter2025/3A04/3A04_group6/D2/SE3A04_D2_Template.tex" "SE3A04_D2_Template.pdf" "SE3A04_D2_Template" 1741547918.81505 0
+["pdflatex"] 1741548359.09239 "/home/braunc8/school/winter2025/3A04/3A04_group6/D2/SE3A04_D2_Template.tex" "SE3A04_D2_Template.pdf" "SE3A04_D2_Template" 1741548360.7335 0
   "/etc/texmf/web2c/texmf.cnf" 1738600641.70728 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/braunc8/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk" 1739745130.39192 11524 ccc1eec3bc81858f6cac3e6a2bd0b2bf ""
-  "/home/braunc8/school/winter2025/3A04/3A04_group6/D2/SE3A04_D2_Template.tex" 1741547916.89391 20436 7c75fc8d9700985d8903bdb9991459fc ""
+  "/home/braunc8/school/winter2025/3A04/3A04_group6/D2/SE3A04_D2_Template.tex" 1741548357.70427 20751 f28d4a10fe7e1823ea7dc5a19346ddc2 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -97,8 +97,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1739745037.47267 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1739745112 6830920 0e90effba570673fe24d94be8cc3769e ""
-  "SE3A04_D2_Template.aux" 1741547918.71425 2051 f453da088fde2c5eb8a5770a755a9880 "pdflatex"
-  "SE3A04_D2_Template.tex" 1741547916.89391 20436 7c75fc8d9700985d8903bdb9991459fc ""
+  "SE3A04_D2_Template.aux" 1741548360.61837 2051 f453da088fde2c5eb8a5770a755a9880 "pdflatex"
+  "SE3A04_D2_Template.tex" 1741548357.70427 20751 f28d4a10fe7e1823ea7dc5a19346ddc2 ""
   "images/Cass.jpg" 1741537476.02074 1226218 01786fd1734e6bc5524d12dac8872633 ""
   "images/Nehad.png" 1741537476.02074 10749 978e9c9ab16fe6e90a9c6fccee0b1847 ""
   "images/Savvy.png" 1741537476.02074 3693 8b3091448007da606ab839fb280abc13 ""
