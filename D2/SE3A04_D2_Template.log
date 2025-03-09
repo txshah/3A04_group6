@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  9 MAR 2025 19:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  9 MAR 2025 19:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -441,37 +441,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--170
  []
 
 [5 <./images/architecture.png>] [6] [7] [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 564--568
+Underfull \hbox (badness 10000) in paragraph at lines 563--567
 
  []
 
 <./images/Cass.jpg, id=46, 2072.74374pt x 1350.04375pt>
 File: ./images/Cass.jpg Graphic file (type jpg)
 <use ./images/Cass.jpg>
-Package pdftex.def Info: ./images/Cass.jpg  used on input line 576.
+Package pdftex.def Info: ./images/Cass.jpg  used on input line 575.
 (pdftex.def)             Requested size: 281.85587pt x 183.56644pt.
 <./images/Nehad.png, id=47, 330.63525pt x 529.37775pt>
 File: ./images/Nehad.png Graphic file (type png)
 <use ./images/Nehad.png>
-Package pdftex.def Info: ./images/Nehad.png  used on input line 589.
+Package pdftex.def Info: ./images/Nehad.png  used on input line 588.
 (pdftex.def)             Requested size: 281.85587pt x 451.28986pt.
 [10 <./images/Cass.jpg>]
 <./images/Savvy.png, id=51, 232.61906pt x 141.52875pt>
 File: ./images/Savvy.png Graphic file (type png)
 <use ./images/Savvy.png>
-Package pdftex.def Info: ./images/Savvy.png  used on input line 599.
+Package pdftex.def Info: ./images/Savvy.png  used on input line 598.
 (pdftex.def)             Requested size: 281.85587pt x 171.50298pt.
  [11 <./images/Nehad.png>]
 <./images/Tvesha.png, id=56, 263.98625pt x 153.57375pt>
 File: ./images/Tvesha.png Graphic file (type png)
 <use ./images/Tvesha.png>
-Package pdftex.def Info: ./images/Tvesha.png  used on input line 614.
+Package pdftex.def Info: ./images/Tvesha.png  used on input line 613.
 (pdftex.def)             Requested size: 281.85587pt x 163.9778pt.
  [12 <./images/Savvy.png> <./images/Tvesha.png>]
 <./images/Victor.png, id=62, 3972.61485pt x 1844.74763pt>
 File: ./images/Victor.png Graphic file (type png)
 <use ./images/Victor.png>
-Package pdftex.def Info: ./images/Victor.png  used on input line 627.
+Package pdftex.def Info: ./images/Victor.png  used on input line 626.
 (pdftex.def)             Requested size: 140.92793pt x 65.41722pt.
  [13 <./images/Victor.png (PNG copy)>] (./SE3A04_D2_Template.aux)
  ***********
