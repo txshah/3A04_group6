@@ -160,8 +160,14 @@ The overall architecture style chosen for the interaction between these subsyste
 % End SubSection
 \subsection{Subsystems}
 \label{sub:subsystems}
+Provide a list of your subsystems, with a brief description of each. Be sure to document its purpose and relationship to other subsystems.
 % Begin SubSection
- Provide a list of your subsystems, with a brief description of each. Be sure to document its purpose and relationship to other subsystems.
+\subsubsection{Classification Management}
+Description here
+\subsubsection{Generate Report}
+Description here
+\subsubsection{Account Management}
+Description here
 
 % End SubSection
 
@@ -379,6 +385,94 @@ The overall architecture style chosen for the interaction between these subsyste
 		Report Database \\
 		\hline
 		\end{tabular}
+	\end{table}
+
+	\begin{table}[H]
+	    \centering
+	    \begin{tabular}{|p{7cm}|p{7cm}|}
+	    \hline 
+	     \multicolumn{2}{|l|}{\textbf{Class Name: Account Manager (Controller)}} \\
+	    \hline
+	    \textbf{Responsibility:} & \textbf{Collaborators:} \\
+	    \hline
+		Knows Login \newline
+		Knows Reset Password \newline
+		Knows Create Account \newline
+		Knows Login Error \newline
+		Knows Login Success \newline
+		Knows Forum \newline
+		Coordinates account interactions from user & 		
+	    Login \newline
+		Reset Password \newline
+		Create Account \newline
+		Login Error \newline
+		Login Success \newline
+		Forum \\
+	    \hline
+	    \end{tabular}
+	\end{table}
+
+	\begin{table}[H]
+	    \centering
+	    \begin{tabular}{|p{7cm}|p{7cm}|}
+	    \hline 
+	     \multicolumn{2}{|l|}{\textbf{Class Name: Account Database (Entity)}} \\
+	    \hline
+	    \textbf{Responsibility:} & \textbf{Collaborators:} \\
+	    \hline
+	    Knows Account Manager \newline
+		Keeps record of all accounts & 		
+	    Account Manager \\
+	    \hline
+	    \end{tabular}
+	\end{table}
+
+	\begin{table}[H]
+	    \centering
+	    \begin{tabular}{|p{7cm}|p{7cm}|}
+	    \hline 
+	     \multicolumn{2}{|l|}{\textbf{Class Name: Login (Boundary)}} \\
+	    \hline
+	    \textbf{Responsibility:} & \textbf{Collaborators:} \\
+	    \hline
+	    Knows Account Manager \newline
+		Displays Login Form & 
+		Account Manager \\
+	    \hline
+	    \end{tabular}
+	\end{table}
+
+	\begin{table}[H]
+	    \centering
+	    \begin{tabular}{|p{7cm}|p{7cm}|}
+	    \hline 
+	     \multicolumn{2}{|l|}{\textbf{Class Name: Reset Password (Boundary)}} \\
+	    \hline
+	    \textbf{Responsibility:} & \textbf{Collaborators:} \\
+	    \hline
+	    Knows Account Manager \newline
+		Displays reset password form \newline 
+		Relays new password information to Account Manager & 		
+	    Account Manager \\
+	    \hline
+	    \end{tabular}
+	\end{table}
+
+	\begin{table}[H]
+	    \centering
+	    \begin{tabular}{|p{7cm}|p{7cm}|}
+	    \hline 
+	     \multicolumn{2}{|l|}{\textbf{Class Name: Create Account (Boundary)}} \\
+	    \hline
+	    \textbf{Responsibility:} & \textbf{Collaborators:} \\
+	    \hline
+		Knows Account Manager \newline
+		Displays create account screen \newline
+		Runs process to create new account \newline 
+		Relays new account information to Account Manager & 		
+	    Account Manager \\
+	    \hline
+	    \end{tabular}
 	\end{table}
 	
 % End Section
