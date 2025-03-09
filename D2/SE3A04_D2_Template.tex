@@ -109,7 +109,7 @@ The remainder of this document is structured as follows:
 \section{Analysis Class Diagram}
 \label{sec:analysis_class_diagram}
 % Begin Section
-This section should provide an analysis class diagram for your application.
+\includegraphics[width=1\textwidth]{ACD.png}
 % End Section
 
 
@@ -474,6 +474,50 @@ This subsystem manages all aspects of account creation and account interaction i
 	    \hline
 	    \end{tabular}
 	\end{table}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Survey Agent (Controller)}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		Knows Image Information Source & Forum \\
+        Provides logic for determining animal based on survey input  & Description Information Source \\
+        
+		\end{tabular}
+	\end{table}
+
+    	\begin{table}[H]
+		\centering
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Free Form Agent (Controller)}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		Knows Image Information Source & Forum \\
+        Provides logic for determining animal based on free form input & Description Information Source \\
+
+		\hline
+		\end{tabular}
+	\end{table}
+
+
+    	\begin{table}[H]
+		\centering
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name: Image Agent (Controller)}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		Knows Description Information Source  &  Forum		\\
+        Provides logic for determining animal based on image input & Image Information Source \\
+		\hline
+		\end{tabular}
+	\end{table}
 	
 % End Section
 \FloatBarrier
@@ -511,8 +555,11 @@ Include a Division of Labour sheet which indicates the contributions of each tea
 
 \textbf{Savvy Liu}
 \begin{itemize}
-\setlength\itemindent{2em}
-\item Add contributions 
+    \setlength\itemindent{2em}
+    \item Section 2 - Create and refine analysis class diagram
+    \item Section 4 - CRC card Free Form Agent
+    \item Section 4 - CRC card Image Agent
+    \item Section 4 - CRC card Search Agent
 \end{itemize} 
 \includegraphics[width=0.6\textwidth]{Savvy.png}
 
