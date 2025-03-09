@@ -466,15 +466,16 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
     
             \item National Parks/Hunting Organization (Ontario Federation of Anglers and Hunters) \#6 \\
                 \newline NA
-        \textbf{Global Scenario:}
+            \end{enumerate}
+            \textbf{Global Scenario:}
         \noindent \textbf{Pre-condition:} User has opened the application and is not logged in
     
             \noindent \textbf{Main Success Scenario:}
             \begin{enumerate}
-                \item User selects create an account from login page
-                \item System provides user with fields to create a username and password
-                \item System asks users to re-enter password for confirmation
-                \item Account has been created and user is logged in on home page
+                \item[1] User selects create an account from login page
+                \item[2] System provides user with fields to create a username and password
+                \item[3] System asks users to re-enter password for confirmation
+                \item[4] Account has been created and user is logged in on home page
             \end{enumerate}
     
             \noindent \textbf{Secondary Scenarios:}
@@ -482,7 +483,6 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
                 \item If the user enters an already-taken username, the system prompts the user to use a different username and offers suggestions.
                 \item If the user misenters information for the password field, the system prompts the user to try again and does not proceed.
             \end{itemize}
-        \end{enumerate}
     
         \item View history \#2
         
@@ -524,20 +524,20 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
     
             \item National Parks/Hunting Organization (Ontario Federation of Anglers and Hunters) \#6 \\
                 \newline NA
+        \end{enumerate}
         \textbf{Global Scenario:}
         \noindent \textbf{Pre-condition:} User has opened the application and is not logged in.
     
             \noindent \textbf{Main Success Scenario:}
             \begin{enumerate}
-                \item User navigates to view history page
-                \item System displays user history in chronilogical order with periodic ads
+                \item[1] User navigates to view history page
+                \item[2] System displays user history in chronilogical order with periodic ads
             \end{enumerate}
     
             \noindent \textbf{Secondary Scenarios:}
             \begin{itemize}
                 \item If user has no history, system prompts user that they have no history and offers to redirect them to query page
             \end{itemize}
-        \end{enumerate}
     
 
         \item Submitting a photo \#3
@@ -622,19 +622,19 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
             \item[8iii.2] If the species is considered *unhuntable* due to conservation laws, the system notifies the user.
             \item[8iii.3] System provides relevant legal hunting information based on the identified species.
         \end{enumerate}
-
+    \end{enumerate}
 \textbf{Global Scenario:}
 \noindent \textbf{Pre-condition:}  
     User is logged in and submits a photo for species identification.
 
 \noindent \textbf{Main Success Scenario:}
 \begin{enumerate}
-    \item User uploads or captures an image.
-    \item System processes the image using AI models.
-    \item System submits results to the forum.
-    \item Forum consolidates data from all identification experts.
-    \item Final species prediction is displayed to the user.
-    \item User can choose to submit the identification result to the community.
+    \item[1] User uploads or captures an image.
+    \item[2] System processes the image using AI models.
+    \item[3] System submits results to the forum.
+    \item[4] Forum consolidates data from all identification experts.
+    \item[5] Final species prediction is displayed to the user.
+    \item[6] User can choose to submit the identification result to the community.
 \end{enumerate}
 
 \noindent \textbf{Secondary Scenarios:}
@@ -644,7 +644,6 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
     \item If the Image Recognition Expert fails, the user is advised to use another input method.
     \item If some experts fail to respond, the forum provides an answer based on available data.
 \end{itemize}
-\end{enumerate}
 
 \item Submitting a survey \#4
 
@@ -737,14 +736,14 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 
 \textbf{Main Success Scenario:}
 \begin{enumerate}
-    \item User selects survey-based species identification.
-    \item System presents a series of questions using the Decision-Tree Expert.
-    \item User completes the survey.
-    \item System generates a species prediction and accuracy score.
-    \item System submits results to the forum.
-    \item Forum consolidates data from all identification experts.
-    \item Final species prediction is displayed to the user.
-    \item User can choose to submit the identification result to the community.
+    \item[1] User selects survey-based species identification.
+    \item[2] System presents a series of questions using the Decision-Tree Expert.
+    \item[3] User completes the survey.
+    \item[4] System generates a species prediction and accuracy score.
+    \item[5] System submits results to the forum.
+    \item[6] Forum consolidates data from all identification experts.
+    \item[7] Final species prediction is displayed to the user.
+    \item[8] User can choose to submit the identification result to the community.
 \end{enumerate}
 
 \textbf{Secondary Scenarios:}
@@ -815,11 +814,11 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 
 \textbf{Main Success Scenario:}
 \begin{enumerate}
-    \item User navigates to the login page.
-    \item User inputs their credentials.
-    \item System validates the credentials.
-    \item If credentials match, access is granted, and the user is redirected to their dashboard.
-    \item If credentials do not match, the system displays an error message and allows the user to retry or reset the password.
+    \item[1] User navigates to the login page.
+    \item[2] User inputs their credentials.
+    \item[3] System validates the credentials.
+    \item[4] If credentials match, access is granted, and the user is redirected to their dashboard.
+    \item[5] If credentials do not match, the system displays an error message and allows the user to retry or reset the password.
 \end{enumerate}
 
 \textbf{Secondary Scenarios:}
@@ -891,10 +890,10 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
 
 \textbf{Main Success Scenario:}
 \begin{enumerate}
-    \item[(a)] User selects "View Report" from the dashboard.
-    \item[(b)] The system retrieves and displays the report information, including the animal's details such as species, habitat, and diet.
-    \item[(c)] User reviews the report.
-    \item[(d)] User may choose to share the report with the community.
+    \item[1] User selects "View Report" from the dashboard.
+    \item[2] The system retrieves and displays the report information, including the animal's details such as species, habitat, and diet.
+    \item[3] User reviews the report.
+    \item[4] User may choose to share the report with the community.
 \end{enumerate}
 
 \textbf{Secondary Scenarios:}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.16)  9 MAR 2025 16:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.16)  9 MAR 2025 16:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -583,7 +583,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 464--466
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 467--471
+Underfull \hbox (badness 10000) in paragraph at lines 467--469
 
  []
 
@@ -608,7 +608,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 522--524
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 525--529
+Underfull \hbox (badness 10000) in paragraph at lines 525--527
 
  []
 
@@ -632,186 +632,188 @@ Underfull \hbox (badness 10000) in paragraph at lines 610--613
 
  []
 
-
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 618--621
 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 654--655
+
+Underfull \hbox (badness 10000) in paragraph at lines 653--654
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 703--705
+Underfull \hbox (badness 10000) in paragraph at lines 702--704
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--712
+Underfull \hbox (badness 10000) in paragraph at lines 709--711
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 716--718
+Underfull \hbox (badness 10000) in paragraph at lines 715--717
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 719--721
+Underfull \hbox (badness 10000) in paragraph at lines 718--720
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 726--728
+Underfull \hbox (badness 10000) in paragraph at lines 725--727
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 764--765
+Underfull \hbox (badness 10000) in paragraph at lines 763--764
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 784--786
+Underfull \hbox (badness 10000) in paragraph at lines 783--785
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 789--791
+Underfull \hbox (badness 10000) in paragraph at lines 788--790
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 794--796
+Underfull \hbox (badness 10000) in paragraph at lines 793--795
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 801--803
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 806--808
+Underfull \hbox (badness 10000) in paragraph at lines 800--802
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 836--837
+Underfull \hbox (badness 10000) in paragraph at lines 805--807
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 835--836
 
  []
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP2. on input line 863.
+             The label is: \bf VP2. on input line 862.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP3. on input line 868.
+             The label is: \bf VP3. on input line 867.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP4. on input line 873.
-
-
-LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP5. on input line 878.
-
-
-LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP6. on input line 883.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 888--889
-
- []
+             The label is: \bf VP4. on input line 872.
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 890--891
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP5. on input line 877.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP6. on input line 882.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 887--888
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 913--914
+Underfull \hbox (badness 10000) in paragraph at lines 889--890
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 912--913
 
  []
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP2. on input line 940.
+             The label is: \bf VP2. on input line 939.
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP3. on input line 945.
-
-
-LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP4. on input line 950.
-
-
-LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP5. on input line 955.
-
-
-LaTeX Warning: The counter will not be printed.
-             The label is: \bf VP6. on input line 960.
+             The label is: \bf VP3. on input line 944.
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 965--966
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP4. on input line 949.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP5. on input line 954.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: \bf VP6. on input line 959.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 964--965
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 967--968
+Underfull \hbox (badness 10000) in paragraph at lines 966--967
 
  []
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 1122.
+(hyperref)                than one, level fixed on input line 1121.
 
 [18] [19] [20] [21]
-Overfull \hbox (0.46696pt too wide) in paragraph at lines 1338--1339
+Overfull \hbox (0.46696pt too wide) in paragraph at lines 1337--1338
 []\OT1/cmr/m/n/10 Requirement: Multi-Factor Au-then-ti-ca-tion (MFA) should be re-quired for ad-min and high-privilege
  []
 
 [22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 1487--1489
+Underfull \hbox (badness 10000) in paragraph at lines 1486--1488
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 1505--1509
+Underfull \hbox (badness 10000) in paragraph at lines 1504--1508
 
  []
 
-<./images/Cass.jpg, id=556, 2072.74374pt x 1350.04375pt>
+<./images/Cass.jpg, id=531, 2072.74374pt x 1350.04375pt>
 File: ./images/Cass.jpg Graphic file (type jpg)
 <use ./images/Cass.jpg>
-Package pdftex.def Info: ./images/Cass.jpg  used on input line 1516.
+Package pdftex.def Info: ./images/Cass.jpg  used on input line 1515.
 (pdftex.def)             Requested size: 140.92793pt x 91.77292pt.
-<./images/Nehad.png, id=557, 330.63525pt x 529.37775pt>
+<./images/Nehad.png, id=532, 330.63525pt x 529.37775pt>
 File: ./images/Nehad.png Graphic file (type png)
 <use ./images/Nehad.png>
-Package pdftex.def Info: ./images/Nehad.png  used on input line 1530.
+Package pdftex.def Info: ./images/Nehad.png  used on input line 1529.
 (pdftex.def)             Requested size: 281.85587pt x 451.28986pt.
 [25 <./images/Cass.jpg>]
-<./images/Savvy.png, id=563, 232.61906pt x 141.52875pt>
+<./images/Savvy.png, id=538, 232.61906pt x 141.52875pt>
 File: ./images/Savvy.png Graphic file (type png)
 <use ./images/Savvy.png>
-Package pdftex.def Info: ./images/Savvy.png  used on input line 1541.
+Package pdftex.def Info: ./images/Savvy.png  used on input line 1540.
 (pdftex.def)             Requested size: 281.85587pt x 171.50298pt.
  [26 <./images/Nehad.png>]
-<./images/Tvesha.png, id=569, 263.98625pt x 153.57375pt>
+<./images/Tvesha.png, id=544, 263.98625pt x 153.57375pt>
 File: ./images/Tvesha.png Graphic file (type png)
 <use ./images/Tvesha.png>
-Package pdftex.def Info: ./images/Tvesha.png  used on input line 1556.
+Package pdftex.def Info: ./images/Tvesha.png  used on input line 1555.
 (pdftex.def)             Requested size: 281.85587pt x 163.9778pt.
-<./images/Victor.png, id=570, 3972.61485pt x 1844.74763pt>
+<./images/Victor.png, id=545, 3972.61485pt x 1844.74763pt>
 File: ./images/Victor.png Graphic file (type png)
 <use ./images/Victor.png>
-Package pdftex.def Info: ./images/Victor.png  used on input line 1567.
+Package pdftex.def Info: ./images/Victor.png  used on input line 1566.
 (pdftex.def)             Requested size: 140.92793pt x 65.41722pt.
  [27 <./images/Savvy.png> <./images/Tvesha.png>] [28 <./images/Victor.png (PNG copy)>] (./SE3A04_Group6.aux)
  ***********
@@ -826,18 +828,18 @@ Package rerunfilecheck Info: File `SE3A04_Group6.out' has not changed.
 (rerunfilecheck)             Checksum: 2B20EB0ED18ECC8223CD126ABE68BDB8;10300.
  ) 
 Here is how much of TeX's memory you used:
- 12592 strings out of 476106
- 195961 string characters out of 5793933
+ 12567 strings out of 476106
+ 195761 string characters out of 5793933
  1941975 words of memory out of 5000000
  34196 multiletter control sequences out of 15000+600000
  566781 words of font info for 70 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 75i,8n,79p,952b,724s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,8n,79p,952b,740s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/braunc8/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on SE3A04_Group6.pdf (28 pages, 3615242 bytes).
+Output written on SE3A04_Group6.pdf (28 pages, 3614198 bytes).
 PDF statistics:
- 674 PDF objects out of 1000 (max. 8388607)
- 608 compressed objects within 7 object streams
- 256 named destinations out of 1000 (max. 500000)
+ 643 PDF objects out of 1000 (max. 8388607)
+ 578 compressed objects within 6 object streams
+ 231 named destinations out of 1000 (max. 500000)
  473 words of extra memory for PDF output out of 10000 (max. 10000000)
 
