@@ -757,151 +757,153 @@ deer, squirrel, bird), but is unable to tell the different nuances between speci
  
  
 \item Login \#6
- 
-\textbf{Precondition:} Has an account and is trying to log in.
- 
+
+\textbf{Precondition:} The user has an account and is trying to log in.
+
 \begin{enumerate}[{\bf VP1.}]
-\item User \#1 \
- 
-    \textbf{Main Success Scenario:}
+    \item User \#1 \\
+
+        \textbf{Main Success Scenario:}
+        \begin{enumerate}
+            \item[1] User navigates to the login page.
+            \item[2] User inputs their credentials (email/username and password).
+            \item[3] System validates the credentials.
+            \item[4] If credentials match, access is granted, and the user is redirected to their dashboard.
+            \item[5] If credentials do not match, the system displays an error message and allows the user to retry or reset the password.
+        \end{enumerate}
+
+        \textbf{Secondary Scenarios:}
+        \begin{itemize}
+            \item 4i. User has overdue payments.
+            \begin{enumerate}
+                \item[4i.1] System flags the account and restricts access until the payment issue is resolved.
+                \item[4i.2] User is notified of the restriction and given options to settle the issue.
+            \end{enumerate}
+        \end{itemize}
+    
+    \item Ads Team \#2 \\
     \begin{enumerate}
-        \item[1] User navigates to the login page.
-        \item[2] User inputs their credentials (email/username and password).
-        \item[3] System validates the credentials.
-        \item[4] If credentials match, access is granted, and the user is redirected to their dashboard.
-        \item[5] If credentials do not match, the system displays an error message and allows the user to retry or reset the password.
+        \item N/A (The Ads Team has no role in the login process.)
     \end{enumerate}
- 
-\textbf{Secondary Scenarios:}
-\begin{itemize}
-\item 4i. User has overdue payments.
-\begin{enumerate}
-\item[4i.1] System flags the account and restricts access until the payment issue is resolved.
-\item[4i.2] User is notified of the restriction and given options to settle the issue.
+
+    \item Marketing Team \#3 \\
+    \begin{enumerate}
+        \item N/A (The Marketing Team does not directly interact with the login system.)
+    \end{enumerate}
+
+    \item Accounting Team \#4 \\
+    \begin{enumerate}
+        \item (a) User with overdue payments attempts to log in.
+        \item (b) The system flags the account and restricts access until the payment issue is resolved.
+        \item (c) User is notified of the restriction and given options to settle the issue.
+    \end{enumerate}
+
+    \item Environment Canada \#5 \\
+    \begin{enumerate}
+        \item N/A (Environment Canada has no involvement in the login process.)
+    \end{enumerate}
+
+    \item National Parks/Hunting Organization (Ontario Federation of Anglers and Hunters) \#6 \\
+    \begin{enumerate}
+        \item N/A (This organization has no involvement in the login process.)
+    \end{enumerate}
 \end{enumerate}
-\end{itemize}
- 
-\item Ads Team \#2 \
-\begin{enumerate}
-\item N/A (The Ads Team has no role in the login process.)
-\end{enumerate}
- 
-\item Marketing Team \#3 \
-\begin{enumerate}
-\item N/A (The Marketing Team does not directly interact with the login system.)
-\end{enumerate}
- 
-\item Accounting Team \#4 \
-\begin{enumerate}
-\item (a) User with overdue payments attempts to log in.
-\item (b) The system flags the account and restricts access until the payment issue is resolved.
-\item (c) User is notified of the restriction and given options to settle the issue.
-\end{enumerate}
- 
-\item Environment Canada \#5 
-\begin{enumerate}
-\item N/A (Environment Canada has no involvement in the login process.)
-\end{enumerate}
- 
-\item National Parks/Hunting Organization (Ontario Federation of Anglers and Hunters) \#6 \
-\begin{enumerate}
-\item N/A (This organization has no involvement in the login process.)
-\end{enumerate}
-\end{enumerate}
- 
+
 \textbf{Global Scenario:}
- 
-\textbf{Precondition:}
- 
+
+\textbf{Precondition:} The user has an account and is trying to log in.
+
 \textbf{Main Success Scenario:}
 \begin{enumerate}
-\item User navigates to the login page.
-\item User inputs their credentials.
-\item System validates the credentials.
-\item If credentials match, access is granted, and the user is redirected to their dashboard.
-\item If credentials do not match, the system displays an error message and allows the user to retry or reset the password.
+    \item User navigates to the login page.
+    \item User inputs their credentials.
+    \item System validates the credentials.
+    \item If credentials match, access is granted, and the user is redirected to their dashboard.
+    \item If credentials do not match, the system displays an error message and allows the user to retry or reset the password.
 \end{enumerate}
- 
+
 \textbf{Secondary Scenarios:}
 \begin{itemize}
-\item If the user has overdue payments, the system flags the account and restricts access until payment is settled.
-\item User is notified of the restriction and provided with payment options.
+    \item If the user has overdue payments, the system flags the account and restricts access until payment is settled.
+    \item User is notified of the restriction and provided with payment options.
 \end{itemize}
 
 \item Viewing a Report \#7
 
-    \textbf{Precondition:} The user has already taken a picture of an animal and the forum has generated a report.
+\textbf{Precondition:} The user has already taken a picture of an animal and the forum has generated a report.
 
-    \begin{enumerate}[{\bf VP1.}]
-        \item User \#1 \\
+\begin{enumerate}[{\bf VP1.}]
+    \item User \#1 \\
 
-            \textbf{Main Success Scenario:}
+        \textbf{Main Success Scenario:}
+        \begin{enumerate}
+            \item[1] The user opens the app and logs in.
+            \item[2] The system authenticates the user and displays the dashboard.
+            \item[3] The user selects "View Report" from the options.
+            \item[4] The system displays a list of available reports.
+            \item[5] The user selects a specific report from the list.
+            \item[6] The system retrieves the report details and displays them to the user, including the animal's name, species, habitat, diet, and conservation status.
+        \end{enumerate}
+
+        \textbf{Secondary Scenario:}
+        \begin{enumerate}
+            \item[4i] System fails to retrieve the list of reports.
             \begin{enumerate}
-                \item[1] The user opens the app and logs in.
-                \item[2] The system authenticates the user and displays the dashboard.
-                \item[3] The user selects "View Report" from the options.
-                \item[4] The system displays a list of available reports.
-                \item[5] The user selects a specific report from the list.
-                \item[6] The system retrieves the report details and displays them to the user, including the animal's name, species, habitat, diet, and conservation status.
+                \item[4i.1] The system displays an error message.
+                \item[4i.2] The user is prompted to try again or contact customer support.
             \end{enumerate}
-
-            \textbf{Secondary Scenario:}
+            \item[5i] System fails to display the report content.
             \begin{enumerate}
-                \item[4i] System fails to retrieve the list of reports.
-                \begin{enumerate}
-                    \item[4i.1] The system displays an error message.
-                    \item[4i.2] The user is prompted to try again or contact customer support.
-                \end{enumerate}
-                \item[5i] System fails to display the report content.
-                \begin{enumerate}
-                    \item[5i.1] System displays a “Report Unavailable" message.
-                    \item[5i.2] The user is prompted to reload the report or connect with customer support.
-                \end{enumerate}
+                \item[5i.1] System displays a “Report Unavailable" message.
+                \item[5i.2] The user is prompted to reload the report or connect with customer support.
             \end{enumerate}
-    \end{enumerate}
+        \end{enumerate}
+\end{enumerate}
 
-    \begin{enumerate}[{\bf VP2.}]
-        \item Ads Team \\ 
-        N/A
-    \end{enumerate}
+\begin{enumerate}[{\bf VP2.}]
+    \item Ads Team \\
+    N/A
+\end{enumerate}
 
-    \begin{enumerate}[{\bf VP3.}]
-        \item Marketing Team \\
-        N/A
-    \end{enumerate}
+\begin{enumerate}[{\bf VP3.}]
+    \item Marketing Team \\
+    N/A
+\end{enumerate}
 
-    \begin{enumerate}[{\bf VP4.}]
-        \item Accounting Team \\
-        N/A
-    \end{enumerate}
+\begin{enumerate}[{\bf VP4.}]
+    \item Accounting Team \\
+    N/A
+\end{enumerate}
 
-    \begin{enumerate}[{\bf VP5.}]
-        \item Environment Canada \\
-        N/A
-    \end{enumerate}
+\begin{enumerate}[{\bf VP5.}]
+    \item Environment Canada \\
+    N/A
+\end{enumerate}
 
-    \begin{enumerate}[{\bf VP6.}]
-        \item National Parks/Hunting Organization \\
-        N/A
-    \end{enumerate}
+\begin{enumerate}[{\bf VP6.}]
+    \item National Parks/Hunting Organization \\
+    N/A
+\end{enumerate}
 
-    \textbf{Global Scenario:} \\
-    \textbf{Precondition:} The user has an account and is logged into the system. A report has already been generated for the image taken by the user. \\
+\textbf{Global Scenario:} \\
 
-    \textbf{Main Success Scenario:}
-    \begin{enumerate}
-        \item[(a)] User selects "View Report" from the dashboard.
-        \item[(b)] The system retrieves and displays the report information, including the animal's details such as species, habitat, and diet.
-        \item[(c)] User reviews the report.
-        \item[(d)] User may choose to share the report with the community.
-    \end{enumerate}
+\textbf{Precondition:} The user has an account and is logged into the system. A report has already been generated for the image taken by the user. \\
 
-    \textbf{Secondary Scenarios:}
-    \begin{itemize}
-        \item If the system fails to authenticate the user, it prompts for login recovery.
-        \item If the report fails to load, the user is prompted to refresh or contact customer support.
-        \item If the report data is incomplete, the system displays a warning and suggests a re-scan.
-    \end{itemize}
+\textbf{Main Success Scenario:}
+\begin{enumerate}
+    \item[(a)] User selects "View Report" from the dashboard.
+    \item[(b)] The system retrieves and displays the report information, including the animal's details such as species, habitat, and diet.
+    \item[(c)] User reviews the report.
+    \item[(d)] User may choose to share the report with the community.
+\end{enumerate}
+
+\textbf{Secondary Scenarios:}
+\begin{itemize}
+    \item If the system fails to authenticate the user, it prompts for login recovery.
+    \item If the report fails to load, the user is prompted to refresh or contact customer support.
+    \item If the report data is incomplete, the system displays a warning and suggests a re-scan.
+\end{itemize}
+
 
 \item Saving a Report \#8
 
