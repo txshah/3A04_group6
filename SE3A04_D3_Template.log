@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  19 MAR 2025 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  19 MAR 2025 15:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -245,27 +245,26 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-<./images/Forum.png, id=1, 978.65625pt x 783.92876pt>
+) [1
+
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<./images/Forum.png, id=10, 978.65625pt x 783.92876pt>
 File: ./images/Forum.png Graphic file (type png)
 <use ./images/Forum.png>
-Package pdftex.def Info: ./images/Forum.png  used on input line 80.
+Package pdftex.def Info: ./images/Forum.png  used on input line 77.
 (pdftex.def)             Requested size: 489.32693pt x 391.96342pt.
 
-Overfull \hbox (19.57191pt too wide) in paragraph at lines 80--81
+Overfull \hbox (19.57191pt too wide) in paragraph at lines 77--78
  [][] 
  []
 
+[2
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[1
-
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./images/Forum.png>]
+ <./images/Forum.png>]
 <./images/GenerateReport.png, id=16, 411.5375pt x 553.06625pt>
 File: ./images/GenerateReport.png Graphic file (type png)
 <use ./images/GenerateReport.png>
-Package pdftex.def Info: ./images/GenerateReport.png  used on input line 87.
+Package pdftex.def Info: ./images/GenerateReport.png  used on input line 84.
 (pdftex.def)             Requested size: 288.07428pt x 387.14374pt.
  [3
 
@@ -273,36 +272,64 @@ Package pdftex.def Info: ./images/GenerateReport.png  used on input line 87.
 <./images/AccountManager.png, id=21, 1271.75125pt x 748.7975pt>
 File: ./images/AccountManager.png Graphic file (type png)
 <use ./images/AccountManager.png>
-Package pdftex.def Info: ./images/AccountManager.png  used on input line 94.
+Package pdftex.def Info: ./images/AccountManager.png  used on input line 91.
 (pdftex.def)             Requested size: 508.6915pt x 299.51369pt.
 
-Overfull \hbox (38.93648pt too wide) in paragraph at lines 94--95
+Overfull \hbox (38.93648pt too wide) in paragraph at lines 91--92
  [][] 
  []
 
 [4
 
- <./images/AccountManager.png>] [5
+ <./images/AccountManager.png>]
+<./images/Cass.jpg, id=26, 2072.74374pt x 1350.04375pt>
+File: ./images/Cass.jpg Graphic file (type jpg)
+<use ./images/Cass.jpg>
+Package pdftex.def Info: ./images/Cass.jpg  used on input line 142.
+(pdftex.def)             Requested size: 281.85587pt x 183.56644pt.
+<./images/Nehad.png, id=27, 330.63525pt x 529.37775pt>
+File: ./images/Nehad.png Graphic file (type png)
+<use ./images/Nehad.png>
+Package pdftex.def Info: ./images/Nehad.png  used on input line 150.
+(pdftex.def)             Requested size: 281.85587pt x 451.28986pt.
+ [5
 
-] [6{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] (./SE3A04_D3_Template.aux)
+{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./images/Cass.jpg>]
+<./images/Savvy.png, id=33, 232.61906pt x 141.52875pt>
+File: ./images/Savvy.png Graphic file (type png)
+<use ./images/Savvy.png>
+Package pdftex.def Info: ./images/Savvy.png  used on input line 157.
+(pdftex.def)             Requested size: 281.85587pt x 171.50298pt.
+ [6 <./images/Nehad.png>]
+<./images/Tvesha.png, id=38, 263.98625pt x 153.57375pt>
+File: ./images/Tvesha.png Graphic file (type png)
+<use ./images/Tvesha.png>
+Package pdftex.def Info: ./images/Tvesha.png  used on input line 170.
+(pdftex.def)             Requested size: 281.85587pt x 163.9778pt.
+<./images/Victor.png, id=39, 3972.61485pt x 1844.74763pt>
+File: ./images/Victor.png Graphic file (type png)
+<use ./images/Victor.png>
+Package pdftex.def Info: ./images/Victor.png  used on input line 177.
+(pdftex.def)             Requested size: 140.92793pt x 65.41722pt.
+ [7 <./images/Savvy.png> <./images/Tvesha.png> <./images/Victor.png (PNG copy)>] (./SE3A04_D3_Template.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3529 strings out of 474116
- 52778 string characters out of 5743682
- 1930187 words of memory out of 5000000
- 25855 multiletter control sequences out of 15000+600000
- 566613 words of font info for 69 fonts, out of 8000000 for 9000
+ 3560 strings out of 474116
+ 53618 string characters out of 5743682
+ 1929187 words of memory out of 5000000
+ 25889 multiletter control sequences out of 15000+600000
+ 564568 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,65p,309b,234s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on SE3A04_D3_Template.pdf (6 pages, 216290 bytes).
+ 57i,7n,65p,283b,234s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on SE3A04_D3_Template.pdf (7 pages, 3260776 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
