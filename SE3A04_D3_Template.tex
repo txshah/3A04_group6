@@ -10,6 +10,7 @@
 \usepackage{fancyhdr}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
+\numberwithin{figure}{section}
 \usepackage{extarrows}
 \graphicspath{ {./images/} }
 \usepackage{setspace}
@@ -73,23 +74,30 @@ This section should provide an brief overview of the entire document.
 \section{State Charts for Controller Classes}
 \label{sec:state_charts_for_controller_classes}
 % Begin Section
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.4]{Forum.png}
-	\caption{Forum Controller}
-\end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.5]{GenerateReport.png}
-	\caption{Generate Report Controller}
+    \includegraphics[scale=0.5]{Forum.png}
+    \caption{Forum Controller State Chart Diagram}
+    \label{fig:forum_controller}
 \end{figure}
+\clearpage 
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.7]{GenerateReport.png}
+    \caption{Generate Report Controller State Chart Diagram}
+    \label{fig:generate_report_controller}
+\end{figure}
+\clearpage 
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.4]{AccountManager.png}
-	\caption{Account Manager Controller}
+    \caption{Account Manager Controller State Chart Diagram}
+    \label{fig:account_manager_controller}
 \end{figure}
+
 \clearpage 
+
 % End Section
 
 \section{Sequence Diagrams}
