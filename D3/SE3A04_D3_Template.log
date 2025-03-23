@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  23 MAR 2025 10:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.5)  23 MAR 2025 17:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -167,8 +167,17 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count277
 \l__pdf_internal_box=\box53
+) (./SE3A04_D3_Template.aux
+
+LaTeX Warning: Label `fig:account_manager_controller' multiply defined.
+
+
+LaTeX Warning: Label `fig:account_manager_controller' multiply defined.
+
+
+LaTeX Warning: Label `fig:account_manager_controller' multiply defined.
+
 )
-No file SE3A04_D3_Template.aux.
 \openout1 = `SE3A04_D3_Template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -185,6 +194,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -285,69 +295,48 @@ Overfull \hbox (71.85889pt too wide) in paragraph at lines 101--102
 
 
  <./images/AccountManager.png>]
-
-LaTeX Warning: File `Survey_Agents.png' not found on input line 108.
-
-
-/Users/tveshashah/Desktop/Year3/3A04_group6/D3/SE3A04_D3_Template.tex:108: Package pdftex.def Error: File `Survey_Agents.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.108 ...udegraphics[scale=0.8]{Survey_Agents.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[5
-
-]
-
-LaTeX Warning: File `FreeForm_Agent.png' not found on input line 115.
+<./images/Survey_Agents.png, id=28, 425.59pt x 762.85pt>
+File: ./images/Survey_Agents.png Graphic file (type png)
+<use ./images/Survey_Agents.png>
+Package pdftex.def Info: ./images/Survey_Agents.png  used on input line 108.
+(pdftex.def)             Requested size: 340.47244pt x 610.28084pt.
 
 
-/Users/tveshashah/Desktop/Year3/3A04_group6/D3/SE3A04_D3_Template.tex:115: Package pdftex.def Error: File `FreeForm_Agent.png' not found: using draft setting.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.115 ...degraphics[scale=0.8]{FreeForm_Agent.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[6
-
-]
-
-LaTeX Warning: File `Image_Agent.png' not found on input line 122.
+[5 <./images/Survey_Agents.png>]
+<./images/FreeForm_Agent.png, id=33, 425.59pt x 762.85pt>
+File: ./images/FreeForm_Agent.png Graphic file (type png)
+<use ./images/FreeForm_Agent.png>
+Package pdftex.def Info: ./images/FreeForm_Agent.png  used on input line 115.
+(pdftex.def)             Requested size: 340.47244pt x 610.28084pt.
 
 
-/Users/tveshashah/Desktop/Year3/3A04_group6/D3/SE3A04_D3_Template.tex:122: Package pdftex.def Error: File `Image_Agent.png' not found: using draft setting.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 ...cludegraphics[scale=0.8]{Image_Agent.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+[6 <./images/FreeForm_Agent.png>]
+<./images/Image_Agent.png, id=38, 445.665pt x 762.85pt>
+File: ./images/Image_Agent.png Graphic file (type png)
+<use ./images/Image_Agent.png>
+Package pdftex.def Info: ./images/Image_Agent.png  used on input line 122.
+(pdftex.def)             Requested size: 356.53249pt x 610.28084pt.
 
-[7
 
-]
-<./images/login_sequence.png, id=39, 927.465pt x 356.33125pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7 <./images/Image_Agent.png>]
+<./images/login_sequence.png, id=44, 927.465pt x 356.33125pt>
 File: ./images/login_sequence.png Graphic file (type png)
 <use ./images/login_sequence.png>
 Package pdftex.def Info: ./images/login_sequence.png  used on input line 135.
 (pdftex.def)             Requested size: 463.73137pt x 178.16518pt.
  [8
 
+
+
+
  <./images/login_sequence.png (PNG copy)>]
-<./images/CreateAccount_sequence.png, id=43, 654.445pt x 356.33125pt>
+<./images/CreateAccount_sequence.png, id=48, 654.445pt x 356.33125pt>
 File: ./images/CreateAccount_sequence.png Graphic file (type png)
 <use ./images/CreateAccount_sequence.png>
 Package pdftex.def Info: ./images/CreateAccount_sequence.png  used on input line 143.
@@ -355,7 +344,7 @@ Package pdftex.def Info: ./images/CreateAccount_sequence.png  used on input line
  [9
 
  <./images/CreateAccount_sequence.png (PNG copy)>]
-<./images/ViewSavedReports_sequence.png, id=47, 631.35875pt x 356.33125pt>
+<./images/ViewSavedReports_sequence.png, id=52, 631.35875pt x 356.33125pt>
 File: ./images/ViewSavedReports_sequence.png Graphic file (type png)
 <use ./images/ViewSavedReports_sequence.png>
 Package pdftex.def Info: ./images/ViewSavedReports_sequence.png  used on input line 151.
@@ -363,34 +352,34 @@ Package pdftex.def Info: ./images/ViewSavedReports_sequence.png  used on input l
  [10
 
  <./images/ViewSavedReports_sequence.png (PNG copy)>]
-<./images/Cass.jpg, id=51, 2072.74374pt x 1350.04375pt>
+<./images/Cass.jpg, id=56, 2072.74374pt x 1350.04375pt>
 File: ./images/Cass.jpg Graphic file (type jpg)
 <use ./images/Cass.jpg>
 Package pdftex.def Info: ./images/Cass.jpg  used on input line 193.
 (pdftex.def)             Requested size: 281.85587pt x 183.56644pt.
-<./images/Nehad.png, id=52, 330.63525pt x 529.37775pt>
+<./images/Nehad.png, id=57, 330.63525pt x 529.37775pt>
 File: ./images/Nehad.png Graphic file (type png)
 <use ./images/Nehad.png>
-Package pdftex.def Info: ./images/Nehad.png  used on input line 201.
+Package pdftex.def Info: ./images/Nehad.png  used on input line 204.
 (pdftex.def)             Requested size: 281.85587pt x 451.28986pt.
  [11
 
  <./images/Cass.jpg>]
-<./images/Savvy.png, id=56, 232.61906pt x 141.52875pt>
+<./images/Savvy.png, id=61, 232.61906pt x 141.52875pt>
 File: ./images/Savvy.png Graphic file (type png)
 <use ./images/Savvy.png>
-Package pdftex.def Info: ./images/Savvy.png  used on input line 208.
+Package pdftex.def Info: ./images/Savvy.png  used on input line 211.
 (pdftex.def)             Requested size: 281.85587pt x 171.50298pt.
  [12 <./images/Nehad.png>]
-<./images/Tvesha.png, id=61, 263.98625pt x 153.57375pt>
+<./images/Tvesha.png, id=66, 263.98625pt x 153.57375pt>
 File: ./images/Tvesha.png Graphic file (type png)
 <use ./images/Tvesha.png>
-Package pdftex.def Info: ./images/Tvesha.png  used on input line 221.
+Package pdftex.def Info: ./images/Tvesha.png  used on input line 224.
 (pdftex.def)             Requested size: 281.85587pt x 163.9778pt.
-<./images/Victor.png, id=62, 3972.61485pt x 1844.74763pt>
+<./images/Victor.png, id=67, 3972.61485pt x 1844.74763pt>
 File: ./images/Victor.png Graphic file (type png)
 <use ./images/Victor.png>
-Package pdftex.def Info: ./images/Victor.png  used on input line 231.
+Package pdftex.def Info: ./images/Victor.png  used on input line 234.
 (pdftex.def)             Requested size: 140.92793pt x 65.41722pt.
  [13 <./images/Savvy.png> <./images/Tvesha.png> <./images/Victor.png (PNG copy)>] (./SE3A04_D3_Template.aux)
  ***********
@@ -399,22 +388,22 @@ L3 programming layer <2024-02-20>
  ***********
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3680 strings out of 474116
- 57093 string characters out of 5743682
+ 3617 strings out of 474116
+ 55551 string characters out of 5743682
  1931187 words of memory out of 5000000
- 26010 multiletter control sequences out of 15000+600000
- 564736 words of font info for 61 fonts, out of 8000000 for 9000
+ 25946 multiletter control sequences out of 15000+600000
+ 564568 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,65p,286b,285s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on SE3A04_D3_Template.pdf (13 pages, 3639946 bytes).
+ 57i,7n,65p,286b,234s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on SE3A04_D3_Template.pdf (13 pages, 3677652 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
