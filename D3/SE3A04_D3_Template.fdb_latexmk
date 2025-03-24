@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1742784358.95891 "/home/braunc8/school/winter2025/3A04/3A04_group6/D3/SE3A04_D3_Template.tex" "SE3A04_D3_Template.pdf" "SE3A04_D3_Template" 1742784361.77104 0
+["pdflatex"] 1742784409.48966 "/home/braunc8/school/winter2025/3A04/3A04_group6/D3/SE3A04_D3_Template.tex" "SE3A04_D3_Template.pdf" "SE3A04_D3_Template" 1742784411.06662 0
   "/etc/texmf/web2c/texmf.cnf" 1738600641.70728 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/braunc8/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk" 1739745130.39192 11524 ccc1eec3bc81858f6cac3e6a2bd0b2bf ""
-  "/home/braunc8/school/winter2025/3A04/3A04_group6/D3/SE3A04_D3_Template.tex" 1742784360.09538 8365 953d3adc5fd4a8415eccc4461c587e83 ""
+  "/home/braunc8/school/winter2025/3A04/3A04_group6/D3/SE3A04_D3_Template.tex" 1742784405.7203 9264 affe4deb8f7985026c401f9f17b30f7a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -62,8 +62,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1739745037.47267 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1739745112 6830920 0e90effba570673fe24d94be8cc3769e ""
-  "SE3A04_D3_Template.aux" 1742784361.67132 3286 4a06cf688014762dc492b4e4755f8fdc "pdflatex"
-  "SE3A04_D3_Template.tex" 1742784360.09538 8365 953d3adc5fd4a8415eccc4461c587e83 ""
+  "SE3A04_D3_Template.aux" 1742784410.95486 4140 7e2f0223653aa3ef2d4e2cf3250d7dd2 "pdflatex"
+  "SE3A04_D3_Template.tex" 1742784405.7203 9264 affe4deb8f7985026c401f9f17b30f7a ""
   "images/AccountManager.png" 1742776799.75209 280708 c4128bbad6afc3f285b1b7f9822efcef ""
   "images/Cass.jpg" 1742776799.77209 1226218 01786fd1734e6bc5524d12dac8872633 ""
   "images/CreateAccount_sequence.png" 1742776799.77209 23979 dab69b9d1b81e744ccd027ac835cab5d ""
@@ -78,7 +78,11 @@
   "images/Tvesha.png" 1742776799.79209 150276 638c6eac813ad451e8946e7ca5e663ec ""
   "images/Victor.png" 1742776799.80209 1706519 390f9791c2729a67c358f6505b2ff3dd ""
   "images/ViewSavedReports_sequence.png" 1742776799.80209 23304 5e04f27a1e741e121dd477a38668faa5 ""
+  "images/accountManager_Section4D3_group6_SFWRENG3A04.png" 1742782822.90806 60545 2b35403f332f6498aa6322320b648702 ""
+  "images/classDiagram_Section4D3_group6_SFWRENG3A04.png" 1742782459.22092 182673 bef97079106476918bd1f93fb8dfe4d6 ""
   "images/login_sequence.png" 1742776799.80209 27842 60a5fc8312cabbb64c108405c96efd2e ""
+  "images/reportGenerator_Section4D3_group6_SFWRENG3A04.png" 1742783116.90704 68309 36a15e9d3a739c2a10ee7d7c1f89c307 ""
+  "images/search_Section4D3_group6_SFWRENG3A04.png" 1742783277.25258 174331 c061e2836f45a034d498039a73e51af0 ""
   (generated)
   "SE3A04_D3_Template.aux"
   "SE3A04_D3_Template.log"
