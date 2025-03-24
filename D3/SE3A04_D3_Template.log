@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.16)  23 MAR 2025 22:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.16)  23 MAR 2025 22:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -181,12 +181,6 @@ LaTeX Warning: Label `fig:account_manager_controller' multiply defined.
 LaTeX Warning: Label `fig:ViewSavedReports_sequence' multiply defined.
 
 
-LaTeX Warning: Label `fig:ViewSavedReports_sequence' multiply defined.
-
-
-LaTeX Warning: Label `fig:ViewSavedReports_sequence' multiply defined.
-
-
 LaTeX Warning: Label `fig:accountManager_Section4D3_group6_SFWRENG3A04' multiply defined.
 
 )
@@ -364,115 +358,89 @@ Package pdftex.def Info: ./images/ViewSavedReports_sequence.png  used on input l
  [10
 
  <./images/ViewSavedReports_sequence.png (PNG copy)>]
-<./images/StartImageSearch_sequence.png, id=56, 636.3775pt x 498.86375pt>
-File: ./images/StartImageSearch_sequence.png Graphic file (type png)
-<use ./images/StartImageSearch_sequence.png>
-Package pdftex.def Info: ./images/StartImageSearch_sequence.png  used on input line 159.
-(pdftex.def)             Requested size: 445.46121pt x 349.20224pt.
+<./images/StartSearch_sequence.png, id=56, 645.41125pt x 513.92pt>
+File: ./images/StartSearch_sequence.png Graphic file (type png)
+<use ./images/StartSearch_sequence.png>
+Package pdftex.def Info: ./images/StartSearch_sequence.png  used on input line 159.
+(pdftex.def)             Requested size: 451.7848pt x 359.74153pt.
  [11
 
- <./images/StartImageSearch_sequence.png (PNG copy)>]
-<./images/StartFreeFormSearch_sequence.png, id=60, 700.6175pt x 498.86375pt>
-File: ./images/StartFreeFormSearch_sequence.png Graphic file (type png)
-<use ./images/StartFreeFormSearch_sequence.png>
-Package pdftex.def Info: ./images/StartFreeFormSearch_sequence.png  used on input line 168.
-(pdftex.def)             Requested size: 490.42891pt x 349.20224pt.
+ <./images/StartSearch_sequence.png (PNG copy)>]
+<./images/classDiagram_Section4D3_group6_SFWRENG3A04.png, id=60, 1107.53775pt x 372.1905pt>
+File: ./images/classDiagram_Section4D3_group6_SFWRENG3A04.png Graphic file (type png)
+<use ./images/classDiagram_Section4D3_group6_SFWRENG3A04.png>
+Package pdftex.def Info: ./images/classDiagram_Section4D3_group6_SFWRENG3A04.png  used on input line 170.
+(pdftex.def)             Requested size: 465.16269pt x 156.31894pt.
+ [12
 
-Overfull \hbox (20.67389pt too wide) in paragraph at lines 168--169
- [][] 
- []
+ <./images/classDiagram_Section4D3_group6_SFWRENG3A04.png>]
+<./images/accountManager_Section4D3_group6_SFWRENG3A04.png, id=64, 449.2785pt x 330.033pt>
+File: ./images/accountManager_Section4D3_group6_SFWRENG3A04.png Graphic file (type png)
+<use ./images/accountManager_Section4D3_group6_SFWRENG3A04.png>
+Package pdftex.def Info: ./images/accountManager_Section4D3_group6_SFWRENG3A04.png  used on input line 177.
+(pdftex.def)             Requested size: 539.13148pt x 396.0376pt.
 
-[12
-
- <./images/StartFreeformSearch_sequence.png (PNG copy)>]
-<./images/StartSurveySearch_sequence.png, id=64, 677.53125pt x 498.86375pt>
-File: ./images/StartSurveySearch_sequence.png Graphic file (type png)
-<use ./images/StartSurveySearch_sequence.png>
-Package pdftex.def Info: ./images/StartSurveySearch_sequence.png  used on input line 176.
-(pdftex.def)             Requested size: 474.26863pt x 349.20224pt.
-
-Overfull \hbox (4.51361pt too wide) in paragraph at lines 176--177
+Overfull \hbox (69.37646pt too wide) in paragraph at lines 177--178
  [][] 
  []
 
 [13
 
- <./images/StartSurveySearch_sequence.png (PNG copy)>]
-<./images/classDiagram_Section4D3_group6_SFWRENG3A04.png, id=69, 1107.53775pt x 372.1905pt>
-File: ./images/classDiagram_Section4D3_group6_SFWRENG3A04.png Graphic file (type png)
-<use ./images/classDiagram_Section4D3_group6_SFWRENG3A04.png>
-Package pdftex.def Info: ./images/classDiagram_Section4D3_group6_SFWRENG3A04.png  used on input line 187.
-(pdftex.def)             Requested size: 465.16269pt x 156.31894pt.
- [14
-
- <./images/classDiagram_Section4D3_group6_SFWRENG3A04.png>]
-<./images/accountManager_Section4D3_group6_SFWRENG3A04.png, id=73, 449.2785pt x 330.033pt>
-File: ./images/accountManager_Section4D3_group6_SFWRENG3A04.png Graphic file (type png)
-<use ./images/accountManager_Section4D3_group6_SFWRENG3A04.png>
-Package pdftex.def Info: ./images/accountManager_Section4D3_group6_SFWRENG3A04.png  used on input line 194.
-(pdftex.def)             Requested size: 539.13148pt x 396.0376pt.
-
-Overfull \hbox (69.37646pt too wide) in paragraph at lines 194--195
- [][] 
- []
-
-[15
-
  <./images/accountManager_Section4D3_group6_SFWRENG3A04.png>]
-<./images/reportGenerator_Section4D3_group6_SFWRENG3A04.png, id=77, 293.29575pt x 390.86024pt>
+<./images/reportGenerator_Section4D3_group6_SFWRENG3A04.png, id=69, 293.29575pt x 390.86024pt>
 File: ./images/reportGenerator_Section4D3_group6_SFWRENG3A04.png Graphic file (type png)
 <use ./images/reportGenerator_Section4D3_group6_SFWRENG3A04.png>
-Package pdftex.def Info: ./images/reportGenerator_Section4D3_group6_SFWRENG3A04.png  used on input line 201.
+Package pdftex.def Info: ./images/reportGenerator_Section4D3_group6_SFWRENG3A04.png  used on input line 184.
 (pdftex.def)             Requested size: 439.94252pt x 586.28893pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16 <./images/reportGenerator_Section4D3_group6_SFWRENG3A04.png>]
-<./images/search_Section4D3_group6_SFWRENG3A04.png, id=81, 700.41675pt x 471.56175pt>
+[14 <./images/reportGenerator_Section4D3_group6_SFWRENG3A04.png>]
+<./images/search_Section4D3_group6_SFWRENG3A04.png, id=73, 700.41675pt x 471.56175pt>
 File: ./images/search_Section4D3_group6_SFWRENG3A04.png Graphic file (type png)
 <use ./images/search_Section4D3_group6_SFWRENG3A04.png>
-Package pdftex.def Info: ./images/search_Section4D3_group6_SFWRENG3A04.png  used on input line 208.
+Package pdftex.def Info: ./images/search_Section4D3_group6_SFWRENG3A04.png  used on input line 191.
 (pdftex.def)             Requested size: 490.28838pt x 330.09097pt.
 
-Overfull \hbox (20.53336pt too wide) in paragraph at lines 208--209
+Overfull \hbox (20.53336pt too wide) in paragraph at lines 191--192
  [][] 
  []
 
-[17
+[15
 
 
  <./images/search_Section4D3_group6_SFWRENG3A04.png>]
-<./images/Cass.jpg, id=85, 2072.74374pt x 1350.04375pt>
+<./images/Cass.jpg, id=77, 2072.74374pt x 1350.04375pt>
 File: ./images/Cass.jpg Graphic file (type jpg)
 <use ./images/Cass.jpg>
-Package pdftex.def Info: ./images/Cass.jpg  used on input line 244.
+Package pdftex.def Info: ./images/Cass.jpg  used on input line 229.
 (pdftex.def)             Requested size: 281.85587pt x 183.56644pt.
-<./images/Nehad.png, id=86, 330.63525pt x 529.37775pt>
+<./images/Nehad.png, id=78, 330.63525pt x 529.37775pt>
 File: ./images/Nehad.png Graphic file (type png)
 <use ./images/Nehad.png>
-Package pdftex.def Info: ./images/Nehad.png  used on input line 255.
+Package pdftex.def Info: ./images/Nehad.png  used on input line 240.
 (pdftex.def)             Requested size: 281.85587pt x 451.28986pt.
- [18
+ [16
 
  <./images/Cass.jpg>]
-<./images/Savvy.png, id=90, 232.61906pt x 141.52875pt>
+<./images/Savvy.png, id=82, 232.61906pt x 141.52875pt>
 File: ./images/Savvy.png Graphic file (type png)
 <use ./images/Savvy.png>
-Package pdftex.def Info: ./images/Savvy.png  used on input line 265.
+Package pdftex.def Info: ./images/Savvy.png  used on input line 250.
 (pdftex.def)             Requested size: 281.85587pt x 171.50298pt.
- [19 <./images/Nehad.png>]
-<./images/Tvesha.png, id=96, 263.98625pt x 153.57375pt>
+ [17 <./images/Nehad.png>]
+<./images/Tvesha.png, id=87, 263.98625pt x 153.57375pt>
 File: ./images/Tvesha.png Graphic file (type png)
 <use ./images/Tvesha.png>
-Package pdftex.def Info: ./images/Tvesha.png  used on input line 278.
+Package pdftex.def Info: ./images/Tvesha.png  used on input line 263.
 (pdftex.def)             Requested size: 281.85587pt x 163.9778pt.
-<./images/Victor.png, id=97, 3972.61485pt x 1844.74763pt>
+<./images/Victor.png, id=88, 3972.61485pt x 1844.74763pt>
 File: ./images/Victor.png Graphic file (type png)
 <use ./images/Victor.png>
-Package pdftex.def Info: ./images/Victor.png  used on input line 288.
+Package pdftex.def Info: ./images/Victor.png  used on input line 273.
 (pdftex.def)             Requested size: 140.92793pt x 65.41722pt.
- [20 <./images/Savvy.png> <./images/Tvesha.png> <./images/Victor.png (PNG copy)>] (./SE3A04_D3_Template.aux)
+ [18 <./images/Savvy.png> <./images/Tvesha.png> <./images/Victor.png (PNG copy)>] (./SE3A04_D3_Template.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -483,18 +451,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3682 strings out of 476106
- 58654 string characters out of 5793933
+ 3664 strings out of 476106
+ 57805 string characters out of 5793933
  1928975 words of memory out of 5000000
- 25662 multiletter control sequences out of 15000+600000
+ 25644 multiletter control sequences out of 15000+600000
  564568 words of font info for 60 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  57i,7n,65p,291b,234s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/braunc8/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on SE3A04_D3_Template.pdf (20 pages, 4135784 bytes).
+Output written on SE3A04_D3_Template.pdf (18 pages, 4072572 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 121 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
