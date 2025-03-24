@@ -1,0 +1,5 @@
+
+//takes
+interface StartSearch {
+
+}
