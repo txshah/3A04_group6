@@ -1,5 +1,0 @@
-
-//takes
-interface StartSearch {
-
-}
