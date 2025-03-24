@@ -180,9 +180,6 @@ LaTeX Warning: Label `fig:account_manager_controller' multiply defined.
 
 LaTeX Warning: Label `fig:ViewSavedReports_sequence' multiply defined.
 
-
-LaTeX Warning: Label `fig:accountManager_Section4D3_group6_SFWRENG3A04' multiply defined.
-
 )
 \openout1 = `SE3A04_D3_Template.aux'.
 
@@ -366,81 +363,36 @@ Package pdftex.def Info: ./images/StartSearch_sequence.png  used on input line 1
  [11
 
  <./images/StartSearch_sequence.png (PNG copy)>]
-<./images/classDiagram_Section4D3_group6_SFWRENG3A04.png, id=60, 1107.53775pt x 372.1905pt>
-File: ./images/classDiagram_Section4D3_group6_SFWRENG3A04.png Graphic file (type png)
-<use ./images/classDiagram_Section4D3_group6_SFWRENG3A04.png>
-Package pdftex.def Info: ./images/classDiagram_Section4D3_group6_SFWRENG3A04.png  used on input line 170.
-(pdftex.def)             Requested size: 465.16269pt x 156.31894pt.
- [12
-
- <./images/classDiagram_Section4D3_group6_SFWRENG3A04.png>]
-<./images/accountManager_Section4D3_group6_SFWRENG3A04.png, id=64, 449.2785pt x 330.033pt>
-File: ./images/accountManager_Section4D3_group6_SFWRENG3A04.png Graphic file (type png)
-<use ./images/accountManager_Section4D3_group6_SFWRENG3A04.png>
-Package pdftex.def Info: ./images/accountManager_Section4D3_group6_SFWRENG3A04.png  used on input line 177.
-(pdftex.def)             Requested size: 539.13148pt x 396.0376pt.
-
-Overfull \hbox (69.37646pt too wide) in paragraph at lines 177--178
- [][] 
- []
-
-[13
-
- <./images/accountManager_Section4D3_group6_SFWRENG3A04.png>]
-<./images/reportGenerator_Section4D3_group6_SFWRENG3A04.png, id=69, 293.29575pt x 390.86024pt>
-File: ./images/reportGenerator_Section4D3_group6_SFWRENG3A04.png Graphic file (type png)
-<use ./images/reportGenerator_Section4D3_group6_SFWRENG3A04.png>
-Package pdftex.def Info: ./images/reportGenerator_Section4D3_group6_SFWRENG3A04.png  used on input line 184.
-(pdftex.def)             Requested size: 439.94252pt x 586.28893pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[14 <./images/reportGenerator_Section4D3_group6_SFWRENG3A04.png>]
-<./images/search_Section4D3_group6_SFWRENG3A04.png, id=73, 700.41675pt x 471.56175pt>
-File: ./images/search_Section4D3_group6_SFWRENG3A04.png Graphic file (type png)
-<use ./images/search_Section4D3_group6_SFWRENG3A04.png>
-Package pdftex.def Info: ./images/search_Section4D3_group6_SFWRENG3A04.png  used on input line 191.
-(pdftex.def)             Requested size: 490.28838pt x 330.09097pt.
-
-Overfull \hbox (20.53336pt too wide) in paragraph at lines 191--192
- [][] 
- []
-
-[15
-
-
- <./images/search_Section4D3_group6_SFWRENG3A04.png>]
-<./images/Cass.jpg, id=77, 2072.74374pt x 1350.04375pt>
+<./images/Cass.jpg, id=60, 2072.74374pt x 1350.04375pt>
 File: ./images/Cass.jpg Graphic file (type jpg)
 <use ./images/Cass.jpg>
-Package pdftex.def Info: ./images/Cass.jpg  used on input line 229.
+Package pdftex.def Info: ./images/Cass.jpg  used on input line 204.
 (pdftex.def)             Requested size: 281.85587pt x 183.56644pt.
-<./images/Nehad.png, id=78, 330.63525pt x 529.37775pt>
+<./images/Nehad.png, id=61, 330.63525pt x 529.37775pt>
 File: ./images/Nehad.png Graphic file (type png)
 <use ./images/Nehad.png>
-Package pdftex.def Info: ./images/Nehad.png  used on input line 240.
+Package pdftex.def Info: ./images/Nehad.png  used on input line 215.
 (pdftex.def)             Requested size: 281.85587pt x 451.28986pt.
- [16
+ [12
 
  <./images/Cass.jpg>]
-<./images/Savvy.png, id=82, 232.61906pt x 141.52875pt>
+<./images/Savvy.png, id=65, 232.61906pt x 141.52875pt>
 File: ./images/Savvy.png Graphic file (type png)
 <use ./images/Savvy.png>
-Package pdftex.def Info: ./images/Savvy.png  used on input line 250.
+Package pdftex.def Info: ./images/Savvy.png  used on input line 226.
 (pdftex.def)             Requested size: 281.85587pt x 171.50298pt.
- [17 <./images/Nehad.png>]
-<./images/Tvesha.png, id=87, 263.98625pt x 153.57375pt>
+ [13 <./images/Nehad.png>]
+<./images/Tvesha.png, id=71, 263.98625pt x 153.57375pt>
 File: ./images/Tvesha.png Graphic file (type png)
 <use ./images/Tvesha.png>
-Package pdftex.def Info: ./images/Tvesha.png  used on input line 263.
+Package pdftex.def Info: ./images/Tvesha.png  used on input line 239.
 (pdftex.def)             Requested size: 281.85587pt x 163.9778pt.
-<./images/Victor.png, id=88, 3972.61485pt x 1844.74763pt>
+<./images/Victor.png, id=72, 3972.61485pt x 1844.74763pt>
 File: ./images/Victor.png Graphic file (type png)
 <use ./images/Victor.png>
-Package pdftex.def Info: ./images/Victor.png  used on input line 273.
+Package pdftex.def Info: ./images/Victor.png  used on input line 249.
 (pdftex.def)             Requested size: 140.92793pt x 65.41722pt.
- [18 <./images/Savvy.png> <./images/Tvesha.png> <./images/Victor.png (PNG copy)>] (./SE3A04_D3_Template.aux)
+ [14 <./images/Savvy.png> <./images/Tvesha.png> <./images/Victor.png (PNG copy)>] (./SE3A04_D3_Template.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -451,18 +403,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3664 strings out of 476106
- 57805 string characters out of 5793933
+ 3625 strings out of 476106
+ 55526 string characters out of 5793933
  1928975 words of memory out of 5000000
- 25644 multiletter control sequences out of 15000+600000
+ 25605 multiletter control sequences out of 15000+600000
  564568 words of font info for 60 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  57i,7n,65p,291b,234s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/braunc8/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on SE3A04_D3_Template.pdf (18 pages, 4072572 bytes).
+Output written on SE3A04_D3_Template.pdf (14 pages, 3708005 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 105 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
