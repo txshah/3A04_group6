@@ -2,8 +2,7 @@ package com.example.gaim2.search.startsearch
 
 import com.example.gaim2.search.Survey
 import com.example.gaim2.search.algorithm.SearchAlgorithm
-import com.example.gaim2.ui.Page.SearchPage
-import com.example.gaim2.ui.Page.SurveySearchPage
+import com.example.gaim2.ui.page.search_page.SurveySearchPage
 
 //see StartSearch for description, Survey based input
 class SurveyStartSearch : StartSearch<Survey>() {

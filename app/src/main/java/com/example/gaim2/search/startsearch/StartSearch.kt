@@ -2,7 +2,7 @@ package com.example.gaim2.search.startsearch
 
 import com.example.gaim2.search.SearchResult
 import com.example.gaim2.search.algorithm.SearchAlgorithm
-import com.example.gaim2.ui.Page.SearchPage
+import com.example.gaim2.ui.page.search_page.SearchPage
 
 //takes input data based on the search type requested and repackages it to the correct data type
 //then passes correctly typed data to search algorithm

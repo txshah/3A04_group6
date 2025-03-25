@@ -1,8 +1,7 @@
 package com.example.gaim2.search.startsearch
 
 import com.example.gaim2.search.algorithm.SearchAlgorithm
-import com.example.gaim2.ui.Page.FreeformSearchPage
-import com.example.gaim2.ui.Page.SearchPage
+import com.example.gaim2.ui.page.search_page.FreeformSearchPage
 
 //see StartSearch for description, Freeform based input
 class FreeformStartSearch : StartSearch<String> (){
