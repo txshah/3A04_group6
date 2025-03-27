@@ -17,10 +17,9 @@ class MainActivity : AppCompatActivity () {
 
         //assigning buttons to values
         try{
-            Log.d("BUTTON", "Finding buttons");
+            //top bar buttons
             val homeButton = findViewById<Button>(R.id.home_page)
             val accountButton = findViewById<Button>(R.id.account_page)
-            Log.d("BUTTON", "Topbar buttons made");
 
             //search buttons
             val surveySearchButton = findViewById<Button>(R.id.survey_search)
@@ -29,12 +28,13 @@ class MainActivity : AppCompatActivity () {
 
             //start button
             val startSearchButton = findViewById<Button>(R.id.start_search)
-            Log.d("BUTTON", "Search buttons made");
 
+            //sample button listener
             homeButton.setOnClickListener {
                 Log.d("BUTTON", "Hello") // Prints "Hello" to logcat
                 println("Hello") // Prints "Hello" to the console (debugging)
             }
+
         }catch (e: Error){
             print(e)
         }
