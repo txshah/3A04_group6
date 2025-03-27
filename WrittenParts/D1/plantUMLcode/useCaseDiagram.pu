@@ -1,0 +1,41 @@
+@startuml
+actor "App User" as User
+actor "Third-Party API" as Expert1
+actor "Authenticator" as Auth
+
+rectangle "Species Classifier System" {
+    User --> (Login to App)
+    (Login to App) ..> (Authenticate User) : <<includes>>
+    (Authenticate User) ..> (Deny User) : <<extends>>
+    (Authenticate User) ..> (Accept User) : <<extends>>
+    Auth ..> (Authenticate User)
+
+    User --> (Create Account)
+    (Create Account) ..> (Enter User Information) : <<includes>>
+    (Enter User Information) ..> (Display Account Created) : <<includes>>
+    (Display Account Created) ..> (Login to Account): <<extends>>
+
+    (Accept User) ..> (View Home Page) : <<includes>>  
+
+    User --> (Select Classification Request)
+    (View Home Page) ..> (Select Classification Request): <<includes>>  
+    (Select Classification Request) ..> (Start Image Search) : <<includes>>
+    (Select Classification Request) ..> (Start Freeform Search) : <<includes>>
+    (Select Classification Request) ..> (Start Survey Search) : <<includes>>
+
+     User --> (View Saved Results)
+    (View Home Page) ..> (View Saved Results): <<includes>> 
+
+    (Start Image Search) ..> (Image Processing): <<includes>>
+    (Image Processing) ..> (Decision Forum Processing) <<includes>>
+    (Start Freeform Search) ..>  (Decision Forum Processing): <<includes>>
+    (Start Survey Search) ..>  (Decision Forum Processing): <<includes>>
+
+    Expert1 --> (Image Processing)
+    (Decision Forum Processing) ..>  (Display Results): <<extends>>
+    (Display Results) ..> (Generate Report) : <<extends>>
+
+    (Generate Report) ..> (Save Results to Account) : <<extends>>
+    (Save Results to Account) ..> (View Saved Results) : <<includes>>
+}
+@enduml

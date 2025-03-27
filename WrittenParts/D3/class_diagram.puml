@@ -1,0 +1,260 @@
+@startuml
+'Messages'
+
+interface Display<T>{
+    + display<T>(): void
+}
+
+interface DisplayMessage<Message>{
+    + display<Message>(): void    
+}
+
+class FailureMessage{
+   - message: Message
+   + display<Message>(): void 
+}
+
+class SuccessMessage{
+   - message: String
+   + display<Message>(): void 
+}
+
+class Message{
+    - message: String
+    - options: Array<boolean>
+    + getMessage(): String
+    + getOptions: Array<boolean>
+}
+
+DisplayMessage <|.. FailureMessage
+DisplayMessage <|.. SuccessMessage
+DisplayMessage *-- Message
+Display <|.. DisplayMessage
+
+'Login'
+
+class LoginError{
+    + displayError(): boolean
+    - displayMessageMessage(): void
+    - displayOption(): boolean
+}
+
+class LoginSuccess{
+    - authentificationStatus: boolean
+    + displaySuccess(): void
+    + getAuthentificationStatus(): boolean
+}
+
+LoginError o-- FailureMessage
+LoginSuccess o-- SuccessMessage
+
+'Forum'
+class Forum{
+    + search(): Result
+    + getReport(result: Result): void
+}
+
+Forum *-- Search
+Forum *-- ReportGenerator
+
+
+'Main'
+
+class Main{
+    + run(): void
+    - runLogin(): void
+    - runMainpage(): void
+}
+
+Main *- Forum
+AccountManager -* Main
+
+'Search'
+
+interface Search{
+    + guess(input: InputType): Result
+}
+
+class ImageSearch{
+    + guess(input: InputType): Result
+}
+
+class FreeformSearch{
+    + guess(input: InputType): Result
+}
+
+class SurveySearch{
+    + guess(input: InputType): Result
+}
+
+
+class Result{
+    - accuracyRating: float
+    - animalGuess: string
+    + getAccuracyRating(): float
+    + getAnimalGuess(): string
+}
+
+'Agents'
+
+interface Agent<T extends InputType>{
+    + getGuess(input: T): Result
+}
+
+class FreeformAgent<FreeformInput>{
+    + getGuess(input: FreeformInput): Result
+}
+
+class SurveyAgent<SurveyInput>{
+    + getGuess(input: SurveyInput): Result
+}
+
+class ImageAgent<ImageInput>{
+    + getGuess(input: ImageInput): Result
+}
+
+interface InputType<T>{
+    + getInput(): T
+}
+
+class SurveyInput{
+    + getInput(): Survey
+}
+
+class FreeformInput{
+    + getInput(): string
+}
+
+class ImageInput{
+    + getInput(): string
+}
+
+class Survey{
+    - answer1: string
+    - answer2: string
+    - answer3: string
+    + getAnswer1(): string
+    + getAnswer2(): string
+    + getAnswer3(): string
+}
+
+Search <|.. SurveySearch
+Search <|.. FreeformSearch
+Search <|.. ImageSearch
+
+InputType <|.. SurveyInput
+InputType <|.. FreeformInput
+InputType <|.. ImageInput
+
+Agent <|.. SurveyAgent
+Agent <|.. FreeformAgent
+Agent <|.. ImageAgent
+
+Search *-- Agent
+InputType <- Search
+Search o- Result
+SurveyInput *-- Survey
+
+'InformationSource'
+interface InformationSource{
+    + getInformation(): string
+}
+
+class DescriptionInformationSource{
+    + getInformation(): string
+}
+
+class ImageInformationSource{
+    + getInformation(): string
+}
+
+InformationSource <|-- DescriptionInformationSource
+InformationSource <|-- ImageInformationSource
+
+Agent --> InformationSource
+'Report'
+
+class GenerateReport{
+    + createReport(result: Result): Report
+}
+
+class ReportGenerator{
+    + processReport(report: Report): void
+}
+
+class ReportDatabase{
+    - reports: Map<User, Map<Date, Report>>
+    + getReports(user: integer): Map<Date, Report>
+    + getReports(user: integer, date: Date): Map<Date, Report>
+}
+
+class ReportViewer{
+    + display<Report>(): void
+}
+
+class ReportSaver{
+    + save(report: Report): void
+}
+
+class Report{
+    - animalName: string
+    - animalClass: string
+    - animalImage: string
+    - accuracyRating: float
+    + getAnimalName(): string
+    + getAnimalClass(): string
+    + getAnimalImage(): string
+    + getAccuracyRating(): float 
+}
+
+ReportGenerator *-- GenerateReport
+ReportGenerator *--- ReportDatabase
+ReportGenerator *-- ReportViewer
+ReportGenerator *-- ReportSaver
+ReportViewer <|-- Display
+ReportGenerator o- Report
+
+
+'Account'
+
+class AccountManager{
+    + resetPassword(): void
+    + createAccount(): void
+    + login(): void
+    - attemptLogin(): Message
+    - displayLoginMessage(message: Message): void
+}
+
+class AccountDatabase{
+    - accounts: Map<login, Account>
+    + getAccount(login: string): Account
+}
+
+class Account{
+    - login: string
+    - password: string
+    + getPassword(): string
+}
+
+class Login{
+    + displayLogin(): boolean
+}
+
+class ResetPassword{
+    + displayReset(): void
+}
+
+class CreateAccount{
+    + displayCreateAccount(): Account
+}
+
+
+AccountManager o-- AccountDatabase
+AccountManager *-- ResetPassword
+AccountManager *-- CreateAccount
+AccountManager *-- Login
+
+AccountDatabase o-- Account
+
+
+@enduml

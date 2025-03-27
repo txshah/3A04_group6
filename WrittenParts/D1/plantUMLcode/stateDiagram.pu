@@ -1,0 +1,21 @@
+@startuml
+(Start) --> (Landing)
+
+(Landing) --> (AccountService): Create Account/Login
+(AccountService) --> (Landing)
+(AccountService) --> (Home)
+(Home) --> (AccountService): Update/View Account
+
+(Home) --> (ClassificationProcess) : Identify Species
+(ClassificationProcess) --> (Home) : Cancel Classification
+
+(ClassificationProcess)--> (ImageExpert) : Submit Image 
+(ClassificationProcess)--> (SurveyExpert) : Submit Survey
+(ClassificationProcess) --> (DescriptionExpert) : Submit Description 
+
+(ImageExpert) --> (DisplayResults) : Process Image
+(SurveyExpert) --> (DisplayResults) : Process Survey
+(DescriptionExpert) --> (DisplayResults) : Process Description
+
+(DisplayResults) --> (AccountService) : Save Results
+@enduml
