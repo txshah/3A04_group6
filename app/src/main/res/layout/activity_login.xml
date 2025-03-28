@@ -14,7 +14,7 @@
         android:layout_height="382dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="86dp"
         android:text="Login"
