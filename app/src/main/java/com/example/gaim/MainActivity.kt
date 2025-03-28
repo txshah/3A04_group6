@@ -3,6 +3,7 @@ package com.example.gaim
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
 
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -18,8 +19,8 @@ class MainActivity : AppCompatActivity () {
         //assigning buttons to values
         try{
             //top bar buttons
-            val homeButton = findViewById<Button>(R.id.home_page)
-            val accountButton = findViewById<Button>(R.id.account_page)
+            val homeButton = findViewById<ImageButton>(R.id.home_page)
+            val accountButton = findViewById<ImageButton>(R.id.account_page)
 
             //search buttons
             val surveySearchButton = findViewById<Button>(R.id.survey_search)

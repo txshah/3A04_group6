@@ -5,9 +5,18 @@
     android:orientation="vertical">
 
 
-    <Button
-        android:id="@+id/login"
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="172dp"
-        android:text="Login" />
+        android:layout_height="wrap_content" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="382dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:text="Login"
+        android:textSize="34sp" />
 </LinearLayout>
