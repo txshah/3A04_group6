@@ -1,6 +1,6 @@
 package com.example.gaim
 
-import SwitchButtonTracker
+import com.example.gaim.ui.utility.SwitchButtonTracker
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
