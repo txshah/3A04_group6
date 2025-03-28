@@ -15,7 +15,7 @@ class SearchController (private val context: Context, private val intent: Intent
 
     private fun runSearches(){
         for(activity in SearchActivity.entries){
-            if(intent.extras?.getBoolean(activity.key) == SearchState.PENDING.value){
+            if(intent.extras?.getBoolean(activity.name) == SearchState.PENDING.value){
                 context.startActivity(intent)
             }
         }
@@ -25,7 +25,7 @@ class SearchController (private val context: Context, private val intent: Intent
     public fun complete(search: Class<out AppCompatActivity>){
         val activity = SearchActivity.find(search)
 
-        intent.extras?.putBoolean(activity?.key, SearchState.PROCESSED.value); //indicates that the given key has been processed in the intent
+        intent.extras?.putBoolean(activity?.name, SearchState.PROCESSED.value); //indicates that the given key has been processed in the intent
 
         start()
     }
