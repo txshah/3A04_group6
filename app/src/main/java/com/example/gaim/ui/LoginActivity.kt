@@ -1,10 +1,12 @@
-package com.example.gaim
+package com.example.gaim.ui
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import com.example.gaim.MainActivity
+import com.example.gaim.R
 
 class LoginActivity : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,10 +17,18 @@ class LoginActivity : AppCompatActivity()  {
 
         val loginButton = findViewById<Button>(R.id.login)
 
+
+
         //sample button listener
         loginButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent);
+            complete()
         }
+    }
+
+    private fun complete(){
+        val intent = Intent(this, MainActivity::class.java);
+
+        intent.putExtra("login", true)
+        startActivity(intent)
     }
 }
