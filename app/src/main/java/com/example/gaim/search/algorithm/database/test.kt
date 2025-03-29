@@ -1,38 +1,50 @@
-package com.example.gaim2.search.algorithm.database
 import java.sql.DriverManager
 
 fun main() {
-    // Connect to the database
-    val dbPath = "canadian_species.db"
-    val connection = DriverManager.getConnection("jdbc:sqlite:$dbPath")
+    try {
+        // Load SQLite JDBC driver
+        Class.forName("org.sqlite.JDBC")
 
-    // Example 1: Simple query
-    val statement = connection.createStatement()
-    val resultSet = statement.executeQuery("SELECT name, legs, size FROM species LIMIT 5")
+        // Define the database path - use absolute path for certainty
+        val dbPath = "app/src/main/java/com/example/gaim/search/algorithm/database/canadian_species.db"
+        val connection = DriverManager.getConnection("jdbc:sqlite:$dbPath")
 
-    println("First 5 species:")
-    while (resultSet.next()) {
-        val name = resultSet.getString("name")
-        val legs = resultSet.getInt("legs")
-        val size = resultSet.getString("size")
-        println("$name (Legs: $legs, Size: $size)")
+        println("Connected to db: $dbPath")
+
+        // check tables
+        val metaStatement = connection.createStatement()
+        val tables = metaStatement.executeQuery("SELECT name FROM sqlite_master WHERE type='table'")
+        println("Tables in db:")
+        while (tables.next()) {
+            println("${tables.getString("name")}")
+        }
+        tables.close()
+        metaStatement.close()
+
+        try {
+            val statement = connection.createStatement()
+            val resultSet = statement.executeQuery("SELECT name, legs, size FROM species LIMIT 5")
+
+            println("\nresults:")
+            while (resultSet.next()) {
+                val name = resultSet.getString("name")
+                val legs = resultSet.getInt("legs")
+                val size = resultSet.getString("size")
+                println("Name: $name, Legs: $legs, Size: $size")
+            }
+
+            resultSet.close()
+            statement.close()
+        } catch (e: Exception) {
+            println("Query failed: ${e.message}")
+        }
+
+        connection.close()
+    } catch (e: ClassNotFoundException) {
+        println("SQLite driver not found")
+        e.printStackTrace()
+    } catch (e: Exception) {
+        println("Database connection failed: ${e.message}")
+        e.printStackTrace()
     }
-
-    // Example 2: Parameterized query
-    val preparedStatement = connection.prepareStatement(
-        "SELECT name FROM species WHERE endangered = ? AND size = ?"
-    )
-    preparedStatement.setString(1, "Yes")
-    preparedStatement.setString(2, "Large")
-
-    val endangeredLarge = preparedStatement.executeQuery()
-    println("\nEndangered large species:")
-    while (endangeredLarge.next()) {
-        println(endangeredLarge.getString("name"))
-    }
-
-    // Close resources
-    resultSet.close()
-    statement.close()
-    connection.close()
 }
