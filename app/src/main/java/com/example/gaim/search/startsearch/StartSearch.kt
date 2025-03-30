@@ -22,5 +22,6 @@ abstract class StartSearch <InputType>{
 
     //runs the UI and returns the information in the correct input type
     protected abstract fun runDisplay(): InputType;
-
+//    get front end data and send to start search (if thats what is requested by user in front end)
+//    gets all three alogirhtm results and picks one with highest accruacy score - sends that to search controllor
 }
