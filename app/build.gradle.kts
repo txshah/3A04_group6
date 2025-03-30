@@ -40,7 +40,6 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation("org.xerial:sqlite-jdbc:3.41.2.1")
-    implementation ("com.github.gouravkhunger:AccoLib:1.1.2")
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
