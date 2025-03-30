@@ -8,15 +8,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
 
-//NEED LOGIN BEFORE THIS BUT LEADS HERE
-//FROM HERE OPTION TO SEARCH OR VIEW ACCOUNT
-//MAIN FRONT END - HOMEPAGE
-class MainActivity : AppCompatActivity () {
+class SearchUI : AppCompatActivity () {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.search)
 
         //assigning buttons to values
         try{
