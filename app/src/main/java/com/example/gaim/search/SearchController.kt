@@ -18,13 +18,11 @@ class SearchController (private val activity: AbstractActivity, private val inte
     private fun runSearches(){
         for(entry in SearchActivity.entries){
             if(intent.extras?.getBoolean(entry.name) == SearchState.PENDING.value){
-                Log.d("TAG", "Starting activity: " + entry.name)
                 val newIntent = Intent(this@SearchController.activity, entry.search);
 
                 intent.extras?.let { newIntent.putExtras(it) }
 
                 this.activity.nextActivity(entry.search, intent)
-                Log.d("TAG", "Activity started")
             }
         }
     }

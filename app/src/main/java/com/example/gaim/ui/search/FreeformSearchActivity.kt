@@ -15,7 +15,7 @@ class FreeformSearchActivity : AbstractSearchActivity <String>() {
         Log.d("TAG", "Starting activity: Freeform")
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.search)
+        setContentView(R.layout.freeform_search)
 
         val textInput = findViewById<EditText>(R.id.input_text)
 
