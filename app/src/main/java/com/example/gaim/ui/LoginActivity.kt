@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.gaim.MainActivity
 import com.example.gaim.R
 
-class LoginActivity : AppCompatActivity()  {
+class LoginActivity : AbstractActivity ()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
