@@ -13,7 +13,7 @@ class SearchUI : AppCompatActivity () {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        setContentView(R.layout.search)
+        setContentView(R.layout.freeform_search)
 
         //assigning buttons to values
         try{
