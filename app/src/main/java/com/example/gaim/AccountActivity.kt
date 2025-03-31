@@ -1,11 +1,14 @@
 package com.example.gaim
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gaim.R
 
-class AccountActivity : AppCompatActivity()  {
+class AccountActivity : AbstractActivity () {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        TODO("Not yet implemented")
+
+        setContentView(R.layout.activity_account)
     }
 }
