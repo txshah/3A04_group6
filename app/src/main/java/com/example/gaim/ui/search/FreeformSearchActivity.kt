@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import com.example.gaim.R
+import com.example.gaim.search.algorithm.FreeformSearchAlgorithm
+import com.example.gaim.search.algorithm.SearchAlgorithm
 
-class FreeformSearchActivity: AbstractSearchActivity () {
+class FreeformSearchActivity : AbstractSearchActivity <String>() {
+    override val algorithm: SearchAlgorithm<String> = FreeformSearchAlgorithm();
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
