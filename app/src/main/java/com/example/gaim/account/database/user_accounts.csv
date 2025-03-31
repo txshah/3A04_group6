@@ -1,0 +1,2 @@
+First Name,Last Name,Email,Username,Password,reports_json
+Alice,Johnson,alice.johnson@example.com,alicej,pass1234,"[{""name"":""Red Fox"",""description"":""Spotted near forest trail"",""accuracy_score"":0.91,""picture"":""app/src/main/java/com/example/gaim/account/database/redfox.jpg""},{""name"":""app/src/main/java/com/example/gaim/account/database/Snowy Owl"",""description"":""Flying overhead"",""accuracy_score"":0.95,""picture"":""owl.png""}]"
