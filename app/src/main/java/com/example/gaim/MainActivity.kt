@@ -1,18 +1,20 @@
 package com.example.gaim
 
+import android.content.Intent
 import com.example.gaim.ui.utility.SwitchButtonTracker
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import com.example.gaim.search.SearchActivity
 import com.example.gaim.search.SearchController
 import com.example.gaim.search.SearchState
+import com.example.gaim.ui.AbstractActivity
 
 //Homepage
-class MainActivity : AppCompatActivity () {
+class MainActivity : AbstractActivity () {
     //hash map containing relevant search button activities to their button IDs
     private val searchButtonMap: Map<SearchActivity, Int> = hashMapOf(
         SearchActivity.SURVEY to R.id.survey_search,
@@ -59,11 +61,16 @@ class MainActivity : AppCompatActivity () {
     private fun runSearch(searchStateTrackers: Collection<SearchStateTracker>){
         for(tracker in searchStateTrackers){
             intent.putExtra(tracker.searchName(), tracker.state())
+            Log.d("", tracker.searchName() + "\t" + tracker.state())
         }
 
         val searchController = SearchController(this, intent)
 
         searchController.start()
+    }
+
+    private fun run(intent: Intent){
+        startActivity(intent)
     }
 }
 
