@@ -6,7 +6,9 @@ import com.example.gaim.search.GaimActivity
 //
 enum class MainpageActivity  (override val activity: Class<out AbstractActivity>): GaimActivity {
     ACCOUNT(AccountActivity::class.java),
-    MAIN(MainActivity::class.java);
+    MAIN(MainActivity::class.java),
+    LOGIN(LoginActivity::class.java),
+    CREATEACCOUNT(CreateAccountActivity::class.java);
 
     companion object {
         fun find(search: Class<out AbstractActivity>): MainpageActivity? {

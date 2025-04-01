@@ -14,7 +14,9 @@ import com.example.gaim.ui.utility.MissingText
 class LoginActivity : AbstractActivity ()  {
     private val usernameID = R.id.username
     private val passwordID = R.id.password
+
     private val loginID = R.id.login
+    private val createAccountID = R.id.create_account
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,25 +25,29 @@ class LoginActivity : AbstractActivity ()  {
 
         val usernameInput = findViewById<EditText>(usernameID)
         val passwordInput = findViewById<EditText>(passwordID)
+
         val loginButton = findViewById<Button>(loginID)
+        val createAccountButton = findViewById<Button>(createAccountID)
 
         val loginCheckers = mutableSetOf<ErrorChecker>(
             MissingText(this, usernameInput, "Username"),
             MissingText(this, passwordInput, "Password")
         )
 
-        //sample button listener
         loginButton.setOnClickListener {
             if(this.checkErrors(loginCheckers)){
-                complete()
+                this.nextActivity(MainpageActivity.MAIN)
             }
+        }
+
+        createAccountButton.setOnClickListener {
+            this.nextActivity(MainpageActivity.CREATEACCOUNT)
         }
     }
 
     private fun complete(){
         val intent = Intent(this, MainActivity::class.java);
 
-        intent.putExtra("login", true)
         startActivity(intent)
     }
 }
