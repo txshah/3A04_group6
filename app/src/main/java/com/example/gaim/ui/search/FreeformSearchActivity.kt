@@ -25,7 +25,7 @@ class FreeformSearchActivity : AbstractSearchActivity <String>() {
         val submitFreeform = findViewById<Button>(submitID)
 
         val submitFreeformErrorCheckers = mutableSetOf<ErrorChecker>(
-            MissingText(this, textInput)
+            MissingText(this, textInput, "Your input")
         )
 
         submitFreeform.setOnClickListener {

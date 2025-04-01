@@ -5,9 +5,9 @@ import android.widget.EditText
 import com.example.gaim.ui.AbstractActivity
 
 //checks if empty text given an activity, input field, and button field
-class MissingText (activity: AbstractActivity, private val textInput: EditText) : TextError (activity, textInput) {
+class MissingText (activity: AbstractActivity, private val textInput: EditText, fieldName: String = "An input field") : TextError (activity, textInput) {
     override val errorTitle: String = "Missing text"
-    override val errorMessage: String = "An input field is missing text!"
+    override val errorMessage: String = "$fieldName is missing text!"
 
     private val emptyText: String = this.textInput.text.toString()
 
