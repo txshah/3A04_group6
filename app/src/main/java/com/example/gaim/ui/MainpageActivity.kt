@@ -2,11 +2,16 @@ package com.example.gaim.ui
 
 import com.example.gaim.MainActivity
 import com.example.gaim.search.GaimActivity
+import com.example.gaim.ui.account.AccountActivity
+import com.example.gaim.ui.account.CreateAccountActivity
+import com.example.gaim.ui.account.LoginActivity
 
 //
 enum class MainpageActivity  (override val activity: Class<out AbstractActivity>): GaimActivity {
     ACCOUNT(AccountActivity::class.java),
-    MAIN(MainActivity::class.java);
+    MAIN(MainActivity::class.java),
+    LOGIN(LoginActivity::class.java),
+    CREATEACCOUNT(CreateAccountActivity::class.java);
 
     companion object {
         fun find(search: Class<out AbstractActivity>): MainpageActivity? {

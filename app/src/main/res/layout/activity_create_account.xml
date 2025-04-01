@@ -33,19 +33,20 @@
         android:background="@android:drawable/editbox_background"
         android:layout_marginTop="12dp"/>
 
-    <Button
-        android:id="@+id/login"
+    <EditText
+        android:id="@+id/retype_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_marginTop="16dp"/>
+        android:hint="Retype Password"
+        android:padding="12dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginTop="12dp"/>
 
     <Button
         android:id="@+id/create_account"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Create Account" />
-
+        android:text="Create Account"
+        android:layout_marginTop="16dp"/>
 
 </LinearLayout>

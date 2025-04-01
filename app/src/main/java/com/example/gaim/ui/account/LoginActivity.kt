@@ -1,20 +1,20 @@
-package com.example.gaim.ui
+package com.example.gaim.ui.account
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import com.example.gaim.MainActivity
 import com.example.gaim.R
+import com.example.gaim.ui.*
 import com.example.gaim.ui.utility.ErrorChecker
 import com.example.gaim.ui.utility.MissingText
 
-class LoginActivity : AbstractActivity ()  {
+class LoginActivity : AbstractActivity()  {
     private val usernameID = R.id.username
     private val passwordID = R.id.password
+
     private val loginID = R.id.login
+    private val createAccountID = R.id.create_account
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,25 +23,31 @@ class LoginActivity : AbstractActivity ()  {
 
         val usernameInput = findViewById<EditText>(usernameID)
         val passwordInput = findViewById<EditText>(passwordID)
+
         val loginButton = findViewById<Button>(loginID)
+        val createAccountButton = findViewById<Button>(createAccountID)
 
         val loginCheckers = mutableSetOf<ErrorChecker>(
             MissingText(this, usernameInput, "Username"),
             MissingText(this, passwordInput, "Password")
         )
 
-        //sample button listener
         loginButton.setOnClickListener {
             if(this.checkErrors(loginCheckers)){
-                complete()
+                if(this.loginVerified()){
+                    this.nextActivity(MainpageActivity.MAIN)
+                }
             }
+        }
+
+        createAccountButton.setOnClickListener {
+            this.nextActivity(MainpageActivity.CREATEACCOUNT)
         }
     }
 
-    private fun complete(){
-        val intent = Intent(this, MainActivity::class.java);
-
-        intent.putExtra("login", true)
-        startActivity(intent)
+    private fun loginVerified(): Boolean{
+        //ADD IN LOGIN VERIFICATION
+        return true
     }
+
 }
