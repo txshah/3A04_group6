@@ -26,7 +26,7 @@ class SearchController (private val activity: AbstractActivity, private val inte
     }
 
     //sets the search activity as processed and goes to check if any more are still pending
-    fun complete(search: Class<out AppCompatActivity>){
+    fun complete(search: Class<out AbstractActivity>){
         val activity = SearchActivity.find(search)
 
         intent.extras?.putBoolean(activity?.name, SearchState.PROCESSED.value); //indicates that the given key has been processed in the intent
