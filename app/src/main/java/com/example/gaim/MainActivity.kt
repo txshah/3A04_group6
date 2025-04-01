@@ -12,6 +12,7 @@ import com.example.gaim.search.SearchController
 import com.example.gaim.search.SearchState
 import com.example.gaim.ui.AbstractActivity
 import com.example.gaim.ui.MainpageActivity
+import com.google.android.material.button.MaterialButton
 
 //Homepage
 class MainActivity : AbstractActivity () {
@@ -47,7 +48,7 @@ class MainActivity : AbstractActivity () {
     //sets up the image buttons in the top bar
     private fun setUpImageButtons() {
         for(entry in imageButtonMap){
-            val button = findViewById<ImageButton>(entry.value)
+            val button = findViewById<MaterialButton>(entry.value)
 
             button.setOnClickListener {
                 nextActivity(entry.key)
