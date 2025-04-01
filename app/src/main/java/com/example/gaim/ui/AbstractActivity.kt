@@ -8,13 +8,13 @@ import com.example.gaim.search.GaimActivity
 abstract class AbstractActivity: AppCompatActivity () {
 
     fun nextActivity(activity: GaimActivity){
-        val intent = Intent(this, activity.activity);
+        val intent = Intent(this, activity.activity)
 
         startActivity(intent)
     }
 
     fun nextActivity(activity: GaimActivity, previousIntent: Intent){
-        val intent = Intent(this, activity.activity);
+        val intent = Intent(this, activity.activity)
 
         intent.putExtras(previousIntent)
         startActivity(intent)
