@@ -1,8 +1,6 @@
 package com.example.gaim.search.algorithm
 
 import com.example.gaim.search.SearchResult
-import com.example.gaim.search.Survey
-import com.example.gaim.search.startsearch.SurveyStartSearch
 import java.sql.DriverManager
 
 //see SEARCH ALGOIRTHM for description
