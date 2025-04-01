@@ -1,10 +1,7 @@
-package com.example.gaim
+package com.example.gaim.ui
 
 import android.os.Bundle
-import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
 import com.example.gaim.R
-import com.example.gaim.ui.AbstractActivity
 
 class AccountActivity : AbstractActivity () {
     override fun onCreate(savedInstanceState: Bundle?) {
