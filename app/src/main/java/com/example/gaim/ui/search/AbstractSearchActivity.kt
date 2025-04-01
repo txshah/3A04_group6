@@ -1,6 +1,5 @@
 package com.example.gaim.ui.search
 
-import androidx.appcompat.app.AppCompatActivity
 import com.example.gaim.search.SearchController
 import com.example.gaim.search.algorithm.SearchAlgorithm
 import com.example.gaim.ui.AbstractActivity
@@ -15,4 +14,6 @@ abstract class AbstractSearchActivity <T>: AbstractActivity ()  {
         val searchController = SearchController(inheritor, intent)
         searchController.complete(inheritor.javaClass)
     }
+
+
 }
