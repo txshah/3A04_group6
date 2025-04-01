@@ -1,12 +1,9 @@
 package com.example.gaim.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import com.example.gaim.MainActivity
 import com.example.gaim.R
 import com.example.gaim.ui.utility.ErrorChecker
 import com.example.gaim.ui.utility.MissingText
@@ -43,11 +40,5 @@ class LoginActivity : AbstractActivity ()  {
         createAccountButton.setOnClickListener {
             this.nextActivity(MainpageActivity.CREATEACCOUNT)
         }
-    }
-
-    private fun complete(){
-        val intent = Intent(this, MainActivity::class.java);
-
-        startActivity(intent)
     }
 }
