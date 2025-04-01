@@ -9,7 +9,8 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
-        maven("https://repo.kotlin.link")
+        maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots/") }
+        maven { url = uri("https://maven.pkg.github.com/microsoft/onnxruntime") }
     }
 }
 dependencyResolutionManagement {
