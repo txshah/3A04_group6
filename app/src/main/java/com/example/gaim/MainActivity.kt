@@ -48,7 +48,7 @@ class MainActivity : AbstractActivity () {
     //sets up the image buttons in the top bar
     private fun setUpImageButtons() {
         for(entry in imageButtonMap){
-            val button = findViewById<MaterialButton>(entry.value)
+            val button = findViewById<ImageButton>(entry.value)
 
             button.setOnClickListener {
                 nextActivity(entry.key)
