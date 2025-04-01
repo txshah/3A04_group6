@@ -1,14 +1,15 @@
-package com.example.gaim.ui
+package com.example.gaim.ui.account
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import com.example.gaim.R
+import com.example.gaim.ui.*
 import com.example.gaim.ui.utility.ErrorChecker
 import com.example.gaim.ui.utility.MissingText
 
-class LoginActivity : AbstractActivity ()  {
+class LoginActivity : AbstractActivity()  {
     private val usernameID = R.id.username
     private val passwordID = R.id.password
 
@@ -33,7 +34,9 @@ class LoginActivity : AbstractActivity ()  {
 
         loginButton.setOnClickListener {
             if(this.checkErrors(loginCheckers)){
-                this.nextActivity(MainpageActivity.MAIN)
+                if(this.loginVerified()){
+                    this.nextActivity(MainpageActivity.MAIN)
+                }
             }
         }
 
@@ -41,4 +44,10 @@ class LoginActivity : AbstractActivity ()  {
             this.nextActivity(MainpageActivity.CREATEACCOUNT)
         }
     }
+
+    private fun loginVerified(): Boolean{
+        //ADD IN LOGIN VERIFICATION
+        return true
+    }
+
 }
