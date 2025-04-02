@@ -1,9 +1,7 @@
 package com.example.gaim.search
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import com.example.gaim.ui.AbstractActivity
-import com.example.gaim.search.SearchResult
 
 //checks the intent for true search activities and runs them
 class SearchController (private val activity: AbstractActivity, private val intent: Intent){
@@ -12,6 +10,11 @@ class SearchController (private val activity: AbstractActivity, private val inte
 
     fun start(){
         runSearches()
+
+        for(entry in SearchActivity.entries){
+            val searchResult = SearchResult.getFromIntent(intent, entry)
+            addSearchResult(searchResult)
+        }
 
         //to do("Implement report generation (either call or in this class) after searches have been finished")
     }
@@ -43,18 +46,19 @@ class SearchController (private val activity: AbstractActivity, private val inte
             // Update accuracy (+0.20) if duplicate exists
             searchResults.remove(existingResult)
             searchResults.add(
-                    existingResult.copy(accuracy = existingResult.accuracy + 0.20)
-                )
-
+                existingResult.copy(accuracy = existingResult.accuracy?.plus(0.20))
+            )
         } else {
             searchResults.add(result)
         }
     }
 
+    /*
     fun final(): SearchResult? {
         if (searchResults.isEmpty()) return null
 
         return searchResults.maxByOrNull { it.accuracy }
     }
 
+    */
 }
