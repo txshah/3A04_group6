@@ -12,7 +12,7 @@ import com.google.gson.JsonObject
 import com.google.protobuf.ByteString
 
 // GOOGLE CLOUD VISION API KEY
-private const val API_KEY = "ENTER UR KEY"
+private const val API_KEY = "AIzaSyAakFzZed_NUhPYQSOCFyxyAu9soZVTd_g"
 
 class ImageSearchAlgorithm : SearchAlgorithm<String> {
     override fun search(input: String): SearchResult {

@@ -43,8 +43,9 @@ class SearchController (private val activity: AbstractActivity, private val inte
             // Update accuracy (+0.20) if duplicate exists
             searchResults.remove(existingResult)
             searchResults.add(
-                existingResult.copy(accuracy = existingResult.accuracy + 0.20)
-            )
+                    existingResult.copy(accuracy = existingResult.accuracy + 0.20)
+                )
+
         } else {
             searchResults.add(result)
         }
