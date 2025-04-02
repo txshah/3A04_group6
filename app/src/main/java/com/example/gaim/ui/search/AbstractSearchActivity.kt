@@ -10,10 +10,11 @@ abstract class AbstractSearchActivity <T>: AbstractActivity ()  {
     //run this function when the freeform search has all
     //required information and the page can move to the
     // next search type pass in "this" in inheritor classes
-    protected fun completeSearch(inheritor: AbstractSearchActivity<T>){
+    protected fun completeSearch(input: T, inheritor: AbstractSearchActivity<T>){
+        val searchResult = algorithm.search(input)
+        searchResult.putInIntent(intent, inheritor.javaClass)
+
         val searchController = SearchController(inheritor, intent)
-
-
         searchController.complete(inheritor.javaClass)
     }
 

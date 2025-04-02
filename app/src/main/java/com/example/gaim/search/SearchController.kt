@@ -13,6 +13,7 @@ class SearchController (private val activity: AbstractActivity, private val inte
     fun start(){
         runSearches()
 
+
         //to do("Implement report generation (either call or in this class) after searches have been finished")
     }
 
