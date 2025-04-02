@@ -77,6 +77,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation("com.google.cloud:google-cloud-aiplatform:3.53.0")
     implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+    implementation("com.google.cloud:google-cloud-vision:3.15.0")
     implementation("io.ktor:ktor-client-android:2.3.7")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

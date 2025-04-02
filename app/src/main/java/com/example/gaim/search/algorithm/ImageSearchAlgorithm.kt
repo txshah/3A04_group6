@@ -1,50 +1,108 @@
 package com.example.gaim.search.algorithm
 
 import com.example.gaim.search.SearchResult
+import java.io.File
+import java.net.URISyntaxException
+import java.net.URL
+import java.net.HttpURLConnection
+import java.nio.file.Files
+import com.google.gson.JsonParser
+import com.google.gson.JsonObject
+import com.google.protobuf.ByteString
 
-
-//see SEARCH ALGORITHM for description, input string is file path to image
+// GOOGLE CLOUD VISION API KEY
+private const val API_KEY = "AIzaSyAakFzZed_NUhPYQSOCFyxyAu9soZVTd_g"
 
 class ImageSearchAlgorithm : SearchAlgorithm<String> {
     override fun search(input: String): SearchResult {
-//        in real implementation use input text
-        print("start")
-        var sampleInput = "app/src/main/java/com/example/gaim/account/database/redfox.jpg"
-        print("api")
-        var answer = apiCall(sampleInput)
+        println("Starting image search...")
 
-        if (answer.isEmpty()) {
+        val filePath = if (input.isNotEmpty()) input
+        else "app/src/main/java/com/example/gaim/account/database/redfox.jpg"
+
+        println("Processing file: $filePath")
+
+        val detectedLabels = apiCall(filePath)
+
+        if (detectedLabels.isEmpty()) {
             return SearchResult("N/A", 0.0)
         }
 
-        var maxEntry = answer.maxBy { it.value }
-        var species = maxEntry.key
-        var accuracy = maxEntry.value.toDouble()
-        print("$species and $accuracy")
+        val maxEntry = detectedLabels.maxByOrNull { it.value } ?: return SearchResult("N/A", 0.0)
+        val species = maxEntry.key
+        val accuracy = maxEntry.value.toDouble()
+
+        println("Detected: $species with confidence: $accuracy")
 
         return SearchResult(species, accuracy)
     }
 
+    @Throws(URISyntaxException::class)
+    fun getFileFromResource(fileName: String): File {
+        val classLoader: ClassLoader = object {}.javaClass.classLoader
+        val resource: URL? = classLoader.getResource(fileName)
+        return resource?.toURI()?.let { File(it) }
+            ?: throw IllegalArgumentException("File not found! $fileName")
+    }
 
     private fun apiCall(filePath: String): Map<String, Float> {
-//        exactly 10 keywords from any input text
-//        in one line split input into words and then get all words great than three and take 10 distinct
         print("here")
-        val hashMap = HashMap<String, Float>()
+        val labelsMap = mutableMapOf<String, Float>()
+        try {
+            val file = if (File(filePath).exists()) File(filePath) else getFileFromResource(filePath)
+            val imgBytes = ByteString.copyFrom(Files.readAllBytes(file.toPath()))
+            val base64Image = java.util.Base64.getEncoder().encodeToString(imgBytes.toByteArray())
 
+            val jsonRequest = """
+                {
+                  "requests": [
+                    {
+                      "image": { "content": "$base64Image" },
+                      "features": [{ "type": "LABEL_DETECTION", "maxResults": 10 }]
+                    }
+                  ]
+                }
+            """.trimIndent()
 
-            print("here1")
+            val url = URL("https://vision.googleapis.com/v1/images:annotate?key=$API_KEY")
+            print("Here")
+            val connection = url.openConnection() as HttpURLConnection
+            connection.requestMethod = "POST"
+            connection.setRequestProperty("Content-Type", "application/json")
+            connection.doOutput = true
 
-            return hashMap
+            connection.outputStream.use { os ->
+                os.write(jsonRequest.toByteArray())
+                os.flush()
+            }
+
+            val responseCode = connection.responseCode
+            if (responseCode != 200) {
+                val errorResponse = connection.errorStream?.bufferedReader()?.use { it.readText() }
+                println("Error: HTTP $responseCode - $errorResponse")
+                return labelsMap
+            }
+
+            val response = connection.inputStream.bufferedReader().use { it.readText() }
+            val jsonResponse = JsonParser.parseString(response).asJsonObject
+            val labels = jsonResponse.getAsJsonArray("responses")
+                .firstOrNull()?.asJsonObject
+                ?.getAsJsonArray("labelAnnotations") ?: return labelsMap
+
+            for (label in labels) {
+                val obj = label as JsonObject
+                labelsMap[obj.get("description").asString] = obj.get("score").asFloat
+                print(labelsMap)
+            }
+        } catch (e: Exception) {
+            println("Error processing image: ${e.message}")
         }
-
+        return labelsMap
+    }
 }
-
 
 fun main() {
     val searcher = ImageSearchAlgorithm()
-    val result = searcher.search("") // Input doesn't matter since sampleInput is hardcoded
+    val result = searcher.search("app/src/main/java/com/example/gaim/account/database/redfox.jpg")
+    print(result)
 }
-
-
-
