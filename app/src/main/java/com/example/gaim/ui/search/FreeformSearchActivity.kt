@@ -32,7 +32,7 @@ class FreeformSearchActivity : AbstractSearchActivity <String>() {
             var currentText = textInput.text.toString()
 
             if(this.checkErrors(submitFreeformErrorCheckers)){
-                algorithm.search(currentText)
+                completeSearch(currentText, this)
             }
         }
 

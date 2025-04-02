@@ -1,7 +1,6 @@
 package com.example.gaim.search.algorithm
 
 import com.example.gaim.search.SearchResult
-import com.example.gaim.search.algorithm.SearchAlgorithm
 import java.sql.DriverManager
 
 
@@ -59,6 +58,7 @@ class FreeformSearchAlgorithm : SearchAlgorithm<String>{
 //        return ANIMAL: number of words from keyword list that are in that animals keyword col
         Class.forName("org.sqlite.JDBC")
         val dbPath = "app/src/main/java/com/example/gaim/search/algorithm/database/canadian_species.db"
+
         val connection = DriverManager.getConnection("jdbc:sqlite:$dbPath")
         var output = mutableMapOf<String, Int>()
 
