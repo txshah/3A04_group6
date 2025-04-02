@@ -15,6 +15,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        
+        // TODO: Replace this value with your actual Gemini API key
+        buildConfigField("String", "GEMINI_API_KEY", "\"AIzaSyCxquf5sBHr_sCQxfhoeysgKUi4PBmLSrQ\"")
     }
 
     buildTypes {
@@ -26,12 +29,33 @@ android {
             )
         }
     }
+    
+    // Add packaging options to handle duplicate files
+    packaging {
+        resources {
+            excludes += "/META-INF/DEPENDENCIES"
+            excludes += "/META-INF/LICENSE"
+            excludes += "/META-INF/LICENSE.txt"
+            excludes += "/META-INF/license.txt"
+            excludes += "/META-INF/NOTICE"
+            excludes += "/META-INF/NOTICE.txt"
+            excludes += "/META-INF/notice.txt"
+            excludes += "/META-INF/ASL2.0"
+            excludes += "/META-INF/*.kotlin_module"
+            excludes += "META-INF/INDEX.LIST"
+        }
+    }
+    
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+    
+    buildFeatures {
+        buildConfig = true
     }
 }
 
@@ -46,6 +70,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation("com.google.cloud:google-cloud-aiplatform:3.53.0")
+    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+    implementation("io.ktor:ktor-client-android:2.3.7")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

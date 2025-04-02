@@ -4,7 +4,7 @@ import com.example.gaim.ui.utility.SwitchButtonTracker
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
-
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import com.example.gaim.search.GaimActivity
 import com.example.gaim.search.SearchActivity
@@ -13,6 +13,7 @@ import com.example.gaim.search.SearchState
 import com.example.gaim.ui.AbstractActivity
 import com.example.gaim.ui.MainpageActivity
 import com.google.android.material.button.MaterialButton
+import androidx.appcompat.app.AlertDialog
 
 //Homepage
 class MainActivity : AbstractActivity () {
@@ -34,7 +35,7 @@ class MainActivity : AbstractActivity () {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
+        
         //assigning buttons to values
         setUpImageButtons()
 
@@ -43,6 +44,9 @@ class MainActivity : AbstractActivity () {
 
         //start button
         setUpStartSearchButton(searchStateTrackers)
+        
+        //Gemini test button
+        setUpGeminiTestButton()
     }
 
     //sets up the image buttons in the top bar
@@ -87,6 +91,30 @@ class MainActivity : AbstractActivity () {
         val searchController = SearchController(this, intent) //preparing search controller
 
         searchController.start()
+    }
+
+    //sets up the Gemini test button
+    private fun setUpGeminiTestButton() {
+        val geminiTestButton = findViewById<Button>(R.id.gemini_test)
+        
+        geminiTestButton.setOnClickListener {
+            testGemini()
+        }
+    }
+    
+    //tests the Gemini integration
+    private fun testGemini() {
+        val geminiService = GeminiService(this)
+        
+        Toast.makeText(this, "Sending test prompt to Google Gemini API via Vertex AI...", Toast.LENGTH_SHORT).show()
+        
+        geminiService.testGemini { response ->
+            AlertDialog.Builder(this)
+                .setTitle("Gemini Response")
+                .setMessage(response)
+                .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+                .show()
+        }
     }
 }
 
