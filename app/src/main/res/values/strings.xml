@@ -1,3 +1,47 @@
 <resources>
     <string name="app_name">gaim</string>
+        <string-array name="legs_options">
+            <item>1</item>
+            <item>2</item>
+            <item>3</item>
+            <item>4</item>
+            <item>5</item>
+            <item>6</item>
+        </string-array>
+
+        <string-array name="coat_options">
+            <item>Fur</item>
+            <item>Feathers</item>
+            <item>Scale</item>
+        </string-array>
+
+        <string-array name="colour_options">
+            <item>Brown</item>
+            <item>Grey</item>
+            <item>Black</item>
+            <item>White</item>
+            <item>Other</item>
+            <item>Green</item>
+            <item>Black and White</item>
+            <item>Tan</item>
+            <item>Red</item>
+            <item>Spotted</item>
+        </string-array>
+
+        <string-array name="domain_options">
+            <item>Aerial</item>
+            <item>Aquatic</item>
+            <item>Land</item>
+        </string-array>
+
+        <string-array name="region_options">
+            <item>Canada</item>
+            <item>Arctic</item>
+        </string-array>
+
+        <string-array name="size_options">
+            <item>Large</item>
+            <item>Medium</item>
+            <item>Small</item>
+        </string-array>
 </resources>
