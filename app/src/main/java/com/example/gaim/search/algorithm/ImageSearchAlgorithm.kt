@@ -6,12 +6,13 @@ import java.net.URISyntaxException
 import java.net.URL
 import java.net.HttpURLConnection
 import java.nio.file.Files
+import java.util.Base64
 import com.google.gson.JsonParser
 import com.google.gson.JsonObject
 import com.google.protobuf.ByteString
 
 // GOOGLE CLOUD VISION API KEY
-private const val API_KEY = "AIzaSyAakFzZed_NUhPYQSOCFyxyAu9soZVTd_g"
+private const val API_KEY = "ENTER UR KEY"
 
 class ImageSearchAlgorithm : SearchAlgorithm<String> {
     override fun search(input: String): SearchResult {
@@ -25,6 +26,7 @@ class ImageSearchAlgorithm : SearchAlgorithm<String> {
         val detectedLabels = apiCall(filePath)
 
         if (detectedLabels.isEmpty()) {
+            println("No labels detected.")
             return SearchResult("N/A", 0.0)
         }
 
@@ -37,21 +39,14 @@ class ImageSearchAlgorithm : SearchAlgorithm<String> {
         return SearchResult(species, accuracy)
     }
 
-    @Throws(URISyntaxException::class)
-    fun getFileFromResource(fileName: String): File {
-        val classLoader: ClassLoader = object {}.javaClass.classLoader
-        val resource: URL? = classLoader.getResource(fileName)
-        return resource?.toURI()?.let { File(it) }
-            ?: throw IllegalArgumentException("File not found! $fileName")
-    }
 
     private fun apiCall(filePath: String): Map<String, Float> {
         print("here")
         val labelsMap = mutableMapOf<String, Float>()
         try {
-            val file = if (File(filePath).exists()) File(filePath) else getFileFromResource(filePath)
-            val imgBytes = ByteString.copyFrom(Files.readAllBytes(file.toPath()))
-            val base64Image = java.util.Base64.getEncoder().encodeToString(imgBytes.toByteArray())
+            val file = File(filePath)
+            val imgBytes = Files.readAllBytes(file.toPath())
+            val base64Image = Base64.getEncoder().encodeToString(imgBytes)
 
             val jsonRequest = """
                 {
