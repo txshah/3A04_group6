@@ -12,6 +12,8 @@ abstract class AbstractSearchActivity <T>: AbstractActivity ()  {
     // next search type pass in "this" in inheritor classes
     protected fun completeSearch(inheritor: AbstractSearchActivity<T>){
         val searchController = SearchController(inheritor, intent)
+
+
         searchController.complete(inheritor.javaClass)
     }
 
