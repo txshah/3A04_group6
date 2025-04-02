@@ -3,20 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:padding="24dp"
     android:background="@color/white">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Select Animal Attributes"
         android:textSize="24sp"
-        android:textStyle="bold"
         android:textColor="@android:color/black"
-        android:gravity="center"
+        android:gravity="left"
         android:layout_marginBottom="24dp"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Number of Legs"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:gravity="left"/>
     <Spinner
         android:id="@+id/spinner_legs"
         android:layout_width="match_parent"
@@ -26,6 +32,13 @@
         android:layout_marginBottom="12dp"
         android:entries="@array/legs_options"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Coat Type"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:gravity="left"/>
     <Spinner
         android:id="@+id/spinner_coat"
         android:layout_width="match_parent"
@@ -35,6 +48,13 @@
         android:layout_marginBottom="12dp"
         android:entries="@array/coat_options"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Colour"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:gravity="left"/>
     <Spinner
         android:id="@+id/spinner_colour"
         android:layout_width="match_parent"
@@ -44,6 +64,13 @@
         android:layout_marginBottom="12dp"
         android:entries="@array/colour_options"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Domain"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:gravity="left"/>
     <Spinner
         android:id="@+id/spinner_domain"
         android:layout_width="match_parent"
@@ -53,6 +80,13 @@
         android:layout_marginBottom="12dp"
         android:entries="@array/domain_options"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Region"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:gravity="left"/>
     <Spinner
         android:id="@+id/spinner_region"
         android:layout_width="match_parent"
@@ -62,6 +96,13 @@
         android:layout_marginBottom="12dp"
         android:entries="@array/region_options"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Size"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:gravity="left"/>
     <Spinner
         android:id="@+id/spinner_size"
         android:layout_width="match_parent"
