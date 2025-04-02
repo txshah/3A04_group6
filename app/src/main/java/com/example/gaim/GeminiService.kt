@@ -25,18 +25,28 @@ class GeminiService(private val context: Context) {
     private val modelName = "gemini-1.5-flash" // Using the auto-updated version
     
     fun testGemini(onResult: (String) -> Unit) {
-        if (apiKey == "your_gemini_api_key_here") {
-            val message = "Please update the GEMINI_API_KEY field in app/build.gradle.kts with your Gemini API key"
+        if (apiKey.isEmpty()) {
+            val message = "Please add your Gemini API key to gradle.properties file with key 'GEMINI_API_KEY'"
             Log.e(TAG, message)
             onResult("API key not set")
             return
         }
         
+        // Log first few characters of API key for debugging (without exposing the full key)
+        if (apiKey.length > 4) {
+            Log.d(TAG, "Using API key starting with: ${apiKey.substring(0, 4)}...")
+        }
+        
+        // For debug builds, we can make the network check optional
+        val skipNetworkCheck = false // Set to true to skip network check for testing
+        
         // Check for internet connectivity before making the API call
-        if (!isNetworkAvailable()) {
-            Log.e(TAG, "No internet connection available")
-            onResult("No internet connection")
-            return
+        if (!skipNetworkCheck && !isNetworkAvailable()) {
+            Log.e(TAG, "Network check failed - attempting API call anyway")
+            // We can continue anyway to see if the API call succeeds
+            // This helps distinguish between actual network issues and issues with our detection
+            Toast.makeText(context, "Network connectivity is limited or not detected", Toast.LENGTH_SHORT).show()
+            // Don't return here, try the API call anyway
         }
         
         Log.d(TAG, "Starting Gemini API call with model: $modelName")
@@ -73,7 +83,7 @@ class GeminiService(private val context: Context) {
                 )
                 
                 // Create a simple text prompt
-                val prompt = "Hello! This is a test message from my Android app. Please respond with a brief greeting."
+                val prompt = "Hello! This is a test message from my Android app. Please respond with a brief greeting, followed by a 10 digit random number so I know its a real response."
                 Log.d(TAG, "Sending prompt to Gemini: $prompt")
                 
                 // Generate content
@@ -145,9 +155,6 @@ class GeminiService(private val context: Context) {
                     // Print detailed stack trace
                     Log.e(TAG, "Full error details: ${e.stackTraceToString()}")
                     
-                    // Print API key length for debugging (don't show the actual key)
-                    Log.d(TAG, "API key length: ${apiKey.length}")
-                    
                     withContext(Dispatchers.Main) {
                         Toast.makeText(context, "Error communicating with Gemini", Toast.LENGTH_SHORT).show()
                         onResult("Error: Failed to get response")
@@ -160,11 +167,31 @@ class GeminiService(private val context: Context) {
     // Helper method to check for internet connectivity
     private fun isNetworkAvailable(): Boolean {
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val network = connectivityManager.activeNetwork ?: return false
-        val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
+        val network = connectivityManager.activeNetwork
         
-        return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
-               capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)
+        // Log more detailed information about network state
+        if (network == null) {
+            Log.d(TAG, "No active network found")
+            return false
+        }
+        
+        val capabilities = connectivityManager.getNetworkCapabilities(network)
+        if (capabilities == null) {
+            Log.d(TAG, "No network capabilities found")
+            return false
+        }
+        
+        // Log detailed capabilities
+        Log.d(TAG, "Network capabilities: " +
+            "INTERNET=${capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)}, " +
+            "VALIDATED=${capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)}, " +
+            "NOT_METERED=${capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_NOT_METERED)}")
+        
+        // Check if any connectivity exists - less strict than before
+        val hasInternet = capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+        
+        // For debugging purposes, proceed even without full validation to test API
+        return hasInternet // Only require internet capability, not validation
     }
     
     // Helper method to find the root cause of an exception

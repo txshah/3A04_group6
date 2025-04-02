@@ -3,6 +3,11 @@ plugins {
     alias(libs.plugins.kotlin.android)
 }
 
+// Read the API key directly using Gradle's built-in property system
+// Make sure to add your API key to gradle.properties (not local.properties)
+// with the format: GEMINI_API_KEY=your_api_key_here
+val geminiApiKey = project.findProperty("GEMINI_API_KEY") as String? ?: ""
+
 android {
     namespace = "com.example.gaim"
     compileSdk = 35
@@ -16,8 +21,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         
-        // TODO: Replace this value with your actual Gemini API key
-        buildConfigField("String", "GEMINI_API_KEY", "\"AIzaSyCxquf5sBHr_sCQxfhoeysgKUi4PBmLSrQ\"")
+        // Use the API key from gradle.properties
+        buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")
     }
 
     buildTypes {
