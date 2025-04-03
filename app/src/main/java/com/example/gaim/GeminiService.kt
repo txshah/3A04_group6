@@ -22,11 +22,16 @@ class GeminiService(private val context: Context) {
 
     private val TAG = "GeminiService"
     private val apiKey: String = BuildConfig.GEMINI_API_KEY
-    private val modelName = "gemini-1.5-flash" // Using the auto-updated version
 
-    fun testGemini(onResult: (String) -> Unit) {
-        if (apiKey.isEmpty()) {
-            val message = "Please add your Gemini API key to gradle.properties file with key 'GEMINI_API_KEY'"
+    fun testGemini(
+        modelName: String = "gemini-1.5-flash",
+        onResult: (String) -> Unit,
+        customPrompt: String? = null
+    ) {
+        // Check for API key first
+        val apiKey = BuildConfig.GEMINI_API_KEY
+        if (apiKey.isNullOrEmpty() || apiKey == "YOUR_API_KEY_HERE") {
+            val message = "Gemini API key not found. Please add your API key to gradle.properties with key GEMINI_API_KEY"
             Log.e(TAG, message)
             onResult("API key not set")
             return
@@ -82,8 +87,8 @@ class GeminiService(private val context: Context) {
                     safetySettings = safetySettings
                 )
 
-                // Create a simple text prompt
-                val prompt = "Hello! This is a test message from my Android app. Please respond with a brief greeting, followed by a 10 digit random number so I know its a real response."
+                // Use custom prompt if provided, otherwise use default
+                val prompt = customPrompt ?: "Hello! This is a test message from my Android app. Please respond with a brief greeting, followed by a 10 digit random number so I know its a real response."
                 Log.d(TAG, "Sending prompt to Gemini: $prompt")
 
                 // Generate content

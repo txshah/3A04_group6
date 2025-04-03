@@ -14,6 +14,11 @@ import com.example.gaim.ui.AbstractActivity
 import com.example.gaim.ui.MainpageActivity
 import com.google.android.material.button.MaterialButton
 import androidx.appcompat.app.AlertDialog
+import com.google.android.material.textfield.TextInputEditText
+import android.widget.TextView
+import android.text.method.ScrollingMovementMethod
+import android.view.View
+import android.widget.ProgressBar
 
 //Homepage
 class MainActivity : AbstractActivity () {
@@ -31,6 +36,11 @@ class MainActivity : AbstractActivity () {
 
     private val searchButtonID: Int = R.id.start_search;
 
+    private var resultTextView: TextView? = null
+    private var geminiService: GeminiService? = null
+    private var geminiPromptInput: TextInputEditText? = null
+    private var loadingIndicator: ProgressBar? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -47,6 +57,14 @@ class MainActivity : AbstractActivity () {
         
         //Gemini test button
         setUpGeminiTestButton()
+
+        resultTextView = findViewById(R.id.status)
+        // Make the TextView scrollable
+        resultTextView?.movementMethod = ScrollingMovementMethod()
+        
+        geminiPromptInput = findViewById(R.id.gemini_prompt_input)
+        geminiService = GeminiService(this)
+        loadingIndicator = findViewById(R.id.loading_indicator)
     }
 
     //sets up the image buttons in the top bar
@@ -98,22 +116,24 @@ class MainActivity : AbstractActivity () {
         val geminiTestButton = findViewById<Button>(R.id.gemini_test)
         
         geminiTestButton.setOnClickListener {
-            testGemini()
-        }
-    }
-    
-    //tests the Gemini integration
-    private fun testGemini() {
-        val geminiService = GeminiService(this)
-        
-        Toast.makeText(this, "Sending test prompt to Google Gemini API via Vertex AI...", Toast.LENGTH_SHORT).show()
-        
-        geminiService.testGemini { response ->
-            AlertDialog.Builder(this)
-                .setTitle("Gemini Response")
-                .setMessage(response)
-                .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-                .show()
+            resultTextView?.text = "Sending request to Gemini..."
+            
+            // Show loading indicator
+            loadingIndicator?.visibility = View.VISIBLE
+            
+            // Get the custom prompt from the input field
+            val customPrompt = geminiPromptInput?.text?.toString()?.takeIf { it.isNotBlank() }
+            
+            // Pass the custom prompt to the testGemini method
+            geminiService?.testGemini(
+                modelName = "gemini-1.5-flash",
+                onResult = { result ->
+                    resultTextView?.text = result
+                    // Hide loading indicator when response is received
+                    loadingIndicator?.visibility = View.GONE
+                },
+                customPrompt = customPrompt
+            )
         }
     }
 }
