@@ -1,5 +1,6 @@
 package com.example.gaim.search.algorithm
 
+import android.util.Log
 import com.example.gaim.search.SearchResult
 import java.io.File
 import java.net.URISyntaxException
@@ -13,20 +14,51 @@ import com.google.protobuf.ByteString
 
 // GOOGLE CLOUD VISION API KEY
 private const val API_KEY = "AIzaSyAakFzZed_NUhPYQSOCFyxyAu9soZVTd_g"
+private const val TAG = "ImageSearchAlgorithm"
+
+// Helper function to handle logging in both Android and standalone environments
+private fun logMessage(level: String, tag: String, message: String, throwable: Throwable? = null) {
+    try {
+        // Try to use Android logging
+        when (level) {
+            "DEBUG" -> Log.d(tag, message, throwable)
+            "INFO" -> Log.i(tag, message, throwable)
+            "WARN" -> Log.w(tag, message, throwable)
+            "ERROR" -> Log.e(tag, message, throwable)
+            else -> Log.d(tag, message, throwable)
+        }
+    } catch (e: Exception) {
+        // Fall back to standard output for standalone Java/Kotlin environment
+        val prefix = "[$level][$tag] "
+        println(prefix + message)
+        throwable?.printStackTrace()
+    }
+}
 
 class ImageSearchAlgorithm : SearchAlgorithm<String> {
+    // Store last raw response and status code
+    private var lastRawResponse: String? = null
+    private var lastStatusCode: Int = 0
+    
+    // Expose last raw response
+    fun getLastRawResponse(): String? = lastRawResponse
+    
+    // Expose last status code
+    fun getLastStatusCode(): Int = lastStatusCode
+    
     override fun search(input: String): SearchResult {
-        println("Starting image search...")
+        logMessage("DEBUG", TAG, "Starting image search...")
 
         val filePath = if (input.isNotEmpty()) input
         else "app/src/main/java/com/example/gaim/account/database/redfox.jpg"
 
-        println("Processing file: $filePath")
+        logMessage("DEBUG", TAG, "Processing file: $filePath")
 
         val detectedLabels = apiCall(filePath)
+        logMessage("DEBUG", TAG, "Detected labels: $detectedLabels")
 
         if (detectedLabels.isEmpty()) {
-            println("No labels detected.")
+            logMessage("WARN", TAG, "No labels detected for the image")
             return SearchResult("N/A", 0.0)
         }
 
@@ -34,19 +66,26 @@ class ImageSearchAlgorithm : SearchAlgorithm<String> {
         val species = maxEntry.key
         val accuracy = maxEntry.value.toDouble()
 
-        println("Detected: $species with confidence: $accuracy")
+        logMessage("INFO", TAG, "Detected species: $species with confidence: $accuracy")
 
         return SearchResult(species, accuracy)
     }
 
 
     private fun apiCall(filePath: String): Map<String, Float> {
-        print("here")
+        logMessage("DEBUG", TAG, "Making API call to Google Vision API for file: $filePath")
         val labelsMap = mutableMapOf<String, Float>()
         try {
             val file = File(filePath)
+            if (!file.exists()) {
+                logMessage("ERROR", TAG, "File does not exist: $filePath")
+                return labelsMap
+            }
+            
+            logMessage("DEBUG", TAG, "Reading file bytes and encoding to Base64")
             val imgBytes = Files.readAllBytes(file.toPath())
             val base64Image = Base64.getEncoder().encodeToString(imgBytes)
+            logMessage("DEBUG", TAG, "File size: ${imgBytes.size} bytes")
 
             val jsonRequest = """
                 {
@@ -60,44 +99,72 @@ class ImageSearchAlgorithm : SearchAlgorithm<String> {
             """.trimIndent()
 
             val url = URL("https://vision.googleapis.com/v1/images:annotate?key=$API_KEY")
-            print("Here")
+            logMessage("DEBUG", TAG, "Sending request to: ${url.toString()}")
+            
             val connection = url.openConnection() as HttpURLConnection
             connection.requestMethod = "POST"
             connection.setRequestProperty("Content-Type", "application/json")
             connection.doOutput = true
 
+            logMessage("DEBUG", TAG, "Writing request data to connection")
             connection.outputStream.use { os ->
                 os.write(jsonRequest.toByteArray())
                 os.flush()
             }
 
             val responseCode = connection.responseCode
+            this.lastStatusCode = responseCode
+            logMessage("DEBUG", TAG, "Received response code: $responseCode")
+            
             if (responseCode != 200) {
                 val errorResponse = connection.errorStream?.bufferedReader()?.use { it.readText() }
-                println("Error: HTTP $responseCode - $errorResponse")
+                this.lastRawResponse = errorResponse
+                logMessage("ERROR", TAG, "Error from Vision API: HTTP $responseCode - $errorResponse")
                 return labelsMap
             }
 
+            logMessage("DEBUG", TAG, "Reading response from Vision API")
             val response = connection.inputStream.bufferedReader().use { it.readText() }
+            // Store the raw response
+            this.lastRawResponse = response
+            logMessage("DEBUG", TAG, "Raw API response: $response")
+            
+            logMessage("DEBUG", TAG, "Parsing JSON response")
             val jsonResponse = JsonParser.parseString(response).asJsonObject
-            val labels = jsonResponse.getAsJsonArray("responses")
+            val annotations = jsonResponse.getAsJsonArray("responses")
                 .firstOrNull()?.asJsonObject
-                ?.getAsJsonArray("labelAnnotations") ?: return labelsMap
-
-            for (label in labels) {
-                val obj = label as JsonObject
-                labelsMap[obj.get("description").asString] = obj.get("score").asFloat
-                print(labelsMap)
+                ?.getAsJsonArray("labelAnnotations")
+            
+            if (annotations == null) {
+                logMessage("WARN", TAG, "No label annotations found in response")
+                return labelsMap
             }
+            
+            logMessage("DEBUG", TAG, "Processing ${annotations.size()} label annotations")
+            for (label in annotations) {
+                val obj = label as JsonObject
+                val description = obj.get("description").asString
+                val score = obj.get("score").asFloat
+                labelsMap[description] = score
+                logMessage("DEBUG", TAG, "Label: $description, Score: $score")
+            }
+            
+            logMessage("INFO", TAG, "Successfully processed ${labelsMap.size} labels")
         } catch (e: Exception) {
-            println("Error processing image: ${e.message}")
+            logMessage("ERROR", TAG, "Error processing image: ${e.message}", e)
         }
         return labelsMap
     }
 }
 
 fun main() {
+    println("==== Running ImageSearchAlgorithm as standalone application ====")
     val searcher = ImageSearchAlgorithm()
     val result = searcher.search("app/src/main/java/com/example/gaim/account/database/redfox.jpg")
-    print(result)
+    println("==== SEARCH RESULT ====")
+    println(result)
+    // Print the raw response
+    println("==== RAW API RESPONSE ====")
+    println(searcher.getLastRawResponse())
+    println("======================")
 }
