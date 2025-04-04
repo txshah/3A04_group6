@@ -2,7 +2,7 @@ package com.example.gaim.search
 
 import android.content.Intent
 import com.example.gaim.ui.AbstractActivity
-import java.io.Serializable
+import com.example.gaim.ui.search.AbstractSearchActivity
 
 //
 //class SearchResult(private val animalName: String, private val accuracy: Double) {
@@ -10,7 +10,7 @@ import java.io.Serializable
 //
 //}
 //to store data = data class
-data class SearchResult(val name: String?, val accuracy: Double?) : Serializable {
+data class SearchResult(val name: String?, val accuracy: Double?){
     fun putInIntent(intent: Intent, activity: Class<out AbstractActivity>){
         val searchActivity = SearchActivity.find(activity)
         searchActivity?.let { putInIntent(intent, it) }
@@ -25,8 +25,6 @@ data class SearchResult(val name: String?, val accuracy: Double?) : Serializable
     }
 
     companion object{
-        private const val serialVersionUID = 1L
-
         fun getFromIntent(intent: Intent, activity: Class<out AbstractActivity>){
             val searchActivity = SearchActivity.find(activity)
             searchActivity?.let { getFromIntent(intent, it) }

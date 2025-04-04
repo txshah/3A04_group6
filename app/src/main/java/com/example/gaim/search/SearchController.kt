@@ -2,7 +2,6 @@ package com.example.gaim.search
 
 import android.content.Intent
 import com.example.gaim.ui.AbstractActivity
-import com.example.gaim.ui.search.DisplayResultsActivity
 
 //checks the intent for true search activities and runs them
 class SearchController (private val activity: AbstractActivity, private val intent: Intent){
@@ -17,12 +16,7 @@ class SearchController (private val activity: AbstractActivity, private val inte
             addSearchResult(searchResult)
         }
 
-        // Show results if we have any
-        if (searchResults.isNotEmpty()) {
-            val resultsIntent = Intent(activity, DisplayResultsActivity::class.java)
-            resultsIntent.putExtra("search_results", ArrayList(searchResults))
-            activity.startActivity(resultsIntent)
-        }
+        //to do("Implement report generation (either call or in this class) after searches have been finished")
     }
 
     private fun runSearches(){

@@ -70,9 +70,6 @@
                 <category android:name="android.intent.category.ALTERNATIVE" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.search.DisplayResultsActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
