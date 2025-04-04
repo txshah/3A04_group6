@@ -9,32 +9,54 @@ import com.example.gaim.ui.*
 import com.example.gaim.ui.utility.ErrorChecker
 import com.example.gaim.ui.utility.MissingText
 import android.content.Context
+import java.io.File
 import java.io.FileOutputStream
-import android.database.sqlite.SQLiteDatabase
+import android.util.Log
+import android.widget.Toast
 
 fun copyDatabaseFromAssetsIfNeeded(context: Context, dbName: String) {
     val dbPath = context.getDatabasePath(dbName)
+    val TAG = "LoginActivity"
 
     if (!dbPath.exists()) {
-        dbPath.parentFile?.mkdirs()
-        context.assets.open(dbName).use { input ->
-            FileOutputStream(dbPath).use { output ->
-                input.copyTo(output)
+        try {
+            // Create the databases directory if it doesn't exist
+            dbPath.parentFile?.mkdirs()
+            
+            // Copy the database from assets
+            context.assets.open(dbName).use { input ->
+                FileOutputStream(dbPath).use { output ->
+                    input.copyTo(output)
+                }
             }
+            Log.d(TAG, "Successfully copied database from assets")
+        } catch (e: Exception) {
+            Log.e(TAG, "Error copying database from assets", e)
+            throw e
         }
+    } else {
+        Log.d(TAG, "Database already exists at: ${dbPath.absolutePath}")
     }
 }
 
 class LoginActivity : AbstractActivity()  {
     private val usernameID = R.id.username
     private val passwordID = R.id.password
-
     private val loginID = R.id.login
     private val createAccountID = R.id.create_account
+    private val TAG = "LoginActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        copyDatabaseFromAssetsIfNeeded(this, "user_accounts.db")
+        try {
+            copyDatabaseFromAssetsIfNeeded(this, "user_accounts.db")
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to initialize database", e)
+            Toast.makeText(this, "Error: Unable to access database", Toast.LENGTH_LONG).show()
+            finish() // Close the activity since we can't proceed without the database
+            return
+        }
+        
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
@@ -62,13 +84,11 @@ class LoginActivity : AbstractActivity()  {
         }
     }
 
-    private fun loginVerified(): Boolean{
-        //ADD IN LOGIN VERIFICATION
+    private fun loginVerified(): Boolean {
         val username = findViewById<EditText>(usernameID).text.toString()
         val password = findViewById<EditText>(passwordID).text.toString()
 
         val loginManager = LoginManager(this)
         return loginManager.verifyCredentials(username, password)
     }
-
 }

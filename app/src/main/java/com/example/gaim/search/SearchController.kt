@@ -1,6 +1,7 @@
 package com.example.gaim.search
 
 import android.content.Intent
+import android.util.Log
 import com.example.gaim.ui.AbstractActivity
 import com.example.gaim.ui.search.DisplayResultsActivity
 
@@ -8,28 +9,38 @@ import com.example.gaim.ui.search.DisplayResultsActivity
 class SearchController (private val activity: AbstractActivity, private val intent: Intent){
     //checks given intent for true search activies and runs them
     private val searchResults = mutableListOf<SearchResult>()
+    private val TAG = "SearchController"
 
     fun start(){
+        Log.d(TAG, "Starting search process")
         runSearches()
 
         for(entry in SearchActivity.entries){
-            val searchResult = SearchResult.getFromIntent(intent, entry)
-            addSearchResult(searchResult)
+            Log.d(TAG, "Processing entry: ${entry.name}")
+            SearchResult.getFromIntent(intent, entry)?.let { result ->
+                Log.d(TAG, "Found result for ${entry.name}: ${result.name} with accuracy ${result.accuracy}")
+                addSearchResult(result)
+            }
         }
 
         // Show results if we have any
         if (searchResults.isNotEmpty()) {
+            Log.d(TAG, "Found ${searchResults.size} results, launching DisplayResultsActivity")
             val resultsIntent = Intent(activity, DisplayResultsActivity::class.java).apply {
                 putParcelableArrayListExtra("search_results", ArrayList(searchResults))
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             }
             activity.startActivity(resultsIntent)
+        } else {
+            Log.d(TAG, "No search results found")
         }
     }
 
     private fun runSearches(){
+        Log.d(TAG, "Running searches")
         for(entry in SearchActivity.entries){
             if(intent.extras?.getBoolean(entry.name) == SearchState.PENDING.value){
+                Log.d(TAG, "Found pending search for ${entry.name}")
                 val newIntent = Intent(this@SearchController.activity, entry.activity).apply {
                     intent.extras?.let { putExtras(it) }
                 }
@@ -42,21 +53,23 @@ class SearchController (private val activity: AbstractActivity, private val inte
     //sets the search activity as processed and goes to check if any more are still pending
     fun complete(search: Class<out AbstractActivity>){
         val activity = SearchActivity.find(search)
-
-        intent.extras?.putBoolean(activity?.name, SearchState.PROCESSED.value); //indicates that the given key has been processed in the intent
-
+        activity?.let { 
+            Log.d(TAG, "Completing search for ${it.name}")
+            intent.extras?.putBoolean(it.name, SearchState.PROCESSED.value)
+        }
         start()
     }
 
     fun addSearchResult(result: SearchResult) {
         val existingResult = searchResults.firstOrNull { it.name == result.name }
         if (existingResult != null) {
-            // Update accuracy (+0.20) if duplicate exists
+            Log.d(TAG, "Updating existing result for ${result.name}")
             searchResults.remove(existingResult)
             searchResults.add(
                 existingResult.copy(accuracy = existingResult.accuracy?.plus(0.20))
             )
         } else {
+            Log.d(TAG, "Adding new result for ${result.name}")
             searchResults.add(result)
         }
     }

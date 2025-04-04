@@ -3,8 +3,6 @@ package com.example.gaim
 import com.example.gaim.ui.utility.SwitchButtonTracker
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageButton
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import com.example.gaim.search.GaimActivity
 import com.example.gaim.search.SearchActivity
@@ -70,7 +68,7 @@ class MainActivity : AbstractActivity () {
     //sets up the image buttons in the top bar
     private fun setUpImageButtons() {
         for(entry in imageButtonMap){
-            val button = findViewById<ImageButton>(entry.value)
+            val button = findViewById<MaterialButton>(entry.value)
 
             button.setOnClickListener {
                 nextActivity(entry.key)

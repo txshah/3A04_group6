@@ -36,9 +36,9 @@ data class SearchResult(val name: String?, val accuracy: Double?) : Parcelable {
             return arrayOfNulls(size)
         }
 
-        fun getFromIntent(intent: Intent, activity: Class<out AbstractActivity>) {
+        fun getFromIntent(intent: Intent, activity: Class<out AbstractActivity>): SearchResult? {
             val searchActivity = SearchActivity.find(activity)
-            searchActivity?.let { getFromIntent(intent, it) }
+            return searchActivity?.let { getFromIntent(intent, it) }
         }
 
         fun getFromIntent(intent: Intent, activity: SearchActivity): SearchResult {
@@ -47,11 +47,11 @@ data class SearchResult(val name: String?, val accuracy: Double?) : Parcelable {
             return SearchResult(name, accuracy)
         }
 
-        fun toName(activity: SearchActivity): String {
+        private fun toName(activity: SearchActivity): String {
             return activity.name + ": name"
         }
 
-        fun toAccuracy(activity: SearchActivity): String {
+        private fun toAccuracy(activity: SearchActivity): String {
             return activity.name + ": accuracy"
         }
     }
@@ -62,8 +62,8 @@ data class SearchResult(val name: String?, val accuracy: Double?) : Parcelable {
     }
 
     fun putInIntent(intent: Intent, activity: SearchActivity) {
-        val name = toName(activity)
-        var accuracy = toAccuracy(activity)
+        val name = CREATOR.toName(activity)
+        val accuracy = CREATOR.toAccuracy(activity)
         intent.putExtra(name, this.name)
         intent.putExtra(accuracy, this.accuracy)
     }
