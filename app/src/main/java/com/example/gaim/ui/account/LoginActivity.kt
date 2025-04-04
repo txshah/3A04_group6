@@ -1,5 +1,5 @@
 package com.example.gaim.ui.account
-
+import com.example.gaim.account.login.LoginManager
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -47,7 +47,11 @@ class LoginActivity : AbstractActivity()  {
 
     private fun loginVerified(): Boolean{
         //ADD IN LOGIN VERIFICATION
-        return true
+        val username = findViewById<EditText>(usernameID).text.toString()
+        val password = findViewById<EditText>(passwordID).text.toString()
+
+        val loginManager = LoginManager(this)
+        return loginManager.verifyCredentials(username, password)
     }
 
 }
