@@ -1,7 +1,7 @@
 package com.example.gaim.ui.search
 
 import android.os.Bundle
-import android.view.ViewGroup
+import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -47,30 +47,30 @@ class DisplayResultsActivity : AppCompatActivity() {
             // Create a CardView programmatically
             val card = CardView(this).apply {
                 layoutParams = LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
                 ).apply {
-                    setMargins(0, 0, 0, 24) // Bottom margin
+                    setMargins(0, 0, 0, 32) // 32dp bottom margin
                 }
-                radius = resources.getDimension(R.dimen.cardview_default_radius)
-                elevation = resources.getDimension(R.dimen.cardview_default_elevation)
+                radius = 16f // 16dp corner radius
+                elevation = 8f // 8dp elevation
+                setContentPadding(32, 32, 32, 32) // 32dp padding
             }
 
             // Create the content layout
             val content = LinearLayout(this).apply {
                 layoutParams = LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
                 )
                 orientation = LinearLayout.VERTICAL
-                setPadding(32, 32, 32, 32)
             }
 
             // Create and add name TextView
             val nameView = TextView(this).apply {
                 layoutParams = LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
                 )
                 text = result.name ?: "Unknown"
                 textSize = 16f
@@ -81,8 +81,8 @@ class DisplayResultsActivity : AppCompatActivity() {
             // Create and add accuracy TextView
             val accuracyView = TextView(this).apply {
                 layoutParams = LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
                 ).apply {
                     topMargin = 8
                 }
@@ -100,7 +100,6 @@ class DisplayResultsActivity : AppCompatActivity() {
 
     private fun generateReport(results: List<SearchResult>) {
         // TODO: Implement report generation
-        // For now, show a toast indicating that report generation is coming soon
         android.widget.Toast.makeText(
             this,
             "Report generation coming soon!",
