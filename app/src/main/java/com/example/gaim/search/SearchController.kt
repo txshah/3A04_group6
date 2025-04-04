@@ -19,8 +19,10 @@ class SearchController (private val activity: AbstractActivity, private val inte
 
         // Show results if we have any
         if (searchResults.isNotEmpty()) {
-            val resultsIntent = Intent(activity, DisplayResultsActivity::class.java)
-            resultsIntent.putExtra("search_results", ArrayList(searchResults))
+            val resultsIntent = Intent(activity, DisplayResultsActivity::class.java).apply {
+                putParcelableArrayListExtra("search_results", ArrayList(searchResults))
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            }
             activity.startActivity(resultsIntent)
         }
     }
@@ -28,9 +30,9 @@ class SearchController (private val activity: AbstractActivity, private val inte
     private fun runSearches(){
         for(entry in SearchActivity.entries){
             if(intent.extras?.getBoolean(entry.name) == SearchState.PENDING.value){
-                val newIntent = Intent(this@SearchController.activity, entry.activity);
-
-                intent.extras?.let { newIntent.putExtras(it) }
+                val newIntent = Intent(this@SearchController.activity, entry.activity).apply {
+                    intent.extras?.let { putExtras(it) }
+                }
 
                 this.activity.nextActivity(entry, intent)
             }
@@ -69,6 +71,6 @@ class SearchController (private val activity: AbstractActivity, private val inte
     */
 
     fun getResults(): List<SearchResult> {
-        return searchResults
+        return searchResults.toList()
     }
 }
