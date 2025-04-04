@@ -8,6 +8,22 @@ import com.example.gaim.R
 import com.example.gaim.ui.*
 import com.example.gaim.ui.utility.ErrorChecker
 import com.example.gaim.ui.utility.MissingText
+import android.content.Context
+import java.io.FileOutputStream
+import android.database.sqlite.SQLiteDatabase
+
+fun copyDatabaseFromAssetsIfNeeded(context: Context, dbName: String) {
+    val dbPath = context.getDatabasePath(dbName)
+
+    if (!dbPath.exists()) {
+        dbPath.parentFile?.mkdirs()
+        context.assets.open(dbName).use { input ->
+            FileOutputStream(dbPath).use { output ->
+                input.copyTo(output)
+            }
+        }
+    }
+}
 
 class LoginActivity : AbstractActivity()  {
     private val usernameID = R.id.username
@@ -18,6 +34,7 @@ class LoginActivity : AbstractActivity()  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        copyDatabaseFromAssetsIfNeeded(this, "user_accounts.db")
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
