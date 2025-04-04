@@ -61,4 +61,8 @@ class SearchController (private val activity: AbstractActivity, private val inte
     }
 
     */
+
+    fun getResults(): List<SearchResult> {
+        return searchResults
+    }
 }
