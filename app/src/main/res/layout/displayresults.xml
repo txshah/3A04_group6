@@ -1,35 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:background="@color/white"
-    android:gravity="center">
+    android:padding="16dp"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Display Results"
+        android:text="Search Results"
         android:textSize="24sp"
+        android:textStyle="bold"
         android:textColor="@android:color/black"
         android:layout_marginBottom="16dp"
         android:gravity="center"/>
 
-    <EditText
-        android:id="@+id/result_box"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:hint="Results will appear here..."
-        android:padding="12dp"
-        android:background="@android:drawable/editbox_background"
-        android:gravity="top|start"
-        android:focusable="false"
-        android:scrollbars="vertical"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_gravity="center"/>
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvBestMatch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Best Match"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_green_dark"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvBestMatchName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/tvBestMatchAccuracy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Other Matches"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/otherMatchesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+    </ScrollView>
 
     <Button
         android:id="@+id/generate_report"
@@ -39,8 +89,7 @@
         android:textSize="18sp"
         android:textColor="@android:color/white"
         android:backgroundTint="@android:color/holo_blue_light"
-        android:background="@android:drawable/btn_default"
-        android:padding="12dp"
-        android:layout_gravity="center"/>
+        android:layout_marginTop="16dp"
+        android:padding="12dp"/>
 
 </LinearLayout>
