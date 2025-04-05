@@ -238,11 +238,21 @@ class MainActivity : AbstractActivity() {
     //runs the search
     private fun runSearch() {
         Log.d("MainActivity", "Running search")
-        // Only include forms that are PROCESSED in the search
+        // Include both the processed state and search results in the intent
         for((activity, tracker) in formStateTrackers) {
             val isProcessed = tracker.getState() == ButtonState.PROCESSED
             Log.d("MainActivity", "Form ${activity.name} is processed: $isProcessed")
             intent.putExtra(activity.name, isProcessed)
+            
+            // If the form is processed, include its search result
+            if (isProcessed) {
+                tracker.getSearchResult()?.let { searchIntent ->
+                    // Copy all the extras from the search result intent to our intent
+                    searchIntent.extras?.let { bundle ->
+                        intent.putExtras(bundle)
+                    }
+                }
+            }
         }
 
         Log.d("MainActivity", "Starting SearchController")
@@ -281,9 +291,9 @@ class MainActivity : AbstractActivity() {
         
         Log.d("MainActivity", "onActivityResult called with requestCode: $requestCode, resultCode: $resultCode")
         
-        if (resultCode == RESULT_OK) {
+        if (resultCode == RESULT_OK && data != null) {
             // Get the activity that just completed
-            val completedClassName = data?.component?.className
+            val completedClassName = data.component?.className
             Log.d("MainActivity", "Completed activity class name: $completedClassName")
             
             val completedActivity = SearchActivity.entries.find { searchActivity ->
@@ -295,10 +305,12 @@ class MainActivity : AbstractActivity() {
             Log.d("MainActivity", "Found completed activity: ${completedActivity?.name}")
             
             completedActivity?.let { activity ->
-                // Mark this form as processed
+                // Mark this form as processed and save its search result
                 val tracker = formStateTrackers[activity]
                 Log.d("MainActivity", "Current state for ${activity.name}: ${tracker?.getState()}")
                 tracker?.setState(ButtonState.PROCESSED)
+                // Save the search result from the returned intent
+                tracker?.setSearchResult(data)
                 Log.d("MainActivity", "Updated state for ${activity.name}: ${tracker?.getState()}")
                 
                 // Find the next pending form
