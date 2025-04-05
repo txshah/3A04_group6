@@ -71,6 +71,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ui.search.SurveySearchActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.ALTERNATIVE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ui.search.DisplayResultsActivity"
             android:exported="false" />
     </application>
