@@ -1,33 +1,64 @@
 package com.example.gaim.search.algorithm
 
+import android.content.Context
+import android.database.sqlite.SQLiteDatabase
 import com.example.gaim.search.SearchResult
-import java.sql.DriverManager
+import java.io.File
 
 //see SEARCH ALGOIRTHM for description
-class SurveySearchAlgorithm : SearchAlgorithm<String>{
+class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<String> {
+    private val DB_NAME = "canadian_species.db"
+    private var dbFile: File? = null
+    private var database: SQLiteDatabase? = null
+
+    init {
+        setupDatabase()
+    }
+
+    private fun setupDatabase() {
+        // Get the database file in the app's private directory
+        dbFile = context.getDatabasePath(DB_NAME)
+        
+        // If database doesn't exist in app's private directory, copy it from assets
+        if (!dbFile!!.exists()) {
+            dbFile!!.parentFile?.mkdirs()  // Create directories if they don't exist
+            
+            try {
+                // Copy database from assets
+                context.assets.open(DB_NAME).use { input ->
+                    dbFile!!.outputStream().use { output ->
+                        input.copyTo(output)
+                    }
+                }
+            } catch (e: Exception) {
+                throw RuntimeException("Error copying database from assets", e)
+            }
+        }
+
+        // Open the database
+        database = SQLiteDatabase.openDatabase(
+            dbFile!!.absolutePath,
+            null,
+            SQLiteDatabase.OPEN_READONLY
+        )
+    }
 
     override fun search(input: String): SearchResult {
-//        in real implementation use input text
-        var sampleInput = "legs:4;coat:Fur; colour:Brown; domain:Land; region:Canada; size:Large"
-        var variables= extract(sampleInput)
-        var options  = query(variables)
+        val variables = extract(input)
+        val options = query(variables)
 
-        if (options.isEmpty()){
-            print("N/A and 0.0")
+        if (options.isEmpty()) {
             return SearchResult("N/A", 0.0)
         }
 
-        var maxEntry = options.maxBy { it.value }
-        var species = maxEntry.key
-        var accuracy = maxEntry.value.toDouble()/ (options.size)
-        print("$species and $accuracy")
+        val maxEntry = options.maxBy { it.value }
+        val species = maxEntry.key
+        val accuracy = maxEntry.value.toDouble() / options.size
 
         return SearchResult(species, accuracy)
     }
 
-    private fun extract(input: String): HashMap<String, String>{
-//        exactly 10 keywords from any input text
-//        in one line split input into words and then get all words great than three and take 10 distinct
+    private fun extract(input: String): HashMap<String, String> {
         val hashMap = HashMap<String, String>()
         input.split(";")
             .map { it.trim() }
@@ -39,42 +70,72 @@ class SurveySearchAlgorithm : SearchAlgorithm<String>{
         return hashMap
     }
 
-    private fun query(input: HashMap<String, String>): Map<String, Int>{
-        //        loop through and query for animals with those key words (add animal to hash and check if it has one of five key words
-//        returns animal and number of key words the animal gets
-//        for i in options:
-//            search in db - example (KEY WORD COL IS A STRING OF KEYWORDS)
-//        return ANIMAL: number of words from keyword list that are in that animals keyword col
-        Class.forName("org.sqlite.JDBC")
-        val dbPath = "app/src/main/java/com/example/gaim/search/algorithm/database/canadian_species.db"
-        val connection = DriverManager.getConnection("jdbc:sqlite:$dbPath")
-        var output = mutableMapOf<String, Int>()
+    private fun query(input: HashMap<String, String>): Map<String, Int> {
+        val results = mutableMapOf<String, Int>()
+        
+        try {
+            val legs = input["legs"]?.toIntOrNull()
+            val coat = input["coat"]
+            val colour = input["colour"]
+            val domain = input["domain"]
+            val region = input["region"]
+            val size = input["size"]
 
-        var legs = (input["legs"])?.toIntOrNull()  ;
-        var coat = input["coat"] ;
-        var colour = input["colour"] ;
-        var domain = input["domain"] ;
-        var region = input["region"] ;
-        var size = input["size"] ;
+            val selectionArgs = mutableListOf<String>()
+            val selectionCriteria = mutableListOf<String>()
 
-        val statement = connection.createStatement()
-        val resultSet = statement.executeQuery("SELECT name FROM species WHERE legs=$legs " +
-                "and coat='$coat' and colour='$colour' and domain='$domain' and " +
-                "region='$region' and size='$size'")
+            legs?.let { 
+                selectionCriteria.add("legs = ?")
+                selectionArgs.add(it.toString())
+            }
+            coat?.let {
+                selectionCriteria.add("coat = ?")
+                selectionArgs.add(it)
+            }
+            colour?.let {
+                selectionCriteria.add("colour = ?")
+                selectionArgs.add(it)
+            }
+            domain?.let {
+                selectionCriteria.add("domain = ?")
+                selectionArgs.add(it)
+            }
+            region?.let {
+                selectionCriteria.add("region = ?")
+                selectionArgs.add(it)
+            }
+            size?.let {
+                selectionCriteria.add("size = ?")
+                selectionArgs.add(it)
+            }
 
-        while (resultSet.next()) {
-//                number of keywords that animal contains
-            val speciesName = resultSet.getString("name")
-            output[speciesName] = 100
+            val selection = selectionCriteria.joinToString(" AND ")
+            
+            val cursor = database?.query(
+                "species",  // table name
+                arrayOf("name"),  // columns to return
+                selection,  // selection criteria
+                selectionArgs.toTypedArray(),  // selection args
+                null,  // group by
+                null,  // having
+                null   // order by
+            )
+
+            cursor?.use {
+                while (it.moveToNext()) {
+                    val name = it.getString(0)
+                    results[name] = 100
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
 
-        return output
-
+        return results
     }
 
-}
-
-fun main() {
-    val searcher = SurveySearchAlgorithm()
-    val result = searcher.search("") // Input doesn't matter since sampleInput is hardcoded
+    fun cleanup() {
+        database?.close()
+        database = null
+    }
 }

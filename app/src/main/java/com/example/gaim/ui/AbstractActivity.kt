@@ -8,15 +8,13 @@ import com.example.gaim.ui.utility.ErrorChecker
 
 //MAKE SURE ALL ACTIVITIES IMPLEMENT THIS
 abstract class AbstractActivity: AppCompatActivity () {
-    fun nextActivity(activity: GaimActivity){
+    open fun nextActivity(activity: GaimActivity){
         val intent = Intent(this, activity.activity)
-
         startActivity(intent)
     }
 
-    fun nextActivity(activity: GaimActivity, previousIntent: Intent){
+    open fun nextActivity(activity: GaimActivity, previousIntent: Intent){
         val intent = Intent(this, activity.activity)
-
         intent.putExtras(previousIntent)
         startActivity(intent)
     }

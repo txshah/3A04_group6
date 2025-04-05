@@ -1,6 +1,7 @@
 package com.example.gaim.ui.search
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import com.example.gaim.R
@@ -9,8 +10,10 @@ import com.example.gaim.search.algorithm.SearchAlgorithm
 import com.example.gaim.ui.utility.ErrorChecker
 import com.example.gaim.ui.utility.MissingText
 
-class FreeformSearchActivity : AbstractSearchActivity <String>() {
-    override val algorithm: SearchAlgorithm<String> = FreeformSearchAlgorithm();
+class FreeformSearchActivity : AbstractSearchActivity<String>() {
+    override val algorithm: SearchAlgorithm<String> by lazy {
+        FreeformSearchAlgorithm(this)
+    }
 
     private val inputID = R.id.input_text;
     private val submitID = R.id.submit_freeform;
@@ -29,13 +32,20 @@ class FreeformSearchActivity : AbstractSearchActivity <String>() {
         )
 
         submitFreeform.setOnClickListener {
-            var currentText = textInput.text.toString()
+            val currentText = textInput.text.toString()
 
-            if(this.checkErrors(submitFreeformErrorCheckers)){
+            if (checkErrors(submitFreeformErrorCheckers)) {
+                Log.d("FreeformSearchActivity", "Form validation passed, calling completeSearch")
                 completeSearch(currentText, this)
+                Log.d("FreeformSearchActivity", "completeSearch completed")
+            } else {
+                Log.d("FreeformSearchActivity", "Form validation failed")
             }
         }
-
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        (algorithm as? FreeformSearchAlgorithm)?.cleanup()
+    }
 }

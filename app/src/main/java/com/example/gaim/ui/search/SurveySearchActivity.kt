@@ -8,7 +8,10 @@ import com.example.gaim.search.algorithm.SearchAlgorithm
 import com.example.gaim.search.algorithm.SurveySearchAlgorithm
 
 class SurveySearchActivity: AbstractSearchActivity<String> () {
-    override val algorithm: SearchAlgorithm<String> = SurveySearchAlgorithm()
+    // Initialize algorithm lazily since we need context
+    override val algorithm: SearchAlgorithm<String> by lazy { 
+        SurveySearchAlgorithm(this)
+    }
 
     private val submitID = R.id.submit_freeform
     private val legsID = R.id.spinner_legs
