@@ -35,6 +35,7 @@
                     android:insetRight="0dp"
                     android:insetBottom="0dp"
                     app:iconGravity="textStart"
+
                     android:padding="12dp"
                     app:cornerRadius="24dp"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
@@ -50,11 +51,6 @@
                     android:layout_height="48dp"
                     app:icon="@android:drawable/ic_dialog_info"
                     app:iconTint="@android:color/black"
-                    android:insetLeft="0dp"
-                    android:insetTop="0dp"
-                    android:insetRight="0dp"
-                    android:insetBottom="0dp"
-                    app:iconGravity="textStart"
                     android:padding="12dp"
                     app:cornerRadius="24dp"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
@@ -65,34 +61,35 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="16dp">
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:padding="16dp">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
                         android:text="Search Options"
                         android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="16dp"/>
+                        android:textStyle="bold" />
 
                     <com.google.android.material.button.MaterialButtonToggleGroup
                         android:id="@+id/toggle_group"
@@ -102,139 +99,62 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/survey_search"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="180dp"
+                            android:layout_weight="1"
+                            android:padding="16dp"
                             android:text="Survey Search"
                             android:textAlignment="textStart"
-                            android:padding="16dp"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             app:icon="@android:drawable/ic_menu_edit"
-                            app:iconGravity="textStart"/>
+                            app:iconGravity="textStart" />
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/freeform_search"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="180dp"
+                            android:layout_weight="1"
+                            android:padding="16dp"
                             android:text="Freeform Search"
                             android:textAlignment="textStart"
-                            android:padding="16dp"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             app:icon="@android:drawable/ic_menu_search"
-                            app:iconGravity="textStart"/>
+                            app:iconGravity="textStart" />
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/image_search"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="180dp"
+                            android:layout_weight="1"
+                            android:padding="16dp"
                             android:text="Image Search"
                             android:textAlignment="textStart"
-                            android:padding="16dp"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             app:icon="@android:drawable/ic_menu_camera"
-                            app:iconGravity="textStart"/>
+                            app:iconGravity="textStart" />
                     </com.google.android.material.button.MaterialButtonToggleGroup>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/fill_forms"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Fill in Forms"
+                        android:layout_height="80dp"
                         android:layout_marginTop="16dp"
                         android:padding="16dp"
-                        app:cornerRadius="8dp"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                        android:text="Fill in Forms"
+                        app:cornerRadius="8dp" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/start_search"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Start Search"
+                        android:layout_height="80dp"
                         android:layout_marginTop="8dp"
                         android:padding="16dp"
-                        app:cornerRadius="8dp"/>
+                        android:text="Start Search"
+                        app:cornerRadius="8dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Gemini AI Assistant"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="16dp"/>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Enter your prompt for Gemini"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/gemini_prompt_input"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textMultiLine"
-                            android:minLines="2"
-                            android:maxLines="6"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical"
-                        android:layout_marginTop="16dp">
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/gemini_test"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Ask Gemini"
-                            app:cornerRadius="8dp"/>
-
-                        <ProgressBar
-                            android:id="@+id/loading_indicator"
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            android:layout_marginStart="16dp"
-                            android:visibility="gone"/>
-                    </LinearLayout>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="2dp"
-                        app:strokeWidth="1dp"
-                        app:strokeColor="#EEEEEE">
-
-                        <TextView
-                            android:id="@+id/status"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:minHeight="100dp"
-                            android:padding="16dp"
-                            android:textSize="16sp"
-                            android:textColor="@android:color/black"
-                            android:gravity="top|start"
-                            android:text="Gemini response will appear here"/>
-                    </com.google.android.material.card.MaterialCardView>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
