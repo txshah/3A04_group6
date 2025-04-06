@@ -1,5 +1,7 @@
 package com.example.gaim.ui.search
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -10,14 +12,25 @@ import com.example.gaim.R
 import com.example.gaim.search.algorithm.ImageSearchAlgorithm
 import com.example.gaim.search.algorithm.SearchAlgorithm
 import com.example.gaim.ui.MainpageActivity
+import android.net.Uri
+import android.os.Environment
+import android.provider.MediaStore
+import java.io.File
+import java.io.FileOutputStream
+import java.io.InputStream
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 
 class ImageSearchActivity: AbstractSearchActivity<String> () {
     private val TAG = "ImageSearchActivity"
     override val algorithm: SearchAlgorithm<String> = ImageSearchAlgorithm();
-    private val imagePreviewID = R.id.ivPreview
-    private val chooseImageID = R.id.choose_image
     private val uploadImageId = R.id.upload_image
+
+    private val PICK_IMAGE_REQUEST = 1001
+    private val imagePreviewID = R.id.ivPreview
+    private var selectedImagePath: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,26 +38,36 @@ class ImageSearchActivity: AbstractSearchActivity<String> () {
         setContentView(R.layout.activity_image_search)
         Log.d(TAG, "ImageSearchActivity created")
 
-        val imagePreview = findViewById<ImageView>(imagePreviewID)
-        Log.d(TAG, "Image preview view initialized")
 
-        val chooseImage = findViewById<Button>(chooseImageID)
         val uploadImage = findViewById<Button>(uploadImageId)
         Log.d(TAG, "UI buttons initialized")
 
+
         uploadImage.setOnClickListener {
-            Log.d(TAG, "Upload image button clicked")
-            if(imageAnalyzed()){
-                Log.i(TAG, "Image successfully analyzed, navigating to main activity")
-                nextActivity(MainpageActivity.MAIN)
-            } else {
-                Log.w(TAG, "Image analysis unsuccessful")
-            }
+            Log.d(TAG, "Upload Image button clicked")
+            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            intent.type = "image/*"
+            startActivityForResult(intent, PICK_IMAGE_REQUEST)
         }
-        
-        chooseImage.setOnClickListener {
-            Log.d(TAG, "Choose image button clicked")
-            // Existing functionality here
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
+            val imageUri = data.data!!
+            findViewById<ImageView>(imagePreviewID).setImageURI(imageUri)
+
+            val filePath = saveImageToInternalStorage(imageUri)
+            if (filePath != null) {
+                selectedImagePath = filePath.toString()
+                Log.d(TAG, "Image saved to: $filePath")
+
+                completeSearch(filePath.toString(), this)
+            } else {
+                Log.e(TAG, "Failed to save image to internal storage")
+            }
         }
     }
 
@@ -67,5 +90,25 @@ class ImageSearchActivity: AbstractSearchActivity<String> () {
         
         Log.d(TAG, "Image analysis completed")
         return true
+    }
+
+    private fun saveImageToInternalStorage(uri: Uri): String? {
+        return try {
+            val inputStream: InputStream? = contentResolver.openInputStream(uri)
+            val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
+            val fileName = "IMG_$timeStamp.jpg"
+            val file = File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), fileName)
+
+            val outputStream = FileOutputStream(file)
+            inputStream?.copyTo(outputStream)
+
+            inputStream?.close()
+            outputStream.close()
+
+            file.absolutePath
+        } catch (e: Exception) {
+            Log.e(TAG, "Error saving image: ${e.message}", e)
+            null
+        }
     }
 }

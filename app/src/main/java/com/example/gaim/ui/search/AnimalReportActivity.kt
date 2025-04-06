@@ -1,5 +1,6 @@
 package com.example.gaim.ui.search
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -14,6 +15,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.gaim.BuildConfig
 import com.example.gaim.GeminiService
+import com.example.gaim.MainActivity
 import com.example.gaim.R
 import com.example.gaim.search.SearchResult
 import kotlinx.coroutines.CoroutineScope
@@ -72,7 +74,9 @@ class AnimalReportActivity : AppCompatActivity() {
             
             // Set up back button
             backButton.setOnClickListener {
-                finish()
+                val intent = Intent(this, MainActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+                startActivity(intent)
             }
             
             // Fetch animal image and data
