@@ -30,6 +30,12 @@
                     android:layout_height="48dp"
                     app:icon="@android:drawable/btn_star"
                     app:iconTint="@android:color/black"
+                    android:insetLeft="0dp"
+                    android:insetTop="0dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp"
+                    app:iconGravity="textStart"
+
                     android:padding="12dp"
                     app:cornerRadius="24dp"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>

@@ -68,17 +68,11 @@ class MainActivity : AbstractActivity() {
 
         //start button
         setUpStartSearchButton()
-        
-        //Gemini test button
-        setUpGeminiTestButton()
 
-        resultTextView = findViewById(R.id.status)
         // Make the TextView scrollable
         resultTextView?.movementMethod = ScrollingMovementMethod()
         
-        geminiPromptInput = findViewById(R.id.gemini_prompt_input)
         geminiService = GeminiService(this)
-        loadingIndicator = findViewById(R.id.loading_indicator)
     }
 
     //sets up the image buttons in the top bar
@@ -258,32 +252,6 @@ class MainActivity : AbstractActivity() {
         Log.d("MainActivity", "Starting SearchController")
         val searchController = SearchController(this, intent)
         searchController.start()
-    }
-
-    //sets up the Gemini test button
-    private fun setUpGeminiTestButton() {
-        val geminiTestButton = findViewById<Button>(R.id.gemini_test)
-        
-        geminiTestButton.setOnClickListener {
-            resultTextView?.text = "Sending request to Gemini..."
-            
-            // Show loading indicator
-            loadingIndicator?.visibility = View.VISIBLE
-            
-            // Get the custom prompt from the input field
-            val customPrompt = geminiPromptInput?.text?.toString()?.takeIf { it.isNotBlank() }
-            
-            // Pass the custom prompt to the testGemini method
-            geminiService?.testGemini(
-                modelName = "gemini-1.5-flash",
-                onResult = { result ->
-                    resultTextView?.text = result
-                    // Hide loading indicator when response is received
-                    loadingIndicator?.visibility = View.GONE
-                },
-                customPrompt = customPrompt
-            )
-        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
