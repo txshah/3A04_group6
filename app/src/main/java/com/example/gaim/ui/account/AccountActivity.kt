@@ -1,6 +1,7 @@
 package com.example.gaim.ui.account
 
 import android.os.Bundle
+import android.util.Log
 
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -18,8 +19,6 @@ class AccountActivity : AbstractActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.savedaccount)
 
-
-
         //setting the top value to a username
         val username = intent.getStringExtra(Login.USERNAME.value)
         val password = intent.getStringExtra(Login.PASSWORD.value)
@@ -30,9 +29,10 @@ class AccountActivity : AbstractActivity() {
         usernameID.text = username
 
         //setting up previous user data
-        val previousResults = mutableSetOf<String>()
-        for (searchResult in accountSettings.getAnimals()){
-            previousResults.add(searchResult.name + "\t                                    " + searchResult.accuracy)
+        val previousResults =  accountSettings.getAnimals()
+
+        for (result in previousResults){
+            Log.d("TAG", result.toString())
         }
 
         //adding previous user data to custom adapter

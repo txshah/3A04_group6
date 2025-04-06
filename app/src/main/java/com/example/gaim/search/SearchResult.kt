@@ -67,4 +67,8 @@ data class SearchResult(val name: String?, val accuracy: Double?) : Parcelable {
         intent.putExtra(name, this.name)
         intent.putExtra(accuracy, this.accuracy)
     }
+
+    override fun toString(): String{
+        return name + "\t" + accuracy
+    }
 }
