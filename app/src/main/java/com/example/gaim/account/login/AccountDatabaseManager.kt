@@ -1,6 +1,5 @@
 package com.example.gaim.account.login
 import android.content.Context
-import com.example.gaim.account.Account
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 
@@ -31,12 +30,7 @@ class AccountDatabaseManager(private val context: Context) {
         }
     }
 
-    public fun register(account: Account): Boolean{
-        TODO("Not yet implemented")
-    }
-
-    //potentially can add more account getters in future if there is need
-    public fun getAccount(username: String): Account{
+    public fun register(username: String, password: String): Boolean{
         TODO("Not yet implemented")
     }
 }
