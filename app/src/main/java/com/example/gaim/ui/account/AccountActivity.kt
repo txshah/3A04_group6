@@ -1,26 +1,46 @@
 package com.example.gaim.ui.account
 
 import android.os.Bundle
-import android.view.View
-import android.widget.EditText
+
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.example.gaim.R
 import com.example.gaim.ui.AbstractActivity
-import org.w3c.dom.Text
+import com.example.gaim.ui.utility.CustomAdapter
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.gaim.account.settings.AccountSettings
 
 class AccountActivity : AbstractActivity() {
     private val usernameID = R.id.user_name
+    private lateinit var accountSettings: AccountSettings
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.savedaccount)
 
+
+
+        //setting the top value to a username
         val username = intent.getStringExtra(Login.USERNAME.value)
+        val password = intent.getStringExtra(Login.PASSWORD.value)
+        accountSettings = AccountSettings(this, username.toString(), password.toString())
 
+        //setting the top value to a username
         val usernameID = findViewById<TextView>(usernameID)
-
         usernameID.text = username
 
+        //setting up previous user data
+        val previousResults = mutableSetOf<String>()
+        for (searchResult in accountSettings.getAnimals()){
+            previousResults.add(searchResult.name + "\t                                    " + searchResult.accuracy)
+        }
+
+        //adding previous user data to custom adapter
+        val customAdapter = CustomAdapter(previousResults.toTypedArray())
+
+        val recyclerView: RecyclerView = findViewById(R.id.recycler_view_reports)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = customAdapter
     }
 
 }

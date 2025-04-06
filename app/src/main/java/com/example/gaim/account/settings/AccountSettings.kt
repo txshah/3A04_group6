@@ -13,12 +13,12 @@ class AccountSettings(private val context: Context, private val username: String
     private val dbPath = context.getDatabasePath("user_accounts.db").absolutePath
 
     // Save a simple animal entry
-    fun save(animal: String, accuracy: Float) {
+    fun save(animal: String, accuracy: Double?) {
         val jsonArray = getUserJsonData()
 
         val entry = JSONObject().apply {
             put("animal", animal)
-            put("accuracy", accuracy.toDouble()) // Safe across all Android versions
+            put("accuracy", accuracy) // Safe across all Android versions
             put("timestamp", System.currentTimeMillis())
         }
 
@@ -30,7 +30,7 @@ class AccountSettings(private val context: Context, private val username: String
     // Save from a SearchResult object
     fun save(searchResult: SearchResult) {
         val name = searchResult.name ?: "Unknown"
-        val accuracy = searchResult.accuracy?.toFloat() ?: 0f
+        val accuracy = searchResult.accuracy
         save(name, accuracy)
     }
 
