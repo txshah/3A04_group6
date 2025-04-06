@@ -12,12 +12,16 @@ abstract class AbstractSearchActivity <T>: AbstractActivity () {
 
     //run this function when the form has all required information
     //and should be saved (but not start the search yet)
-    protected fun completeSearch(input: T, inheritor: AbstractSearchActivity<T>) {
+    protected suspend fun completeSearch(input: T, inheritor: AbstractSearchActivity<T>) {
         Log.d(
             "AbstractSearchActivity",
             "Starting completeSearch for ${inheritor.javaClass.simpleName}"
         )
         val searchResult = algorithm.search(input)
+        Log.d(
+            "AbstractSearchActivity",
+            "Here: ${searchResult}"
+        )
         searchResult.putInIntent(intent, inheritor.javaClass)
 
         // Set the component name on the intent to ensure proper activity result handling

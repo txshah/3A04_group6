@@ -48,7 +48,7 @@ class FreeformSearchAlgorithm(private val context: Context) : SearchAlgorithm<St
         )
     }
 
-    override fun search(input: String): SearchResult {
+    override suspend fun search(input: String): SearchResult {
         val options = query(input)
 
         if (options.isEmpty()) {

@@ -1,5 +1,6 @@
 package com.example.gaim.search.algorithm
 
+import android.content.Context
 import android.util.Log
 import com.example.gaim.search.SearchResult
 import java.io.File
@@ -11,6 +12,8 @@ import java.util.Base64
 import com.google.gson.JsonParser
 import com.google.gson.JsonObject
 import com.google.protobuf.ByteString
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 // GOOGLE CLOUD VISION API KEY
 private const val API_KEY = "AIzaSyAakFzZed_NUhPYQSOCFyxyAu9soZVTd_g"
@@ -35,26 +38,34 @@ private fun logMessage(level: String, tag: String, message: String, throwable: T
     }
 }
 
-class ImageSearchAlgorithm : SearchAlgorithm<String> {
+class ImageSearchAlgorithm (private val context: Context) : SearchAlgorithm<String> {
     // Store last raw response and status code
     private var lastRawResponse: String? = null
     private var lastStatusCode: Int = 0
-    
+
     // Expose last raw response
     fun getLastRawResponse(): String? = lastRawResponse
-    
+
     // Expose last status code
     fun getLastStatusCode(): Int = lastStatusCode
-    
-    override fun search(input: String): SearchResult {
+
+    override suspend fun search(input: String): SearchResult {
         logMessage("DEBUG", TAG, "Starting image search...")
 
+
         val filePath = if (input.isNotEmpty()) input
-        else "app/src/main/java/com/example/gaim/account/database/redfox.jpg"
+        else {
+            val fallback = File(context.filesDir, "app/src/main/java/com/example/gaim/account/database/redfox.jpg").absolutePath
+            fallback
+            logMessage("DEBUG", TAG, "FallBack: ${fallback}")
+        }
+        logMessage("DEBUG", TAG, "newFile: ${filePath}")
 
         logMessage("DEBUG", TAG, "Processing file: $filePath")
 
-        val detectedLabels = apiCall(filePath)
+        val detectedLabels = withContext(Dispatchers.IO) {
+            apiCall(filePath.toString())
+        }
         logMessage("DEBUG", TAG, "Detected labels: $detectedLabels")
 
         if (detectedLabels.isEmpty()) {
@@ -81,7 +92,7 @@ class ImageSearchAlgorithm : SearchAlgorithm<String> {
                 logMessage("ERROR", TAG, "File does not exist: $filePath")
                 return labelsMap
             }
-            
+
             logMessage("DEBUG", TAG, "Reading file bytes and encoding to Base64")
             val imgBytes = Files.readAllBytes(file.toPath())
             val base64Image = Base64.getEncoder().encodeToString(imgBytes)
@@ -100,7 +111,7 @@ class ImageSearchAlgorithm : SearchAlgorithm<String> {
 
             val url = URL("https://vision.googleapis.com/v1/images:annotate?key=$API_KEY")
             logMessage("DEBUG", TAG, "Sending request to: ${url.toString()}")
-            
+
             val connection = url.openConnection() as HttpURLConnection
             connection.requestMethod = "POST"
             connection.setRequestProperty("Content-Type", "application/json")
@@ -115,7 +126,7 @@ class ImageSearchAlgorithm : SearchAlgorithm<String> {
             val responseCode = connection.responseCode
             this.lastStatusCode = responseCode
             logMessage("DEBUG", TAG, "Received response code: $responseCode")
-            
+
             if (responseCode != 200) {
                 val errorResponse = connection.errorStream?.bufferedReader()?.use { it.readText() }
                 this.lastRawResponse = errorResponse
@@ -128,18 +139,18 @@ class ImageSearchAlgorithm : SearchAlgorithm<String> {
             // Store the raw response
             this.lastRawResponse = response
             logMessage("DEBUG", TAG, "Raw API response: $response")
-            
+
             logMessage("DEBUG", TAG, "Parsing JSON response")
             val jsonResponse = JsonParser.parseString(response).asJsonObject
             val annotations = jsonResponse.getAsJsonArray("responses")
                 .firstOrNull()?.asJsonObject
                 ?.getAsJsonArray("labelAnnotations")
-            
+
             if (annotations == null) {
                 logMessage("WARN", TAG, "No label annotations found in response")
                 return labelsMap
             }
-            
+
             logMessage("DEBUG", TAG, "Processing ${annotations.size()} label annotations")
             for (label in annotations) {
                 val obj = label as JsonObject
@@ -148,7 +159,7 @@ class ImageSearchAlgorithm : SearchAlgorithm<String> {
                 labelsMap[description] = score
                 logMessage("DEBUG", TAG, "Label: $description, Score: $score")
             }
-            
+
             logMessage("INFO", TAG, "Successfully processed ${labelsMap.size} labels")
         } catch (e: Exception) {
             logMessage("ERROR", TAG, "Error processing image: ${e.message}", e)
@@ -159,12 +170,12 @@ class ImageSearchAlgorithm : SearchAlgorithm<String> {
 
 fun main() {
     println("==== Running ImageSearchAlgorithm as standalone application ====")
-    val searcher = ImageSearchAlgorithm()
-    val result = searcher.search("app/src/main/java/com/example/gaim/account/database/redfox.jpg")
-    println("==== SEARCH RESULT ====")
-    println(result)
-    // Print the raw response
-    println("==== RAW API RESPONSE ====")
-    println(searcher.getLastRawResponse())
-    println("======================")
+//    val searcher = ImageSearchAlgorithm()
+//    val result = searcher.search("app/src/main/java/com/example/gaim/account/database/redfox.jpg")
+//    println("==== SEARCH RESULT ====")
+//    println(result)
+//    // Print the raw response
+//    println("==== RAW API RESPONSE ====")
+//    println(searcher.getLastRawResponse())
+//    println("======================")
 }

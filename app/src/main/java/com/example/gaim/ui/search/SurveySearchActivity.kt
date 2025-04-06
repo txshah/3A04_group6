@@ -3,9 +3,11 @@ package com.example.gaim.ui.search
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Spinner
+import androidx.lifecycle.lifecycleScope
 import com.example.gaim.R
 import com.example.gaim.search.algorithm.SearchAlgorithm
 import com.example.gaim.search.algorithm.SurveySearchAlgorithm
+import kotlinx.coroutines.launch
 
 class SurveySearchActivity: AbstractSearchActivity<String> () {
     // Initialize algorithm lazily since we need context
@@ -42,7 +44,9 @@ class SurveySearchActivity: AbstractSearchActivity<String> () {
                 regionSpinner.selectedItem.toString(),
                 sizeSpinner.selectedItem.toString()
             )
-            completeSearch(surveyInput, this)
+            lifecycleScope.launch {
+                completeSearch(surveyInput, this@SurveySearchActivity)
+            }
         }
     }
 

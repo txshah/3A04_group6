@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import androidx.lifecycle.lifecycleScope
 import com.example.gaim.R
 import com.example.gaim.search.algorithm.FreeformSearchAlgorithm
 import com.example.gaim.search.algorithm.SearchAlgorithm
+import com.example.gaim.ui.search.SurveySearchActivity
 import com.example.gaim.ui.utility.ErrorChecker
 import com.example.gaim.ui.utility.MissingText
+import kotlinx.coroutines.launch
 
 class FreeformSearchActivity : AbstractSearchActivity<String>() {
     override val algorithm: SearchAlgorithm<String> by lazy {
@@ -36,7 +39,10 @@ class FreeformSearchActivity : AbstractSearchActivity<String>() {
 
             if (checkErrors(submitFreeformErrorCheckers)) {
                 Log.d("FreeformSearchActivity", "Form validation passed, calling completeSearch")
-                completeSearch(currentText, this)
+                lifecycleScope.launch {
+                    completeSearch(currentText, this@FreeformSearchActivity)
+                }
+//                completeSearch(currentText, this)
                 Log.d("FreeformSearchActivity", "completeSearch completed")
             } else {
                 Log.d("FreeformSearchActivity", "Form validation failed")

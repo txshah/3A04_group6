@@ -43,7 +43,7 @@ class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<Stri
         )
     }
 
-    override fun search(input: String): SearchResult {
+    override suspend fun search(input: String): SearchResult {
         val variables = extract(input)
         val options = query(variables)
 
