@@ -9,10 +9,10 @@ import com.example.gaim.ui.*
 import com.example.gaim.ui.utility.ErrorChecker
 import com.example.gaim.ui.utility.MissingText
 import android.content.Context
-import java.io.File
 import java.io.FileOutputStream
 import android.util.Log
 import android.widget.Toast
+import com.example.gaim.ui.utility.IncorrectLogin
 
 fun copyDatabaseFromAssetsIfNeeded(context: Context, dbName: String) {
     val dbPath = context.getDatabasePath(dbName)
@@ -40,11 +40,14 @@ fun copyDatabaseFromAssetsIfNeeded(context: Context, dbName: String) {
 }
 
 class LoginActivity : AbstractActivity()  {
+    private val TAG = "LoginActivity"
+
     private val usernameID = R.id.username
     private val passwordID = R.id.password
     private val loginID = R.id.login
     private val createAccountID = R.id.create_account
-    private val TAG = "LoginActivity"
+
+    private val loginManager = LoginManager(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,22 +63,21 @@ class LoginActivity : AbstractActivity()  {
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
-        val usernameInput = findViewById<EditText>(usernameID)
-        val passwordInput = findViewById<EditText>(passwordID)
+        val username = findViewById<EditText>(usernameID)
+        val password = findViewById<EditText>(passwordID)
 
         val loginButton = findViewById<Button>(loginID)
         val createAccountButton = findViewById<Button>(createAccountID)
 
         val loginCheckers = mutableSetOf<ErrorChecker>(
-            MissingText(this, usernameInput, "Username"),
-            MissingText(this, passwordInput, "Password")
+            MissingText(this, username, "Username"),
+            MissingText(this, password, "Password"),
+            IncorrectLogin(this, username, password, loginManager)
         )
 
         loginButton.setOnClickListener {
             if(this.checkErrors(loginCheckers)){
-                if(this.loginVerified()){
-                    this.nextActivity(MainpageActivity.MAIN)
-                }
+                this.nextActivity(MainpageActivity.MAIN)
             }
         }
 
@@ -84,11 +86,4 @@ class LoginActivity : AbstractActivity()  {
         }
     }
 
-    private fun loginVerified(): Boolean {
-        val username = findViewById<EditText>(usernameID).text.toString()
-        val password = findViewById<EditText>(passwordID).text.toString()
-
-        val loginManager = LoginManager(this)
-        return loginManager.verifyCredentials(username, password)
-    }
 }
