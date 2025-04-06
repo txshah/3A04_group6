@@ -23,6 +23,11 @@ class AccountDatabaseManager(private val context: Context) {
             cursor.close()
             db.close()
 
+            // If login is successful, set the current user in the session
+            if (isValid) {
+                UserSession.setUser(username)
+            }
+
             return isValid
         } catch (e: SQLiteException) {
             e.printStackTrace()
