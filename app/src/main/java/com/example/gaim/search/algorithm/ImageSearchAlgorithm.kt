@@ -169,7 +169,7 @@ class ImageSearchAlgorithm (private val context: Context) : SearchAlgorithm<Stri
 }
 
 fun main() {
-    println("==== Running ImageSearchAlgorithm as standalone application ====")
+    println("==== Running ImageSearchAlgorithm ====")
 //    val searcher = ImageSearchAlgorithm()
 //    val result = searcher.search("app/src/main/java/com/example/gaim/account/database/redfox.jpg")
 //    println("==== SEARCH RESULT ====")
@@ -177,5 +177,4 @@ fun main() {
 //    // Print the raw response
 //    println("==== RAW API RESPONSE ====")
 //    println(searcher.getLastRawResponse())
-//    println("======================")
 }
