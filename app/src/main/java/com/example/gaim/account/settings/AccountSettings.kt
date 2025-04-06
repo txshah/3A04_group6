@@ -3,7 +3,7 @@ package com.example.gaim.account.settings
 import com.example.gaim.search.SearchResult
 
 //Manages account history UI and interactions
-class AccountSettings (private val username: String, private val Password: String){
+class AccountSettings (private val username: String, private val password: String){
 
     //associates this instance of account setting sto the given username and password
     init {
