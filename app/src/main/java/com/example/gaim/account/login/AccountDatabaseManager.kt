@@ -30,6 +30,7 @@ class AccountDatabaseManager(private val context: Context) {
             return false
         }
     }
+
     public fun register(account: Account): Boolean{
         TODO("Not yet implemented")
     }
