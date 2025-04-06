@@ -55,7 +55,9 @@ class CreateAccountActivity : AbstractActivity() {
         createAccountButton.setOnClickListener {
             if(this.checkErrors(createAccountCheckers)){
                 if(this.createAccount(usernameInput.text.toString(), passwordInput.text.toString())){
-                    this.nextActivity(MainpageActivity.MAIN)
+                    this.nextActivity(MainpageActivity.MAIN, intent)
+                }else{
+                    this.showErrorDialog("Username already exists", "Please try a different username")
                 }
             }
 
@@ -63,12 +65,19 @@ class CreateAccountActivity : AbstractActivity() {
     }
 
     private fun createAccount(username: String, password: String): Boolean{
-        try{
-            return loginManager.createAccount(username, password)
-        }catch(e: Error){
-            Log.d(TAG, e.toString())
-            return false
+        val accountCreated = loginManager.createAccount(username, password)
+
+        if(accountCreated){
+            updateCurrentUser(username, password)
         }
 
+        return accountCreated
+
     }
+
+    private fun updateCurrentUser(username:String, password: String){
+        intent.putExtra(Login.USERNAME.value, username)
+        intent.putExtra(Login.PASSWORD.value, password)
+    }
+
 }

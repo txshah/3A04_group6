@@ -47,6 +47,7 @@ class AccountDatabaseManager(private val context: Context) {
 
             return newRowId != -1L
         }catch (e: SQLiteException) {
+
             e.printStackTrace()
             return false
         }

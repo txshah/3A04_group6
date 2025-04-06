@@ -13,7 +13,6 @@ import androidx.appcompat.app.AlertDialog
 import com.google.android.material.textfield.TextInputEditText
 import android.widget.TextView
 import android.text.method.ScrollingMovementMethod
-import android.view.View
 import android.widget.ProgressBar
 import com.example.gaim.ui.utility.ButtonState
 import com.example.gaim.ui.utility.FormStateTracker
@@ -314,17 +313,19 @@ class MainActivity : AbstractActivity() {
     }
 
     //starts the next activity
-    override fun nextActivity(activity: GaimActivity) {
+    fun nextActivity(activity: GaimActivity) {
         Log.d("MainActivity", "Starting next activity: ${activity.activity.simpleName}")
-        val intent = Intent(this, activity.activity)
+        val newIntent = Intent(this, activity.activity)
+        newIntent.putExtras(intent)
+
         if (activity is SearchActivity) {
             Log.d("MainActivity", "Starting activity for result")
             // Add component name to intent for proper activity result handling
-            intent.component = ComponentName(this, activity.activity)
-            startActivityForResult(intent, 1)
+            newIntent.component = ComponentName(this, activity.activity)
+            startActivityForResult(newIntent, 1)
         } else {
             Log.d("MainActivity", "Starting activity normally")
-            startActivity(intent)
+            startActivity(newIntent)
         }
     }
 

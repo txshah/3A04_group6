@@ -9,5 +9,10 @@ class AccountActivity : AbstractActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.savedaccount)
+
+        val username = intent.getStringExtra(Login.USERNAME.value)
+        val password = intent.getStringExtra(Login.PASSWORD.value)
+
     }
+
 }

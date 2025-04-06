@@ -77,13 +77,20 @@ class LoginActivity : AbstractActivity()  {
 
         loginButton.setOnClickListener {
             if(this.checkErrors(loginCheckers)){
-                this.nextActivity(MainpageActivity.MAIN)
+                updateCurrentUser(username.text.toString(), password.text.toString())
+                this.nextActivity(MainpageActivity.MAIN, intent)
             }
         }
 
         createAccountButton.setOnClickListener {
-            this.nextActivity(MainpageActivity.CREATEACCOUNT)
+            this.nextActivity(MainpageActivity.CREATEACCOUNT, intent)
         }
+    }
+
+    //updates the current user in the intent
+    private fun updateCurrentUser(username:String, password: String){
+        intent.putExtra(Login.USERNAME.value, username)
+        intent.putExtra(Login.PASSWORD.value, password)
     }
 
 }
