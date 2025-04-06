@@ -1,6 +1,5 @@
 package com.example.gaim.ui.search
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -15,10 +14,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.gaim.BuildConfig
 import com.example.gaim.GeminiService
-import com.example.gaim.MainActivity
 import com.example.gaim.R
-import com.example.gaim.account.login.ReportDatabaseManager
-import com.example.gaim.account.login.UserSession
 import com.example.gaim.search.SearchResult
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -35,7 +31,6 @@ class AnimalReportActivity : AppCompatActivity() {
     private lateinit var nameTextView: TextView
     private lateinit var loadingIndicator: ProgressBar
     private lateinit var backButton: Button
-    private lateinit var saveReportButton: Button
     private lateinit var animalImageView: ImageView
     private lateinit var animalInfoContainer: LinearLayout
     
@@ -44,9 +39,6 @@ class AnimalReportActivity : AppCompatActivity() {
     private lateinit var characteristicsText: TextView
     private lateinit var huntingText: TextView
     private lateinit var habitatText: TextView
-    
-    // Animal name from intent
-    private lateinit var animalName: String
     
     // Google Custom Search API constants
     private val SEARCH_API_URL = "https://www.googleapis.com/customsearch/v1"
@@ -62,7 +54,6 @@ class AnimalReportActivity : AppCompatActivity() {
             nameTextView = findViewById(R.id.animalNameText)
             loadingIndicator = findViewById(R.id.loadingIndicator)
             backButton = findViewById(R.id.backButton)
-            saveReportButton = findViewById(R.id.saveReportButton)
             animalImageView = findViewById(R.id.animalImageView)
             animalInfoContainer = findViewById(R.id.animalInfoContainer)
             
@@ -73,7 +64,7 @@ class AnimalReportActivity : AppCompatActivity() {
             habitatText = findViewById(R.id.habitatText)
             
             // Get animal name from intent
-            animalName = intent.getStringExtra("animal_name") ?: "Unknown Animal"
+            val animalName = intent.getStringExtra("animal_name") ?: "Unknown Animal"
             
             // Set animal name
             nameTextView.text = animalName
@@ -81,13 +72,8 @@ class AnimalReportActivity : AppCompatActivity() {
             
             // Set up back button
             backButton.setOnClickListener {
-                val intent = Intent(this, MainActivity::class.java)
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                startActivity(intent)
+                finish()
             }
-            
-            // Set up save report button
-            setupSaveReportButton()
             
             // Fetch animal image and data
             fetchAnimalImage(animalName)
@@ -95,43 +81,6 @@ class AnimalReportActivity : AppCompatActivity() {
             
         } catch (e: Exception) {
             Log.e(TAG, "Error in onCreate", e)
-        }
-    }
-    
-    private fun setupSaveReportButton() {
-        // Check if user is logged in
-        if (UserSession.isLoggedIn()) {
-            saveReportButton.setOnClickListener {
-                saveAnimalReport()
-            }
-        } else {
-            // Disable button if not logged in
-            saveReportButton.isEnabled = false
-            saveReportButton.text = "Login to Save"
-            
-            // Show login required toast when clicked
-            saveReportButton.setOnClickListener {
-                Toast.makeText(this, "You must be logged in to save reports", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-    
-    private fun saveAnimalReport() {
-        val username = UserSession.getUser()
-        if (username != null) {
-            val reportManager = ReportDatabaseManager(this)
-            val success = reportManager.saveAnimalReport(username, animalName)
-            
-            if (success) {
-                Toast.makeText(this, "Report saved successfully", Toast.LENGTH_SHORT).show()
-                // Disable button after successful save to prevent duplicate saves
-                saveReportButton.isEnabled = false
-                saveReportButton.text = "Report Saved"
-            } else {
-                Toast.makeText(this, "Failed to save report", Toast.LENGTH_SHORT).show()
-            }
-        } else {
-            Toast.makeText(this, "You must be logged in to save reports", Toast.LENGTH_SHORT).show()
         }
     }
     

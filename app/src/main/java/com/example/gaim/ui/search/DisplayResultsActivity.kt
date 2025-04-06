@@ -10,13 +10,10 @@ import com.example.gaim.R
 import com.example.gaim.search.SearchResult
 import androidx.core.content.ContextCompat
 import android.content.Intent
-import android.widget.Button
-import com.example.gaim.MainActivity
 
 class DisplayResultsActivity : AppCompatActivity() {
     private var container: LinearLayout? = null
     private val TAG = "DisplayResultsActivity"
-    private lateinit var backButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,15 +54,6 @@ class DisplayResultsActivity : AppCompatActivity() {
             findViewById<android.widget.Button>(R.id.generate_report)?.setOnClickListener {
                 generateReport(searchResults)
             }
-
-            // Set up back button
-            backButton = findViewById(R.id.backButton)
-            backButton.setOnClickListener {
-                val intent = Intent(this, MainActivity::class.java)
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                startActivity(intent)
-            }
-
             Log.d(TAG, "onCreate completed successfully")
             
         } catch (e: Exception) {
@@ -172,8 +160,6 @@ class DisplayResultsActivity : AppCompatActivity() {
             ).show()
         }
     }
-
-
 
     override fun onDestroy() {
         container = null
