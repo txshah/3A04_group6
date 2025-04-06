@@ -3,10 +3,12 @@ plugins {
     alias(libs.plugins.kotlin.android)
 }
 
-// Read the API key directly using Gradle's built-in property system
-// Make sure to add your API key to gradle.properties (not local.properties)
-// with the format: GEMINI_API_KEY=your_api_key_here
+// Read the API keys directly using Gradle's built-in property system
+// Make sure to add your API keys to gradle.properties (not local.properties)
+// with the format: API_KEY=your_api_key_here
 val geminiApiKey = project.findProperty("GEMINI_API_KEY") as String? ?: ""
+val googleSearchApiKey = project.findProperty("GOOGLE_SEARCH_API_KEY") as String? ?: ""
+val googleSearchEngineId = project.findProperty("GOOGLE_SEARCH_ENGINE_ID") as String? ?: ""
 
 android {
     namespace = "com.example.gaim"
@@ -21,8 +23,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         
-        // Use the API key from gradle.properties
+        // Use the API keys from gradle.properties
         buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")
+        buildConfigField("String", "GOOGLE_SEARCH_API_KEY", "\"$googleSearchApiKey\"")
+        buildConfigField("String", "GOOGLE_SEARCH_ENGINE_ID", "\"$googleSearchEngineId\"")
     }
 
     buildTypes {
@@ -79,6 +83,7 @@ dependencies {
     implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
     implementation("com.google.cloud:google-cloud-vision:3.15.0")
     implementation("io.ktor:ktor-client-android:2.3.7")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

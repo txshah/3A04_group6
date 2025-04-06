@@ -9,6 +9,7 @@ import androidx.cardview.widget.CardView
 import com.example.gaim.R
 import com.example.gaim.search.SearchResult
 import androidx.core.content.ContextCompat
+import android.content.Intent
 
 class DisplayResultsActivity : AppCompatActivity() {
     private var container: LinearLayout? = null
@@ -138,11 +139,26 @@ class DisplayResultsActivity : AppCompatActivity() {
     }
 
     private fun generateReport(results: List<SearchResult>) {
-        android.widget.Toast.makeText(
-            this,
-            "Report generation coming soon!",
-            android.widget.Toast.LENGTH_SHORT
-        ).show()
+        try {
+            val bestMatch = results.maxByOrNull { it.accuracy ?: 0.0 }
+            val animalName = bestMatch?.name ?: "Unknown"
+            
+            Log.d(TAG, "Generating report for animal: $animalName")
+            
+            // Launch the AnimalReportActivity
+            val intent = Intent(this, AnimalReportActivity::class.java).apply {
+                putExtra("animal_name", animalName)
+            }
+            startActivity(intent)
+            
+        } catch (e: Exception) {
+            Log.e(TAG, "Error generating report", e)
+            android.widget.Toast.makeText(
+                this,
+                "Error generating report",
+                android.widget.Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 
     override fun onDestroy() {

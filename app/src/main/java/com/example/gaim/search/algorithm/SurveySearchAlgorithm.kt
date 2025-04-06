@@ -53,7 +53,7 @@ class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<Stri
 
         val maxEntry = options.maxBy { it.value }
         val species = maxEntry.key
-        val accuracy = maxEntry.value.toDouble() / options.size
+        val accuracy = maxEntry.value.toDouble() / options.size / 100
 
         return SearchResult(species, accuracy)
     }
