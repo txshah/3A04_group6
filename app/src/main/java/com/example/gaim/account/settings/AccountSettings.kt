@@ -10,8 +10,47 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 class AccountSettings(private val context: Context, private val username: String, private val password: String) {
-
     private val dbPath = context.getDatabasePath("user_accounts.db").absolutePath
+
+    // Save a simple animal entry
+    fun save(animal: String, accuracy: Float) {
+        val jsonArray = getUserJsonData()
+
+        val entry = JSONObject().apply {
+            put("animal", animal)
+            put("accuracy", accuracy.toDouble()) // Safe across all Android versions
+            put("timestamp", System.currentTimeMillis())
+        }
+
+        jsonArray.put(entry)
+        updateUserJsonData(jsonArray)
+        Log.d("AccountSettings", "✅ Saved animal: $animal, accuracy: $accuracy")
+    }
+
+    // Save from a SearchResult object
+    fun save(searchResult: SearchResult) {
+        val name = searchResult.name ?: "Unknown"
+        val accuracy = searchResult.accuracy?.toFloat() ?: 0f
+        save(name, accuracy)
+    }
+
+    // Fetch all stored animal reports
+    fun getAnimals(): MutableCollection<SearchResult> {
+        val results = mutableListOf<SearchResult>()
+        val jsonArray = getUserJsonData()
+
+        for (i in 0 until jsonArray.length()) {
+            val obj = jsonArray.getJSONObject(i)
+            val name = obj.optString("animal", "Unknown")
+            val accuracy = obj.optDouble("accuracy", 0.0)
+            results.add(SearchResult(name = name, accuracy = accuracy))
+        }
+
+        Log.d("AccountSettings", "✅ Loaded ${results.size} saved animals")
+        return results
+    }
+
+
 
     // Get the user's JSON history from the DB
     private fun getUserJsonData(): JSONArray {
@@ -52,43 +91,5 @@ class AccountSettings(private val context: Context, private val username: String
         } catch (e: SQLiteException) {
             e.printStackTrace()
         }
-    }
-
-    // Save a simple animal entry
-    fun save(animal: String, accuracy: Float) {
-        val jsonArray = getUserJsonData()
-
-        val entry = JSONObject().apply {
-            put("animal", animal)
-            put("accuracy", accuracy.toDouble()) // Safe across all Android versions
-            put("timestamp", System.currentTimeMillis())
-        }
-
-        jsonArray.put(entry)
-        updateUserJsonData(jsonArray)
-        Log.d("AccountSettings", "✅ Saved animal: $animal, accuracy: $accuracy")
-    }
-
-    // Save from a SearchResult object
-    fun save(searchResult: SearchResult) {
-        val name = searchResult.name ?: "Unknown"
-        val accuracy = searchResult.accuracy?.toFloat() ?: 0f
-        save(name, accuracy)
-    }
-
-    // Fetch all stored animal reports
-    fun getAnimals(): MutableCollection<SearchResult> {
-        val results = mutableListOf<SearchResult>()
-        val jsonArray = getUserJsonData()
-
-        for (i in 0 until jsonArray.length()) {
-            val obj = jsonArray.getJSONObject(i)
-            val name = obj.optString("animal", "Unknown")
-            val accuracy = obj.optDouble("accuracy", 0.0)
-            results.add(SearchResult(name = name, accuracy = accuracy))
-        }
-
-        Log.d("AccountSettings", "✅ Loaded ${results.size} saved animals")
-        return results
     }
 }

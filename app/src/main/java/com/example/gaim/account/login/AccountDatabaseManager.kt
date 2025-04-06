@@ -1,4 +1,5 @@
 package com.example.gaim.account.login
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
@@ -30,7 +31,25 @@ class AccountDatabaseManager(private val context: Context) {
         }
     }
 
-    public fun register(username: String, password: String): Boolean{
-        TODO("Not yet implemented")
+    //registers a username and password with the username/password db
+    fun register(username: String, password: String): Boolean{
+        try{
+            val dbPath = context.getDatabasePath("user_accounts.db").absolutePath
+            val db: SQLiteDatabase = SQLiteDatabase.openDatabase(dbPath, null, SQLiteDatabase.OPEN_READWRITE)
+
+            val values = ContentValues().apply {
+                put("username", username)
+                put("password", password)
+            }
+
+            val newRowId = db.insert("users", null, values)
+            db.close()
+
+            return newRowId != -1L
+        }catch (e: SQLiteException) {
+            e.printStackTrace()
+            return false
+        }
+
     }
 }
