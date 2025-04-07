@@ -17,7 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 // GOOGLE CLOUD VISION API KEY
-private const val API_KEY = BuildConfig.GOOGLE_API_CLOUD
+private const val API_KEY = "AIzaSyAakFzZed_NUhPYQSOCFyxyAu9soZVTd_g"
 private const val TAG = "ImageSearchAlgorithm"
 
 // Helper function to handle logging in both Android and standalone environments

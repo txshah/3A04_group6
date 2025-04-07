@@ -24,7 +24,7 @@ class AccountSettings(private val context: Context, private val username: String
 
         jsonArray.put(entry)
         updateUserJsonData(jsonArray)
-        Log.d("AccountSettings", "✅ Saved animal: $animal, accuracy: $accuracy")
+        Log.d("AccountSettings", "Saved animal: $animal, accuracy: $accuracy")
     }
 
     // Save from a SearchResult object
@@ -46,7 +46,7 @@ class AccountSettings(private val context: Context, private val username: String
             results.add(SearchResult(name = name, accuracy = accuracy))
         }
 
-        Log.d("AccountSettings", "✅ Loaded ${results.size} saved animals")
+        Log.d("AccountSettings", "Loaded ${results.size} saved animals")
         return results
     }
 

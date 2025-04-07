@@ -27,11 +27,9 @@ class SearchController (private val activity: AbstractActivity, private val inte
         if (searchResults.isNotEmpty()) {
             Log.d(TAG, "Found ${searchResults.size} results, launching DisplayResultsActivity")
             val resultsIntent = Intent(activity, DisplayResultsActivity::class.java).apply {
-                putParcelableArrayListExtra("search_results", ArrayList(searchResults))
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                putParcelableArrayListExtra("search_results", ArrayList(searchResults)) // then override safely
             }
-
-            resultsIntent.putExtras(intent)
             activity.startActivity(resultsIntent)
         } else {
             Log.d(TAG, "No search results found")
@@ -41,13 +39,14 @@ class SearchController (private val activity: AbstractActivity, private val inte
     private fun runSearches(){
         Log.d(TAG, "Running searches")
         for(entry in SearchActivity.entries){
-            if(intent.extras?.getBoolean(entry.name) == SearchState.PENDING.value){
+            if (intent.extras?.getBoolean(entry.name, false) == true){
                 Log.d(TAG, "Found pending search for ${entry.name}")
                 val newIntent = Intent(this@SearchController.activity, entry.activity).apply {
                     intent.extras?.let { putExtras(it) }
                 }
 
                 this.activity.nextActivity(entry, newIntent)
+                return
             }
         }
     }

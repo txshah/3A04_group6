@@ -17,6 +17,7 @@ import com.example.gaim.GeminiService
 import com.example.gaim.R
 import com.example.gaim.search.SearchResult
 import com.example.gaim.ui.AbstractActivity
+import com.example.gaim.ui.MainpageActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -71,10 +72,12 @@ class AnimalReportActivity : AbstractActivity() {
             // Set animal name
             nameTextView.text = animalName
             Log.d(TAG, "Displaying animal: $animalName")
-            
+
+            val backButton = findViewById<Button>(R.id.backButton)
+
             // Set up back button
             backButton.setOnClickListener {
-                finish()
+                nextActivity(MainpageActivity.MAIN, intent)
             }
             
             // Fetch animal image and data

@@ -231,25 +231,28 @@ class MainActivity : AbstractActivity() {
     //runs the search
     private fun runSearch() {
         Log.d("MainActivity", "Running search")
+        val searchIntent = Intent()
+
         // Include both the processed state and search results in the intent
-        for((activity, tracker) in formStateTrackers) {
-            val isProcessed = tracker.getState() == ButtonState.PROCESSED
-            Log.d("MainActivity", "Form ${activity.name} is processed: $isProcessed")
-            intent.putExtra(activity.name, isProcessed)
-            
-            // If the form is processed, include its search result
-            if (isProcessed) {
-                tracker.getSearchResult()?.let { searchIntent ->
-                    // Copy all the extras from the search result intent to our intent
-                    searchIntent.extras?.let { bundle ->
-                        intent.putExtras(bundle)
+        for ((activity, tracker) in formStateTrackers) {
+            if (tracker.getState() == ButtonState.PROCESSED) {
+                Log.d("MainActivity", "Form ${activity.name} is PROCESSED – adding to intent")
+                searchIntent.putExtra(activity.name, true)
+
+                tracker.getSearchResult()?.let { resultIntent ->
+                    resultIntent.extras?.let { bundle ->
+                        searchIntent.putExtras(bundle)
                     }
                 }
             }
         }
 
         Log.d("MainActivity", "Starting SearchController")
-        val searchController = SearchController(this, intent)
+        Log.d("MainActivityHERE", intent.toString())
+        Log.d("MainActivityHERE", searchIntent.toString())
+//        val searchController = SearchController(this, intent)
+        val searchController = SearchController(this, searchIntent)
+        Log.d("MainActivityHERE", searchController.toString())
         searchController.start()
     }
 

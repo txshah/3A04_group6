@@ -36,7 +36,7 @@ class DisplayResultsActivity : AbstractActivity() {
                 intent.getParcelableArrayListExtra<SearchResult>("search_results")
             } ?: ArrayList()
             
-            Log.d(TAG, "Search results size: ${searchResults.size}")
+            Log.d(TAG, "Search results: ${searchResults}")
 
             val backButton = findViewById<Button>(R.id.backButton)
             // Set up back button
