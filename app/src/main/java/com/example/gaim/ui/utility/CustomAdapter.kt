@@ -7,8 +7,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gaim.R
 import com.example.gaim.search.SearchResult
+import com.example.gaim.ui.AbstractActivity
+import com.example.gaim.ui.MainpageActivity
 
-class CustomAdapter(private val dataSet: Array<SearchResult>) :
+class CustomAdapter(private val activity: AbstractActivity, val dataSet: Array<SearchResult>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     // ViewHolder for two TextViews
@@ -26,6 +28,10 @@ class CustomAdapter(private val dataSet: Array<SearchResult>) :
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val item = dataSet[position]
         viewHolder.textView1.text = item.name
+        viewHolder.textView1.setOnClickListener {
+            activity.intent.putExtra("animal_name", item.name)
+            activity.nextActivity(MainpageActivity.REPORT, activity.intent)
+        }
         viewHolder.textView2.text = item.accuracy.toString()
     }
 

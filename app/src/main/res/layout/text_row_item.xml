@@ -4,14 +4,20 @@
     android:columnCount="2"
     android:padding="8dp">
 
-    <!-- First column item -->
-    <TextView
+    <Button
         android:id="@+id/textView1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:text="Item 1"
-        android:padding="4dp" />
+        android:padding="8dp"
+        android:textColor="#000000"
+        android:backgroundTint="#D1C4E9"
+        android:strokeColor="#7E57C2"
+        android:insetLeft="0dp"
+        android:insetRight="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"/>
 
     <!-- Second column item -->
     <TextView
@@ -19,6 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
+        android:gravity = "center"
         android:text="Item 2"
         android:padding="4dp" />
 

@@ -11,11 +11,11 @@ import com.example.gaim.search.SearchResult
 import androidx.core.content.ContextCompat
 import android.content.Intent
 import android.widget.Button
-import com.example.gaim.MainActivity
+import com.example.gaim.ui.AbstractActivity
+import com.example.gaim.ui.MainpageActivity
 
-class DisplayResultsActivity : AppCompatActivity() {
+class DisplayResultsActivity : AbstractActivity() {
     private var container: LinearLayout? = null
-    private lateinit var backButton: Button
     private val TAG = "DisplayResultsActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +39,12 @@ class DisplayResultsActivity : AppCompatActivity() {
             
             Log.d(TAG, "Search results size: ${searchResults.size}")
 
+            val backButton = findViewById<Button>(R.id.backButton)
+            // Set up back button
+            backButton.setOnClickListener {
+                nextActivity(MainpageActivity.MAIN, intent)
+            }
+
             if (searchResults.isNotEmpty()) {
                 // Display best match
                 val bestMatch = searchResults.maxByOrNull { it.accuracy ?: 0.0 }
@@ -57,14 +63,6 @@ class DisplayResultsActivity : AppCompatActivity() {
             findViewById<android.widget.Button>(R.id.generate_report)?.setOnClickListener {
                 generateReport(searchResults)
             }
-            // Set up back button
-            backButton = findViewById(R.id.backButton)
-            backButton.setOnClickListener {
-                val intent = Intent(this, MainActivity::class.java)
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
-                startActivity(intent)
-            }
-
             Log.d(TAG, "onCreate completed successfully")
             
         } catch (e: Exception) {
@@ -177,4 +175,4 @@ class DisplayResultsActivity : AppCompatActivity() {
         super.onDestroy()
         Log.d(TAG, "Activity destroyed")
     }
-}
+} 

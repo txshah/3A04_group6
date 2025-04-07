@@ -3,7 +3,11 @@ package com.example.gaim.ui
 import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gaim.account.settings.AccountSettings
 import com.example.gaim.search.GaimActivity
+import com.example.gaim.search.SearchResult
+import com.example.gaim.ui.account.Login
+import com.example.gaim.ui.search.AnimalReportActivity
 import com.example.gaim.ui.utility.ErrorChecker
 
 //MAKE SURE ALL ACTIVITIES IMPLEMENT THIS
@@ -33,6 +37,17 @@ abstract class AbstractActivity: AppCompatActivity () {
         }
 
         return true
+    }
+
+    fun saveResult(result: SearchResult){
+        val username = intent.getStringExtra(Login.USERNAME.value).toString()
+        val password = intent.getStringExtra(Login.PASSWORD.value).toString()
+
+        val accountSettings = AccountSettings(this, username, password)
+
+        accountSettings.save(result)
+
+        intent.putExtra("animal_name", result.name)
     }
 
 }

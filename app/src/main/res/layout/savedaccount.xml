@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
     android:padding="24dp"
@@ -35,10 +35,10 @@
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/user_location"
+            android:id="@+id/user_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Location: New York"
+            android:text="Password: New York"
             android:textSize="14sp"
             android:textColor="@android:color/darker_gray"
             android:layout_marginStart="16dp"/>
@@ -55,6 +55,37 @@
         android:textColor="@android:color/black"
         android:layout_marginBottom="16dp"/>
 
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:padding="8dp">
+
+        <!-- First column item -->
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:text="Name"
+            android:textStyle="bold"
+            android:padding="4dp" />
+
+        <!-- Second column item -->
+        <TextView
+            android:id="@+id/accuracy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:text="Accuracy"
+            android:textStyle="bold"
+            android:padding="4dp" />
+
+        <!-- Repeat for more items -->
+    </GridLayout>
+
     <!-- RecyclerView to Display Reports -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_reports"
@@ -63,15 +94,17 @@
         android:layout_marginBottom="24dp"
         android:layout_weight="1" />
 
-    <!-- Generate Report Button -->
-
+    <!-- Home Button -->
     <Button
-        android:id="@+id/backButton"
+        android:id="@+id/homepage2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="Home"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"/>
 
 </LinearLayout>
