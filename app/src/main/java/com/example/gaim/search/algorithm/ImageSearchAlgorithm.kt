@@ -15,6 +15,12 @@ import com.google.gson.JsonObject
 import com.google.protobuf.ByteString
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+//        DEBUG REFERENCES
+//  reference for DB set up :https://gist.github.com/wontondon/1271795
+// reference for cursor use: https://cursa.app/en/page/working-with-sqlite-databases-working-with-cursors
+//reference for cloud api: https://clouddevs.com/kotlin/google-cloud-vision/?
+//image compression: https://gupta-kavya.medium.com/optimizing-image-upload-to-the-server-android-f27239785125
+//API: https://medium.com/%40johnidouglasmarangon/google-cloud-vision-api-for-image-handling-and-ocr-a6763969a2e6
 
 // GOOGLE CLOUD VISION API KEY
 private const val API_KEY = "AIzaSyAakFzZed_NUhPYQSOCFyxyAu9soZVTd_g"

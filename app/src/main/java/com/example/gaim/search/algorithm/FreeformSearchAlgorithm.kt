@@ -5,6 +5,10 @@ import android.database.sqlite.SQLiteDatabase
 import com.example.gaim.search.SearchResult
 import java.io.File
 
+//        DEBUG REFERENCES
+//        reference for DB set up :https://gist.github.com/wontondon/1271795
+// reference for cursor use: https://cursa.app/en/page/working-with-sqlite-databases-working-with-cursors
+
 //see SEARCH ALGORITHM for description
 class FreeformSearchAlgorithm(private val context: Context) : SearchAlgorithm<String> {
 //    global vars - later

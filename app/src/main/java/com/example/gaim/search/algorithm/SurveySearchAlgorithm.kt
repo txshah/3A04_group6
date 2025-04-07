@@ -5,7 +5,12 @@ import android.database.sqlite.SQLiteDatabase
 import com.example.gaim.search.SearchResult
 import java.io.File
 
-//see SEARCH ALGOIRTHM for description
+//        DEBUG REFERENCES
+//        reference for DB set up :https://gist.github.com/wontondon/1271795
+// reference for cursor use: https://cursa.app/en/page/working-with-sqlite-databases-working-with-cursors
+
+
+//see SEARCH ALGO for description
 class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<String> {
 //    file with 200 plus speicies
     private val DB_NAME = "canadian_species.db"
@@ -45,7 +50,7 @@ class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<Stri
         )
     }
 
-//    serch function - main result returned here
+//    ssearch function - main result returned here
     override suspend fun search(input: String): SearchResult {
 
         val variables = extract(input)
@@ -62,7 +67,7 @@ class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<Stri
 
         return SearchResult(species, accuracy)
     }
-    //        from survey options split based on semicol (to get all paramters
+    //        from survey options split based on semicolon (to get all paramdters
     private fun extract(input: String): HashMap<String, String> {
         val hashMap = HashMap<String, String>()
         input.split(";")
@@ -76,7 +81,7 @@ class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<Stri
     }
     //       query database - all variables filled to something
     private fun query(input: HashMap<String, String>): Map<String, Int> {
-//        set up results - whatveer is answered by this query
+//        set up results - whatever is answered by this query
         val results = mutableMapOf<String, Int>()
         
         try {
@@ -114,7 +119,7 @@ class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<Stri
                 selectionCriteria.add("size = ?")
                 selectionArgs.add(it)
             }
-//automate thequery process by adding and between variables
+//automate the query process by adding and between variables
             val selection = selectionCriteria.joinToString(" AND ")
             //query called
             val cursor = database?.query(

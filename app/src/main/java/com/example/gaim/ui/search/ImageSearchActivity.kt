@@ -24,11 +24,15 @@ import java.io.InputStream
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+//        DEBUG REFERENCES
+//Output Stream: https://stackoverflow.com/questions/55312954/saving-file-in-internal-storage-using-uri-obtained-from-storage-access-network/55313801
+//Photo picker: https://developer.android.com/training/data-storage/shared/photopicker
 
-//image front end to allow user to update ghpoto
+
+//image front end to allow user to update photo
 class ImageSearchActivity: AbstractSearchActivity<String> () {
     private val TAG = "ImageSearchActivity"
-//    set up algorithms to allo for search calls
+//    set up algorithms to allow for search calls
     override val algorithm: SearchAlgorithm<String> by lazy {
         ImageSearchAlgorithm(this)
     }
@@ -40,7 +44,7 @@ class ImageSearchActivity: AbstractSearchActivity<String> () {
 //    image path
     private var selectedImagePath: String? = null
 
-//on create - at beigginging
+//on create - at beginning
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -48,7 +52,7 @@ class ImageSearchActivity: AbstractSearchActivity<String> () {
         setContentView(R.layout.activity_image_search)
         Log.d(TAG, "ImageSearchActivity created")
 
-//uploade image button set up
+//upload image button set up
         val uploadImage = findViewById<Button>(uploadImageId)
         Log.d(TAG, "UI buttons initialized")
 

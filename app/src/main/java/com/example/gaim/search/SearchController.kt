@@ -7,16 +7,16 @@ import com.example.gaim.ui.search.DisplayResultsActivity
 
 //checks the intent for true search activities and runs them
 class SearchController (private val activity: AbstractActivity, private val intent: Intent){
-    //checks given intent for true search activies and runs them
+    //checks given intent for true search activities and runs them
     private val searchResults = mutableListOf<SearchResult>()
     private val TAG = "SearchController"
 
     fun start(){
         Log.d(TAG, "Starting search process")
         runSearches()
-//for all enteries
+//for all entries
         for(entry in SearchActivity.entries){
-//            log statments for testing
+//            log statements for testing
             Log.d(TAG, "Processing entry: ${entry.name}")
             SearchResult.getFromIntent(intent, entry)?.let { result ->
                 Log.d(TAG, "Found result for ${entry.name}: ${result.name} with accuracy ${result.accuracy}")
@@ -41,7 +41,7 @@ class SearchController (private val activity: AbstractActivity, private val inte
 
     private fun runSearches(){
         Log.d(TAG, "Running searches")
-//        go through all enteries and based on that create intents to pass around data
+//        go through all entries and based on that create intents to pass around data
         for(entry in SearchActivity.entries){
             if(intent.extras?.getBoolean(entry.name) == SearchState.PENDING.value){
                 Log.d(TAG, "Found pending search for ${entry.name}")
@@ -72,7 +72,7 @@ class SearchController (private val activity: AbstractActivity, private val inte
             Log.d(TAG, "Unknown skipped")
             return
         }
-//not null existing value then update accuraxcy score mroe (becuase two agents give same result)
+//not null existing value then update accuracy score more (because two agents give same result)
         if (existingResult != null) {
             Log.d(TAG, "Updating existing result for ${result.name}")
             searchResults.remove(existingResult)
@@ -80,7 +80,7 @@ class SearchController (private val activity: AbstractActivity, private val inte
                 existingResult.copy(accuracy = existingResult.accuracy?.plus(0.20))
             )
         } else {
-//            give accurcy score
+//            give accuracy score
             Log.d(TAG, "Adding new result for ${result.name}")
             searchResults.add(result)
         }

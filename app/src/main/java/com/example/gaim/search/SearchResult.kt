@@ -8,7 +8,7 @@ import com.example.gaim.ui.search.AbstractSearchActivity
 
 //
 //class SearchResult(private val animalName: String, private val accuracy: Double) {
-////store all three search results and send to controllor
+////store all three search results and send to controller
 //
 //}
 //to store data = data class
