@@ -49,4 +49,12 @@ abstract class AbstractActivity: AppCompatActivity () {
         accountSettings.save(result)
     }
 
+    fun addLogin(newIntent: Intent){
+        val username = intent.getStringExtra(Login.USERNAME.value).toString()
+        val password = intent.getStringExtra(Login.PASSWORD.value).toString()
+
+        newIntent.putExtra(Login.USERNAME.value, username)
+        newIntent.putExtra(Login.PASSWORD.value, password)
+
+    }
 }

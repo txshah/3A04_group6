@@ -32,7 +32,7 @@ class SearchController (private val activity: AbstractActivity, private val inte
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             }
 //results update
-            resultsIntent.putExtras(intent)
+            activity.addLogin(resultsIntent)
             activity.startActivity(resultsIntent)
         } else {
             Log.d(TAG, "No search results found")
