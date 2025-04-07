@@ -9,7 +9,7 @@ plugins {
 val geminiApiKey = project.findProperty("GEMINI_API_KEY") as String? ?: ""
 val googleSearchApiKey = project.findProperty("GOOGLE_SEARCH_API_KEY") as String? ?: ""
 val googleSearchEngineId = project.findProperty("GOOGLE_SEARCH_ENGINE_ID") as String? ?: ""
-
+val googleSearchCloud = project.findProperty("GOOGLE_API_CLOUD") as String? ?: ""
 android {
     namespace = "com.example.gaim"
     compileSdk = 35
@@ -27,6 +27,7 @@ android {
         buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")
         buildConfigField("String", "GOOGLE_SEARCH_API_KEY", "\"$googleSearchApiKey\"")
         buildConfigField("String", "GOOGLE_SEARCH_ENGINE_ID", "\"$googleSearchEngineId\"")
+        buildConfigField("String", "GOOGLE_API_CLOUD", "\"$googleSearchCloud\"")
     }
 
     buildTypes {
