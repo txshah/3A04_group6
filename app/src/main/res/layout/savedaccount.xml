@@ -75,5 +75,17 @@
         android:background="@android:drawable/editbox_background"
         android:layout_marginTop="16dp"
         android:padding="12dp"/>
+    <!-- Home Button -->
+    <Button
+        android:id="@+id/homepage2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"/>
 
 </LinearLayout>
