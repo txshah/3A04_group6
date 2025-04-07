@@ -35,8 +35,8 @@ class AccountSettings(private val context: Context, private val username: String
     }
 
     // Fetch all stored animal reports
-    fun getAnimals(): MutableSet<SearchResult> {
-        val results = mutableSetOf<SearchResult>()
+    fun getAnimals(): MutableCollection<SearchResult> {
+        val results = mutableListOf<SearchResult>()
         val jsonArray = getUserJsonData()
 
         for (i in 0 until jsonArray.length()) {

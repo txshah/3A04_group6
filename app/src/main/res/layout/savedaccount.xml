@@ -35,10 +35,10 @@
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/user_location"
+            android:id="@+id/user_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Location: New York"
+            android:text="Password: New York"
             android:textSize="14sp"
             android:textColor="@android:color/darker_gray"
             android:layout_marginStart="16dp"/>

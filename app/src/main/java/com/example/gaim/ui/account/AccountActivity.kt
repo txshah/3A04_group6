@@ -14,6 +14,7 @@ import com.example.gaim.search.SearchResult
 
 class AccountActivity : AbstractActivity() {
     private val usernameID = R.id.user_name
+    private val passwordID = R.id.user_password
     private val homeID = R.id.homepage2
     private lateinit var accountSettings: AccountSettings
 
@@ -26,16 +27,20 @@ class AccountActivity : AbstractActivity() {
         val password = intent.getStringExtra(Login.PASSWORD.value)
         accountSettings = AccountSettings(this, username.toString(), password.toString())
 
-        setUsername(username.toString())
+        setUsername(username.toString(), password.toString())
         setHome()
         showPreviousResults()
     }
 
     //sets topbar val to current user
-    private fun setUsername(username: String){
+    private fun setUsername(username: String, password: String){
         //setting the top value to a username
         val usernameID = findViewById<TextView>(usernameID)
         usernameID.text = username
+
+        //setting the top value to a username
+        val passwordID = findViewById<TextView>(passwordID)
+        passwordID.text = "Password: $password"
     }
 
     //sets up the home button
