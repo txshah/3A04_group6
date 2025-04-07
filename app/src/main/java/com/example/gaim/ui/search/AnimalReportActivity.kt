@@ -16,6 +16,7 @@ import com.example.gaim.BuildConfig
 import com.example.gaim.GeminiService
 import com.example.gaim.R
 import com.example.gaim.search.SearchResult
+import com.example.gaim.ui.AbstractActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,7 +26,7 @@ import org.json.JSONObject
 import java.net.HttpURLConnection
 import java.net.URL
 
-class AnimalReportActivity : AppCompatActivity() {
+class AnimalReportActivity : AbstractActivity() {
     private val TAG = "AnimalReportActivity"
     
     private lateinit var nameTextView: TextView

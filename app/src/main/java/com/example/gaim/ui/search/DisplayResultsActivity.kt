@@ -10,8 +10,9 @@ import com.example.gaim.R
 import com.example.gaim.search.SearchResult
 import androidx.core.content.ContextCompat
 import android.content.Intent
+import com.example.gaim.ui.AbstractActivity
 
-class DisplayResultsActivity : AppCompatActivity() {
+class DisplayResultsActivity : AbstractActivity() {
     private var container: LinearLayout? = null
     private val TAG = "DisplayResultsActivity"
 

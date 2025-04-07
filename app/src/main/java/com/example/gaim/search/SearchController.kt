@@ -45,7 +45,7 @@ class SearchController (private val activity: AbstractActivity, private val inte
                     intent.extras?.let { putExtras(it) }
                 }
 
-                this.activity.nextActivity(entry, intent)
+                this.activity.nextActivity(entry, newIntent)
             }
         }
     }

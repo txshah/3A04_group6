@@ -52,7 +52,7 @@ class AccountActivity : AbstractActivity() {
         val previousResults =  accountSettings.getAnimals()
 
         //adding previous user data to custom adapter
-        val customAdapter = CustomAdapter(previousResults.toTypedArray())
+        val customAdapter = CustomAdapter(this, previousResults.toTypedArray())
 
         val recyclerView: RecyclerView = findViewById(R.id.recycler_view_reports)
         recyclerView.layoutManager = LinearLayoutManager(this)
