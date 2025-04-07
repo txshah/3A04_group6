@@ -55,6 +55,37 @@
         android:textColor="@android:color/black"
         android:layout_marginBottom="16dp"/>
 
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:padding="8dp">
+
+        <!-- First column item -->
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:text="Name"
+            android:textStyle="bold"
+            android:padding="4dp" />
+
+        <!-- Second column item -->
+        <TextView
+            android:id="@+id/accuracy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:text="Accuracy"
+            android:textStyle="bold"
+            android:padding="4dp" />
+
+        <!-- Repeat for more items -->
+    </GridLayout>
+
     <!-- RecyclerView to Display Reports -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_reports"
