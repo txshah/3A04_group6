@@ -70,7 +70,7 @@ class ImageSearchAlgorithm (private val context: Context) : SearchAlgorithm<Stri
 
         if (detectedLabels.isEmpty()) {
             logMessage("WARN", TAG, "No labels detected for the image")
-            return SearchResult("N/A", 0.0)
+            return SearchResult("Unknown", 0.0)
         }
 
         val maxEntry = detectedLabels.maxByOrNull { it.value } ?: return SearchResult("N/A", 0.0)

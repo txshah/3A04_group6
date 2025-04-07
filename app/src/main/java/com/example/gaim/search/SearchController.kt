@@ -62,6 +62,11 @@ class SearchController (private val activity: AbstractActivity, private val inte
 
     fun addSearchResult(result: SearchResult) {
         val existingResult = searchResults.firstOrNull { it.name == result.name }
+        if (result.name == null) {
+            Log.d(TAG, "Unknown skipped")
+            return
+        }
+
         if (existingResult != null) {
             Log.d(TAG, "Updating existing result for ${result.name}")
             searchResults.remove(existingResult)
@@ -72,6 +77,7 @@ class SearchController (private val activity: AbstractActivity, private val inte
             Log.d(TAG, "Adding new result for ${result.name}")
             searchResults.add(result)
         }
+        Log.d(TAG, "Search Result ${searchResults}")
     }
 
     /*

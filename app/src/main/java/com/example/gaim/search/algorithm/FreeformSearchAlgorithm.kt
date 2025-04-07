@@ -52,7 +52,7 @@ class FreeformSearchAlgorithm(private val context: Context) : SearchAlgorithm<St
         val options = query(input)
 
         if (options.isEmpty()) {
-            return SearchResult("N/A", 0.0)
+            return SearchResult("Unknown", 0.0)
         }
 
         val maxEntry = options.maxBy { it.value }
