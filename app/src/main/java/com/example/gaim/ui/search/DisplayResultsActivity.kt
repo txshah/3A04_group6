@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.example.gaim.R
 import com.example.gaim.search.SearchResult
@@ -153,12 +152,14 @@ class DisplayResultsActivity : AbstractActivity() {
             val animalName = bestMatch?.name ?: "Unknown"
             
             Log.d(TAG, "Generating report for animal: $animalName")
-            
+
+            bestMatch?.let { saveResult(it) }
             // Launch the AnimalReportActivity
-            val intent = Intent(this, AnimalReportActivity::class.java).apply {
+            val newIntent = Intent(this, AnimalReportActivity::class.java).apply {
                 putExtra("animal_name", animalName)
             }
-            startActivity(intent)
+            newIntent.putExtras(intent)
+            startActivity(newIntent)
             
         } catch (e: Exception) {
             Log.e(TAG, "Error generating report", e)

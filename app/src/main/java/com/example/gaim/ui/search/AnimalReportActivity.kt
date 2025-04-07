@@ -50,7 +50,8 @@ class AnimalReportActivity : AbstractActivity() {
         
         try {
             setContentView(R.layout.animal_report)
-            
+
+
             // Initialize views
             nameTextView = findViewById(R.id.animalNameText)
             loadingIndicator = findViewById(R.id.loadingIndicator)

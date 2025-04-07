@@ -46,8 +46,6 @@ abstract class AbstractActivity: AppCompatActivity () {
         val accountSettings = AccountSettings(this, username, password)
 
         accountSettings.save(result)
-
-        intent.putExtra("animal_name", result.name)
     }
 
 }

@@ -30,6 +30,8 @@ class SearchController (private val activity: AbstractActivity, private val inte
                 putParcelableArrayListExtra("search_results", ArrayList(searchResults))
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             }
+
+            resultsIntent.putExtras(intent)
             activity.startActivity(resultsIntent)
         } else {
             Log.d(TAG, "No search results found")
