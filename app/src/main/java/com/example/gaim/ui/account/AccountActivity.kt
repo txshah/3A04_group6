@@ -10,6 +10,7 @@ import com.example.gaim.ui.utility.CustomAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gaim.account.settings.AccountSettings
 import com.example.gaim.ui.MainpageActivity
+import com.example.gaim.search.SearchResult
 
 class AccountActivity : AbstractActivity() {
     private val usernameID = R.id.user_name

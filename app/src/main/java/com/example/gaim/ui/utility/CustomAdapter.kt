@@ -29,6 +29,7 @@ class CustomAdapter(private val activity: AbstractActivity, val dataSet: Array<S
         val item = dataSet[position]
         viewHolder.textView1.text = item.name
         viewHolder.textView1.setOnClickListener {
+            activity.intent.putExtra("animal_name", item.name)
             activity.nextActivity(MainpageActivity.REPORT, activity.intent)
         }
         viewHolder.textView2.text = item.accuracy.toString()
