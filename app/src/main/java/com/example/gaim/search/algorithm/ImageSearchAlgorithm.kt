@@ -49,7 +49,7 @@ class ImageSearchAlgorithm (private val context: Context) : SearchAlgorithm<Stri
 
     // Expose last status code
     fun getLastStatusCode(): Int = lastStatusCode
-
+//suspend search used to make sure api works
     override suspend fun search(input: String): SearchResult {
         logMessage("DEBUG", TAG, "Starting image search...")
 
@@ -73,7 +73,7 @@ class ImageSearchAlgorithm (private val context: Context) : SearchAlgorithm<Stri
             logMessage("WARN", TAG, "No labels detected for the image")
             return SearchResult("Unknown", 0.0)
         }
-
+//max entry chosen from many options returned by api
         val maxEntry = detectedLabels.maxByOrNull { it.value } ?: return SearchResult("N/A", 0.0)
         val species = maxEntry.key
         val accuracy = maxEntry.value.toDouble()
@@ -83,7 +83,7 @@ class ImageSearchAlgorithm (private val context: Context) : SearchAlgorithm<Stri
         return SearchResult(species, accuracy)
     }
 
-
+//api call - use google vision key
     private fun apiCall(filePath: String): Map<String, Float> {
         logMessage("DEBUG", TAG, "Making API call to Google Vision API for file: $filePath")
         val labelsMap = mutableMapOf<String, Float>()
@@ -93,7 +93,7 @@ class ImageSearchAlgorithm (private val context: Context) : SearchAlgorithm<Stri
                 logMessage("ERROR", TAG, "File does not exist: $filePath")
                 return labelsMap
             }
-
+//make image smaller to make sure it fits
             logMessage("DEBUG", TAG, "Reading file bytes and encoding to Base64")
             val imgBytes = Files.readAllBytes(file.toPath())
             val base64Image = Base64.getEncoder().encodeToString(imgBytes)
@@ -109,7 +109,7 @@ class ImageSearchAlgorithm (private val context: Context) : SearchAlgorithm<Stri
                   ]
                 }
             """.trimIndent()
-
+//URL to based on API
             val url = URL("https://vision.googleapis.com/v1/images:annotate?key=$API_KEY")
             logMessage("DEBUG", TAG, "Sending request to: ${url.toString()}")
 
@@ -123,7 +123,7 @@ class ImageSearchAlgorithm (private val context: Context) : SearchAlgorithm<Stri
                 os.write(jsonRequest.toByteArray())
                 os.flush()
             }
-
+//RESPONSE FROM API
             val responseCode = connection.responseCode
             this.lastStatusCode = responseCode
             logMessage("DEBUG", TAG, "Received response code: $responseCode")
@@ -140,19 +140,20 @@ class ImageSearchAlgorithm (private val context: Context) : SearchAlgorithm<Stri
             // Store the raw response
             this.lastRawResponse = response
             logMessage("DEBUG", TAG, "Raw API response: $response")
-
+//annotiations are the rsponses
             logMessage("DEBUG", TAG, "Parsing JSON response")
             val jsonResponse = JsonParser.parseString(response).asJsonObject
             val annotations = jsonResponse.getAsJsonArray("responses")
                 .firstOrNull()?.asJsonObject
                 ?.getAsJsonArray("labelAnnotations")
-
+//debug stuff
             if (annotations == null) {
                 logMessage("WARN", TAG, "No label annotations found in response")
                 return labelsMap
             }
 
             logMessage("DEBUG", TAG, "Processing ${annotations.size()} label annotations")
+//            go through annoitations iteratively and get score and name in labelsMap
             for (label in annotations) {
                 val obj = label as JsonObject
                 val description = obj.get("description").asString
@@ -169,6 +170,7 @@ class ImageSearchAlgorithm (private val context: Context) : SearchAlgorithm<Stri
     }
 }
 
+//testing function
 fun main() {
     println("==== Running ImageSearchAlgorithm ====")
 //    val searcher = ImageSearchAlgorithm()

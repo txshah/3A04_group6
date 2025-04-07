@@ -11,7 +11,7 @@ class FreeformSearchAlgorithm(private val context: Context) : SearchAlgorithm<St
 //    private val client = OkHttpClient()
 //    private val apiToken = ""
 //    private val modelUrl = ""
-
+//DB SET UP
     private val DB_NAME = "canadian_species.db"
     private var dbFile: File? = null
     private var database: SQLiteDatabase? = null
@@ -47,11 +47,11 @@ class FreeformSearchAlgorithm(private val context: Context) : SearchAlgorithm<St
             SQLiteDatabase.OPEN_READONLY
         )
     }
-
+//SEARCH FUNCTION
     override suspend fun search(input: String): SearchResult {
-        // Extract up to 10 keywords from the input
+        // Extract up to 10 keywords from the input - max limit
         val keyWords = extract(input)
-
+//from keywords query them and get hasmap
         val options = query(keyWords)
 
         if (options.isEmpty()) {
@@ -60,7 +60,8 @@ class FreeformSearchAlgorithm(private val context: Context) : SearchAlgorithm<St
 
         val maxEntry = options.maxBy { it.value }
         val species = maxEntry.key
-        val accuracy = maxEntry.value.toDouble() / options.size
+//    hashmap score out of matched keywords / total keywords
+        val accuracy = maxEntry.value.toDouble() / keyWords.size
 
         return SearchResult(species, accuracy)
     }
@@ -88,11 +89,13 @@ class FreeformSearchAlgorithm(private val context: Context) : SearchAlgorithm<St
             
             // Query each word
             for (word in input) {
+//                query from the keywords col - different then query
                 val cursor = database?.rawQuery(
                     "SELECT name FROM species WHERE keywords LIKE ?",
                     arrayOf("%$word%")
                 )
-
+//go through results from query and add to results (number of words matched to found word)
+//                result from DB: number of keywords
                 cursor?.use {
                     while (it.moveToNext()) {
                         val name = it.getString(0)

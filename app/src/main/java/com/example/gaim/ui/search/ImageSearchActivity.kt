@@ -25,29 +25,34 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-
+//image front end to allow user to update ghpoto
 class ImageSearchActivity: AbstractSearchActivity<String> () {
     private val TAG = "ImageSearchActivity"
+//    set up algorithms to allo for search calls
     override val algorithm: SearchAlgorithm<String> by lazy {
         ImageSearchAlgorithm(this)
     }
+//    uploading xml connection
     private val uploadImageId = R.id.upload_image
 
     private val PICK_IMAGE_REQUEST = 1001
     private val imagePreviewID = R.id.ivPreview
+//    image path
     private var selectedImagePath: String? = null
 
+//on create - at beigginging
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+//    follow this made view
         setContentView(R.layout.activity_image_search)
         Log.d(TAG, "ImageSearchActivity created")
 
-
+//uploade image button set up
         val uploadImage = findViewById<Button>(uploadImageId)
         Log.d(TAG, "UI buttons initialized")
 
-
+//when you click get URI to get location - this image from images in phone
         uploadImage.setOnClickListener {
             Log.d(TAG, "Upload Image button clicked")
             val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
@@ -58,12 +63,13 @@ class ImageSearchActivity: AbstractSearchActivity<String> () {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        get code for image
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
             val imageUri = data.data!!
             findViewById<ImageView>(imagePreviewID).setImageURI(imageUri)
-
+//URI to filepath (get location of stored on phone)
             val filePath = saveImageToInternalStorage(imageUri)
             Log.d(TAG, "HERE $filePath")
             if (filePath != null) {
@@ -72,6 +78,7 @@ class ImageSearchActivity: AbstractSearchActivity<String> () {
                 Log.d(TAG, "Does file exist? ${File(filePath).exists()}")
                 Log.d(TAG, "File size: ${File(filePath).length()} bytes")
                 Log.d(TAG, "Saved path: $filePath")
+//                use this to make sure API run from iamge location - need to use @due to suspend class (added due to api sage)
                 lifecycleScope.launch {
                     completeSearch(filePath.toString(), this@ImageSearchActivity)
                 }
@@ -101,16 +108,17 @@ class ImageSearchActivity: AbstractSearchActivity<String> () {
 //        Log.d(TAG, "Image analysis completed")
 //        return true
 //    }
-
+//function to allow inbuild to storage
     private fun saveImageToInternalStorage(uri: Uri): String? {
         return try {
             val inputStream: InputStream? = contentResolver.openInputStream(uri)
+//            set to time saved to ensure unique name for image at all time
             val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
             val fileName = "IMG_$timeStamp.jpg"
 
             val directory = File(filesDir, "account/database")
             if (!directory.exists()) directory.mkdirs()
-
+//save to director using output and input streams
             val file = File(directory, fileName)
             val outputStream = FileOutputStream(file)
             inputStream?.copyTo(outputStream)

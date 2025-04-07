@@ -22,6 +22,7 @@ import android.content.ComponentName
 
 //Homepage
 class MainActivity : AbstractActivity() {
+//    set up account and main homepage button
     private val imageButtonMap: Map<GaimActivity, Int> = hashMapOf(
         MainpageActivity.ACCOUNT to R.id.account_page,
         MainpageActivity.MAIN to R.id.home_page
@@ -33,12 +34,13 @@ class MainActivity : AbstractActivity() {
         SearchActivity.FREEFORM to R.id.freeform_search,
         SearchActivity.IMAGE to R.id.image_search
     )
-
+//buttons
     private val searchButtonID: Int = R.id.start_search
     private val fillFormsButtonID: Int = R.id.fill_forms
-
+//views
     private var resultTextView: TextView? = null
     private var geminiService: GeminiService? = null
+//    testing views
     private var geminiPromptInput: TextInputEditText? = null
     private var loadingIndicator: ProgressBar? = null
 
@@ -52,10 +54,10 @@ class MainActivity : AbstractActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        
+
         // Clear visited forms when activity is created
         visitedForms.clear()
-        
+
         //assigning buttons to values
         setUpImageButtons()
 
@@ -70,7 +72,7 @@ class MainActivity : AbstractActivity() {
 
         // Make the TextView scrollable
         resultTextView?.movementMethod = ScrollingMovementMethod()
-        
+
         geminiService = GeminiService(this)
     }
 
@@ -92,13 +94,14 @@ class MainActivity : AbstractActivity() {
             val searchButton = findViewById<Button>(buttonId)
             val tracker = FormStateTracker(activity)
             Log.d("MainActivity", "Created tracker for ${activity.name} with initial state: ${tracker.getState()}")
-            
+
             // Set up click listener for each search button
             searchButton.setOnClickListener {
                 Log.d("MainActivity", "Button clicked for ${activity.name}, current state: ${tracker.getState()}")
                 when (tracker.getState()) {
                     ButtonState.PROCESSED -> {
                         Log.d("MainActivity", "${activity.name} is PROCESSED, showing edit dialog")
+//                        box for editing form - pop up
                         AlertDialog.Builder(this)
                             .setTitle("Edit Form?")
                             .setMessage("Would you like to edit this form again?")
@@ -108,6 +111,7 @@ class MainActivity : AbstractActivity() {
                             .setNegativeButton("No") { dialog, _ -> dialog.dismiss() }
                             .show()
                     }
+//                    button state select and unselct
                     ButtonState.PENDING -> {
                         Log.d("MainActivity", "Setting ${activity.name} to UNSELECTED")
                         tracker.setState(ButtonState.UNSELECTED)
@@ -120,7 +124,7 @@ class MainActivity : AbstractActivity() {
                     }
                 }
             }
-            
+//tracker - so we can view users past searches
             tracker
         }
     }
@@ -135,7 +139,7 @@ class MainActivity : AbstractActivity() {
             val pendingForms = formStateTrackers.entries
                 .filter { it.value.getState() == ButtonState.PENDING }
                 .map { it.key }
-            
+
             Log.d("MainActivity", "Pending forms: ${pendingForms.map { it.name }}")
 
             if (pendingForms.isEmpty()) {
@@ -143,9 +147,9 @@ class MainActivity : AbstractActivity() {
                 val processedForms = formStateTrackers.entries
                     .filter { it.value.getState() == ButtonState.PROCESSED }
                     .map { it.key }
-                
-                Log.d("MainActivity", "Processed forms: ${processedForms.map { it.name }}")
 
+                Log.d("MainActivity", "Processed forms: ${processedForms.map { it.name }}")
+//if empty
                 if (processedForms.isEmpty()) {
                     Log.d("MainActivity", "No forms selected at all")
                     AlertDialog.Builder(this)
@@ -191,7 +195,7 @@ class MainActivity : AbstractActivity() {
             val pendingForms = formStateTrackers.entries
                 .filter { it.value.getState() == ButtonState.PENDING }
                 .map { it.key }
-            
+
             val processedForms = formStateTrackers.entries
                 .filter { it.value.getState() == ButtonState.PROCESSED }
                 .map { it.key }
@@ -202,6 +206,7 @@ class MainActivity : AbstractActivity() {
                 pendingForms.isNotEmpty() -> {
                     Log.d("MainActivity", "Cannot start search - have unfilled forms: ${pendingForms.map { it.name }}")
                     val formNames = pendingForms.map { it.name }.toTypedArray()
+//                    pop up
                     AlertDialog.Builder(this)
                         .setTitle("Unfilled Forms")
                         .setMessage("You must fill in all selected forms before starting the search:\n" + formNames.joinToString("\n"))
@@ -231,49 +236,47 @@ class MainActivity : AbstractActivity() {
     //runs the search
     private fun runSearch() {
         Log.d("MainActivity", "Running search")
-        val searchIntent = Intent()
-
         // Include both the processed state and search results in the intent
-        for ((activity, tracker) in formStateTrackers) {
-            if (tracker.getState() == ButtonState.PROCESSED) {
-                Log.d("MainActivity", "Form ${activity.name} is PROCESSED – adding to intent")
-                searchIntent.putExtra(activity.name, true)
+        for((activity, tracker) in formStateTrackers) {
+//            for eacch acitvity tracker - processed buttons
+            val isProcessed = tracker.getState() == ButtonState.PROCESSED
+            Log.d("MainActivity", "Form ${activity.name} is processed: $isProcessed")
+            intent.putExtra(activity.name, isProcessed)
 
-                tracker.getSearchResult()?.let { resultIntent ->
-                    resultIntent.extras?.let { bundle ->
-                        searchIntent.putExtras(bundle)
+            // If the form is processed, include its search result
+            if (isProcessed) {
+                tracker.getSearchResult()?.let { searchIntent ->
+                    // Copy all the extras from the search result intent to our intent
+                    searchIntent.extras?.let { bundle ->
+                        intent.putExtras(bundle)
                     }
                 }
             }
         }
-
+// call search controller
         Log.d("MainActivity", "Starting SearchController")
-        Log.d("MainActivityHERE", intent.toString())
-        Log.d("MainActivityHERE", searchIntent.toString())
-//        val searchController = SearchController(this, intent)
-        val searchController = SearchController(this, searchIntent)
-        Log.d("MainActivityHERE", searchController.toString())
+        val searchController = SearchController(this, intent)
         searchController.start()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        
+
         Log.d("MainActivity", "onActivityResult called with requestCode: $requestCode, resultCode: $resultCode")
-        
+
         if (resultCode == RESULT_OK && data != null) {
             // Get the activity that just completed
             val completedClassName = data.component?.className
             Log.d("MainActivity", "Completed activity class name: $completedClassName")
-            
+
             val completedActivity = SearchActivity.entries.find { searchActivity ->
                 val matches = completedClassName?.endsWith(searchActivity.activity.simpleName) == true
                 Log.d("MainActivity", "Checking ${searchActivity.name} (${searchActivity.activity.simpleName}) against $completedClassName: $matches")
                 matches
             }
-            
+
             Log.d("MainActivity", "Found completed activity: ${completedActivity?.name}")
-            
+
             completedActivity?.let { activity ->
                 // Mark this form as processed and save its search result
                 val tracker = formStateTrackers[activity]
@@ -282,13 +285,13 @@ class MainActivity : AbstractActivity() {
                 // Save the search result from the returned intent
                 tracker?.setSearchResult(data)
                 Log.d("MainActivity", "Updated state for ${activity.name}: ${tracker?.getState()}")
-                
+
                 // Find the next pending form
                 val nextPendingForm = formStateTrackers.entries
                     .find { it.value.getState() == ButtonState.PENDING }?.key
-                
+
                 Log.d("MainActivity", "Next pending form: ${nextPendingForm?.name}")
-                
+
                 if (nextPendingForm != null) {
                     // Automatically start the next form
                     nextActivity(nextPendingForm, intent)
@@ -345,4 +348,3 @@ class MainActivity : AbstractActivity() {
         }
     }
 }
-

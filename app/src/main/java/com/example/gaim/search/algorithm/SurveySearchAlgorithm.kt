@@ -7,10 +7,12 @@ import java.io.File
 
 //see SEARCH ALGOIRTHM for description
 class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<String> {
+//    file with 200 plus speicies
     private val DB_NAME = "canadian_species.db"
     private var dbFile: File? = null
     private var database: SQLiteDatabase? = null
 
+//    set up databse based on pathname
     init {
         setupDatabase()
     }
@@ -43,21 +45,24 @@ class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<Stri
         )
     }
 
+//    serch function - main result returned here
     override suspend fun search(input: String): SearchResult {
+
         val variables = extract(input)
         val options = query(variables)
 
         if (options.isEmpty()) {
             return SearchResult("Unknown", 0.0)
         }
-
+//        get result from options hashmap with largest value
         val maxEntry = options.maxBy { it.value }
         val species = maxEntry.key
+//    set accuracy based on number of options (so four options all 25 percent, equally likely)
         val accuracy = maxEntry.value.toDouble() / options.size / 100
 
         return SearchResult(species, accuracy)
     }
-
+    //        from survey options split based on semicol (to get all paramters
     private fun extract(input: String): HashMap<String, String> {
         val hashMap = HashMap<String, String>()
         input.split(";")
@@ -69,8 +74,9 @@ class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<Stri
 
         return hashMap
     }
-
+    //       query database - all variables filled to something
     private fun query(input: HashMap<String, String>): Map<String, Int> {
+//        set up results - whatveer is answered by this query
         val results = mutableMapOf<String, Int>()
         
         try {
@@ -83,8 +89,8 @@ class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<Stri
 
             val selectionArgs = mutableListOf<String>()
             val selectionCriteria = mutableListOf<String>()
-
-            legs?.let { 
+//set variables
+            legs?.let {
                 selectionCriteria.add("legs = ?")
                 selectionArgs.add(it.toString())
             }
@@ -108,9 +114,9 @@ class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<Stri
                 selectionCriteria.add("size = ?")
                 selectionArgs.add(it)
             }
-
+//automate thequery process by adding and between variables
             val selection = selectionCriteria.joinToString(" AND ")
-            
+            //query called
             val cursor = database?.query(
                 "species",  // table name
                 arrayOf("name"),  // columns to return
@@ -120,7 +126,7 @@ class SurveySearchAlgorithm(private val context: Context) : SearchAlgorithm<Stri
                 null,  // having
                 null   // order by
             )
-
+//returned outputs from query and add (all set to 100 percent at this time)
             cursor?.use {
                 while (it.moveToNext()) {
                     val name = it.getString(0)
