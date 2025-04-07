@@ -10,7 +10,9 @@ import com.example.gaim.R
 import com.example.gaim.search.SearchResult
 import androidx.core.content.ContextCompat
 import android.content.Intent
+import android.widget.Button
 import com.example.gaim.ui.AbstractActivity
+import com.example.gaim.ui.MainpageActivity
 
 class DisplayResultsActivity : AbstractActivity() {
     private var container: LinearLayout? = null
@@ -36,6 +38,12 @@ class DisplayResultsActivity : AbstractActivity() {
             } ?: ArrayList()
             
             Log.d(TAG, "Search results size: ${searchResults.size}")
+
+            val backButton = findViewById<Button>(R.id.backButton)
+            // Set up back button
+            backButton.setOnClickListener {
+                nextActivity(MainpageActivity.MAIN, intent)
+            }
 
             if (searchResults.isNotEmpty()) {
                 // Display best match
