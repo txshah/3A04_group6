@@ -49,7 +49,10 @@ class FreeformSearchAlgorithm(private val context: Context) : SearchAlgorithm<St
     }
 
     override suspend fun search(input: String): SearchResult {
-        val options = query(input)
+        // Extract up to 10 keywords from the input
+        val keyWords = extract(input)
+
+        val options = query(keyWords)
 
         if (options.isEmpty()) {
             return SearchResult("Unknown", 0.0)
@@ -62,24 +65,32 @@ class FreeformSearchAlgorithm(private val context: Context) : SearchAlgorithm<St
         return SearchResult(species, accuracy)
     }
 
-    private fun query(input: String): Map<String, Int> {
+    private fun extract(input: String): List<String>{
+//        exactly 10 keywords from any input text
+//        in one line split input into words and then get all words great than three and take 10 distinct
+        var output = input.split(" ")
+//            make sure sig word and chars
+            .filter { it.length > 3 && it.matches(Regex("[a-zA-Z]+")) }
+            .map { it.lowercase() }
+            .distinct()
+            .take(10)
+
+        print("$output")
+
+        return output
+    }
+
+    private fun query(input: List<String>): Map<String, Int> {
         val results = mutableMapOf<String, Int>()
         
         try {
             // Split input into words
-            val words = input.split(" ")
             
             // Query each word
-            for (word in words) {
+            for (word in input) {
                 val cursor = database?.rawQuery(
-                    "SELECT name FROM species WHERE " +
-                    "name LIKE ? OR " +
-                    "coat LIKE ? OR " +
-                    "colour LIKE ? OR " +
-                    "domain LIKE ? OR " +
-                    "region LIKE ? OR " +
-                    "size LIKE ?",
-                    Array(6) { "%$word%" }
+                    "SELECT name FROM species WHERE keywords LIKE ?",
+                    arrayOf("%$word%")
                 )
 
                 cursor?.use {
