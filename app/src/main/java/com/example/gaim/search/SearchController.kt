@@ -31,7 +31,7 @@ class SearchController (private val activity: AbstractActivity, private val inte
                 putParcelableArrayListExtra("search_results", ArrayList(searchResults))
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             }
-//results updatex
+//results update
             resultsIntent.putExtras(intent)
             activity.startActivity(resultsIntent)
         } else {

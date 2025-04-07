@@ -47,11 +47,11 @@ data class SearchResult(val name: String?, val accuracy: Double?) : Parcelable {
             return SearchResult(name, accuracy)
         }
 
-        private fun toName(activity: SearchActivity): String {
+        internal fun toName(activity: SearchActivity): String {
             return activity.name + ": name"
         }
 
-        private fun toAccuracy(activity: SearchActivity): String {
+        internal fun toAccuracy(activity: SearchActivity): String {
             return activity.name + ": accuracy"
         }
     }

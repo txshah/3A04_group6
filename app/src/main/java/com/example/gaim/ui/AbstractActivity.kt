@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gaim.account.settings.AccountSettings
 import com.example.gaim.search.GaimActivity
+import com.example.gaim.search.SearchActivity
 import com.example.gaim.search.SearchResult
 import com.example.gaim.ui.account.Login
 import com.example.gaim.ui.search.AnimalReportActivity

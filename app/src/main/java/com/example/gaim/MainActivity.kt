@@ -124,7 +124,6 @@ class MainActivity : AbstractActivity() {
                     }
                 }
             }
-//tracker - so we can view users past searches
             tracker
         }
     }
